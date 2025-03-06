@@ -10,13 +10,13 @@ metadata:
 next:
   description: ''
 ---
-1. **Quantas vezes posso consultar os dados dos meus usuários?**  
+1. **Quantas vezes posso consultar os dados dos meus usuários?**\
    Não existe limite para consulta de dados na Plataforma Lina OpenX. Realizamos atualizações periódicas dos dados para garantir a precisão e relevância dos dados disponibilizados, respeitando os prazos de disponibilização de dados e limites operacionais do Open Finance Brasil.
-2. **Como posso garantir que os dados dos meus usuários estão corretos?**  
+2. **Como posso garantir que os dados dos meus usuários estão corretos?**\
    Disponibilizamos endpoints para a atualização forçada das informações dos usuários. Para isso, basta seguir as instruções dos endpoints de force sync disponíveis no swagger da API.
-3. **Quando sei que os dados que estou consultando estão atualizados?**  
+3. **Quando sei que os dados que estou consultando estão atualizados?**\
    A cada componente atualizado, enviamos o timestamp da última atualização para o conjunto de dados consultados campo:updatedAt.
-4. **Qual é a frequência de atualização dos dados?**  
+4. **Qual é a frequência de atualização dos dados?**\
    Seguimos a seguinte tabela de frequência de atualizações:
 
 | Produto              | Dados                                                                             | Frequência                 |
