@@ -20,32 +20,20 @@ A estrutura dos dados do nível 2 é proprietária, e possui endpoints segregado
 
 Estão disponíveis endpoints para:
 
-- Média de entradas e saídas de múltiplas contas dos últimos 12 meses;
-- Média de compras e pagamentos de múltiplos cartões de crédito dos últimos 12 meses;
-- Transações e movimentações acumuladas dos últimos 12 meses para contas, cartões e investimentos;
-- Análise de portfólio de investimentos (posição e movimentações);
-- Controle de gastos mensais;
+* Média de entradas e saídas de múltiplas contas dos últimos 12 meses;
+* Média de compras e pagamentos de múltiplos cartões de crédito dos últimos 12 meses;
+* Transações e movimentações acumuladas dos últimos 12 meses para contas, cartões e investimentos;
+* Análise de portfólio de investimentos (posição e movimentações);
+* Controle de gastos mensais;
 
 ## Inferência
 
 Estão disponíveis endpoints para:
 
-- Inferência de Renda PF/PJ;
-- Inferência de Custos Fixos e Custos Recorrentes;
-- Categorização de despesas;
+* Inferência de Renda PF/PJ;
+* Inferência de Custos Fixos e Custos Recorrentes;
+* Categorização de despesas;
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/591129e8e065d91c8dcb46d6dde00d6e6a8b6dd3bf74f6ec28d85b7c9dd7b498-image.png",
-        null,
-        null
-      ],
-      "align": "center",
-      "caption": "Exemplo de interfaces que podem ser desenvolvidas com as informações disponíveis na Plataforma"
-    }
-  ]
-}
-[/block]
+<Image alt="Exemplo de interfaces que podem ser desenvolvidas com as informações disponíveis na Plataforma" align="center" src="https://files.readme.io/591129e8e065d91c8dcb46d6dde00d6e6a8b6dd3bf74f6ec28d85b7c9dd7b498-image.png">
+  Exemplo de interfaces que podem ser desenvolvidas com as informações disponíveis na Plataforma
+</Image>
