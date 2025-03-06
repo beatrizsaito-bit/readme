@@ -20,8 +20,8 @@ Nossos clientes não precisam se preocupar em desenvolver suas próprias interfa
 
 Possuimos visão segregadas pelos inúmeros produtos que temos acesso:
 
-- Dashboard transacional
-- Agregação de contas, cartões, investimentos, contratos de crédito e dados cadastrais nas mais diversas instituições do Brasil
+* Dashboard transacional
+* Agregação de contas, cartões, investimentos, contratos de crédito e dados cadastrais nas mais diversas instituições do Brasil
 
 ![](https://files.readme.io/1e406f605420fac834a8514d20a76f70409e0e20910ac3571c4a744c16c12d9f-image.png)
 
