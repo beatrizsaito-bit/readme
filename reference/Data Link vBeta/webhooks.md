@@ -16,7 +16,7 @@ Ao invés de realizar consultas periódicas na API para buscar informações, os
 
 ## Configurações
 
-Para configurar, basta acessar o [Painel de Administração (Console)](https://console.linaopenx.com.br) e acessar o menu à esquerda em _"Configurações"_ e em seguida preencher com a URL que irá receber as chamadas da aplicação
+Para configurar, basta acessar o [Painel de Administração (Console)](https://console.linaopenx.com.br) e acessar o menu à esquerda em *"Configurações"* e em seguida preencher com a URL que irá receber as chamadas da aplicação
 
 ![](https://files.readme.io/d4170e8f3a2e67365d6320a631097b2b351ddd7afb5fb0d6367e4f1622d482fc-image.png)
 
@@ -53,12 +53,12 @@ Os seguintes eventos são enviados através do webhook registrado:
 ## Segurança
 
 > 📘 Assinatura e Secret
-> 
+>
 > A assinatura digital que garante a unicidade da mensagem se encontra no header `x-webhook-signature`. Já o `secret` do webhook pode ser acessado, recuperado e rotacionado no [console](https://console.hml.linaopenx.com.br/data-distributor/config)
 
 Para fins de segurança no recebimento destes webhooks, utilizamos uma "assinatura digital" única e segura da mensagem que será enviada. Esta assinatura digital é sempre contida nos `headers` da requisição, na chave `x-webhook-signature`. 
 
-Esta assinatura é gerada utilizando o conteúdo da mensagem (`payload`) e o segredo compartilhado (`secret do webhook` - também acessível no [console](https://console.linaopenx.com.br/data-distributor/config)) que apenas o remetente e o destinatário conhecem. Aplicando o algoritmo de hash criptográfico _HMAC-SHA256_, combinamos o payload com o `secret do webhook` em uma operação não-reversível. Este processo gera um hash, que então convertemos para formato hexadecimal para facilitar a transmissão.
+Esta assinatura é gerada utilizando o conteúdo da mensagem (`payload`) e o segredo compartilhado (`secret do webhook` - também acessível no [console](https://console.linaopenx.com.br/data-distributor/config)) que apenas o remetente e o destinatário conhecem. Aplicando o algoritmo de hash criptográfico *HMAC-SHA256*, combinamos o payload com o `secret do webhook` em uma operação não-reversível. Este processo gera um hash, que então convertemos para formato hexadecimal para facilitar a transmissão.
 
 Esta assinatura serve como uma espécie de "selo de autenticidade" que permite ao destinatário verificar se a mensagem é autêntica e não foi alterada durante o envio, pois apenas quem possui o mesmo segredo conseguirá gerar a mesma assinatura para o mesmo payload.
 
