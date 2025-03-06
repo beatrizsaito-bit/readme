@@ -11,11 +11,11 @@ next:
   description: ''
 ---
 > 📘 A quem é destinado este produto
-> 
+>
 > Esta seção é direcionada aos participantes indiretos do Open Finance Brasil que desejam aproveitar a praticidade das jornadas de iniciação de pagamentos no ecossistema Open Finance. Para os participantes diretos que preferem operar com licenças, autorizações, canais e experiências de usuário próprios, oferecemos uma solução de iniciação de pagamentos no nível de infraestrutura. Essa solução é completa, atendendo a todos os requisitos de segurança e funcionalidade necessários para operar como uma iniciadora de transações de pagamento.
 
-O Portal de Iniciação foi projetado para simplificar o processo de iniciação de pagamentos,  
-reduzindo significativamente o tempo e os recursos necessários para que as empresas possam oferecer  
+O Portal de Iniciação foi projetado para simplificar o processo de iniciação de pagamentos,\
+reduzindo significativamente o tempo e os recursos necessários para que as empresas possam oferecer\
 a seus clientes uma experiência de pagamento moderna e eficiente.
 
 ## Integrações e interfaces
