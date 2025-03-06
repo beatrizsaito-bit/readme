@@ -2,3 +2,4 @@
 - paymentcontroller_getpaymentrequest-1
 - paymentcontroller_getpayment-1
 - paymentcontroller_getpaymentbyexternaid-1
+- paymentcontroller_getpaymentbytxid-1
