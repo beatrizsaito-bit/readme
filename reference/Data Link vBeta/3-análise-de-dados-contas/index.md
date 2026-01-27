@@ -2,7 +2,7 @@
 title: Nível 2 - Análise de dados e Diagnóstico
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
