@@ -23154,7 +23154,14 @@
             "name": "investment_type",
             "in": "path",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "bank-fixed-incomes",
+                "credit-fixed-incomes",
+                "variable-incomes",
+                "treasure-titles",
+                "funds"
+              ]
             },
             "required": true,
             "description": "Valores: bank-fixed-incomes, funds, treasure-titles, variable-incomes, credit-fixed-incomes",
