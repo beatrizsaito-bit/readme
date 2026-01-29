@@ -24263,11 +24263,46 @@
             "name": "investment_type",
             "in": "path",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "bank-fixed-incomes",
+                "treasure-titles",
+                "variable-incomes",
+                "credit-fixed-incomes",
+                "funds"
+              ]
             },
             "required": true,
             "description": "Valores: bank-fixed-incomes, funds, treasure-titles, variable-incomes, credit-fixed-incomes",
             "example": "funds"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fromDate",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "toDate",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
