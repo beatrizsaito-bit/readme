@@ -14266,6 +14266,20 @@
             },
             "required": true,
             "example": "{{credit_card_account_id}}"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
