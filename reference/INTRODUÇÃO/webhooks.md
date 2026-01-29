@@ -2,7 +2,7 @@
 title: Webhooks
 deprecated: false
 hidden: false
-icon: fab fa-connectdevelop
+icon: fab fa-confluence
 metadata:
   robots: index
 ---
