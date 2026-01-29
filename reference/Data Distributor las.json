@@ -13,22 +13,9 @@
     }
   ],
   "components": {
-    "securitySchemes": {
-      "noauthAuth": {
-        "type": "http",
-        "scheme": "noauth"
-      },
-      "oauth2Auth": {
-        "type": "http",
-        "scheme": "oauth2"
-      }
-    }
+    "securitySchemes": {}
   },
-  "security": [
-    {
-      "oauth2Auth": []
-    }
-  ],
+  "security": [],
   "tags": [
     {
       "name": "1 - Fluxo de consentimento"
@@ -28269,11 +28256,6 @@
           "X - Métricas"
         ],
         "summary": "Métricas de uso",
-        "security": [
-          {
-            "noauthAuth": []
-          }
-        ],
         "responses": {
           "200": {
             "description": "Successful response",
