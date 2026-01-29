@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "http://itp-dados.linaopenx.com.br"
+      "url": "http://itp-dados.hml.linaopenx.com.br"
     },
     {
       "url": "http://localhost:3001"
