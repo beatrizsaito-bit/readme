@@ -1,5 +1,5 @@
 ---
-title: Instituições participantes
+title: Instituições
 deprecated: false
 hidden: false
 metadata:
