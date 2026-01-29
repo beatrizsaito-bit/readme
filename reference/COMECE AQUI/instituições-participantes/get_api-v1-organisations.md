@@ -1,5 +1,5 @@
 ---
-title: Lista de instituições participantes
+title: Listar instituições participantes
 excerpt: Retorna os dados de todas as instituições disponíveis
 api:
   file: Data Distributor las.json
