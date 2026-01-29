@@ -83,8 +83,9 @@ hidden: false
 
   **Tipo de dado JSON**\
   `object`
+</Accordion>
 
-  <Accordion title="rejectedBy" icon="fa-info-circle">
+<Accordion title="rejectedBy" icon="fa-info-circle">
     **Descrição**\
     Identifica quem realizou a rejeição do consentimento.
 
@@ -96,10 +97,10 @@ hidden: false
     Condicional
 
     **Tipo de dado JSON**\
-    `string`
-  </Accordion>
+  `string`
+</Accordion>
 
-  <Accordion title="reason" icon="fa-info-circle">
+<Accordion title="reason" icon="fa-info-circle">
     **Descrição**\
     Detalha o motivo da rejeição do consentimento
 
@@ -108,8 +109,9 @@ hidden: false
 
     **Tipo de dado JSON**\
     `object`
+</Accordion>
 
-    <Accordion title="code" icon="fa-info-circle">
+<Accordion title="code" icon="fa-info-circle">
       **Descrição**\
       Código padronizado que representa a razão da rejeição.
 
@@ -125,8 +127,6 @@ hidden: false
 
       **Tipo de dado JSON**\
       `string`
-    </Accordion>
-  </Accordion>
 </Accordion>
 
 <Accordion title="additionalInformation">
