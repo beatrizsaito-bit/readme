@@ -6,7 +6,7 @@
   },
   "paths": {
     "/api/v1/users/{user_id}/analysis/financial/{type}": {},
-    "/api/v1/users/user_id/analysis/financial/": {
+    "/api/v1/users/user_id/analysis/financial/{type}": {
       "get": {
         "description": "",
         "responses": {
@@ -14,9 +14,18 @@
             "description": ""
           }
         },
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
         "summary": "Copy of ",
-        "operationId": "get_api-v1-users-user-id-analysis-financial"
+        "operationId": "get_api-v1-users-user-id-analysis-financial-type"
       }
     }
   },
