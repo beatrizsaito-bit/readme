@@ -506,64 +506,62 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "organisationId": {
-                      "type": "string"
-                    },
-                    "authorisationServerId": {
-                      "type": "string"
-                    },
-                    "consent": {
-                      "type": "array",
-                      "items": {
-                        "properties": {
-                          "loggedUser": {
-                            "type": "array",
-                            "items": {
-                              "properties": {
-                                "cpf": {
-                                  "type": "string"
-                                }
-                              },
-                              "type": "object"
-                            }
-                          },
-                          "businessEntity": {
-                            "type": "array",
-                            "items": {
-                              "properties": {
-                                "cnpj": {
-                                  "type": "string"
-                                }
-                              },
-                              "type": "object"
+                "type": "object",
+                "properties": {
+                  "organisationId": {
+                    "type": "string"
+                  },
+                  "authorisationServerId": {
+                    "type": "string"
+                  },
+                  "consent": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "loggedUser": {
+                          "type": "array",
+                          "items": {
+                            "properties": {
+                              "cpf": {
+                                "type": "string"
+                              }
                             },
-                            "description": "caso a consulta seja para pessoa jurídica"
-                          },
-                          "permissions": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
+                            "type": "object"
                           }
                         },
-                        "type": "object",
-                        "required": [
-                          "loggedUser",
-                          "permissions"
-                        ]
-                      }
+                        "businessEntity": {
+                          "type": "array",
+                          "items": {
+                            "properties": {
+                              "cnpj": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "description": "caso a consulta seja para pessoa jurídica"
+                        },
+                        "permissions": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "description": "verificar a lista de permissões"
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "loggedUser",
+                        "permissions"
+                      ]
                     }
-                  },
-                  "required": [
-                    "organisationId",
-                    "consent",
-                    "authorisationServerId"
-                  ]
-                }
+                  }
+                },
+                "required": [
+                  "organisationId",
+                  "consent",
+                  "authorisationServerId"
+                ]
               }
             }
           }
@@ -624,20 +622,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "redirectUrl": {
+                      "type": "string",
+                      "example": "https://auth.mockbank.poc.raidiam.io/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3AD2AKVKARaSdsGQ5KF_8Q8&client_id=yXYqweXJXhxqMebXy7j_e&state=WD2D99Nhn3nse80JoBP87n0E1IA8utKYxpxxDONIba2UPpTNGKLDod38gWlhhLexDgu9Y8xmuWzAJGhpibmDaNNG4bg3HzDYTIo3"
+                    }
+                  }
                 },
                 "examples": {
-                  "example-0": {
-                    "summary": "Consentimento PF",
-                    "value": {
-                      "redirectUrl": "https://auth.mockbank.poc.raidiam.io/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3AD2AKVKARaSdsGQ5KF_8Q8&client_id=yXYqweXJXhxqMebXy7j_e&state=WD2D99Nhn3nse80JoBP87n0E1IA8utKYxpxxDONIba2UPpTNGKLDod38gWlhhLexDgu9Y8xmuWzAJGhpibmDaNNG4bg3HzDYTIo3"
-                    }
-                  },
-                  "example-1": {
-                    "summary": "Consentimento PJ",
-                    "value": {
-                      "redirectUrl": "https://auth.mockbank.poc.raidiam.io/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3AD2AKVKARaSdsGQ5KF_8Q8&client_id=yXYqweXJXhxqMebXy7j_e&state=WD2D99Nhn3nse80JoBP87n0E1IA8utKYxpxxDONIba2UPpTNGKLDod38gWlhhLexDgu9Y8xmuWzAJGhpibmDaNNG4bg3HzDYTIo3"
-                    }
+                  "Created": {
+                    "summary": "Created",
+                    "value": ""
                   }
                 }
               }
