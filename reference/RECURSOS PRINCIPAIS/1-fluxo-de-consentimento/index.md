@@ -2,7 +2,7 @@
 title: Consentimentos
 hidden: false
 ---
-# 📄 Estrutura do Objeto
+# Estrutura do Objeto
 
 <Table align={["left","left","left","left"]}>
   <thead>
