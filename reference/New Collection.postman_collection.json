@@ -4,5 +4,12 @@
     "title": "New Collection",
     "version": "1.0.0"
   },
-  "paths": {}
+  "paths": {},
+  "servers": [
+    {
+      "url": "https://itp-dados.hml.linaopenx.com.br"
+    }
+  ],
+  "components": {},
+  "x-readme": {}
 }
