@@ -129,7 +129,30 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "OrganisationName": {
+                      "type": "string"
+                    },
+                    "OrganisationId": {
+                      "type": "string"
+                    },
+                    "LegalEntityName": {
+                      "type": "string"
+                    },
+                    "RegistrationName": {
+                      "type": "string"
+                    },
+                    "ParentOrganisationReference": {
+                      "type": "string"
+                    },
+                    "AuthorisationServer": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "OrganisationName"
+                  ]
                 },
                 "example": {
                   "data": [
