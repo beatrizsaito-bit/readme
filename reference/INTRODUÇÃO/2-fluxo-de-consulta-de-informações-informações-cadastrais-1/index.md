@@ -1,4 +1,4 @@
 ---
-title: Usuário
+title: Usuários
 hidden: false
 ---
