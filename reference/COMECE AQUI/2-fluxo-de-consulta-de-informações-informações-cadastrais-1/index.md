@@ -1,4 +1,4 @@
 ---
-title: Cadastros
+title: Usuário
 hidden: false
 ---
