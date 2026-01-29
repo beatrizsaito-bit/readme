@@ -110,21 +110,21 @@ hidden: false
     `object`
 
     <Accordion title="code" icon="fa-info-circle">
-       **Descrição**\
+      **Descrição**\
       Código padronizado que representa a razão da rejeição.
 
-			* CONSENT_EXPIRED – consentimento que ultrapassou o tempo limite para autorização.
-			* CUSTOMER_MANUALLY_REJECTED – cliente efetuou a rejeição do consentimento manualmente através de interação nas instituições participantes.
-			* CUSTOMER_MANUALLY_REVOKED – cliente efetuou a revogação após a autorização do consentimento.
-			* CONSENT_MAX_DATE_REACHED – consentimento que ultrapassou o tempo limite de compartilhamento.
-			* CONSENT_TECHNICAL_ISSUE – consentimento que foi rejeitado devido a um problema técnico que impossibilita seu uso pela instituição receptora, por exemplo: falha associada a troca do AuthCode pelo AccessToken, durante o processo de Hybrid Flow.
-			* INTERNAL_SECURITY_REASON – consentimento que foi rejeitado devido as políticas de segurança aplicada pela instituição transmissora.
+      * CONSENT\_EXPIRED – consentimento que ultrapassou o tempo limite para autorização.
+      * CUSTOMER\_MANUALLY\_REJECTED – cliente efetuou a rejeição do consentimento manualmente através de interação nas instituições participantes.
+      * CUSTOMER\_MANUALLY\_REVOKED – cliente efetuou a revogação após a autorização do consentimento.
+      * CONSENT\_MAX\_DATE\_REACHED – consentimento que ultrapassou o tempo limite de compartilhamento.
+      * CONSENT\_TECHNICAL\_ISSUE – consentimento que foi rejeitado devido a um problema técnico que impossibilita seu uso pela instituição receptora, por exemplo: falha associada a troca do AuthCode pelo AccessToken, durante o processo de Hybrid Flow.
+      * INTERNAL\_SECURITY\_REASON – consentimento que foi rejeitado devido as políticas de segurança aplicada pela instituição transmissora.
 
-    **Mandatoriedade**\
-    Condicional
+      **Mandatoriedade**\
+      Condicional
 
-    **Tipo de dado JSON**\
-    `string`
+      **Tipo de dado JSON**\
+      `string`
     </Accordion>
   </Accordion>
 </Accordion>
@@ -173,6 +173,6 @@ hidden: false
   `string`
 </Accordion>
 
-## Consents`permissions`
+<br />
 
 <br />
