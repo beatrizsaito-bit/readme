@@ -237,3 +237,11 @@ A partir desta definição, basta realizar a chamada POST para o endpoint listad
 ```
 
 <br />
+
+<Callout icon="📘" theme="info">
+  **URL de redirecionamento**
+
+  A URL de redirecionamento recebida nesta chamada é uma URL do banco destino (transmissor) e deve ser acessada somente uma vez por consentimento. Esta URL não poderá ser reutilizada e chamadas subsequentes apresentarão erro. Neste caso, reinicie o fluxo desde o passo 3 deste guia.
+</Callout>
+
+<br />
