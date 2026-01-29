@@ -245,3 +245,34 @@ A partir desta definição, basta realizar a chamada POST para o endpoint listad
 </Callout>
 
 <br />
+
+# Passo 3 - Login e acesso à Instituição financeira
+
+<Callout icon="📘" theme="info">
+  **Acesso à instituição financeira**
+
+  O acesso à instituição financeira deve ser realizada pelo usuário final - que por sua vez deve realizar o início da sessão no domínio da instituição financeira (seja por celular ou web). Vale lembrar que o ambiente é da instituição financeira e não temos controle sobre a jornada do usuário neste acesso.
+</Callout>
+
+Após o redirecionamento, o usuário deverá realizar login na sua instituição financeira e finalizar a autorização do consentimento. Após a autorização ele será redirecionado para a URL parametrizada.
+
+# Passo 4 - Redirecionamento final do usuário
+
+<Callout icon="📘" theme="info">
+  **Redirecionamento Lina OpenX**
+
+  Para clientes que ainda estão em fases de testes, o redirecionamento sempre ocorrerá para a página:
+  Redirect Demo Page . Para testar futuras integrações, basta inserir a URL de redirecionamento no campo de redirecionamento. Para clientes em produção a URL configurada no cadastro sempre será utilizada para casos de erro ou sucesso.
+</Callout>
+
+<br />
+
+# Passo 5 - Coletando userId e consultando dados
+
+<Callout icon="⚠️">
+  **Importância do campo userId**
+
+  Utilizamos o id do usuário como chave de identificação dos usuários na nossa base. Não realizamos consultas por informações pessoais como nomes e CPFs. Mesmo que um usuário realize inúmeros consentimentos (em diferentes instituições), sempre retornaremos o mesmo id de usuário - portanto, não existe a necessidade de armazenar diferentes IDs por transação.
+</Callout>
+
+Através da consulta da rota /api/v1/users/ é possível verificar o userId de todos os usuários com consentimento em sua base.
