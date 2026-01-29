@@ -1,12 +1,12 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Data Distributor - 1.0.2",
+    "title": "Data Distributor ",
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "http://{{base_url}}"
+      "url": "http://itp-dados.hml.linaopenx.com.br"
     },
     {
       "url": "http://localhost:3001"
@@ -28846,5 +28846,6 @@
         }
       }
     }
-  }
+  },
+  "x-readme": {}
 }
