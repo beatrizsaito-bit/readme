@@ -1,5 +1,5 @@
 ---
-title: Listagem de instituições
+title: Lista instituições
 excerpt: Retorna os dados de todas as instituições disponíveis
 api:
   file: Data Distributor las.json
