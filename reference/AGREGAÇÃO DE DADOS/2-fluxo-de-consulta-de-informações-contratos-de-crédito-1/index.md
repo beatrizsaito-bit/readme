@@ -1,4 +1,4 @@
 ---
-title: 2 - Fluxo de consulta de informações > Contratos de crédito
+title: Contratos de crédito
 hidden: false
 ---
