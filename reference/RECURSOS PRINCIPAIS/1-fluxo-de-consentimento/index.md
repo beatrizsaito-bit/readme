@@ -79,24 +79,41 @@ hidden: false
   Objeto retornado quando o consentimento for rejeitado.
 
   **Mandatoriedade**\
-  Opcional
+  Condicional
 
   **Tipo de dado JSON**\
   `object`
-  
-<Accordion title="rejectedBy" icon="fa-info-circle">
-Conteúdo do nível 2
-</Accordion>
 
-<Accordion title="reason" icon="fa-info-circle">
-Conteúdo do nível 2
+  <Accordion title="rejectedBy" icon="fa-info-circle">
+    **Descrição**\
+    Identifica quem realizou a rejeição do consentimento.
 
-<Accordion title="code" icon="fa-info-circle">
-Conteúdo do nível 3
-</Accordion>
+    - USER usuário
+    - ASPSP instituição transmissora
+    - TPP instituição receptora
 
-</Accordion>
+  **Mandatoriedade**\
+ Condicional
 
+  **Tipo de dado JSON**\
+  `string`
+  </Accordion>
+
+  <Accordion title="reason" icon="fa-info-circle">
+  **Descrição**\
+    Detalha o motivo da rejeição do consentimento
+
+ **Mandatoriedade**\
+ Condicional
+
+  **Tipo de dado JSON**\
+  `object`
+
+
+    <Accordion title="code" icon="fa-info-circle">
+      Conteúdo do nível 3
+    </Accordion>
+  </Accordion>
 </Accordion>
 
 <Accordion title="additionalInformation">
