@@ -1,4 +1,4 @@
 ---
-title: 3 - Análise de dados > Investimentos
+title: Investimentos
 hidden: false
 ---
