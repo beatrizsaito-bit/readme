@@ -4,11 +4,133 @@ hidden: false
 ---
 # Estrutura do Objeto
 
-<Accordion title="My Accordion Title" icon="fa-info-circle">
-  Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** Ut enim
-  ad minim veniam, quis nostrud exercitation ullamco. Excepteur sint
-  occaecat cupidatat non proident!
+<Accordion title="consentId">
+**Descrição**  
+Identificador único do consentimento no formato
+
+**Mandatoriedade**  
+Obrigatório
+
+**Tipo de dado JSON**  
+`string`
 </Accordion>
+
+<Accordion title="creationDateTime">
+**Descrição**  
+Data e hora de criação do recurso UTC.
+
+**Mandatoriedade**  
+Obrigatório
+
+**Tipo de dado JSON**  
+`string`
+</Accordion>
+
+<Accordion title="status">
+**Descrição**  
+Estado atual do consentimento cadastrado
+
+- AUTHORISED  
+- AWAITING_AUTHORISATION  
+- REJECTED  
+
+**Mandatoriedade**  
+Obrigatório
+
+**Tipo de dado JSON**  
+`string`
+</Accordion>
+
+<Accordion title="statusUpdateDateTime">
+**Descrição**  
+Data e hora da última atualização do consentimento em UTC.
+
+**Mandatoriedade**  
+Obrigatório
+
+**Tipo de dado JSON**  
+`string`
+</Accordion>
+
+<Accordion title="permissions">
+**Descrição**  
+Lista de permissões concedidas para acesso às APIs do Open Finance Brasil.
+
+**Mandatoriedade**  
+Obrigatório
+
+**Tipo de dado JSON**  
+`array`
+</Accordion>
+
+<Accordion title="expirationDateTime">
+**Descrição**  
+Data e hora de expiração do consentimento em apenas quando houver validade determinada.
+
+**Mandatoriedade**  
+Condicional
+
+**Tipo de dado JSON**  
+`string`
+</Accordion>
+
+<Accordion title="rejection">
+**Descrição**  
+Objeto retornado quando o consentimento for rejeitado.
+
+**Mandatoriedade**  
+Opcional
+
+**Tipo de dado JSON**  
+`object`
+</Accordion>
+
+<Accordion title="additionalInformation">
+**Descrição**  
+Informações adicionais fornecidas pela instituição transmissora.
+
+**Mandatoriedade**  
+Opcional
+
+**Tipo de dado JSON**  
+`string`
+</Accordion>
+
+<Accordion title="journey">
+**Descrição**  
+Informações adicionais relacionadas à Jornada Otimizada.
+
+**Mandatoriedade**  
+Opcional
+
+**Tipo de dado JSON**  
+`object`
+</Accordion>
+
+<Accordion title="isLinked">
+**Descrição**  
+Indica se o consentimento foi iniciado via Jornada Otimizada.
+
+**Mandatoriedade**  
+Opcional
+
+**Tipo de dado JSON**  
+`boolean`
+</Accordion>
+
+<Accordion title="linkId">
+**Descrição**  
+Identificador do consentimento de pagamento ou vínculo relacionado.
+
+**Mandatoriedade**  
+Opcional
+
+**Tipo de dado JSON**  
+`string`
+</Accordion>
+
+
+
 
 <Table align={["left","left","left","left"]}>
   <thead>
