@@ -85,48 +85,48 @@ hidden: false
   `object`
 </Accordion>
 
-<Accordion title="rejectedBy" icon="fa-info-circle">
-    **Descrição**\
-    Identifica quem realizou a rejeição do consentimento.
+<Accordion title="rejectedBy">
+  **Descrição**\
+  Identifica quem realizou a rejeição do consentimento.
 
-    * USER usuário
-    * ASPSP instituição transmissora
-    * TPP instituição receptora
+  * USER usuário
+  * ASPSP instituição transmissora
+  * TPP instituição receptora
 
-    **Mandatoriedade**\
-    Condicional
+  **Mandatoriedade**\
+  Condicional
 
-    **Tipo de dado JSON**\
+  **Tipo de dado JSON**\
   `string`
 </Accordion>
 
-<Accordion title="reason" icon="fa-info-circle">
-    **Descrição**\
-    Detalha o motivo da rejeição do consentimento
+<Accordion title="reason">
+  **Descrição**\
+  Detalha o motivo da rejeição do consentimento
 
-    **Mandatoriedade**\
-    Condicional
+  **Mandatoriedade**\
+  Condicional
 
-    **Tipo de dado JSON**\
-    `object`
+  **Tipo de dado JSON**\
+  `object`
 </Accordion>
 
-<Accordion title="code" icon="fa-info-circle">
-      **Descrição**\
-      Código padronizado que representa a razão da rejeição.
+<Accordion title="code">
+  **Descrição**\
+  Código padronizado que representa a razão da rejeição.
 
-      * CONSENT\_EXPIRED – consentimento que ultrapassou o tempo limite para autorização.
-      * CUSTOMER\_MANUALLY\_REJECTED – cliente efetuou a rejeição do consentimento manualmente através de interação nas instituições participantes.
-      * CUSTOMER\_MANUALLY\_REVOKED – cliente efetuou a revogação após a autorização do consentimento.
-      * CONSENT\_MAX\_DATE\_REACHED – consentimento que ultrapassou o tempo limite de compartilhamento.
-      * CONSENT\_TECHNICAL\_ISSUE – consentimento que foi rejeitado devido a um problema técnico que impossibilita seu uso pela instituição receptora, por exemplo: falha associada a troca do AuthCode pelo AccessToken, durante o processo de Hybrid Flow.
-      * INTERNAL\_SECURITY\_REASON – consentimento que foi rejeitado devido as políticas de segurança aplicada pela instituição transmissora.
+  * CONSENT\_EXPIRED – consentimento que ultrapassou o tempo limite para autorização.
+  * CUSTOMER\_MANUALLY\_REJECTED – cliente efetuou a rejeição do consentimento manualmente através de interação nas instituições participantes.
+  * CUSTOMER\_MANUALLY\_REVOKED – cliente efetuou a revogação após a autorização do consentimento.
+  * CONSENT\_MAX\_DATE\_REACHED – consentimento que ultrapassou o tempo limite de compartilhamento.
+  * CONSENT\_TECHNICAL\_ISSUE – consentimento que foi rejeitado devido a um problema técnico que impossibilita seu uso pela instituição receptora, por exemplo: falha associada a troca do AuthCode pelo AccessToken, durante o processo de Hybrid Flow.
+  * INTERNAL\_SECURITY\_REASON – consentimento que foi rejeitado devido as políticas de segurança aplicada pela instituição transmissora.
 
-      **Mandatoriedade**\
-      Condicional
+  **Mandatoriedade**\
+  Condicional
 
-      **Tipo de dado JSON**\
-      `string`
+  **Tipo de dado JSON**\
+  `string`
 </Accordion>
 
 <Accordion title="additionalInformation">
