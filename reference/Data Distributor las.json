@@ -517,13 +517,22 @@
                   "cpf": {
                     "type": "string"
                   },
+                  "cnpj": {
+                    "type": "string",
+                    "description": "em caso de pessoa jurídica é necessário mandar o CNPJ"
+                  },
                   "permissions": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                      "ACCOUNS_READ"
+                    ]
                   }
                 },
                 "required": [
                   "organisationId",
-                  "permissions"
+                  "permissions",
+                  "cpf",
+                  "authorisationServerId"
                 ]
               }
             }
