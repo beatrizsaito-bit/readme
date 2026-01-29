@@ -4,7 +4,20 @@
     "title": "New Collection",
     "version": "1.0.0"
   },
-  "paths": {},
+  "paths": {
+    "/api/v1/users/user_id/analysis/financial/:type": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "operationId": "get_api-v1-users-user-id-analysis-financial-type"
+      }
+    }
+  },
   "servers": [
     {
       "url": "https://itp-dados.hml.linaopenx.com.br"
