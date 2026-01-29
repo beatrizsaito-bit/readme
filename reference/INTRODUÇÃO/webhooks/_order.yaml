@@ -1,3 +1,4 @@
 - get_api-v1-notification-tenant-id
 - post_api-v1-notification
+- patch_api-v1-notification-tenant-id
 - instituições-participantes
