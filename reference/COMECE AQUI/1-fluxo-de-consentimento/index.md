@@ -1,4 +1,4 @@
 ---
-title: Criar consentimentos
+title: Consentimentos
 hidden: false
 ---
