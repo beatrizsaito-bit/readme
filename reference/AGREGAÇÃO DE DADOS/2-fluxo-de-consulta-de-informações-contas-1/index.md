@@ -1,4 +1,4 @@
 ---
-title: 2 - Fluxo de consulta de informações > Contas
+title: Contas
 hidden: false
 ---
