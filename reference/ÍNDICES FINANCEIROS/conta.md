@@ -1,5 +1,5 @@
 ---
-title: Conta
+title: Contas
 deprecated: false
 hidden: false
 metadata:
