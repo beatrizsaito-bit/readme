@@ -146,7 +146,25 @@
                     "ParentOrganisationReference": {
                       "type": "string"
                     },
-                    "AuthorisationServer": {
+                    "AuthorisationServerId": {
+                      "type": "string"
+                    },
+                    "CustomerFriendlyName": {
+                      "type": "string"
+                    },
+                    "CustomerFriednlyDescription": {
+                      "type": "string"
+                    },
+                    "CustomerFriendlyLogoUri": {
+                      "type": "string"
+                    },
+                    "ApiFamilyType": {
+                      "type": "string"
+                    },
+                    "ApiVersion": {
+                      "type": "string"
+                    },
+                    "ApiDiscoveryEndpoints": {
                       "type": "string"
                     }
                   },
