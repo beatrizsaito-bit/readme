@@ -27234,7 +27234,798 @@
         }
       }
     },
-    "/api/v1/users/{user_id}/consents/{consent_id}": {},
+    "/api/v1/users/{user_id}/consents/{consent_id}": {
+      "get": {
+        "tags": [
+          "2 - Fluxo de consulta de informações > Consentimentos"
+        ],
+        "summary": "Copy of Lista de consentimentos",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "{{user_id}}"
+          },
+          {
+            "in": "path",
+            "name": "consent_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Security-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                }
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "same-origin"
+                }
+              },
+              "Cross-Origin-Resource-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "same-origin"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-referrer"
+                }
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string",
+                  "example": "nosniff"
+                }
+              },
+              "X-DNS-Prefetch-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "off"
+                }
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string",
+                  "example": "SAMEORIGIN"
+                }
+              },
+              "X-XSS-Protection": {
+                "schema": {
+                  "type": "integer",
+                  "example": "0"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"459f-EPEzAsBeoTmDjG4jy/cwNtfd+rk\""
+                }
+              },
+              "Origin-Agent-Cluster": {
+                "schema": {
+                  "type": "string",
+                  "example": "?1"
+                }
+              },
+              "X-Download-Options": {
+                "schema": {
+                  "type": "string",
+                  "example": "noopen"
+                }
+              },
+              "X-Permitted-Cross-Domain-Policies": {
+                "schema": {
+                  "type": "string",
+                  "example": "none"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 14 Feb 2025 11:41:55 GMT"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "17823"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "consentId": {
+                      "type": "string",
+                      "description": "identificador único do consentimento"
+                    },
+                    "creationDateTime": {
+                      "type": "string",
+                      "description": "Data e hora de criação em UTC"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "estado do consentimento",
+                      "enum": [
+                        "AUTHORISED",
+                        "AWAITING_AUTHORISATION",
+                        "REJECTED"
+                      ]
+                    },
+                    "statusUpdatedDateTime": {
+                      "type": "string",
+                      "description": "Data e hora da última atualização do consentimento em UTC"
+                    },
+                    "permissions": {
+                      "type": "string",
+                      "description": "Lista de permissões concedidas para acesso às APIs do Open Finance Brasil. Consulte tabela em [consentimentos](https://lina-itp.readme.io/reference/consentimentos)"
+                    },
+                    "expirationDateTime": {
+                      "type": "string",
+                      "description": "Data e hora de expiração do consentimento apenas quando houver validade determinada em UTC\n\nCondicional"
+                    },
+                    "rejection": {
+                      "type": "object",
+                      "properties": {
+                        "rejectedBy": {
+                          "type": "string",
+                          "description": "Identifica quem realizou a rejeição do consentimento.",
+                          "enum": [
+                            "ASPSP",
+                            "TPP",
+                            "USER"
+                          ]
+                        },
+                        "reason": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                              "description": "Código padronizado que representa a razão da rejeição.\n",
+                              "enum": [
+                                "CONSENT_EXPIRED",
+                                "CUSTOMER_MANUALLY_REJECTED",
+                                "CUSTOMER_MANUALLY_REVOKED",
+                                "CONSENT_MAX_DATE_REACHED",
+                                "CONSENT_TECHNICAL_ISSUE",
+                                "INTERNAL_SECURITY_REASON"
+                              ]
+                            }
+                          },
+                          "description": "Detalha o motivo da rejeição do consentimento"
+                        }
+                      },
+                      "description": "Objeto retornado quando o consentimento for rejeitado (Condicional)"
+                    },
+                    "additionalInformation": {
+                      "type": "string",
+                      "description": "Informações adicionais fornecidas pela instituição transmissora"
+                    },
+                    "journey": {
+                      "type": "object",
+                      "properties": {
+                        "isLinked": {
+                          "type": "boolean",
+                          "description": "Indica se o consentimento foi iniciado via Jornada Otimizada",
+                          "enum": [
+                            true,
+                            false
+                          ]
+                        },
+                        "linkId": {
+                          "type": "string",
+                          "description": "Identificador do consentimento de pagamento ou vínculo relacionado"
+                        }
+                      },
+                      "description": "Informações adicionais relacionadas à Jornada Otimizada"
+                    }
+                  },
+                  "required": [
+                    "creationDateTime",
+                    "consentId",
+                    "permissions",
+                    "statusUpdatedDateTime",
+                    "status",
+                    "rejection"
+                  ]
+                },
+                "example": {
+                  "data": [
+                    {
+                      "_id": "67af28cd4125a9cdfcf51957",
+                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
+                      "consentId": "urn:raidiambank:23f1a40c-6c9e-4c76-998c-d33d7c546818",
+                      "creationDateTime": "2025-02-14T11:28:11Z",
+                      "status": "REJECTED",
+                      "statusUpdateDateTime": "2025-02-14T11:29:41Z",
+                      "permissions": [
+                        "RESOURCES_READ",
+                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                        "ACCOUNTS_BALANCES_READ",
+                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                        "ACCOUNTS_READ",
+                        "ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                        "LOANS_READ",
+                        "LOANS_WARRANTIES_READ",
+                        "LOANS_SCHEDULED_INSTALMENTS_READ",
+                        "LOANS_PAYMENTS_READ",
+                        "FINANCINGS_READ",
+                        "FINANCINGS_WARRANTIES_READ",
+                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "FINANCINGS_PAYMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                        "INVOICE_FINANCINGS_READ",
+                        "INVOICE_FINANCINGS_WARRANTIES_READ",
+                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "INVOICE_FINANCINGS_PAYMENTS_READ",
+                        "BANK_FIXED_INCOMES_READ",
+                        "CREDIT_FIXED_INCOMES_READ",
+                        "FUNDS_READ",
+                        "VARIABLE_INCOMES_READ",
+                        "TREASURE_TITLES_READ"
+                      ],
+                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                      "version": 3,
+                      "createdAt": "2025-02-14T11:28:13.604Z",
+                      "updatedAt": "2025-02-14T11:36:04.617Z",
+                      "tenantId": "lina",
+                      "rejection": {
+                        "rejectedBy": "USER",
+                        "reason": {
+                          "code": "CUSTOMER_MANUALLY_REVOKED"
+                        }
+                      },
+                      "convertedStatusUpdateTime": "2025-02-14T11:29:41.000Z"
+                    },
+                    {
+                      "_id": "67aa5c57d56f5588321bffca",
+                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
+                      "consentId": "urn:raidiambank:2d076b0d-7b01-4822-9147-9303120eb1d3",
+                      "creationDateTime": "2025-02-10T20:06:44Z",
+                      "status": "AUTHORISED",
+                      "statusUpdateDateTime": "2025-02-10T20:07:23Z",
+                      "permissions": [
+                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                        "ACCOUNTS_BALANCES_READ",
+                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                        "ACCOUNTS_READ",
+                        "ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                        "LOANS_READ",
+                        "LOANS_WARRANTIES_READ",
+                        "LOANS_SCHEDULED_INSTALMENTS_READ",
+                        "LOANS_PAYMENTS_READ",
+                        "FINANCINGS_READ",
+                        "FINANCINGS_WARRANTIES_READ",
+                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "FINANCINGS_PAYMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                        "INVOICE_FINANCINGS_READ",
+                        "INVOICE_FINANCINGS_WARRANTIES_READ",
+                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "INVOICE_FINANCINGS_PAYMENTS_READ",
+                        "BANK_FIXED_INCOMES_READ",
+                        "CREDIT_FIXED_INCOMES_READ",
+                        "FUNDS_READ",
+                        "VARIABLE_INCOMES_READ",
+                        "TREASURE_TITLES_READ",
+                        "RESOURCES_READ"
+                      ],
+                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                      "version": 3,
+                      "createdAt": "2025-02-10T20:06:47.628Z",
+                      "updatedAt": "2025-02-10T20:07:31.659Z",
+                      "tenantId": "lina",
+                      "convertedStatusUpdateTime": "2025-02-10T20:07:23.000Z"
+                    },
+                    {
+                      "_id": "67aa44600d20c343d7d59d6a",
+                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
+                      "consentId": "urn:raidiambank:e88da31c-8de8-43dc-ae60-0601c7ae91f9",
+                      "creationDateTime": "2025-02-10T18:24:31Z",
+                      "status": "AUTHORISED",
+                      "statusUpdateDateTime": "2025-02-10T18:34:40Z",
+                      "permissions": [
+                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                        "ACCOUNTS_BALANCES_READ",
+                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                        "ACCOUNTS_READ",
+                        "ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                        "LOANS_READ",
+                        "LOANS_WARRANTIES_READ",
+                        "LOANS_SCHEDULED_INSTALMENTS_READ",
+                        "LOANS_PAYMENTS_READ",
+                        "FINANCINGS_READ",
+                        "FINANCINGS_WARRANTIES_READ",
+                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "FINANCINGS_PAYMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                        "INVOICE_FINANCINGS_READ",
+                        "INVOICE_FINANCINGS_WARRANTIES_READ",
+                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "INVOICE_FINANCINGS_PAYMENTS_READ",
+                        "BANK_FIXED_INCOMES_READ",
+                        "CREDIT_FIXED_INCOMES_READ",
+                        "FUNDS_READ",
+                        "VARIABLE_INCOMES_READ",
+                        "TREASURE_TITLES_READ",
+                        "RESOURCES_READ"
+                      ],
+                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                      "version": 3,
+                      "createdAt": "2025-02-10T18:24:32.803Z",
+                      "updatedAt": "2025-02-10T18:34:47.024Z",
+                      "tenantId": "lina",
+                      "convertedStatusUpdateTime": "2025-02-10T18:34:40.000Z"
+                    },
+                    {
+                      "_id": "6797c2bed3a26cff09508e25",
+                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
+                      "consentId": "urn:raidiambank:d31b780f-08ca-4d92-908e-4428c5c16a42",
+                      "creationDateTime": "2025-01-27T17:30:36Z",
+                      "status": "AUTHORISED",
+                      "statusUpdateDateTime": "2025-01-27T17:31:02Z",
+                      "permissions": [
+                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                        "ACCOUNTS_BALANCES_READ",
+                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                        "ACCOUNTS_READ",
+                        "ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                        "LOANS_READ",
+                        "LOANS_WARRANTIES_READ",
+                        "LOANS_SCHEDULED_INSTALMENTS_READ",
+                        "LOANS_PAYMENTS_READ",
+                        "FINANCINGS_READ",
+                        "FINANCINGS_WARRANTIES_READ",
+                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "FINANCINGS_PAYMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                        "INVOICE_FINANCINGS_READ",
+                        "INVOICE_FINANCINGS_WARRANTIES_READ",
+                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "INVOICE_FINANCINGS_PAYMENTS_READ",
+                        "BANK_FIXED_INCOMES_READ",
+                        "CREDIT_FIXED_INCOMES_READ",
+                        "FUNDS_READ",
+                        "VARIABLE_INCOMES_READ",
+                        "TREASURE_TITLES_READ",
+                        "RESOURCES_READ"
+                      ],
+                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                      "version": 3,
+                      "createdAt": "2025-01-27T17:30:38.150Z",
+                      "updatedAt": "2025-01-27T17:31:08.584Z",
+                      "tenantId": "lina",
+                      "convertedStatusUpdateTime": "2025-01-27T17:31:02.000Z"
+                    },
+                    {
+                      "_id": "678597f4d3a26cff09508d4b",
+                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
+                      "consentId": "urn:raidiambank:928c70a9-9ec4-45cd-baaf-7b79061cc324",
+                      "creationDateTime": "2025-01-13T22:47:14Z",
+                      "status": "AUTHORISED",
+                      "statusUpdateDateTime": "2025-01-13T22:48:55Z",
+                      "permissions": [
+                        "RESOURCES_READ",
+                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                        "ACCOUNTS_BALANCES_READ",
+                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                        "ACCOUNTS_READ",
+                        "ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                        "LOANS_READ",
+                        "LOANS_WARRANTIES_READ",
+                        "LOANS_SCHEDULED_INSTALMENTS_READ",
+                        "LOANS_PAYMENTS_READ",
+                        "FINANCINGS_READ",
+                        "FINANCINGS_WARRANTIES_READ",
+                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "FINANCINGS_PAYMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                        "INVOICE_FINANCINGS_READ",
+                        "INVOICE_FINANCINGS_WARRANTIES_READ",
+                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "INVOICE_FINANCINGS_PAYMENTS_READ",
+                        "BANK_FIXED_INCOMES_READ",
+                        "CREDIT_FIXED_INCOMES_READ",
+                        "FUNDS_READ",
+                        "VARIABLE_INCOMES_READ",
+                        "TREASURE_TITLES_READ"
+                      ],
+                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                      "version": 3,
+                      "createdAt": "2025-01-13T22:47:16.529Z",
+                      "updatedAt": "2025-01-13T22:49:04.303Z",
+                      "tenantId": "lina",
+                      "convertedStatusUpdateTime": "2025-01-13T22:48:55.000Z"
+                    },
+                    {
+                      "_id": "67810b45d3a26cff09508d21",
+                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
+                      "consentId": "urn:raidiambank:0a333a19-1bef-48e2-97ff-bf9f03a5d6cf",
+                      "creationDateTime": "2025-01-10T11:57:56Z",
+                      "status": "AWAITING_AUTHORISATION",
+                      "statusUpdateDateTime": "2025-01-10T11:57:56Z",
+                      "permissions": [
+                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                        "ACCOUNTS_BALANCES_READ",
+                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                        "ACCOUNTS_READ",
+                        "ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                        "LOANS_READ",
+                        "LOANS_WARRANTIES_READ",
+                        "LOANS_SCHEDULED_INSTALMENTS_READ",
+                        "LOANS_PAYMENTS_READ",
+                        "FINANCINGS_READ",
+                        "FINANCINGS_WARRANTIES_READ",
+                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "FINANCINGS_PAYMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                        "INVOICE_FINANCINGS_READ",
+                        "INVOICE_FINANCINGS_WARRANTIES_READ",
+                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "INVOICE_FINANCINGS_PAYMENTS_READ",
+                        "BANK_FIXED_INCOMES_READ",
+                        "CREDIT_FIXED_INCOMES_READ",
+                        "FUNDS_READ",
+                        "VARIABLE_INCOMES_READ",
+                        "TREASURE_TITLES_READ",
+                        "RESOURCES_READ"
+                      ],
+                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                      "version": 3,
+                      "createdAt": "2025-01-10T11:57:57.878Z",
+                      "updatedAt": "2025-01-10T11:57:57.878Z",
+                      "tenantId": "lina",
+                      "convertedStatusUpdateTime": "2025-01-10T11:57:56.000Z"
+                    },
+                    {
+                      "_id": "6764764cd3a26cff09508bb9",
+                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
+                      "consentId": "urn:raidiambank:9edd4ba8-7963-4c74-9842-eac6bb270d99",
+                      "creationDateTime": "2024-12-19T19:38:50Z",
+                      "status": "AUTHORISED",
+                      "statusUpdateDateTime": "2024-12-19T19:39:17Z",
+                      "permissions": [
+                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                        "ACCOUNTS_BALANCES_READ",
+                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                        "ACCOUNTS_READ",
+                        "ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                        "LOANS_READ",
+                        "LOANS_WARRANTIES_READ",
+                        "LOANS_SCHEDULED_INSTALMENTS_READ",
+                        "LOANS_PAYMENTS_READ",
+                        "FINANCINGS_READ",
+                        "FINANCINGS_WARRANTIES_READ",
+                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "FINANCINGS_PAYMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                        "INVOICE_FINANCINGS_READ",
+                        "INVOICE_FINANCINGS_WARRANTIES_READ",
+                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "INVOICE_FINANCINGS_PAYMENTS_READ",
+                        "BANK_FIXED_INCOMES_READ",
+                        "CREDIT_FIXED_INCOMES_READ",
+                        "FUNDS_READ",
+                        "VARIABLE_INCOMES_READ",
+                        "TREASURE_TITLES_READ",
+                        "RESOURCES_READ"
+                      ],
+                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                      "version": 3,
+                      "createdAt": "2024-12-19T19:38:52.287Z",
+                      "updatedAt": "2024-12-19T19:39:26.651Z",
+                      "tenantId": "lina",
+                      "convertedStatusUpdateTime": "2024-12-19T19:39:17.000Z"
+                    },
+                    {
+                      "_id": "675f625e49475e25b10fb541",
+                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
+                      "consentId": "urn:raidiambank:45fac870-e168-44b4-98c4-567819d1ef46",
+                      "creationDateTime": "2024-12-15T23:12:28Z",
+                      "status": "AUTHORISED",
+                      "statusUpdateDateTime": "2024-12-15T23:13:01Z",
+                      "permissions": [
+                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                        "ACCOUNTS_BALANCES_READ",
+                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                        "ACCOUNTS_READ",
+                        "ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                        "LOANS_READ",
+                        "LOANS_WARRANTIES_READ",
+                        "LOANS_SCHEDULED_INSTALMENTS_READ",
+                        "LOANS_PAYMENTS_READ",
+                        "FINANCINGS_READ",
+                        "FINANCINGS_WARRANTIES_READ",
+                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "FINANCINGS_PAYMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                        "INVOICE_FINANCINGS_READ",
+                        "INVOICE_FINANCINGS_WARRANTIES_READ",
+                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "INVOICE_FINANCINGS_PAYMENTS_READ",
+                        "BANK_FIXED_INCOMES_READ",
+                        "CREDIT_FIXED_INCOMES_READ",
+                        "FUNDS_READ",
+                        "VARIABLE_INCOMES_READ",
+                        "TREASURE_TITLES_READ",
+                        "RESOURCES_READ"
+                      ],
+                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                      "version": 3,
+                      "createdAt": "2024-12-15T23:12:30.154Z",
+                      "updatedAt": "2024-12-15T23:13:10.025Z",
+                      "tenantId": "lina",
+                      "convertedStatusUpdateTime": "2024-12-15T23:13:01.000Z"
+                    },
+                    {
+                      "_id": "675f623549475e25b10fb538",
+                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
+                      "consentId": "urn:raidiambank:cf23bc40-1945-49df-a38b-703d4f85cc6e",
+                      "creationDateTime": "2024-12-15T23:11:47Z",
+                      "status": "AWAITING_AUTHORISATION",
+                      "statusUpdateDateTime": "2024-12-15T23:11:47Z",
+                      "permissions": [
+                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                        "ACCOUNTS_BALANCES_READ",
+                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                        "ACCOUNTS_READ",
+                        "ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                        "LOANS_READ",
+                        "LOANS_WARRANTIES_READ",
+                        "LOANS_SCHEDULED_INSTALMENTS_READ",
+                        "LOANS_PAYMENTS_READ",
+                        "FINANCINGS_READ",
+                        "FINANCINGS_WARRANTIES_READ",
+                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "FINANCINGS_PAYMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                        "INVOICE_FINANCINGS_READ",
+                        "INVOICE_FINANCINGS_WARRANTIES_READ",
+                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "INVOICE_FINANCINGS_PAYMENTS_READ",
+                        "BANK_FIXED_INCOMES_READ",
+                        "CREDIT_FIXED_INCOMES_READ",
+                        "FUNDS_READ",
+                        "VARIABLE_INCOMES_READ",
+                        "TREASURE_TITLES_READ",
+                        "RESOURCES_READ"
+                      ],
+                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                      "version": 3,
+                      "createdAt": "2024-12-15T23:11:49.253Z",
+                      "updatedAt": "2024-12-15T23:11:49.253Z",
+                      "tenantId": "lina",
+                      "convertedStatusUpdateTime": "2024-12-15T23:11:47.000Z"
+                    },
+                    {
+                      "_id": "675f61e849475e25b10fb531",
+                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
+                      "consentId": "urn:raidiambank:e110fb53-811e-49df-9741-47c477ed0536",
+                      "creationDateTime": "2024-12-15T23:10:29Z",
+                      "status": "AWAITING_AUTHORISATION",
+                      "statusUpdateDateTime": "2024-12-15T23:10:29Z",
+                      "permissions": [
+                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                        "ACCOUNTS_BALANCES_READ",
+                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                        "ACCOUNTS_READ",
+                        "ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                        "LOANS_READ",
+                        "LOANS_WARRANTIES_READ",
+                        "LOANS_SCHEDULED_INSTALMENTS_READ",
+                        "LOANS_PAYMENTS_READ",
+                        "FINANCINGS_READ",
+                        "FINANCINGS_WARRANTIES_READ",
+                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "FINANCINGS_PAYMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                        "INVOICE_FINANCINGS_READ",
+                        "INVOICE_FINANCINGS_WARRANTIES_READ",
+                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "INVOICE_FINANCINGS_PAYMENTS_READ",
+                        "BANK_FIXED_INCOMES_READ",
+                        "CREDIT_FIXED_INCOMES_READ",
+                        "FUNDS_READ",
+                        "VARIABLE_INCOMES_READ",
+                        "TREASURE_TITLES_READ",
+                        "RESOURCES_READ"
+                      ],
+                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                      "version": 3,
+                      "createdAt": "2024-12-15T23:10:32.803Z",
+                      "updatedAt": "2024-12-15T23:10:32.803Z",
+                      "tenantId": "lina",
+                      "convertedStatusUpdateTime": "2024-12-15T23:10:29.000Z"
+                    },
+                    {
+                      "_id": "6759f9262f1d4278fe6a87c3",
+                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
+                      "consentId": "urn:raidiambank:49e00805-f117-4d41-986e-917310dc31de",
+                      "creationDateTime": "2024-12-11T20:42:01Z",
+                      "status": "AUTHORISED",
+                      "statusUpdateDateTime": "2024-12-11T20:44:55Z",
+                      "permissions": [
+                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                        "ACCOUNTS_BALANCES_READ",
+                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                        "ACCOUNTS_READ",
+                        "ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                        "LOANS_READ",
+                        "LOANS_WARRANTIES_READ",
+                        "LOANS_SCHEDULED_INSTALMENTS_READ",
+                        "LOANS_PAYMENTS_READ",
+                        "FINANCINGS_READ",
+                        "FINANCINGS_WARRANTIES_READ",
+                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "FINANCINGS_PAYMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                        "INVOICE_FINANCINGS_READ",
+                        "INVOICE_FINANCINGS_WARRANTIES_READ",
+                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                        "INVOICE_FINANCINGS_PAYMENTS_READ",
+                        "BANK_FIXED_INCOMES_READ",
+                        "CREDIT_FIXED_INCOMES_READ",
+                        "FUNDS_READ",
+                        "VARIABLE_INCOMES_READ",
+                        "TREASURE_TITLES_READ",
+                        "RESOURCES_READ"
+                      ],
+                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                      "version": 3,
+                      "createdAt": "2024-12-11T20:42:14.853Z",
+                      "updatedAt": "2024-12-11T20:45:04.406Z",
+                      "tenantId": "lina",
+                      "convertedStatusUpdateTime": "2024-12-11T20:44:55.000Z"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_api-v1-users-user-id-consents-consent-id"
+      }
+    },
     "/api/v1/users/{user_id}/analysis/accounts-transactions/monthly-insights": {
       "get": {
         "tags": [
@@ -28712,789 +29503,6 @@
                   ],
                   "createdAt": "2025-03-20T19:22:17.646Z",
                   "updatedAt": "2025-03-20T20:12:11.715Z"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/users/{user_id}/consents-1": {
-      "get": {
-        "tags": [
-          "2 - Fluxo de consulta de informações > Consentimentos"
-        ],
-        "summary": "Copy of Lista de consentimentos",
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "example": "{{user_id}}"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "headers": {
-              "Content-Security-Policy": {
-                "schema": {
-                  "type": "string",
-                  "example": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-                }
-              },
-              "Cross-Origin-Opener-Policy": {
-                "schema": {
-                  "type": "string",
-                  "example": "same-origin"
-                }
-              },
-              "Cross-Origin-Resource-Policy": {
-                "schema": {
-                  "type": "string",
-                  "example": "same-origin"
-                }
-              },
-              "Referrer-Policy": {
-                "schema": {
-                  "type": "string",
-                  "example": "no-referrer"
-                }
-              },
-              "X-Content-Type-Options": {
-                "schema": {
-                  "type": "string",
-                  "example": "nosniff"
-                }
-              },
-              "X-DNS-Prefetch-Control": {
-                "schema": {
-                  "type": "string",
-                  "example": "off"
-                }
-              },
-              "X-Frame-Options": {
-                "schema": {
-                  "type": "string",
-                  "example": "SAMEORIGIN"
-                }
-              },
-              "X-XSS-Protection": {
-                "schema": {
-                  "type": "integer",
-                  "example": "0"
-                }
-              },
-              "Access-Control-Allow-Origin": {
-                "schema": {
-                  "type": "string",
-                  "example": "*"
-                }
-              },
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json; charset=utf-8"
-                }
-              },
-              "ETag": {
-                "schema": {
-                  "type": "string",
-                  "example": "W/\"459f-EPEzAsBeoTmDjG4jy/cwNtfd+rk\""
-                }
-              },
-              "Origin-Agent-Cluster": {
-                "schema": {
-                  "type": "string",
-                  "example": "?1"
-                }
-              },
-              "X-Download-Options": {
-                "schema": {
-                  "type": "string",
-                  "example": "noopen"
-                }
-              },
-              "X-Permitted-Cross-Domain-Policies": {
-                "schema": {
-                  "type": "string",
-                  "example": "none"
-                }
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "example": "Fri, 14 Feb 2025 11:41:55 GMT"
-                }
-              },
-              "Content-Length": {
-                "schema": {
-                  "type": "integer",
-                  "example": "17823"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "consentId": {
-                      "type": "string",
-                      "description": "identificador único do consentimento"
-                    },
-                    "creationDateTime": {
-                      "type": "string",
-                      "description": "Data e hora de criação em UTC"
-                    },
-                    "status": {
-                      "type": "string",
-                      "description": "estado do consentimento",
-                      "enum": [
-                        "AUTHORISED",
-                        "AWAITING_AUTHORISATION",
-                        "REJECTED"
-                      ]
-                    },
-                    "statusUpdatedDateTime": {
-                      "type": "string",
-                      "description": "Data e hora da última atualização do consentimento em UTC"
-                    },
-                    "permissions": {
-                      "type": "string",
-                      "description": "Lista de permissões concedidas para acesso às APIs do Open Finance Brasil. Consulte tabela em [consentimentos](https://lina-itp.readme.io/reference/consentimentos)"
-                    },
-                    "expirationDateTime": {
-                      "type": "string",
-                      "description": "Data e hora de expiração do consentimento apenas quando houver validade determinada em UTC\n\nCondicional"
-                    },
-                    "rejection": {
-                      "type": "object",
-                      "properties": {
-                        "rejectedBy": {
-                          "type": "string",
-                          "description": "Identifica quem realizou a rejeição do consentimento.",
-                          "enum": [
-                            "ASPSP",
-                            "TPP",
-                            "USER"
-                          ]
-                        },
-                        "reason": {
-                          "type": "object",
-                          "properties": {
-                            "code": {
-                              "type": "string",
-                              "description": "Código padronizado que representa a razão da rejeição.\n",
-                              "enum": [
-                                "CONSENT_EXPIRED",
-                                "CUSTOMER_MANUALLY_REJECTED",
-                                "CUSTOMER_MANUALLY_REVOKED",
-                                "CONSENT_MAX_DATE_REACHED",
-                                "CONSENT_TECHNICAL_ISSUE",
-                                "INTERNAL_SECURITY_REASON"
-                              ]
-                            }
-                          },
-                          "description": "Detalha o motivo da rejeição do consentimento"
-                        }
-                      },
-                      "description": "Objeto retornado quando o consentimento for rejeitado (Condicional)"
-                    },
-                    "additionalInformation": {
-                      "type": "string",
-                      "description": "Informações adicionais fornecidas pela instituição transmissora"
-                    },
-                    "journey": {
-                      "type": "object",
-                      "properties": {
-                        "isLinked": {
-                          "type": "boolean",
-                          "description": "Indica se o consentimento foi iniciado via Jornada Otimizada",
-                          "enum": [
-                            true,
-                            false
-                          ]
-                        },
-                        "linkId": {
-                          "type": "string",
-                          "description": "Identificador do consentimento de pagamento ou vínculo relacionado"
-                        }
-                      },
-                      "description": "Informações adicionais relacionadas à Jornada Otimizada"
-                    }
-                  },
-                  "required": [
-                    "creationDateTime",
-                    "consentId",
-                    "permissions",
-                    "statusUpdatedDateTime",
-                    "status",
-                    "rejection"
-                  ]
-                },
-                "example": {
-                  "data": [
-                    {
-                      "_id": "67af28cd4125a9cdfcf51957",
-                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
-                      "consentId": "urn:raidiambank:23f1a40c-6c9e-4c76-998c-d33d7c546818",
-                      "creationDateTime": "2025-02-14T11:28:11Z",
-                      "status": "REJECTED",
-                      "statusUpdateDateTime": "2025-02-14T11:29:41Z",
-                      "permissions": [
-                        "RESOURCES_READ",
-                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                        "ACCOUNTS_BALANCES_READ",
-                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                        "ACCOUNTS_READ",
-                        "ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                        "LOANS_READ",
-                        "LOANS_WARRANTIES_READ",
-                        "LOANS_SCHEDULED_INSTALMENTS_READ",
-                        "LOANS_PAYMENTS_READ",
-                        "FINANCINGS_READ",
-                        "FINANCINGS_WARRANTIES_READ",
-                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "FINANCINGS_PAYMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                        "INVOICE_FINANCINGS_READ",
-                        "INVOICE_FINANCINGS_WARRANTIES_READ",
-                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "INVOICE_FINANCINGS_PAYMENTS_READ",
-                        "BANK_FIXED_INCOMES_READ",
-                        "CREDIT_FIXED_INCOMES_READ",
-                        "FUNDS_READ",
-                        "VARIABLE_INCOMES_READ",
-                        "TREASURE_TITLES_READ"
-                      ],
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "version": 3,
-                      "createdAt": "2025-02-14T11:28:13.604Z",
-                      "updatedAt": "2025-02-14T11:36:04.617Z",
-                      "tenantId": "lina",
-                      "rejection": {
-                        "rejectedBy": "USER",
-                        "reason": {
-                          "code": "CUSTOMER_MANUALLY_REVOKED"
-                        }
-                      },
-                      "convertedStatusUpdateTime": "2025-02-14T11:29:41.000Z"
-                    },
-                    {
-                      "_id": "67aa5c57d56f5588321bffca",
-                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
-                      "consentId": "urn:raidiambank:2d076b0d-7b01-4822-9147-9303120eb1d3",
-                      "creationDateTime": "2025-02-10T20:06:44Z",
-                      "status": "AUTHORISED",
-                      "statusUpdateDateTime": "2025-02-10T20:07:23Z",
-                      "permissions": [
-                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                        "ACCOUNTS_BALANCES_READ",
-                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                        "ACCOUNTS_READ",
-                        "ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                        "LOANS_READ",
-                        "LOANS_WARRANTIES_READ",
-                        "LOANS_SCHEDULED_INSTALMENTS_READ",
-                        "LOANS_PAYMENTS_READ",
-                        "FINANCINGS_READ",
-                        "FINANCINGS_WARRANTIES_READ",
-                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "FINANCINGS_PAYMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                        "INVOICE_FINANCINGS_READ",
-                        "INVOICE_FINANCINGS_WARRANTIES_READ",
-                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "INVOICE_FINANCINGS_PAYMENTS_READ",
-                        "BANK_FIXED_INCOMES_READ",
-                        "CREDIT_FIXED_INCOMES_READ",
-                        "FUNDS_READ",
-                        "VARIABLE_INCOMES_READ",
-                        "TREASURE_TITLES_READ",
-                        "RESOURCES_READ"
-                      ],
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "version": 3,
-                      "createdAt": "2025-02-10T20:06:47.628Z",
-                      "updatedAt": "2025-02-10T20:07:31.659Z",
-                      "tenantId": "lina",
-                      "convertedStatusUpdateTime": "2025-02-10T20:07:23.000Z"
-                    },
-                    {
-                      "_id": "67aa44600d20c343d7d59d6a",
-                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
-                      "consentId": "urn:raidiambank:e88da31c-8de8-43dc-ae60-0601c7ae91f9",
-                      "creationDateTime": "2025-02-10T18:24:31Z",
-                      "status": "AUTHORISED",
-                      "statusUpdateDateTime": "2025-02-10T18:34:40Z",
-                      "permissions": [
-                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                        "ACCOUNTS_BALANCES_READ",
-                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                        "ACCOUNTS_READ",
-                        "ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                        "LOANS_READ",
-                        "LOANS_WARRANTIES_READ",
-                        "LOANS_SCHEDULED_INSTALMENTS_READ",
-                        "LOANS_PAYMENTS_READ",
-                        "FINANCINGS_READ",
-                        "FINANCINGS_WARRANTIES_READ",
-                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "FINANCINGS_PAYMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                        "INVOICE_FINANCINGS_READ",
-                        "INVOICE_FINANCINGS_WARRANTIES_READ",
-                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "INVOICE_FINANCINGS_PAYMENTS_READ",
-                        "BANK_FIXED_INCOMES_READ",
-                        "CREDIT_FIXED_INCOMES_READ",
-                        "FUNDS_READ",
-                        "VARIABLE_INCOMES_READ",
-                        "TREASURE_TITLES_READ",
-                        "RESOURCES_READ"
-                      ],
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "version": 3,
-                      "createdAt": "2025-02-10T18:24:32.803Z",
-                      "updatedAt": "2025-02-10T18:34:47.024Z",
-                      "tenantId": "lina",
-                      "convertedStatusUpdateTime": "2025-02-10T18:34:40.000Z"
-                    },
-                    {
-                      "_id": "6797c2bed3a26cff09508e25",
-                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
-                      "consentId": "urn:raidiambank:d31b780f-08ca-4d92-908e-4428c5c16a42",
-                      "creationDateTime": "2025-01-27T17:30:36Z",
-                      "status": "AUTHORISED",
-                      "statusUpdateDateTime": "2025-01-27T17:31:02Z",
-                      "permissions": [
-                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                        "ACCOUNTS_BALANCES_READ",
-                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                        "ACCOUNTS_READ",
-                        "ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                        "LOANS_READ",
-                        "LOANS_WARRANTIES_READ",
-                        "LOANS_SCHEDULED_INSTALMENTS_READ",
-                        "LOANS_PAYMENTS_READ",
-                        "FINANCINGS_READ",
-                        "FINANCINGS_WARRANTIES_READ",
-                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "FINANCINGS_PAYMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                        "INVOICE_FINANCINGS_READ",
-                        "INVOICE_FINANCINGS_WARRANTIES_READ",
-                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "INVOICE_FINANCINGS_PAYMENTS_READ",
-                        "BANK_FIXED_INCOMES_READ",
-                        "CREDIT_FIXED_INCOMES_READ",
-                        "FUNDS_READ",
-                        "VARIABLE_INCOMES_READ",
-                        "TREASURE_TITLES_READ",
-                        "RESOURCES_READ"
-                      ],
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "version": 3,
-                      "createdAt": "2025-01-27T17:30:38.150Z",
-                      "updatedAt": "2025-01-27T17:31:08.584Z",
-                      "tenantId": "lina",
-                      "convertedStatusUpdateTime": "2025-01-27T17:31:02.000Z"
-                    },
-                    {
-                      "_id": "678597f4d3a26cff09508d4b",
-                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
-                      "consentId": "urn:raidiambank:928c70a9-9ec4-45cd-baaf-7b79061cc324",
-                      "creationDateTime": "2025-01-13T22:47:14Z",
-                      "status": "AUTHORISED",
-                      "statusUpdateDateTime": "2025-01-13T22:48:55Z",
-                      "permissions": [
-                        "RESOURCES_READ",
-                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                        "ACCOUNTS_BALANCES_READ",
-                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                        "ACCOUNTS_READ",
-                        "ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                        "LOANS_READ",
-                        "LOANS_WARRANTIES_READ",
-                        "LOANS_SCHEDULED_INSTALMENTS_READ",
-                        "LOANS_PAYMENTS_READ",
-                        "FINANCINGS_READ",
-                        "FINANCINGS_WARRANTIES_READ",
-                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "FINANCINGS_PAYMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                        "INVOICE_FINANCINGS_READ",
-                        "INVOICE_FINANCINGS_WARRANTIES_READ",
-                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "INVOICE_FINANCINGS_PAYMENTS_READ",
-                        "BANK_FIXED_INCOMES_READ",
-                        "CREDIT_FIXED_INCOMES_READ",
-                        "FUNDS_READ",
-                        "VARIABLE_INCOMES_READ",
-                        "TREASURE_TITLES_READ"
-                      ],
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "version": 3,
-                      "createdAt": "2025-01-13T22:47:16.529Z",
-                      "updatedAt": "2025-01-13T22:49:04.303Z",
-                      "tenantId": "lina",
-                      "convertedStatusUpdateTime": "2025-01-13T22:48:55.000Z"
-                    },
-                    {
-                      "_id": "67810b45d3a26cff09508d21",
-                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
-                      "consentId": "urn:raidiambank:0a333a19-1bef-48e2-97ff-bf9f03a5d6cf",
-                      "creationDateTime": "2025-01-10T11:57:56Z",
-                      "status": "AWAITING_AUTHORISATION",
-                      "statusUpdateDateTime": "2025-01-10T11:57:56Z",
-                      "permissions": [
-                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                        "ACCOUNTS_BALANCES_READ",
-                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                        "ACCOUNTS_READ",
-                        "ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                        "LOANS_READ",
-                        "LOANS_WARRANTIES_READ",
-                        "LOANS_SCHEDULED_INSTALMENTS_READ",
-                        "LOANS_PAYMENTS_READ",
-                        "FINANCINGS_READ",
-                        "FINANCINGS_WARRANTIES_READ",
-                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "FINANCINGS_PAYMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                        "INVOICE_FINANCINGS_READ",
-                        "INVOICE_FINANCINGS_WARRANTIES_READ",
-                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "INVOICE_FINANCINGS_PAYMENTS_READ",
-                        "BANK_FIXED_INCOMES_READ",
-                        "CREDIT_FIXED_INCOMES_READ",
-                        "FUNDS_READ",
-                        "VARIABLE_INCOMES_READ",
-                        "TREASURE_TITLES_READ",
-                        "RESOURCES_READ"
-                      ],
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "version": 3,
-                      "createdAt": "2025-01-10T11:57:57.878Z",
-                      "updatedAt": "2025-01-10T11:57:57.878Z",
-                      "tenantId": "lina",
-                      "convertedStatusUpdateTime": "2025-01-10T11:57:56.000Z"
-                    },
-                    {
-                      "_id": "6764764cd3a26cff09508bb9",
-                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
-                      "consentId": "urn:raidiambank:9edd4ba8-7963-4c74-9842-eac6bb270d99",
-                      "creationDateTime": "2024-12-19T19:38:50Z",
-                      "status": "AUTHORISED",
-                      "statusUpdateDateTime": "2024-12-19T19:39:17Z",
-                      "permissions": [
-                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                        "ACCOUNTS_BALANCES_READ",
-                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                        "ACCOUNTS_READ",
-                        "ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                        "LOANS_READ",
-                        "LOANS_WARRANTIES_READ",
-                        "LOANS_SCHEDULED_INSTALMENTS_READ",
-                        "LOANS_PAYMENTS_READ",
-                        "FINANCINGS_READ",
-                        "FINANCINGS_WARRANTIES_READ",
-                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "FINANCINGS_PAYMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                        "INVOICE_FINANCINGS_READ",
-                        "INVOICE_FINANCINGS_WARRANTIES_READ",
-                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "INVOICE_FINANCINGS_PAYMENTS_READ",
-                        "BANK_FIXED_INCOMES_READ",
-                        "CREDIT_FIXED_INCOMES_READ",
-                        "FUNDS_READ",
-                        "VARIABLE_INCOMES_READ",
-                        "TREASURE_TITLES_READ",
-                        "RESOURCES_READ"
-                      ],
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "version": 3,
-                      "createdAt": "2024-12-19T19:38:52.287Z",
-                      "updatedAt": "2024-12-19T19:39:26.651Z",
-                      "tenantId": "lina",
-                      "convertedStatusUpdateTime": "2024-12-19T19:39:17.000Z"
-                    },
-                    {
-                      "_id": "675f625e49475e25b10fb541",
-                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
-                      "consentId": "urn:raidiambank:45fac870-e168-44b4-98c4-567819d1ef46",
-                      "creationDateTime": "2024-12-15T23:12:28Z",
-                      "status": "AUTHORISED",
-                      "statusUpdateDateTime": "2024-12-15T23:13:01Z",
-                      "permissions": [
-                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                        "ACCOUNTS_BALANCES_READ",
-                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                        "ACCOUNTS_READ",
-                        "ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                        "LOANS_READ",
-                        "LOANS_WARRANTIES_READ",
-                        "LOANS_SCHEDULED_INSTALMENTS_READ",
-                        "LOANS_PAYMENTS_READ",
-                        "FINANCINGS_READ",
-                        "FINANCINGS_WARRANTIES_READ",
-                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "FINANCINGS_PAYMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                        "INVOICE_FINANCINGS_READ",
-                        "INVOICE_FINANCINGS_WARRANTIES_READ",
-                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "INVOICE_FINANCINGS_PAYMENTS_READ",
-                        "BANK_FIXED_INCOMES_READ",
-                        "CREDIT_FIXED_INCOMES_READ",
-                        "FUNDS_READ",
-                        "VARIABLE_INCOMES_READ",
-                        "TREASURE_TITLES_READ",
-                        "RESOURCES_READ"
-                      ],
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "version": 3,
-                      "createdAt": "2024-12-15T23:12:30.154Z",
-                      "updatedAt": "2024-12-15T23:13:10.025Z",
-                      "tenantId": "lina",
-                      "convertedStatusUpdateTime": "2024-12-15T23:13:01.000Z"
-                    },
-                    {
-                      "_id": "675f623549475e25b10fb538",
-                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
-                      "consentId": "urn:raidiambank:cf23bc40-1945-49df-a38b-703d4f85cc6e",
-                      "creationDateTime": "2024-12-15T23:11:47Z",
-                      "status": "AWAITING_AUTHORISATION",
-                      "statusUpdateDateTime": "2024-12-15T23:11:47Z",
-                      "permissions": [
-                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                        "ACCOUNTS_BALANCES_READ",
-                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                        "ACCOUNTS_READ",
-                        "ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                        "LOANS_READ",
-                        "LOANS_WARRANTIES_READ",
-                        "LOANS_SCHEDULED_INSTALMENTS_READ",
-                        "LOANS_PAYMENTS_READ",
-                        "FINANCINGS_READ",
-                        "FINANCINGS_WARRANTIES_READ",
-                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "FINANCINGS_PAYMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                        "INVOICE_FINANCINGS_READ",
-                        "INVOICE_FINANCINGS_WARRANTIES_READ",
-                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "INVOICE_FINANCINGS_PAYMENTS_READ",
-                        "BANK_FIXED_INCOMES_READ",
-                        "CREDIT_FIXED_INCOMES_READ",
-                        "FUNDS_READ",
-                        "VARIABLE_INCOMES_READ",
-                        "TREASURE_TITLES_READ",
-                        "RESOURCES_READ"
-                      ],
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "version": 3,
-                      "createdAt": "2024-12-15T23:11:49.253Z",
-                      "updatedAt": "2024-12-15T23:11:49.253Z",
-                      "tenantId": "lina",
-                      "convertedStatusUpdateTime": "2024-12-15T23:11:47.000Z"
-                    },
-                    {
-                      "_id": "675f61e849475e25b10fb531",
-                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
-                      "consentId": "urn:raidiambank:e110fb53-811e-49df-9741-47c477ed0536",
-                      "creationDateTime": "2024-12-15T23:10:29Z",
-                      "status": "AWAITING_AUTHORISATION",
-                      "statusUpdateDateTime": "2024-12-15T23:10:29Z",
-                      "permissions": [
-                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                        "ACCOUNTS_BALANCES_READ",
-                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                        "ACCOUNTS_READ",
-                        "ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                        "LOANS_READ",
-                        "LOANS_WARRANTIES_READ",
-                        "LOANS_SCHEDULED_INSTALMENTS_READ",
-                        "LOANS_PAYMENTS_READ",
-                        "FINANCINGS_READ",
-                        "FINANCINGS_WARRANTIES_READ",
-                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "FINANCINGS_PAYMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                        "INVOICE_FINANCINGS_READ",
-                        "INVOICE_FINANCINGS_WARRANTIES_READ",
-                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "INVOICE_FINANCINGS_PAYMENTS_READ",
-                        "BANK_FIXED_INCOMES_READ",
-                        "CREDIT_FIXED_INCOMES_READ",
-                        "FUNDS_READ",
-                        "VARIABLE_INCOMES_READ",
-                        "TREASURE_TITLES_READ",
-                        "RESOURCES_READ"
-                      ],
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "version": 3,
-                      "createdAt": "2024-12-15T23:10:32.803Z",
-                      "updatedAt": "2024-12-15T23:10:32.803Z",
-                      "tenantId": "lina",
-                      "convertedStatusUpdateTime": "2024-12-15T23:10:29.000Z"
-                    },
-                    {
-                      "_id": "6759f9262f1d4278fe6a87c3",
-                      "userId": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32",
-                      "consentId": "urn:raidiambank:49e00805-f117-4d41-986e-917310dc31de",
-                      "creationDateTime": "2024-12-11T20:42:01Z",
-                      "status": "AUTHORISED",
-                      "statusUpdateDateTime": "2024-12-11T20:44:55Z",
-                      "permissions": [
-                        "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                        "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                        "ACCOUNTS_BALANCES_READ",
-                        "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                        "ACCOUNTS_READ",
-                        "ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                        "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                        "LOANS_READ",
-                        "LOANS_WARRANTIES_READ",
-                        "LOANS_SCHEDULED_INSTALMENTS_READ",
-                        "LOANS_PAYMENTS_READ",
-                        "FINANCINGS_READ",
-                        "FINANCINGS_WARRANTIES_READ",
-                        "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "FINANCINGS_PAYMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                        "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                        "INVOICE_FINANCINGS_READ",
-                        "INVOICE_FINANCINGS_WARRANTIES_READ",
-                        "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                        "INVOICE_FINANCINGS_PAYMENTS_READ",
-                        "BANK_FIXED_INCOMES_READ",
-                        "CREDIT_FIXED_INCOMES_READ",
-                        "FUNDS_READ",
-                        "VARIABLE_INCOMES_READ",
-                        "TREASURE_TITLES_READ",
-                        "RESOURCES_READ"
-                      ],
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "version": 3,
-                      "createdAt": "2024-12-11T20:42:14.853Z",
-                      "updatedAt": "2024-12-11T20:45:04.406Z",
-                      "tenantId": "lina",
-                      "convertedStatusUpdateTime": "2024-12-11T20:44:55.000Z"
-                    }
-                  ]
                 }
               }
             }
