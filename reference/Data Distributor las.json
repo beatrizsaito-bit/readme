@@ -26584,11 +26584,12 @@
                     },
                     "status": {
                       "type": "string",
-                      "description": "Estado do consentimento\n\n`AUTHORISED`,  `AWAITING_AUTHORISATION` , `REJECTED`"
+                      "description": "estado do consentimento, podendo ser `AUTHORISED`,  `AWAITING_AUTHORISATION` , `REJECTED`"
                     }
                   },
                   "required": [
-                    "creationDateTime"
+                    "creationDateTime",
+                    "consentId"
                   ]
                 },
                 "example": {
