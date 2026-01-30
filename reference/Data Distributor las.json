@@ -12445,7 +12445,147 @@
                 "examples": {
                   "OK": {
                     "summary": "OK",
-                    "value": "{\n  \"data\": {\n    \"cpf\": \"12345678912\",\n    \"banks\": [\n      {\n        \"authorisationServerId\": \"9326f9b2-ae57-42c4-a0d9-acc4ba434696\",\n        \"organisationId\": \"e5a1c7ad-11d4-560d-914c-611003a39219\"\n      },\n      {\n        \"authorisationServerId\": \"06c19499-3412-4125-84b7-d0fbc98b5019\",\n        \"organisationId\": \"926e3037-a685-553c-afa3-f7cb46ff8084\"\n      }\n    ],\n    \"updatedAt\": \"2025-10-10T13:20:36.233Z\",\n    \"userId\": \"1e72b948-d688-4783-9a08-4ee85f34ba5e\",\n    \"tenantIdList\": [\n      \"test\"\n    ],\n    \"userData\": [\n      {\n        \"userId\": \"1e72b948-d688-4783-9a08-4ee85f34ba5e\",\n        \"authorisationServerId\": \"06c19499-3412-4125-84b7-d0fbc98b5019\",\n        \"encripted\": true,\n        \"identification\": {\n          \"socialName\": \"Tatiana Teste\",\n          \"hasBrazilianNationality\": true,\n          \"sex\": \"FEMININO\",\n          \"contacts\": {\n            \"phones\": [\n              {\n                \"isMain\": true,\n                \"areaCode\": \"11\",\n                \"number\": \"999999999\",\n                \"type\": \"MOVEL\",\n                \"countryCallingCode\": \"55\"\n              }\n            ],\n            \"postalAddresses\": [\n              {\n                \"address\": \"Rua Correia Dias, 93\",\n                \"isMain\": true,\n                \"townName\": \"São Paulo\",\n                \"postCode\": \" 04104000\",\n                \"country\": \"Brasil\",\n                \"countrySubDivision\": \"SP\",\n                \"districtName\": \"Paraiso\"\n              }\n            ],\n            \"emails\": [\n              {\n                \"isMain\": true,\n                \"email\": \"tatianateste@linaopenx.com.br\"\n              }\n            ]\n          },\n          \"maritalStatusCode\": \"SOLTEIRO\",\n          \"birthDate\": \"1990-01-01\",\n          \"companiesCnpj\": [\n            \"18236120000158\"\n          ],\n          \"documents\": {\n            \"cpfNumber\": \"12345678912\"\n          },\n          \"updateDateTime\": \"2025-01-23T17:10:21Z\",\n          \"otherDocuments\": [\n            {\n              \"number\": \"289437702\",\n              \"type\": \"RG\"\n            }\n          ],\n          \"civilName\": \"Tatiana Teste\",\n          \"brandName\": \"Nubank\",\n          \"personalId\": \"4b2992ef-d121-4f98-8c62-c6446fb21232\",\n          \"filiation\": [\n            {\n              \"type\": \"MAE\",\n              \"civilName\": \"Cláudia Eduarda\"\n            }\n          ]\n        },\n        \"organisationId\": \"926e3037-a685-553c-afa3-f7cb46ff8084\",\n        \"qualification\": {\n          \"updateDateTime\": \"2025-01-23T17:10:21Z\",\n          \"informedPatrimony\": {\n            \"amount\": {\n              \"amount\": \"10001.0000\",\n              \"currency\": \"BRL\"\n            },\n            \"year\": 2020\n          },\n          \"companyCnpj\": \"null\",\n          \"occupationCode\": \"OUTRO\",\n          \"informedIncome\": {\n            \"frequency\": \"MENSAL\",\n            \"amount\": {\n              \"amount\": \"null\",\n              \"currency\": \"BRL\"\n            },\n            \"date\": \"2025-01-23\"\n          },\n          \"occupationDescription\": \"analyst\"\n        },\n        \"relations\": {\n          \"updateDateTime\": \"2025-01-23T17:10:21Z\",\n          \"portabilitiesReceived\": [\n            {\n              \"employerName\": \" \",\n              \"paycheckBankDetainerCnpj\": \" \",\n              \"portabilityApprovalDate\": \" \",\n              \"paycheckBankDetainerIspb\": \" \",\n              \"employerCnpjCpf\": \" \"\n            }\n          ],\n          \"startDate\": \"2018-04-24T18:51:18Z\",\n          \"accounts\": [\n            {\n              \"compeCode\": \"260\",\n              \"branchCode\": \"0001\",\n              \"number\": \"01204121\",\n              \"checkDigit\": \"1\",\n              \"type\": \"CONTA_PAGAMENTO_PRE_PAGA\",\n              \"subtype\": \"INDIVIDUAL\"\n            }\n          ],\n          \"productsServicesType\": [\n            \"CONTA_DEPOSITO_A_VISTA\",\n            \"CARTAO_CREDITO\"\n          ],\n          \"procurators\": []\n        },\n        \"updatedAt\": \"2025-10-10T13:22:19.033Z\"\n      }\n    ]\n  }\n"
+                    "value": {
+                      "cpf": "12345678912",
+                      "banks": [
+                        {
+                          "authorisationServerId": "9326f9b2-ae57-42c4-a0d9-acc4ba434696",
+                          "organisationId": "e5a1c7ad-11d4-560d-914c-611003a39219"
+                        },
+                        {
+                          "authorisationServerId": "06c19499-3412-4125-84b7-d0fbc98b5019",
+                          "organisationId": "926e3037-a685-553c-afa3-f7cb46ff8084"
+                        }
+                      ],
+                      "updatedAt": "2025-10-10T13:20:36.233Z",
+                      "userId": "1e72b948-d688-4783-9a08-4ee85f34ba5e",
+                      "tenantIdList": [
+                        "test"
+                      ],
+                      "userData": [
+                        {
+                          "userId": "1e72b948-d688-4783-9a08-4ee85f34ba5e",
+                          "authorisationServerId": "06c19499-3412-4125-84b7-d0fbc98b5019",
+                          "encripted": true,
+                          "identification": {
+                            "socialName": "Tatiana Teste",
+                            "hasBrazilianNationality": true,
+                            "sex": "FEMININO",
+                            "contacts": {
+                              "phones": [
+                                {
+                                  "isMain": true,
+                                  "areaCode": "11",
+                                  "number": "999999999",
+                                  "type": "MOVEL",
+                                  "countryCallingCode": "55"
+                                }
+                              ],
+                              "postalAddresses": [
+                                {
+                                  "address": "Rua Correia Dias, 93",
+                                  "isMain": true,
+                                  "townName": "São Paulo",
+                                  "postCode": " 04104000",
+                                  "country": "Brasil",
+                                  "countrySubDivision": "SP",
+                                  "districtName": "Paraiso"
+                                }
+                              ],
+                              "emails": [
+                                {
+                                  "isMain": true,
+                                  "email": "tatianateste@linaopenx.com.br"
+                                }
+                              ]
+                            },
+                            "maritalStatusCode": "SOLTEIRO",
+                            "birthDate": "1990-01-01",
+                            "companiesCnpj": [
+                              "18236120000158"
+                            ],
+                            "documents": {
+                              "cpfNumber": "12345678912"
+                            },
+                            "updateDateTime": "2025-01-23T17:10:21Z",
+                            "otherDocuments": [
+                              {
+                                "number": "289437702",
+                                "type": "RG"
+                              }
+                            ],
+                            "civilName": "Tatiana Teste",
+                            "brandName": "Nubank",
+                            "personalId": "4b2992ef-d121-4f98-8c62-c6446fb21232",
+                            "filiation": [
+                              {
+                                "type": "MAE",
+                                "civilName": "Cláudia Eduarda"
+                              }
+                            ]
+                          },
+                          "organisationId": "926e3037-a685-553c-afa3-f7cb46ff8084",
+                          "qualification": {
+                            "updateDateTime": "2025-01-23T17:10:21Z",
+                            "informedPatrimony": {
+                              "amount": {
+                                "amount": "10001.0000",
+                                "currency": "BRL"
+                              },
+                              "year": 2020
+                            },
+                            "companyCnpj": "null",
+                            "occupationCode": "OUTRO",
+                            "informedIncome": {
+                              "frequency": "MENSAL",
+                              "amount": {
+                                "amount": "null",
+                                "currency": "BRL"
+                              },
+                              "date": "2025-01-23"
+                            },
+                            "occupationDescription": "analyst"
+                          },
+                          "relations": {
+                            "updateDateTime": "2025-01-23T17:10:21Z",
+                            "portabilitiesReceived": [
+                              {
+                                "employerName": " ",
+                                "paycheckBankDetainerCnpj": " ",
+                                "portabilityApprovalDate": " ",
+                                "paycheckBankDetainerIspb": " ",
+                                "employerCnpjCpf": ""
+                              }
+                            ],
+                            "startDate": "2018-04-24T18:51:18Z",
+                            "accounts": [
+                              {
+                                "compeCode": "260",
+                                "branchCode": "0001",
+                                "number": "01204121",
+                                "checkDigit": "1",
+                                "type": "CONTA_PAGAMENTO_PRE_PAGA",
+                                "subtype": "INDIVIDUAL"
+                              }
+                            ],
+                            "productsServicesType": [
+                              "CONTA_DEPOSITO_A_VISTA",
+                              "CARTAO_CREDITO"
+                            ],
+                            "procurators": []
+                          },
+                          "updatedAt": "2025-10-10T13:22:19.033Z"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "string"
+                    }
                   }
                 }
               }
