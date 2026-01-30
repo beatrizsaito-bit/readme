@@ -26584,7 +26584,12 @@
                     },
                     "status": {
                       "type": "string",
-                      "description": "estado do consentimento, podendo ser `AUTHORISED`,  `AWAITING_AUTHORISATION` , `REJECTED`"
+                      "description": "estado do consentimento",
+                      "enum": [
+                        "AUTHORISED",
+                        "AWAITING_AUTHORISATION",
+                        "REJECTED"
+                      ]
                     },
                     "statusUpdatedDateTime": {
                       "type": "string",
@@ -26603,7 +26608,7 @@
                       "properties": {
                         "rejectedBy": {
                           "type": "string",
-                          "description": "Identifica quem realizou a rejeição do consentimento.\n\n`USER` - usuário\n`ASPSP` - instituição transmissora\n`TPP` - instituição receptora",
+                          "description": "Identifica quem realizou a rejeição do consentimento.",
                           "enum": [
                             "ASPSP",
                             "TPP",
@@ -26615,7 +26620,7 @@
                           "properties": {
                             "code": {
                               "type": "string",
-                              "description": "Código padronizado que representa a razão da rejeição.\n\n`CONSENT_EXPIRED` , `CUSTOMER_MANUALLY_REJECTED` – cliente efetuou a rejeição do consentimento manualmente através de interação nas instituições participantes.\n`CUSTOMER_MANUALLY_REVOKED` – cliente efetuou a revogação após a autorização do consentimento.\n`CONSENT_MAX_DATE_REACHED` – consentimento que ultrapassou o tempo limite de compartilhamento.\n`CONSENT_TECHNICAL_ISSUE` – consentimento que foi rejeitado devido a um problema técnico que impossibilita seu uso pela instituição receptora, por exemplo: falha associada a troca do AuthCode pelo AccessToken, durante o processo de Hybrid Flow.\n` INTERNAL_SECURITY_REASON` – consentimento que foi rejeitado devido as políticas de segurança aplicada pela instituição transmissora.",
+                              "description": "Código padronizado que representa a razão da rejeição.\n",
                               "enum": [
                                 "CONSENT_EXPIRED",
                                 "CUSTOMER_MANUALLY_REJECTED",
