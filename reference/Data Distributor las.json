@@ -26347,110 +26347,6 @@
         }
       }
     },
-    "/api/v1/users/{user_id}/consents/{id}": {
-      "delete": {
-        "tags": [
-          "2 - Fluxo de consulta de informações > Consentimentos"
-        ],
-        "summary": "Revogação de consentimento",
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "example": "{{user_id}}"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "example": "{{consent_id}}"
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created",
-            "headers": {
-              "X-Powered-By": {
-                "schema": {
-                  "type": "string",
-                  "example": "Express"
-                }
-              },
-              "Access-Control-Allow-Origin": {
-                "schema": {
-                  "type": "string",
-                  "example": "*"
-                }
-              },
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json; charset=utf-8"
-                }
-              },
-              "Content-Length": {
-                "schema": {
-                  "type": "integer",
-                  "example": "276"
-                }
-              },
-              "ETag": {
-                "schema": {
-                  "type": "string",
-                  "example": "W/\"114-FQ782ozMDi6vnF257R1ECxPzCIc\""
-                }
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "example": "Mon, 09 Sep 2024 17:13:36 GMT"
-                }
-              },
-              "Connection": {
-                "schema": {
-                  "type": "string",
-                  "example": "keep-alive"
-                }
-              },
-              "Keep-Alive": {
-                "schema": {
-                  "type": "string",
-                  "example": "timeout=5"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "examples": {
-                  "example-0": {
-                    "summary": "Consentimento PF",
-                    "value": {
-                      "redirectUrl": "https://auth.mockbank.poc.raidiam.io/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3AD2AKVKARaSdsGQ5KF_8Q8&client_id=yXYqweXJXhxqMebXy7j_e&state=WD2D99Nhn3nse80JoBP87n0E1IA8utKYxpxxDONIba2UPpTNGKLDod38gWlhhLexDgu9Y8xmuWzAJGhpibmDaNNG4bg3HzDYTIo3"
-                    }
-                  },
-                  "example-1": {
-                    "summary": "Consentimento PJ",
-                    "value": {
-                      "redirectUrl": "https://auth.mockbank.poc.raidiam.io/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3AD2AKVKARaSdsGQ5KF_8Q8&client_id=yXYqweXJXhxqMebXy7j_e&state=WD2D99Nhn3nse80JoBP87n0E1IA8utKYxpxxDONIba2UPpTNGKLDod38gWlhhLexDgu9Y8xmuWzAJGhpibmDaNNG4bg3HzDYTIo3"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/v1/users/{user_id}/consents": {
       "get": {
         "tags": [
@@ -28024,6 +27920,97 @@
           }
         },
         "operationId": "get_api-v1-users-user-id-consents-consent-id"
+      },
+      "delete": {
+        "tags": [
+          "2 - Fluxo de consulta de informações > Consentimentos"
+        ],
+        "summary": "Revogação de consentimento",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "{{user_id}}",
+            "description": "Identificador do usuário"
+          },
+          {
+            "in": "path",
+            "name": "consent_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Identificador do consentimento"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "276"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"114-FQ782ozMDi6vnF257R1ECxPzCIc\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 09 Sep 2024 17:13:36 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "delete_api-v1-users-user-id-consents-consent-id"
       }
     },
     "/api/v1/users/{user_id}/analysis/accounts-transactions/monthly-insights": {
