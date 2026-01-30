@@ -13676,17 +13676,137 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "name": {
-                      "type": "string"
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "userId": {
+                            "type": "string",
+                            "example": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017"
+                          },
+                          "transactionId": {
+                            "type": "string",
+                            "example": "901827b9-aba7-40c4-96a1-dd48846f3f57"
+                          },
+                          "accountId": {
+                            "type": "string",
+                            "example": "291e5a29-49ed-401f-a583-193caa7acddd"
+                          },
+                          "completedAuthorisedPaymentType": {
+                            "type": "string",
+                            "example": "TRANSACAO_EFETIVADA"
+                          },
+                          "creditDebitType": {
+                            "type": "string",
+                            "example": "DEBITO"
+                          },
+                          "partieBranchCode": {
+                            "type": "string",
+                            "example": "6272"
+                          },
+                          "partieCheckDigit": {
+                            "type": "string",
+                            "example": "4"
+                          },
+                          "partieCnpjCpf": {
+                            "type": "string",
+                            "example": "87517400444"
+                          },
+                          "partieCompeCode": {
+                            "type": "string",
+                            "example": "123"
+                          },
+                          "partieNumber": {
+                            "type": "string",
+                            "example": "94088392"
+                          },
+                          "partiePersonType": {
+                            "type": "string",
+                            "example": "PESSOA_NATURAL"
+                          },
+                          "transactionAmount": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "771.52"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "transactionDateTime": {
+                            "type": "string",
+                            "example": "2024-03-13T00:00:00.000Z"
+                          },
+                          "transactionName": {
+                            "type": "string",
+                            "example": "PAGAMENTO"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "CARTAO"
+                          }
+                        }
+                      }
+                    },
+                    "totalRecords": {
+                      "type": "integer",
+                      "example": 2,
+                      "default": 0
                     }
-                  },
-                  "required": [
-                    "name"
-                  ]
+                  }
                 },
                 "examples": {
                   "example": {
-                    "value": "{\n  \"data\": [\n    {\n      \"userId\": \"0e58fecb-5a34-4b2c-a1b2-d2f8626df017\",\n      \"transactionId\": \"901827b9-aba7-40c4-96a1-dd48846f3f57\",\n      \"accountId\": \"291e5a29-49ed-401f-a583-193caa7acddd\",\n      \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n      \"creditDebitType\": \"DEBITO\",\n      \"partieBranchCode\": \"6272\",\n      \"partieCheckDigit\": \"4\",\n      \"partieCnpjCpf\": \"87517400444\",\n      \"partieCompeCode\": \"123\",\n      \"partieNumber\": \"94088392\",\n      \"partiePersonType\": \"PESSOA_NATURAL\",\n      \"transactionAmount\": {\n        \"amount\": \"771.52\",\n        \"currency\": \"BRL\"\n      },\n      \"transactionDateTime\": \"2024-03-13T00:00:00.000Z\",\n      \"transactionName\": \"PAGAMENTO\",\n      \"type\": \"CARTAO\"\n    },\n    {\n      \"userId\": \"0e58fecb-5a34-4b2c-a1b2-d2f8626df017\",\n      \"transactionId\": \"639c4d65-4176-48de-a389-90125bd01d62\",\n      \"accountId\": \"291e5a29-49ed-401f-a583-193caa7acddd\",\n      \"completedAuthorisedPaymentType\": \"TRANSACAO_PROCESSANDO\",\n      \"creditDebitType\": \"DEBITO\",\n      \"partieBranchCode\": \"6272\",\n      \"partieCheckDigit\": \"4\",\n      \"partieCnpjCpf\": \"87517400444\",\n      \"partieCompeCode\": \"123\",\n      \"partieNumber\": \"63525217000135\",\n      \"partiePersonType\": \"PESSOA_JURIDICA\",\n      \"transactionAmount\": {\n        \"amount\": \"771.52\",\n        \"currency\": \"BRL\"\n      },\n      \"transactionDateTime\": \"2024-03-12T00:00:00.000Z\",\n      \"transactionName\": \"PAGAMENTO\",\n      \"type\": \"PIX\"\n    },\n\n  \"totalRecords\": 2\n}",
+                    "value": {
+                      "data": [
+                        {
+                          "userId": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017",
+                          "transactionId": "901827b9-aba7-40c4-96a1-dd48846f3f57",
+                          "accountId": "291e5a29-49ed-401f-a583-193caa7acddd",
+                          "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+                          "creditDebitType": "DEBITO",
+                          "partieBranchCode": "6272",
+                          "partieCheckDigit": "4",
+                          "partieCnpjCpf": "87517400444",
+                          "partieCompeCode": "123",
+                          "partieNumber": "94088392",
+                          "partiePersonType": "PESSOA_NATURAL",
+                          "transactionAmount": {
+                            "amount": "771.52",
+                            "currency": "BRL"
+                          },
+                          "transactionDateTime": "2024-03-13T00:00:00.000Z",
+                          "transactionName": "PAGAMENTO",
+                          "type": "CARTAO"
+                        },
+                        {
+                          "userId": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017",
+                          "transactionId": "639c4d65-4176-48de-a389-90125bd01d62",
+                          "accountId": "291e5a29-49ed-401f-a583-193caa7acddd",
+                          "completedAuthorisedPaymentType": "TRANSACAO_PROCESSANDO",
+                          "creditDebitType": "DEBITO",
+                          "partieBranchCode": "6272",
+                          "partieCheckDigit": "4",
+                          "partieCnpjCpf": "87517400444",
+                          "partieCompeCode": "123",
+                          "partieNumber": "63525217000135",
+                          "partiePersonType": "PESSOA_JURIDICA",
+                          "transactionAmount": {
+                            "amount": "771.52",
+                            "currency": "BRL"
+                          },
+                          "transactionDateTime": "2024-03-12T00:00:00.000Z",
+                          "transactionName": "PAGAMENTO",
+                          "type": "PIX"
+                        }
+                      ],
+                      "totalRecords": 2
+                    },
                     "summary": "example"
                   }
                 }
