@@ -13403,8 +13403,8 @@
                   }
                 },
                 "examples": {
-                  "example-0": {
-                    "summary": "Listagem de contas",
+                  "example": {
+                    "summary": "example",
                     "value": {
                       "data": [
                         {
