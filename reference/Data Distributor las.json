@@ -13221,83 +13221,96 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "accountId": {
+                        "type": "string",
+                        "example": "291e5a29-49ed-401f-a583-193caa7acddd"
+                      },
+                      "authorisationServerId": {
+                        "type": "string",
+                        "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                      },
+                      "branchCode": {
+                        "type": "string",
+                        "example": "6272"
+                      },
+                      "brandName": {
+                        "type": "string",
+                        "example": "Sib Bank"
+                      },
+                      "checkDigit": {
+                        "type": "string",
+                        "example": "4"
+                      },
+                      "companyCnpj": {
+                        "type": "string",
+                        "example": "40156018000100"
+                      },
+                      "compeCode": {
+                        "type": "string",
+                        "example": "123"
+                      },
+                      "number": {
+                        "type": "string",
+                        "example": "11188222"
+                      },
+                      "organisationId": {
+                        "type": "string",
+                        "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                      },
+                      "type": {
+                        "type": "string",
+                        "example": "CONTA_POUPANCA"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "example": "2024-09-09T18:00:46.349Z"
+                      },
+                      "details": {
                         "type": "object",
                         "properties": {
-                          "accountId": {
+                          "compeCode": {
                             "type": "string",
-                            "example": "291e5a29-49ed-401f-a583-193caa7acddd"
-                          },
-                          "authorisationServerId": {
-                            "type": "string",
-                            "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                            "example": "123"
                           },
                           "branchCode": {
                             "type": "string",
                             "example": "6272"
                           },
-                          "brandName": {
+                          "number": {
                             "type": "string",
-                            "example": "Sib Bank"
+                            "example": "11188222"
                           },
                           "checkDigit": {
                             "type": "string",
                             "example": "4"
                           },
-                          "companyCnpj": {
-                            "type": "string",
-                            "example": "40156018000100"
-                          },
-                          "compeCode": {
-                            "type": "string",
-                            "example": "123"
-                          },
-                          "number": {
-                            "type": "string",
-                            "example": "11188222"
-                          },
-                          "organisationId": {
-                            "type": "string",
-                            "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
-                          },
                           "type": {
                             "type": "string",
                             "example": "CONTA_POUPANCA"
                           },
-                          "updatedAt": {
+                          "subtype": {
                             "type": "string",
-                            "example": "2024-09-09T18:00:46.349Z"
+                            "example": "INDIVIDUAL"
                           },
-                          "details": {
+                          "currency": {
+                            "type": "string",
+                            "example": "BRL"
+                          }
+                        }
+                      },
+                      "balance": {
+                        "type": "object",
+                        "properties": {
+                          "availableAmount": {
                             "type": "object",
                             "properties": {
-                              "compeCode": {
+                              "amount": {
                                 "type": "string",
-                                "example": "123"
-                              },
-                              "branchCode": {
-                                "type": "string",
-                                "example": "6272"
-                              },
-                              "number": {
-                                "type": "string",
-                                "example": "11188222"
-                              },
-                              "checkDigit": {
-                                "type": "string",
-                                "example": "4"
-                              },
-                              "type": {
-                                "type": "string",
-                                "example": "CONTA_POUPANCA"
-                              },
-                              "subtype": {
-                                "type": "string",
-                                "example": "INDIVIDUAL"
+                                "example": "41233.07"
                               },
                               "currency": {
                                 "type": "string",
@@ -13305,95 +13318,77 @@
                               }
                             }
                           },
-                          "balance": {
+                          "blockedAmount": {
                             "type": "object",
                             "properties": {
-                              "availableAmount": {
-                                "type": "object",
-                                "properties": {
-                                  "amount": {
-                                    "type": "string",
-                                    "example": "41233.07"
-                                  },
-                                  "currency": {
-                                    "type": "string",
-                                    "example": "BRL"
-                                  }
-                                }
-                              },
-                              "blockedAmount": {
-                                "type": "object",
-                                "properties": {
-                                  "amount": {
-                                    "type": "string",
-                                    "example": "999.99"
-                                  },
-                                  "currency": {
-                                    "type": "string",
-                                    "example": "BRL"
-                                  }
-                                }
-                              },
-                              "automaticallyInvestedAmount": {
-                                "type": "object",
-                                "properties": {
-                                  "amount": {
-                                    "type": "string",
-                                    "example": "15000.00"
-                                  },
-                                  "currency": {
-                                    "type": "string",
-                                    "example": "BRL"
-                                  }
-                                }
-                              },
-                              "updateDateTime": {
+                              "amount": {
                                 "type": "string",
-                                "example": "2024-09-09T10:53:52Z"
+                                "example": "999.99"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
                               }
                             }
                           },
-                          "overdraftLimits": {
+                          "automaticallyInvestedAmount": {
                             "type": "object",
                             "properties": {
-                              "overdraftContractedLimit": {
-                                "type": "object",
-                                "properties": {
-                                  "amount": {
-                                    "type": "string",
-                                    "example": "99.9999"
-                                  },
-                                  "currency": {
-                                    "type": "string",
-                                    "example": "BRL"
-                                  }
-                                }
+                              "amount": {
+                                "type": "string",
+                                "example": "15000.00"
                               },
-                              "overdraftUsedLimit": {
-                                "type": "object",
-                                "properties": {
-                                  "amount": {
-                                    "type": "string",
-                                    "example": "12345.40"
-                                  },
-                                  "currency": {
-                                    "type": "string",
-                                    "example": "BRL"
-                                  }
-                                }
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "updateDateTime": {
+                            "type": "string",
+                            "example": "2024-09-09T10:53:52Z"
+                          }
+                        }
+                      },
+                      "overdraftLimits": {
+                        "type": "object",
+                        "properties": {
+                          "overdraftContractedLimit": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "99.9999"
                               },
-                              "unarrangedOverdraftAmount": {
-                                "type": "object",
-                                "properties": {
-                                  "amount": {
-                                    "type": "string",
-                                    "example": "99.9999"
-                                  },
-                                  "currency": {
-                                    "type": "string",
-                                    "example": "BRL"
-                                  }
-                                }
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "overdraftUsedLimit": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "12345.40"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "unarrangedOverdraftAmount": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "99.9999"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
                               }
                             }
                           }
