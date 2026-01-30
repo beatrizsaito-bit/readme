@@ -26572,7 +26572,24 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "consentId": {
+                      "type": "string",
+                      "description": "identificador único do consentimento"
+                    },
+                    "creationDateTime": {
+                      "type": "string",
+                      "description": "Data e hora de criação em UTC"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "estado do consentimento, podendo ser AUTHORISED, AWAITING_AUTHORISATION, REJECTED"
+                    }
+                  },
+                  "required": [
+                    "creationDateTime"
+                  ]
                 },
                 "example": {
                   "data": [
