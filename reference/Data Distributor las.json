@@ -13709,7 +13709,7 @@
                           "creditDebitType": {
                             "type": "string",
                             "example": "DEBITO",
-                            "description": "Indicador do tipo de lançamento no extrato, `DÉBITO` representa saídas na conta e `CRÉDITO` representa as entradas na conta",
+                            "description": "Indicador do tipo de lançamento no extrato, DÉBITO representa saídas na conta e CRÉDITO representa as entradas na conta",
                             "enum": [
                               "CREDITO",
                               "DEBITO"
@@ -13743,20 +13743,31 @@
                           "partiePersonType": {
                             "type": "string",
                             "example": "PESSOA_NATURAL",
-                            "description": "Identificação do tipo de pessoa da pessoa envolvida na transação, `PESSOA_NATURAL`  refere-se a pessoa física"
+                            "description": "Identificação do tipo de pessoa da pessoa envolvida na transação, PESSOA_NATURAL  refere-se a pessoa física",
+                            "enum": [
+                              "PESSOA_NATURAL",
+                              "PESSOA_JURIDICA"
+                            ]
                           },
                           "transactionAmount": {
                             "type": "object",
                             "properties": {
                               "amount": {
                                 "type": "string",
-                                "example": "771.52"
+                                "example": "771.52",
+                                "description": "Valor"
                               },
                               "currency": {
                                 "type": "string",
-                                "example": "BRL"
+                                "example": "BRL",
+                                "description": "Moeda referente ao valor monetário, seguindo o modelo ISO-4217"
                               }
-                            }
+                            },
+                            "description": "Valor da transação",
+                            "required": [
+                              "amount",
+                              "currency"
+                            ]
                           },
                           "transactionDateTime": {
                             "type": "string",
@@ -13764,18 +13775,43 @@
                           },
                           "transactionName": {
                             "type": "string",
-                            "example": "PAGAMENTO"
+                            "example": "PAGAMENTO",
+                            "description": "Data e hora original da transação"
                           },
                           "type": {
                             "type": "string",
-                            "example": "CARTAO"
+                            "example": "CARTAO",
+                            "description": "Tipo da transação",
+                            "enum": [
+                              "TED",
+                              "DOC",
+                              "PIX",
+                              "TRANSFERENCIA_MESMA_INSTITUICAO",
+                              "BOLETO",
+                              "CONVENIO_ARRECADACAO",
+                              "PACOTE_TARIFA_SERVICOS",
+                              "TARIFA_SERVICOS_AVULSOS",
+                              "FOLHA_PAGAMENTO",
+                              "DEPOSITO",
+                              "SAQUE",
+                              "CARTAO",
+                              "ENCARGOS_JUROS_CHEQUE_ESPECIAL",
+                              "RENDIMENTO_APLIC_FINANCEIRA",
+                              "PORTABILIDADE_SALARIO",
+                              "RESGATE_APLIC_FINANCEIRA",
+                              "OPERACAO_CREDITO",
+                              "OUTROS"
+                            ]
                           }
                         },
                         "required": [
                           "accountId",
                           "transactionId",
                           "completedAuthorisedPaymentType",
-                          "creditDebitType"
+                          "creditDebitType",
+                          "transactionAmount",
+                          "transactionName",
+                          "type"
                         ]
                       }
                     },
@@ -13784,7 +13820,10 @@
                       "example": 2,
                       "default": 0
                     }
-                  }
+                  },
+                  "required": [
+                    "totalRecords"
+                  ]
                 },
                 "examples": {
                   "example": {
