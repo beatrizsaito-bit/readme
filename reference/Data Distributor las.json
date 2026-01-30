@@ -27234,59 +27234,7 @@
         }
       }
     },
-    "/api/v1/users/{user_id}/consents/{consent_id}": {
-      "get": {
-        "tags": [
-          "2 - Fluxo de consulta de informações > Consentimentos"
-        ],
-        "summary": "Recuperar um consentimento",
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "example": "{{user_id}}"
-          },
-          {
-            "name": "consent_id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "example": "{{consent_id}}"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "consentId": {
-                      "type": "string",
-                      "description": "Identificador único do consentimento"
-                    },
-                    "creationDateTime": {
-                      "type": "string",
-                      "description": "Data e hora de criação em UTC\n"
-                    }
-                  },
-                  "required": [
-                    "consentId"
-                  ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
+    "/api/v1/users/{user_id}/consents/{consent_id}": {},
     "/api/v1/users/{user_id}/analysis/accounts-transactions/monthly-insights": {
       "get": {
         "tags": [
