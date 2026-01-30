@@ -7,171 +7,249 @@ metadata:
 ---
 <br />
 
-<Accordion title="consentId">
-  **Descrição**\
-  Identificador único do consentimento no formato
+# Permissões
 
-  **Mandatoriedade**\
-  Obrigatório
+<Callout icon="❗️" theme="error">
+  A permissão **RESOURCES_READ** deve ser preenchida em toda requisição
+</Callout>
 
-  **Tipo de dado JSON**\
-  `string`
-</Accordion>
+Abaixo está a lista com as permissões necessários para cada agrupamento de dados
 
-<Accordion title="creationDateTime">
-  **Descrição**\
-  Data e hora de criação do recurso UTC.
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Função
+      </th>
 
-  **Mandatoriedade**\
-  Obrigatório
+      <th>
+        Permissões necessárias
+      </th>
+    </tr>
+  </thead>
 
-  **Tipo de dado JSON**\
-  `string`
-</Accordion>
+  <tbody>
+    <tr>
+      <td>
+        Dados cadastrais e de qualificação de usuário PF
+      </td>
 
-<Accordion title="status">
-  **Descrição**\
-  Estado atual do consentimento cadastrado
+      <td>
+        CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ,
 
-  * AUTHORISED
-  * AWAITING\_AUTHORISATION
-  * REJECTED
+        CUSTOMERS_PERSONAL_ADITTIONALINFO_READ
+      </td>
+    </tr>
 
-  **Mandatoriedade**\
-  Obrigatório
+    <tr>
+      <td>
+        Dados cadastrais e de qualificação de usuário PJ
+      </td>
 
-  **Tipo de dado JSON**\
-  `string`
-</Accordion>
+      <td>
+        CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ,
 
-<Accordion title="statusUpdateDateTime">
-  **Descrição**\
-  Data e hora da última atualização do consentimento em UTC.
+        CUSTOMERS_BUSINESS_ADITTIONALINFO_READ
+      </td>
+    </tr>
 
-  **Mandatoriedade**\
-  Obrigatório
+    <tr>
+      <td>
+        Dados de conta bancária
+      </td>
 
-  **Tipo de dado JSON**\
-  `string`
-</Accordion>
+      <td>
+        ACCOUNTS_BALANCES_READ,
 
-<Accordion title="permissions">
-  **Descrição**\
-  Lista de permissões concedidas para acesso às APIs do Open Finance Brasil.
+        ACCOUNTS_OVERDRAFT_LIMITS_READ,
 
-  **Mandatoriedade**\
-  Obrigatório
+        ACCOUNTS_READ,
 
-  **Tipo de dado JSON**\
-  `array`
-</Accordion>
+        ACCOUNTS_TRANSACTIONS_READ
+      </td>
+    </tr>
 
-<Accordion title="expirationDateTime">
-  **Descrição**\
-  Data e hora de expiração do consentimento em apenas quando houver validade determinada.
+    <tr>
+      <td>
+        Dados de cartão de crédito
+      </td>
 
-  **Mandatoriedade**\
-  Condicional
+      <td>
+        CREDIT_CARDS_ACCOUNTS_READ,
 
-  **Tipo de dado JSON**\
-  `string`
-</Accordion>
+        CREDIT_CARDS_ACCOUNTS_LIMITS_READ,
 
-<Accordion title="rejection">
-  **Descrição**\
-  Objeto retornado quando o consentimento for rejeitado.
+        CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ,
+      </td>
+    </tr>
 
-  **Mandatoriedade**\
-  Condicional
+    <tr>
+      <td>
+        Dados de fatura de cartão de crédito
+      </td>
 
-  **Tipo de dado JSON**\
-  `object`
-</Accordion>
+      <td>
+        CREDIT_CARDS_ACCOUNTS_BILLS_READ,
 
-<Accordion title="rejectedBy">
-  **Descrição**\
-  Identifica quem realizou a rejeição do consentimento.
+        CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ
+      </td>
+    </tr>
 
-  * USER usuário
-  * ASPSP instituição transmissora
-  * TPP instituição receptora
+    <tr>
+      <td>
+        Dados de empréstimo
+      </td>
 
-  **Mandatoriedade**\
-  Condicional
+      <td>
+        LOANS_READ, LOANS_WARRANTIES_READ,
 
-  **Tipo de dado JSON**\
-  `string`
-</Accordion>
+        LOANS_SCHEDULED_INSTALMENTS_READ,
 
-<Accordion title="reason">
-  **Descrição**\
-  Detalha o motivo da rejeição do consentimento
+        LOANS_PAYMENTS_READ
+      </td>
+    </tr>
 
-  **Mandatoriedade**\
-  Condicional
+    <tr>
+      <td>
+        Dados de financiamento
+      </td>
 
-  **Tipo de dado JSON**\
-  `object`
-</Accordion>
+      <td>
+        FINANCINGS_READ,
 
-<Accordion title="code">
-  **Descrição**\
-  Código padronizado que representa a razão da rejeição.
+        FINANCINGS_WARRANTIES_READ,
 
-  * CONSENT\_EXPIRED – consentimento que ultrapassou o tempo limite para autorização.
-  * CUSTOMER\_MANUALLY\_REJECTED – cliente efetuou a rejeição do consentimento manualmente através de interação nas instituições participantes.
-  * CUSTOMER\_MANUALLY\_REVOKED – cliente efetuou a revogação após a autorização do consentimento.
-  * CONSENT\_MAX\_DATE\_REACHED – consentimento que ultrapassou o tempo limite de compartilhamento.
-  * CONSENT\_TECHNICAL\_ISSUE – consentimento que foi rejeitado devido a um problema técnico que impossibilita seu uso pela instituição receptora, por exemplo: falha associada a troca do AuthCode pelo AccessToken, durante o processo de Hybrid Flow.
-  * INTERNAL\_SECURITY\_REASON – consentimento que foi rejeitado devido as políticas de segurança aplicada pela instituição transmissora.
+        FINANCINGS_SCHEDULED_INSTALMENTS_READ,
 
-  **Mandatoriedade**\
-  Condicional
+        FINANCINGS_PAYMENTS_READ
+      </td>
+    </tr>
 
-  **Tipo de dado JSON**\
-  `string`
-</Accordion>
+    <tr>
+      <td>
+        Dados de adiantamento a depositantes
+      </td>
 
-<Accordion title="additionalInformation">
-  **Descrição**\
-  Informações adicionais fornecidas pela instituição transmissora.
+      <td>
+        UNARRANGED_ACCOUNTS_OVERDRAFT_READ,
 
-  **Mandatoriedade**\
-  Opcional
+        UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ,
 
-  **Tipo de dado JSON**\
-  `string`
-</Accordion>
+        UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ,
 
-<Accordion title="journey">
-  **Descrição**\
-  Informações adicionais relacionadas à Jornada Otimizada.
+        UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ
+      </td>
+    </tr>
 
-  **Mandatoriedade**\
-  Opcional
+    <tr>
+      <td>
+        Dados de direitos creditórios
+      </td>
 
-  **Tipo de dado JSON**\
-  `object`
-</Accordion>
+      <td>
+        INVOICE_FINANCINGS_READ,
 
-<Accordion title="isLinked">
-  **Descrição**\
-  Indica se o consentimento foi iniciado via Jornada Otimizada.
+        INVOICE_FINANCINGS_WARRANTIES_READ,
 
-  **Mandatoriedade**\
-  Opcional
+        INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ,
 
-  **Tipo de dado JSON**\
-  `boolean`
-</Accordion>
+        INVOICE_FINANCINGS_PAYMENTS_READ
+      </td>
+    </tr>
 
-<Accordion title="linkId">
-  **Descrição**\
-  Identificador do consentimento de pagamento ou vínculo relacionado.
+    <tr>
+      <td>
+        Dados de renda fixa bancária
+      </td>
 
-  **Mandatoriedade**\
-  Opcional
+      <td>
+        BANK_FIXED_INCOMES_READ
+      </td>
+    </tr>
 
-  **Tipo de dado JSON**\
-  `string`
-</Accordion>
+    <tr>
+      <td>
+        Dados de renda fixa de crédito
+      </td>
+
+      <td>
+        CREDIT_FIXED_INCOMES_READ
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Dados de fundos
+      </td>
+
+      <td>
+        FUNDS_READ
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Dados de renda variável
+      </td>
+
+      <td>
+        VARIABLE_INCOMES_READ
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Dados de títulos do tesouro
+      </td>
+
+      <td>
+        TREASURE_TITLES_READ
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+A partir desta definição, basta realizar a chamada POST para o endpoint listado. Em casos de sucesso, a resposta conterá uma redirectUrlque deve ser utilizada para o redirecionamento do usuário final, por exemplo:
+
+```Text Redirect
+{
+  "redirectUrl": "https://auth.mockbank.poc.raidiam.io/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3AD2AKVKARaSdsGQ5KF_8Q8&client_id=yXYqweXJXhxqMebXy7j_e&state=WD2D99Nhn3nse80JoBP87n0E1IA8utKYxpxxDONIba2UPpTNGKLDod38gWlhhLexDgu9Y8xmuWzAJGhpibmDaNNG4bg3HzDYTIo3"
+}
+```
+
+<Callout icon="📘" theme="info">
+  **URL de redirecionamento**
+
+  A URL de redirecionamento recebida nesta chamada é uma URL do banco destino (transmissor) e deve ser acessada somente uma vez por consentimento. Esta URL não poderá ser reutilizada e chamadas subsequentes apresentarão erro. Neste caso, reinicie o fluxo desde o passo 3 deste guia.
+</Callout>
+
+# Passo 3 - Login e acesso à Instituição financeira
+
+<Callout icon="📘" theme="info">
+  **Acesso à instituição financeira**
+
+  O acesso à instituição financeira deve ser realizada pelo usuário final - que por sua vez deve realizar o início da sessão no domínio da instituição financeira (seja por celular ou web). Vale lembrar que o ambiente é da instituição financeira e não temos controle sobre a jornada do usuário neste acesso.
+</Callout>
+
+Após o redirecionamento, o usuário deverá realizar login na sua instituição financeira e finalizar a autorização do consentimento. Após a autorização ele será redirecionado para a URL parametrizada.
+
+# Passo 4 - Redirecionamento final do usuário
+
+<Callout icon="📘" theme="info">
+  **Redirecionamento Lina OpenX**
+
+  Para clientes que ainda estão em fases de testes, o redirecionamento sempre ocorrerá para a página:
+  Redirect Demo Page . Para testar futuras integrações, basta inserir a URL de redirecionamento no campo de redirecionamento. Para clientes em produção a URL configurada no cadastro sempre será utilizada para casos de erro ou sucesso.
+</Callout>
+
+# Passo 5 - Coletando userId e consultando dados
+
+<Callout icon="⚠️" theme="warn">
+  **Importância do campo userId**
+
+  Utilizamos o id do usuário como chave de identificação dos usuários na nossa base. Não realizamos consultas por informações pessoais como nomes e CPFs. Mesmo que um usuário realize inúmeros consentimentos (em diferentes instituições), sempre retornaremos o mesmo id de usuário - portanto, não existe a necessidade de armazenar diferentes IDs por transação.
+</Callout>
+
+Através da consulta da rota /api/v1/users/ é possível verificar o userId de todos os usuários com consentimento em sua base.
+
+<br />
