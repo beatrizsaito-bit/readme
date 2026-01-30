@@ -13225,7 +13225,8 @@
                   "properties": {
                     "accountId": {
                       "type": "string",
-                      "example": "291e5a29-49ed-401f-a583-193caa7acddd"
+                      "example": "291e5a29-49ed-401f-a583-193caa7acddd",
+                      "description": "Identifica de forma única a conta do cliente"
                     },
                     "authorisationServerId": {
                       "type": "string",
@@ -13233,27 +13234,33 @@
                     },
                     "branchCode": {
                       "type": "string",
-                      "example": "6272"
+                      "example": "6272",
+                      "description": "Código da Agência detentora da conta\n\nObrigatoriamente deve ser preenchido quando o campo \"type\" for diferente de CONTA_PAGAMENTO_PRE_PAGA.\n"
                     },
                     "brandName": {
                       "type": "string",
-                      "example": "Sib Bank"
+                      "example": "Sib Bank",
+                      "description": "Nome da Marca reportada pelo participante no Open Finance"
                     },
                     "checkDigit": {
                       "type": "string",
-                      "example": "4"
+                      "example": "4",
+                      "description": "Dígito da conta"
                     },
                     "companyCnpj": {
                       "type": "string",
-                      "example": "40156018000100"
+                      "example": "40156018000100",
+                      "description": "Número completo do CNPJ da instituição responsável pelo Cadastr"
                     },
                     "compeCode": {
                       "type": "string",
-                      "example": "123"
+                      "example": "123",
+                      "description": "Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR"
                     },
                     "number": {
                       "type": "string",
-                      "example": "11188222"
+                      "example": "11188222",
+                      "description": "Número da conta"
                     },
                     "organisationId": {
                       "type": "string",
@@ -13261,7 +13268,13 @@
                     },
                     "type": {
                       "type": "string",
-                      "example": "CONTA_POUPANCA"
+                      "example": "CONTA_POUPANCA",
+                      "description": "Tipos de contas",
+                      "enum": [
+                        "CONTA_DEPOSITO_A_VISTA",
+                        "CONTA_POUPANCA",
+                        "CONTA_PAGAMENTO_PRE_PAGA"
+                      ]
                     },
                     "updatedAt": {
                       "type": "string",
@@ -13272,33 +13285,58 @@
                       "properties": {
                         "compeCode": {
                           "type": "string",
-                          "example": "123"
+                          "example": "123",
+                          "description": "Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR"
                         },
                         "branchCode": {
                           "type": "string",
-                          "example": "6272"
+                          "example": "6272",
+                          "description": "Código da Agência detentora da conta"
                         },
                         "number": {
                           "type": "string",
-                          "example": "11188222"
+                          "example": "11188222",
+                          "description": "Dígito da conta"
                         },
                         "checkDigit": {
                           "type": "string",
-                          "example": "4"
+                          "example": "4",
+                          "description": "Dígito da conta"
                         },
                         "type": {
                           "type": "string",
-                          "example": "CONTA_POUPANCA"
+                          "example": "CONTA_POUPANCA",
+                          "description": "Tipos de contas",
+                          "enum": [
+                            "CONTA_DEPOSITO_A_VISTA",
+                            "CONTA_POUPANCA",
+                            "CONTA_PAGAMENTO_PRE_PAGA"
+                          ]
                         },
                         "subtype": {
                           "type": "string",
-                          "example": "INDIVIDUAL"
+                          "example": "INDIVIDUAL",
+                          "description": "Subtipo de conta",
+                          "enum": [
+                            "INDIVIDUAL",
+                            "CONJUNTA_SIMPLES",
+                            "CONJUNTA_SOLIDARIA"
+                          ]
                         },
                         "currency": {
                           "type": "string",
-                          "example": "BRL"
+                          "example": "BRL",
+                          "description": "Moeda referente ao valor da transação"
                         }
-                      }
+                      },
+                      "required": [
+                        "compeCode",
+                        "currency",
+                        "subtype",
+                        "type",
+                        "checkDigit",
+                        "number"
+                      ]
                     },
                     "balance": {
                       "type": "object",
@@ -13308,45 +13346,74 @@
                           "properties": {
                             "amount": {
                               "type": "string",
-                              "example": "41233.07"
+                              "example": "41233.07",
+                              "description": "\nValor"
                             },
                             "currency": {
                               "type": "string",
-                              "example": "BRL"
+                              "example": "BRL",
+                              "description": "Moeda referente ao valor monetário, seguindo o modelo ISO-4217"
                             }
-                          }
+                          },
+                          "description": "Saldo disponível para utilização imediata. No caso de conta de depósito a vista, sem considerar cheque especial e investimentos atrelados a conta.",
+                          "required": [
+                            "amount",
+                            "currency"
+                          ]
                         },
                         "blockedAmount": {
                           "type": "object",
                           "properties": {
                             "amount": {
                               "type": "string",
-                              "example": "999.99"
+                              "example": "999.99",
+                              "description": "\nValor"
                             },
                             "currency": {
                               "type": "string",
-                              "example": "BRL"
+                              "example": "BRL",
+                              "description": "Moeda referente ao valor monetário, seguindo o modelo ISO-4217."
                             }
-                          }
+                          },
+                          "description": "Saldo bloqueado, não disponível para utilização imediata",
+                          "required": [
+                            "amount",
+                            "currency"
+                          ]
                         },
                         "automaticallyInvestedAmount": {
                           "type": "object",
                           "properties": {
                             "amount": {
                               "type": "string",
-                              "example": "15000.00"
+                              "example": "15000.00",
+                              "description": "Valor"
                             },
                             "currency": {
                               "type": "string",
-                              "example": "BRL"
+                              "example": "BRL",
+                              "description": "Moeda referente ao valor monetário, seguindo o modelo ISO-4217"
                             }
-                          }
+                          },
+                          "description": "Saldo disponível com aplicação automática - corresponde a soma do saldo disponível acrescido do valor obtido a partir da aplicação automática",
+                          "required": [
+                            "currency",
+                            "amount"
+                          ]
                         },
                         "updateDateTime": {
                           "type": "string",
-                          "example": "2024-09-09T10:53:52Z"
+                          "example": "2024-09-09T10:53:52Z",
+                          "description": "Data e hora da última atualização do saldo"
                         }
-                      }
+                      },
+                      "description": "Informa saldos",
+                      "required": [
+                        "availableAmount",
+                        "automaticallyInvestedAmount",
+                        "blockedAmount",
+                        "updateDateTime"
+                      ]
                     },
                     "overdraftLimits": {
                       "type": "object",
@@ -13392,7 +13459,20 @@
                         }
                       }
                     }
-                  }
+                  },
+                  "required": [
+                    "type",
+                    "accountId",
+                    "authorisationServerId",
+                    "brandName",
+                    "checkDigit",
+                    "companyCnpj",
+                    "compeCode",
+                    "number",
+                    "organisationId",
+                    "updatedAt",
+                    "details"
+                  ]
                 },
                 "examples": {
                   "example": {
