@@ -13683,23 +13683,37 @@
                         "properties": {
                           "userId": {
                             "type": "string",
-                            "example": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017"
+                            "example": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017",
+                            "description": "Identificador  único do usuário"
                           },
                           "transactionId": {
                             "type": "string",
-                            "example": "901827b9-aba7-40c4-96a1-dd48846f3f57"
+                            "example": "901827b9-aba7-40c4-96a1-dd48846f3f57",
+                            "description": "Identificador único da transação individual"
                           },
                           "accountId": {
                             "type": "string",
-                            "example": "291e5a29-49ed-401f-a583-193caa7acddd"
+                            "example": "291e5a29-49ed-401f-a583-193caa7acddd",
+                            "description": "Identificador único da conta"
                           },
                           "completedAuthorisedPaymentType": {
                             "type": "string",
-                            "example": "TRANSACAO_EFETIVADA"
+                            "example": "TRANSACAO_EFETIVADA",
+                            "description": "Indicador do status da transação",
+                            "enum": [
+                              "TRANSACAO_EFETIVADA",
+                              "LANCAMENTO_FUTURO",
+                              "TRANSACAO_PROCESSANDO"
+                            ]
                           },
                           "creditDebitType": {
                             "type": "string",
-                            "example": "DEBITO"
+                            "example": "DEBITO",
+                            "description": "Indicador do tipo de lançamento no extrato, `DÉBITO` representa saídas na conta e `CRÉDITO` representa as entradas na conta",
+                            "enum": [
+                              "CREDITO",
+                              "DEBITO"
+                            ]
                           },
                           "partieBranchCode": {
                             "type": "string",
@@ -13750,7 +13764,13 @@
                             "type": "string",
                             "example": "CARTAO"
                           }
-                        }
+                        },
+                        "required": [
+                          "accountId",
+                          "transactionId",
+                          "completedAuthorisedPaymentType",
+                          "creditDebitType"
+                        ]
                       }
                     },
                     "totalRecords": {
