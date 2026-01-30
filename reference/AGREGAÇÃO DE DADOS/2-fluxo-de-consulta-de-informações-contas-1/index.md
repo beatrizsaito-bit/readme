@@ -15,5 +15,9 @@ As contas disponíveis para acesso são
 </Accordion>
 
 <Accordion title="Conta poupança">
-  O dinheiro fica disponível para ser sacado a qualquer momento e não gera rendimentos para o depositante
+	O dinheiro que ficar na conta por trinta dias passa a gerar rendimentos, com isenção de imposto de renda para quem declara
+</Accordion>
+
+<Accordion title="Conta de pagamento pré-paga">
+  É destinada à execução de transações de pagamento em moeda eletrônica realizadas com base em fundos denominados em reais previamente aportados (CIRCULAR Nº 3.680, BCB de  2013)
 </Accordion>
