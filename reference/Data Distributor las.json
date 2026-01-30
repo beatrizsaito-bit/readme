@@ -26635,6 +26635,28 @@
                         }
                       },
                       "description": "Objeto retornado quando o consentimento for rejeitado (Condicional)"
+                    },
+                    "additionalInformation": {
+                      "type": "string",
+                      "description": "Informações adicionais fornecidas pela instituição transmissora"
+                    },
+                    "journey": {
+                      "type": "object",
+                      "properties": {
+                        "isLinked": {
+                          "type": "boolean",
+                          "description": "Indica se o consentimento foi iniciado via Jornada Otimizada",
+                          "enum": [
+                            true,
+                            false
+                          ]
+                        },
+                        "linkId": {
+                          "type": "string",
+                          "description": "Identificador do consentimento de pagamento ou vínculo relacionado"
+                        }
+                      },
+                      "description": "Informações adicionais relacionadas à Jornada Otimizada"
                     }
                   },
                   "required": [
