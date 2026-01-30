@@ -13717,27 +13717,33 @@
                           },
                           "partieBranchCode": {
                             "type": "string",
-                            "example": "6272"
+                            "example": "6272",
+                            "description": "Código da agência"
                           },
                           "partieCheckDigit": {
                             "type": "string",
-                            "example": "4"
+                            "example": "4",
+                            "description": "Dígito da conta"
                           },
                           "partieCnpjCpf": {
                             "type": "string",
-                            "example": "87517400444"
+                            "example": "87517400444",
+                            "description": "Identificação da pessoa envolvida na transação: pagador ou recebedor"
                           },
                           "partieCompeCode": {
                             "type": "string",
-                            "example": "123"
+                            "example": "123",
+                            "description": "Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR"
                           },
                           "partieNumber": {
                             "type": "string",
-                            "example": "94088392"
+                            "example": "94088392",
+                            "description": "Número da conta da pessoa envolvida na transação"
                           },
                           "partiePersonType": {
                             "type": "string",
-                            "example": "PESSOA_NATURAL"
+                            "example": "PESSOA_NATURAL",
+                            "description": "Identificação do tipo de pessoa da pessoa envolvida na transação, `PESSOA_NATURAL`  refere-se a pessoa física"
                           },
                           "transactionAmount": {
                             "type": "object",
