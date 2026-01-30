@@ -29158,7 +29158,8 @@
             "name": "tenant_id",
             "in": "path",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "tenant-id"
             },
             "required": true,
             "example": "alex-teste"
