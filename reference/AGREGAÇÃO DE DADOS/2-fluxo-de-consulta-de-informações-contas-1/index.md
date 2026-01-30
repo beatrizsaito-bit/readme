@@ -29,7 +29,7 @@ Os tipos de conta possíveis são
 Os subtipos de conta possíveis são
 
 <Accordion title="Conta individual ">
-  Possui um único titula
+  Possui um único titular
 </Accordion>
 
 <Accordion title="Conta conjunta simples">
