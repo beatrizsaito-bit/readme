@@ -26585,6 +26585,14 @@
                     "status": {
                       "type": "string",
                       "description": "estado do consentimento, podendo ser `AUTHORISED`,  `AWAITING_AUTHORISATION` , `REJECTED`"
+                    },
+                    "statusUpdateDateTime": {
+                      "type": "string",
+                      "description": "Data e hora da última atualização do consentimento em UTC"
+                    },
+                    "permissions": {
+                      "type": "string",
+                      "description": "Lista de permissões concedidas para acesso às APIs do Open Finance Brasil. Consulte a tabela em [consentimentos](https://lina-itp.readme.io/update/reference/1-fluxo-de-consentimento)"
                     }
                   },
                   "required": [
