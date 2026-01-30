@@ -27268,12 +27268,17 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "name": {
-                      "type": "string"
+                    "consentId": {
+                      "type": "string",
+                      "description": "Identificador único do consentimento"
+                    },
+                    "creationDateTime": {
+                      "type": "string",
+                      "description": "Data e hora de criação em UTC\n"
                     }
                   },
                   "required": [
-                    "name"
+                    "consentId"
                   ]
                 }
               }
