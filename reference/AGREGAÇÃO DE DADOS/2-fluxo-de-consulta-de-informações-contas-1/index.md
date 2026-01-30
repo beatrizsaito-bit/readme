@@ -14,8 +14,6 @@ As contas disponíveis para acesso são
   O dinheiro fica disponível para ser sacado a qualquer momento e não gera rendimentos para o depositante
 </Accordion>
 
-<br />
-
 <Accordion title="Conta poupança">
   O dinheiro fica disponível para ser sacado a qualquer momento e não gera rendimentos para o depositante
 </Accordion>
