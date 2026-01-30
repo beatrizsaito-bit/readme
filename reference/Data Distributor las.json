@@ -26584,7 +26584,7 @@
                     },
                     "status": {
                       "type": "string",
-                      "description": "estado do consentimento, podendo ser `AUTHORISED`, AWAITING_AUTHORISATION, REJECTED"
+                      "description": "estado do consentimento, podendo ser `AUTHORISED`, `AWAITING_AUTHORISATION`, `REJECTED`"
                     }
                   },
                   "required": [
