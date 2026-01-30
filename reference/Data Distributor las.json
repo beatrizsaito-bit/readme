@@ -12446,145 +12446,543 @@
                   "OK": {
                     "summary": "OK",
                     "value": {
-                      "cpf": "12345678912",
-                      "banks": [
-                        {
-                          "authorisationServerId": "9326f9b2-ae57-42c4-a0d9-acc4ba434696",
-                          "organisationId": "e5a1c7ad-11d4-560d-914c-611003a39219"
-                        },
-                        {
-                          "authorisationServerId": "06c19499-3412-4125-84b7-d0fbc98b5019",
-                          "organisationId": "926e3037-a685-553c-afa3-f7cb46ff8084"
-                        }
-                      ],
-                      "updatedAt": "2025-10-10T13:20:36.233Z",
-                      "userId": "1e72b948-d688-4783-9a08-4ee85f34ba5e",
-                      "tenantIdList": [
-                        "test"
-                      ],
-                      "userData": [
-                        {
-                          "userId": "1e72b948-d688-4783-9a08-4ee85f34ba5e",
-                          "authorisationServerId": "06c19499-3412-4125-84b7-d0fbc98b5019",
-                          "encripted": true,
-                          "identification": {
-                            "socialName": "Tatiana Teste",
-                            "hasBrazilianNationality": true,
-                            "sex": "FEMININO",
-                            "contacts": {
-                              "phones": [
+                      "data": {
+                        "cpf": "12345678912",
+                        "banks": [
+                          {
+                            "authorisationServerId": "9326f9b2-ae57-42c4-a0d9-acc4ba434696",
+                            "organisationId": "e5a1c7ad-11d4-560d-914c-611003a39219"
+                          },
+                          {
+                            "authorisationServerId": "06c19499-3412-4125-84b7-d0fbc98b5019",
+                            "organisationId": "926e3037-a685-553c-afa3-f7cb46ff8084"
+                          }
+                        ],
+                        "updatedAt": "2025-10-10T13:20:36.233Z",
+                        "userId": "1e72b948-d688-4783-9a08-4ee85f34ba5e",
+                        "tenantIdList": [
+                          "test"
+                        ],
+                        "userData": [
+                          {
+                            "userId": "1e72b948-d688-4783-9a08-4ee85f34ba5e",
+                            "authorisationServerId": "06c19499-3412-4125-84b7-d0fbc98b5019",
+                            "encripted": true,
+                            "identification": {
+                              "socialName": "Tatiana Teste",
+                              "hasBrazilianNationality": true,
+                              "sex": "FEMININO",
+                              "contacts": {
+                                "phones": [
+                                  {
+                                    "isMain": true,
+                                    "areaCode": "11",
+                                    "number": "999999999",
+                                    "type": "MOVEL",
+                                    "countryCallingCode": "55"
+                                  }
+                                ],
+                                "postalAddresses": [
+                                  {
+                                    "address": "Rua Correia Dias, 93",
+                                    "isMain": true,
+                                    "townName": "São Paulo",
+                                    "postCode": " 04104000",
+                                    "country": "Brasil",
+                                    "countrySubDivision": "SP",
+                                    "districtName": "Paraiso"
+                                  }
+                                ],
+                                "emails": [
+                                  {
+                                    "isMain": true,
+                                    "email": "tatianateste@linaopenx.com.br"
+                                  }
+                                ]
+                              },
+                              "maritalStatusCode": "SOLTEIRO",
+                              "birthDate": "1990-01-01",
+                              "companiesCnpj": [
+                                "18236120000158"
+                              ],
+                              "documents": {
+                                "cpfNumber": "12345678912"
+                              },
+                              "updateDateTime": "2025-01-23T17:10:21Z",
+                              "otherDocuments": [
                                 {
-                                  "isMain": true,
-                                  "areaCode": "11",
-                                  "number": "999999999",
-                                  "type": "MOVEL",
-                                  "countryCallingCode": "55"
+                                  "number": "289437702",
+                                  "type": "RG"
                                 }
                               ],
-                              "postalAddresses": [
+                              "civilName": "Tatiana Teste",
+                              "brandName": "Nubank",
+                              "personalId": "4b2992ef-d121-4f98-8c62-c6446fb21232",
+                              "filiation": [
                                 {
-                                  "address": "Rua Correia Dias, 93",
-                                  "isMain": true,
-                                  "townName": "São Paulo",
-                                  "postCode": " 04104000",
-                                  "country": "Brasil",
-                                  "countrySubDivision": "SP",
-                                  "districtName": "Paraiso"
-                                }
-                              ],
-                              "emails": [
-                                {
-                                  "isMain": true,
-                                  "email": "tatianateste@linaopenx.com.br"
+                                  "type": "MAE",
+                                  "civilName": "Cláudia Eduarda"
                                 }
                               ]
                             },
-                            "maritalStatusCode": "SOLTEIRO",
-                            "birthDate": "1990-01-01",
-                            "companiesCnpj": [
-                              "18236120000158"
-                            ],
-                            "documents": {
-                              "cpfNumber": "12345678912"
-                            },
-                            "updateDateTime": "2025-01-23T17:10:21Z",
-                            "otherDocuments": [
-                              {
-                                "number": "289437702",
-                                "type": "RG"
-                              }
-                            ],
-                            "civilName": "Tatiana Teste",
-                            "brandName": "Nubank",
-                            "personalId": "4b2992ef-d121-4f98-8c62-c6446fb21232",
-                            "filiation": [
-                              {
-                                "type": "MAE",
-                                "civilName": "Cláudia Eduarda"
-                              }
-                            ]
-                          },
-                          "organisationId": "926e3037-a685-553c-afa3-f7cb46ff8084",
-                          "qualification": {
-                            "updateDateTime": "2025-01-23T17:10:21Z",
-                            "informedPatrimony": {
-                              "amount": {
-                                "amount": "10001.0000",
-                                "currency": "BRL"
+                            "organisationId": "926e3037-a685-553c-afa3-f7cb46ff8084",
+                            "qualification": {
+                              "updateDateTime": "2025-01-23T17:10:21Z",
+                              "informedPatrimony": {
+                                "amount": {
+                                  "amount": "10001.0000",
+                                  "currency": "BRL"
+                                },
+                                "year": 2020
                               },
-                              "year": 2020
-                            },
-                            "companyCnpj": "null",
-                            "occupationCode": "OUTRO",
-                            "informedIncome": {
-                              "frequency": "MENSAL",
-                              "amount": {
-                                "amount": "null",
-                                "currency": "BRL"
+                              "companyCnpj": "null",
+                              "occupationCode": "OUTRO",
+                              "informedIncome": {
+                                "frequency": "MENSAL",
+                                "amount": {
+                                  "amount": "null",
+                                  "currency": "BRL"
+                                },
+                                "date": "2025-01-23"
                               },
-                              "date": "2025-01-23"
+                              "occupationDescription": "analyst"
                             },
-                            "occupationDescription": "analyst"
-                          },
-                          "relations": {
-                            "updateDateTime": "2025-01-23T17:10:21Z",
-                            "portabilitiesReceived": [
-                              {
-                                "employerName": " ",
-                                "paycheckBankDetainerCnpj": " ",
-                                "portabilityApprovalDate": " ",
-                                "paycheckBankDetainerIspb": " ",
-                                "employerCnpjCpf": ""
-                              }
-                            ],
-                            "startDate": "2018-04-24T18:51:18Z",
-                            "accounts": [
-                              {
-                                "compeCode": "260",
-                                "branchCode": "0001",
-                                "number": "01204121",
-                                "checkDigit": "1",
-                                "type": "CONTA_PAGAMENTO_PRE_PAGA",
-                                "subtype": "INDIVIDUAL"
-                              }
-                            ],
-                            "productsServicesType": [
-                              "CONTA_DEPOSITO_A_VISTA",
-                              "CARTAO_CREDITO"
-                            ],
-                            "procurators": []
-                          },
-                          "updatedAt": "2025-10-10T13:22:19.033Z"
-                        }
-                      ]
+                            "relations": {
+                              "updateDateTime": "2025-01-23T17:10:21Z",
+                              "portabilitiesReceived": [
+                                {
+                                  "employerName": " ",
+                                  "paycheckBankDetainerCnpj": " ",
+                                  "portabilityApprovalDate": " ",
+                                  "paycheckBankDetainerIspb": " ",
+                                  "employerCnpjCpf": ""
+                                }
+                              ],
+                              "startDate": "2018-04-24T18:51:18Z",
+                              "accounts": [
+                                {
+                                  "compeCode": "260",
+                                  "branchCode": "0001",
+                                  "number": "01204121",
+                                  "checkDigit": "1",
+                                  "type": "CONTA_PAGAMENTO_PRE_PAGA",
+                                  "subtype": "INDIVIDUAL"
+                                }
+                              ],
+                              "productsServicesType": [
+                                "CONTA_DEPOSITO_A_VISTA",
+                                "CARTAO_CREDITO"
+                              ],
+                              "procurators": []
+                            },
+                            "updatedAt": "2025-10-10T13:22:19.033Z"
+                          }
+                        ]
+                      }
                     }
                   }
                 },
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "data": {
-                      "type": "string"
+                    "cpf": {
+                      "type": "string",
+                      "example": "12345678912"
+                    },
+                    "banks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "authorisationServerId": {
+                            "type": "string",
+                            "example": "9326f9b2-ae57-42c4-a0d9-acc4ba434696"
+                          },
+                          "organisationId": {
+                            "type": "string",
+                            "example": "e5a1c7ad-11d4-560d-914c-611003a39219"
+                          }
+                        }
+                      }
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "example": "2025-10-10T13:20:36.233Z"
+                    },
+                    "userId": {
+                      "type": "string",
+                      "example": "1e72b948-d688-4783-9a08-4ee85f34ba5e"
+                    },
+                    "tenantIdList": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "example": "test"
+                      }
+                    },
+                    "userData": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "userId": {
+                            "type": "string",
+                            "example": "1e72b948-d688-4783-9a08-4ee85f34ba5e"
+                          },
+                          "authorisationServerId": {
+                            "type": "string",
+                            "example": "06c19499-3412-4125-84b7-d0fbc98b5019"
+                          },
+                          "encripted": {
+                            "type": "boolean",
+                            "example": true,
+                            "default": true
+                          },
+                          "identification": {
+                            "type": "object",
+                            "properties": {
+                              "socialName": {
+                                "type": "string",
+                                "example": "Tatiana Teste"
+                              },
+                              "hasBrazilianNationality": {
+                                "type": "boolean",
+                                "example": true,
+                                "default": true
+                              },
+                              "sex": {
+                                "type": "string",
+                                "example": "FEMININO"
+                              },
+                              "contacts": {
+                                "type": "object",
+                                "properties": {
+                                  "phones": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "isMain": {
+                                          "type": "boolean",
+                                          "example": true,
+                                          "default": true
+                                        },
+                                        "areaCode": {
+                                          "type": "string",
+                                          "example": "11"
+                                        },
+                                        "number": {
+                                          "type": "string",
+                                          "example": "999999999"
+                                        },
+                                        "type": {
+                                          "type": "string",
+                                          "example": "MOVEL"
+                                        },
+                                        "countryCallingCode": {
+                                          "type": "string",
+                                          "example": "55"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "postalAddresses": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "address": {
+                                          "type": "string",
+                                          "example": "Rua Correia Dias, 93"
+                                        },
+                                        "isMain": {
+                                          "type": "boolean",
+                                          "example": true,
+                                          "default": true
+                                        },
+                                        "townName": {
+                                          "type": "string",
+                                          "example": "São Paulo"
+                                        },
+                                        "postCode": {
+                                          "type": "string",
+                                          "example": " 04104000"
+                                        },
+                                        "country": {
+                                          "type": "string",
+                                          "example": "Brasil"
+                                        },
+                                        "countrySubDivision": {
+                                          "type": "string",
+                                          "example": "SP"
+                                        },
+                                        "districtName": {
+                                          "type": "string",
+                                          "example": "Paraiso"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "emails": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "isMain": {
+                                          "type": "boolean",
+                                          "example": true,
+                                          "default": true
+                                        },
+                                        "email": {
+                                          "type": "string",
+                                          "example": "tatianateste@linaopenx.com.br"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "maritalStatusCode": {
+                                "type": "string",
+                                "example": "SOLTEIRO"
+                              },
+                              "birthDate": {
+                                "type": "string",
+                                "example": "1990-01-01"
+                              },
+                              "companiesCnpj": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string",
+                                  "example": "18236120000158"
+                                }
+                              },
+                              "documents": {
+                                "type": "object",
+                                "properties": {
+                                  "cpfNumber": {
+                                    "type": "string",
+                                    "example": "12345678912"
+                                  }
+                                }
+                              },
+                              "updateDateTime": {
+                                "type": "string",
+                                "example": "2025-01-23T17:10:21Z"
+                              },
+                              "otherDocuments": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "number": {
+                                      "type": "string",
+                                      "example": "289437702"
+                                    },
+                                    "type": {
+                                      "type": "string",
+                                      "example": "RG"
+                                    }
+                                  }
+                                }
+                              },
+                              "civilName": {
+                                "type": "string",
+                                "example": "Tatiana Teste"
+                              },
+                              "brandName": {
+                                "type": "string",
+                                "example": "Nubank"
+                              },
+                              "personalId": {
+                                "type": "string",
+                                "example": "4b2992ef-d121-4f98-8c62-c6446fb21232"
+                              },
+                              "filiation": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "example": "MAE"
+                                    },
+                                    "civilName": {
+                                      "type": "string",
+                                      "example": "Cláudia Eduarda"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "organisationId": {
+                            "type": "string",
+                            "example": "926e3037-a685-553c-afa3-f7cb46ff8084"
+                          },
+                          "qualification": {
+                            "type": "object",
+                            "properties": {
+                              "updateDateTime": {
+                                "type": "string",
+                                "example": "2025-01-23T17:10:21Z"
+                              },
+                              "informedPatrimony": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "object",
+                                    "properties": {
+                                      "amount": {
+                                        "type": "string",
+                                        "example": "10001.0000"
+                                      },
+                                      "currency": {
+                                        "type": "string",
+                                        "example": "BRL"
+                                      }
+                                    }
+                                  },
+                                  "year": {
+                                    "type": "integer",
+                                    "example": 2020,
+                                    "default": 0
+                                  }
+                                }
+                              },
+                              "companyCnpj": {
+                                "type": "string",
+                                "example": "null"
+                              },
+                              "occupationCode": {
+                                "type": "string",
+                                "example": "OUTRO"
+                              },
+                              "informedIncome": {
+                                "type": "object",
+                                "properties": {
+                                  "frequency": {
+                                    "type": "string",
+                                    "example": "MENSAL"
+                                  },
+                                  "amount": {
+                                    "type": "object",
+                                    "properties": {
+                                      "amount": {
+                                        "type": "string",
+                                        "example": "null"
+                                      },
+                                      "currency": {
+                                        "type": "string",
+                                        "example": "BRL"
+                                      }
+                                    }
+                                  },
+                                  "date": {
+                                    "type": "string",
+                                    "example": "2025-01-23"
+                                  }
+                                }
+                              },
+                              "occupationDescription": {
+                                "type": "string",
+                                "example": "analyst"
+                              }
+                            }
+                          },
+                          "relations": {
+                            "type": "object",
+                            "properties": {
+                              "updateDateTime": {
+                                "type": "string",
+                                "example": "2025-01-23T17:10:21Z"
+                              },
+                              "portabilitiesReceived": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "employerName": {
+                                      "type": "string",
+                                      "example": " "
+                                    },
+                                    "paycheckBankDetainerCnpj": {
+                                      "type": "string",
+                                      "example": " "
+                                    },
+                                    "portabilityApprovalDate": {
+                                      "type": "string",
+                                      "example": " "
+                                    },
+                                    "paycheckBankDetainerIspb": {
+                                      "type": "string",
+                                      "example": " "
+                                    },
+                                    "employerCnpjCpf": {
+                                      "type": "string",
+                                      "example": ""
+                                    }
+                                  }
+                                }
+                              },
+                              "startDate": {
+                                "type": "string",
+                                "example": "2018-04-24T18:51:18Z"
+                              },
+                              "accounts": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "compeCode": {
+                                      "type": "string",
+                                      "example": "260"
+                                    },
+                                    "branchCode": {
+                                      "type": "string",
+                                      "example": "0001"
+                                    },
+                                    "number": {
+                                      "type": "string",
+                                      "example": "01204121"
+                                    },
+                                    "checkDigit": {
+                                      "type": "string",
+                                      "example": "1"
+                                    },
+                                    "type": {
+                                      "type": "string",
+                                      "example": "CONTA_PAGAMENTO_PRE_PAGA"
+                                    },
+                                    "subtype": {
+                                      "type": "string",
+                                      "example": "INDIVIDUAL"
+                                    }
+                                  }
+                                }
+                              },
+                              "productsServicesType": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string",
+                                  "example": "CONTA_DEPOSITO_A_VISTA"
+                                }
+                              },
+                              "procurators": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "example": "2025-10-10T13:22:19.033Z"
+                          }
+                        }
+                      }
                     }
                   }
                 }
