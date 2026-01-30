@@ -29159,7 +29159,7 @@
             "in": "path",
             "schema": {
               "type": "string",
-              "default": "tenant-id"
+              "default": ""
             },
             "required": true,
             "example": "alex-teste"
