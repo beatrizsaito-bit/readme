@@ -10,6 +10,12 @@ hidden: false
 
 As contas disponíveis para acesso são
 
-<Accordion title="Conta de depósito à vista ou conta corrente" icon="fa-info-circle">
+<Accordion title="Conta de depósito à vista ou conta corrente">
+  O dinheiro fica disponível para ser sacado a qualquer momento e não gera rendimentos para o depositante
+</Accordion>
+
+<br />
+
+<Accordion title="Conta poupança">
   O dinheiro fica disponível para ser sacado a qualquer momento e não gera rendimentos para o depositante
 </Accordion>
