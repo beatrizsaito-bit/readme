@@ -26593,11 +26593,43 @@
                     "permissions": {
                       "type": "string",
                       "description": "Lista de permissões concedidas para acesso às APIs do Open Finance Brasil. Consulte tabela em [consentimentos](https://lina-itp.readme.io/reference/consentimentos)"
+                    },
+                    "expirationDateTime": {
+                      "type": "string",
+                      "description": "Data e hora de expiração do consentimento apenas quando houver validade determinada em UTC\n\nCondicional"
+                    },
+                    "rejection": {
+                      "type": "object",
+                      "properties": {
+                        "rejectedBy": {
+                          "type": "string",
+                          "description": "Identifica quem realizou a rejeição do consentimento.\n\n`USER` - usuário\n`ASPSP` - instituição transmissora\n`TPP` - instituição receptora",
+                          "enum": [
+                            "ASPSP",
+                            "TPP",
+                            "USER"
+                          ]
+                        },
+                        "reason": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                              "description": "Código padronizado que representa a razão da rejeição.\n\n`CONSENT_EXPIRED` – consentimento que ultrapassou o tempo limite para autorização.\n`CUSTOMER_MANUALLY_REJECTED` – cliente efetuou a rejeição do consentimento manualmente através de interação nas instituições participantes.\n`CUSTOMER_MANUALLY_REVOKED` – cliente efetuou a revogação após a autorização do consentimento.\n`CONSENT_MAX_DATE_REACHED` – consentimento que ultrapassou o tempo limite de compartilhamento.\n`CONSENT_TECHNICAL_ISSUE` – consentimento que foi rejeitado devido a um problema técnico que impossibilita seu uso pela instituição receptora, por exemplo: falha associada a troca do AuthCode pelo AccessToken, durante o processo de Hybrid Flow.\n` INTERNAL_SECURITY_REASON` – consentimento que foi rejeitado devido as políticas de segurança aplicada pela instituição transmissora."
+                            }
+                          },
+                          "description": "Detalha o motivo da rejeição do consentimento"
+                        }
+                      }
                     }
                   },
                   "required": [
                     "creationDateTime",
-                    "consentId"
+                    "consentId",
+                    "permissions",
+                    "statusUpdatedDateTime",
+                    "status",
+                    "rejection"
                   ]
                 },
                 "example": {
