@@ -10,13 +10,11 @@ metadata:
 
 # Passo 1 - Liste as instituições disponíveis
 
-
-
 <Callout icon="📘" theme="info">
   A Postman Collection disponível para download possui numeração para orientar as chamadas de Fluxo de consentimento.
 </Callout>
 
-Realize a consulta no endpoint de listagem de insituições participantes do Open Finance.  
+Realize a consulta no endpoint de listagem de insituições participantes do Open Finance.
 
 Cada instituição possuem um **OrganisationId**  e do **AuthorisationServerId**, identifique e copie os valores da instituição que será solicitado o consentimento.
 
@@ -26,7 +24,7 @@ Para caso de consentimento de pessoa física será necessário o CPF do usuário
 
 Você precisará enviar o `organisation_id`, `authorisation_server_id` e `user_cpf` preenchidos, além das permissões que deseja consultar.
 
-<Callout icon="❗️">
+<Callout icon="❗️" theme="error">
   A permissão **RESOURCES_READ** deve ser preenchida em toda requisição
 </Callout>
 
@@ -40,7 +38,7 @@ Abaixo está a lista com as permissões necessários para cada agrupamento de da
       </th>
 
       <th>
-        Permissão necessãria
+        Permissões necessárias
       </th>
     </tr>
   </thead>
@@ -269,7 +267,7 @@ Após o redirecionamento, o usuário deverá realizar login na sua instituição
 
 # Passo 5 - Coletando userId e consultando dados
 
-<Callout icon="⚠️">
+<Callout icon="⚠️" theme="warn">
   **Importância do campo userId**
 
   Utilizamos o id do usuário como chave de identificação dos usuários na nossa base. Não realizamos consultas por informações pessoais como nomes e CPFs. Mesmo que um usuário realize inúmeros consentimentos (em diferentes instituições), sempre retornaremos o mesmo id de usuário - portanto, não existe a necessidade de armazenar diferentes IDs por transação.
