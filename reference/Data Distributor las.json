@@ -13221,226 +13221,191 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "accountId": {
+                            "type": "string",
+                            "example": "291e5a29-49ed-401f-a583-193caa7acddd"
+                          },
+                          "authorisationServerId": {
+                            "type": "string",
+                            "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                          },
+                          "branchCode": {
+                            "type": "string",
+                            "example": "6272"
+                          },
+                          "brandName": {
+                            "type": "string",
+                            "example": "Sib Bank"
+                          },
+                          "checkDigit": {
+                            "type": "string",
+                            "example": "4"
+                          },
+                          "companyCnpj": {
+                            "type": "string",
+                            "example": "40156018000100"
+                          },
+                          "compeCode": {
+                            "type": "string",
+                            "example": "123"
+                          },
+                          "number": {
+                            "type": "string",
+                            "example": "11188222"
+                          },
+                          "organisationId": {
+                            "type": "string",
+                            "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "CONTA_POUPANCA"
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "example": "2024-09-09T18:00:46.349Z"
+                          },
+                          "details": {
+                            "type": "object",
+                            "properties": {
+                              "compeCode": {
+                                "type": "string",
+                                "example": "123"
+                              },
+                              "branchCode": {
+                                "type": "string",
+                                "example": "6272"
+                              },
+                              "number": {
+                                "type": "string",
+                                "example": "11188222"
+                              },
+                              "checkDigit": {
+                                "type": "string",
+                                "example": "4"
+                              },
+                              "type": {
+                                "type": "string",
+                                "example": "CONTA_POUPANCA"
+                              },
+                              "subtype": {
+                                "type": "string",
+                                "example": "INDIVIDUAL"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "balance": {
+                            "type": "object",
+                            "properties": {
+                              "availableAmount": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "41233.07"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "blockedAmount": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "999.99"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "automaticallyInvestedAmount": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "15000.00"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "updateDateTime": {
+                                "type": "string",
+                                "example": "2024-09-09T10:53:52Z"
+                              }
+                            }
+                          },
+                          "overdraftLimits": {
+                            "type": "object",
+                            "properties": {
+                              "overdraftContractedLimit": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "99.9999"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "overdraftUsedLimit": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "12345.40"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "unarrangedOverdraftAmount": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "99.9999"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 },
                 "examples": {
-                  "example-0": {
-                    "summary": "Listagem de contas",
-                    "value": {
-                      "data": [
-                        {
-                          "accountId": "291e5a29-49ed-401f-a583-193caa7acddd",
-                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                          "branchCode": "6272",
-                          "brandName": "Sib Bank",
-                          "checkDigit": "4",
-                          "companyCnpj": "40156018000100",
-                          "compeCode": "123",
-                          "number": "11188222",
-                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                          "type": "CONTA_POUPANCA",
-                          "updatedAt": "2024-09-09T18:00:46.349Z",
-                          "details": {
-                            "compeCode": "123",
-                            "branchCode": "6272",
-                            "number": "11188222",
-                            "checkDigit": "4",
-                            "type": "CONTA_POUPANCA",
-                            "subtype": "INDIVIDUAL",
-                            "currency": "BRL"
-                          },
-                          "balance": {
-                            "availableAmount": {
-                              "amount": "41233.07",
-                              "currency": "BRL"
-                            },
-                            "blockedAmount": {
-                              "amount": "999.99",
-                              "currency": "BRL"
-                            },
-                            "automaticallyInvestedAmount": {
-                              "amount": "15000.00",
-                              "currency": "BRL"
-                            },
-                            "updateDateTime": "2024-09-09T10:53:52Z"
-                          },
-                          "overdraftLimits": {
-                            "overdraftContractedLimit": {
-                              "amount": "99.9999",
-                              "currency": "BRL"
-                            },
-                            "overdraftUsedLimit": {
-                              "amount": "12345.40",
-                              "currency": "BRL"
-                            },
-                            "unarrangedOverdraftAmount": {
-                              "amount": "99.9999",
-                              "currency": "BRL"
-                            }
-                          }
-                        },
-                        {
-                          "accountId": "291e5a29-49ed-401f-a583-193caa7aceee",
-                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                          "branchCode": "6272",
-                          "brandName": "Sib Bank",
-                          "checkDigit": "4",
-                          "companyCnpj": "40156018000100",
-                          "compeCode": "123",
-                          "number": "94088392",
-                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                          "type": "CONTA_DEPOSITO_A_VISTA",
-                          "updatedAt": "2024-09-09T18:00:50.299Z",
-                          "details": {
-                            "compeCode": "123",
-                            "branchCode": "6272",
-                            "number": "94088392",
-                            "checkDigit": "4",
-                            "type": "CONTA_DEPOSITO_A_VISTA",
-                            "subtype": "INDIVIDUAL",
-                            "currency": "BRL"
-                          },
-                          "balance": {
-                            "availableAmount": {
-                              "amount": "100000000.04",
-                              "currency": "BRL"
-                            },
-                            "blockedAmount": {
-                              "amount": "12345.0001",
-                              "currency": "BRL"
-                            },
-                            "automaticallyInvestedAmount": {
-                              "amount": "15000.00",
-                              "currency": "BRL"
-                            },
-                            "updateDateTime": "2024-09-09T16:47:45Z"
-                          },
-                          "overdraftLimits": {
-                            "overdraftContractedLimit": {
-                              "amount": "99.9999",
-                              "currency": "BRL"
-                            },
-                            "overdraftUsedLimit": {
-                              "amount": "10000.9999",
-                              "currency": "BRL"
-                            },
-                            "unarrangedOverdraftAmount": {
-                              "amount": "99.9999",
-                              "currency": "BRL"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  "example-1": {
-                    "summary": "Listagem de contas",
-                    "value": {
-                      "data": [
-                        {
-                          "accountId": "291e5a29-49ed-401f-a583-193caa7acddd",
-                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                          "branchCode": "6272",
-                          "brandName": "Sib Bank",
-                          "checkDigit": "4",
-                          "companyCnpj": "40156018000100",
-                          "compeCode": "123",
-                          "number": "11188222",
-                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                          "type": "CONTA_POUPANCA",
-                          "updatedAt": "2025-05-08T02:24:34.731Z",
-                          "details": {
-                            "compeCode": "123",
-                            "branchCode": "6272",
-                            "number": "11188222",
-                            "checkDigit": "4",
-                            "type": "CONTA_POUPANCA",
-                            "subtype": "INDIVIDUAL",
-                            "currency": "BRL"
-                          },
-                          "balance": {
-                            "availableAmount": {
-                              "amount": "41233.07",
-                              "currency": "BRL"
-                            },
-                            "blockedAmount": {
-                              "amount": "999.99",
-                              "currency": "BRL"
-                            },
-                            "automaticallyInvestedAmount": {
-                              "amount": "15000.00",
-                              "currency": "BRL"
-                            },
-                            "updateDateTime": "2025-04-22T12:34:18Z"
-                          },
-                          "overdraftLimits": {
-                            "overdraftContractedLimit": {
-                              "amount": "99.9999",
-                              "currency": "BRL"
-                            },
-                            "overdraftUsedLimit": {
-                              "amount": "12345.40",
-                              "currency": "BRL"
-                            },
-                            "unarrangedOverdraftAmount": {
-                              "amount": "99.9999",
-                              "currency": "BRL"
-                            }
-                          }
-                        },
-                        {
-                          "accountId": "291e5a29-49ed-401f-a583-193caa7aceee",
-                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                          "branchCode": "6272",
-                          "brandName": "Sib Bank",
-                          "checkDigit": "4",
-                          "companyCnpj": "40156018000100",
-                          "compeCode": "123",
-                          "number": "94088392",
-                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                          "type": "CONTA_DEPOSITO_A_VISTA",
-                          "updatedAt": "2025-05-08T02:24:37.760Z",
-                          "details": {
-                            "compeCode": "123",
-                            "branchCode": "6272",
-                            "number": "94088392",
-                            "checkDigit": "4",
-                            "type": "CONTA_DEPOSITO_A_VISTA",
-                            "subtype": "INDIVIDUAL",
-                            "currency": "BRL"
-                          },
-                          "balance": {
-                            "availableAmount": {
-                              "amount": "100000000.04",
-                              "currency": "BRL"
-                            },
-                            "blockedAmount": {
-                              "amount": "12345.0001",
-                              "currency": "BRL"
-                            },
-                            "automaticallyInvestedAmount": {
-                              "amount": "15000.00",
-                              "currency": "BRL"
-                            },
-                            "updateDateTime": "2025-04-24T14:59:26Z"
-                          },
-                          "overdraftLimits": {
-                            "overdraftContractedLimit": {
-                              "amount": "99.9999",
-                              "currency": "BRL"
-                            },
-                            "overdraftUsedLimit": {
-                              "amount": "10000.9999",
-                              "currency": "BRL"
-                            },
-                            "unarrangedOverdraftAmount": {
-                              "amount": "99.9999",
-                              "currency": "BRL"
-                            }
-                          }
-                        }
-                      ]
-                    }
+                  "OK": {
+                    "summary": "OK",
+                    "value": "    {\n      \"accountId\": \"291e5a29-49ed-401f-a583-193caa7acddd\",\n      \"authorisationServerId\": \"c8f0bf49-4744-4933-8960-7add6e590841\",\n      \"branchCode\": \"6272\",\n      \"brandName\": \"Sib Bank\",\n      \"checkDigit\": \"4\",\n      \"companyCnpj\": \"40156018000100\",\n      \"compeCode\": \"123\",\n      \"number\": \"11188222\",\n      \"organisationId\": \"74e929d9-33b6-4d85-8ba7-c146c867a817\",\n      \"type\": \"CONTA_POUPANCA\",\n      \"updatedAt\": \"2024-09-09T18:00:46.349Z\",\n      \"details\": {\n        \"compeCode\": \"123\",\n        \"branchCode\": \"6272\",\n        \"number\": \"11188222\",\n        \"checkDigit\": \"4\",\n        \"type\": \"CONTA_POUPANCA\",\n        \"subtype\": \"INDIVIDUAL\",\n        \"currency\": \"BRL\"\n      },\n      \"balance\": {\n        \"availableAmount\": {\n          \"amount\": \"41233.07\",\n          \"currency\": \"BRL\"\n        },\n        \"blockedAmount\": {\n          \"amount\": \"999.99\",\n          \"currency\": \"BRL\"\n        },\n        \"automaticallyInvestedAmount\": {\n          \"amount\": \"15000.00\",\n          \"currency\": \"BRL\"\n        },\n        \"updateDateTime\": \"2024-09-09T10:53:52Z\"\n      },\n      \"overdraftLimits\": {\n        \"overdraftContractedLimit\": {\n          \"amount\": \"99.9999\",\n          \"currency\": \"BRL\"\n        },\n        \"overdraftUsedLimit\": {\n          \"amount\": \"12345.40\",\n          \"currency\": \"BRL\"\n        },\n        \"unarrangedOverdraftAmount\": {\n          \"amount\": \"99.9999\",\n          \"currency\": \"BRL\"\n        }\n      }\n    },\n    {\n      \"accountId\": \"291e5a29-49ed-401f-a583-193caa7aceee\",\n      \"authorisationServerId\": \"c8f0bf49-4744-4933-8960-7add6e590841\",\n      \"branchCode\": \"6272\",\n      \"brandName\": \"Sib Bank\",\n      \"checkDigit\": \"4\",\n      \"companyCnpj\": \"40156018000100\",\n      \"compeCode\": \"123\",\n      \"number\": \"94088392\",\n      \"organisationId\": \"74e929d9-33b6-4d85-8ba7-c146c867a817\",\n      \"type\": \"CONTA_DEPOSITO_A_VISTA\",\n      \"updatedAt\": \"2024-09-09T18:00:50.299Z\",\n      \"details\": {\n        \"compeCode\": \"123\",\n        \"branchCode\": \"6272\",\n        \"number\": \"94088392\",\n        \"checkDigit\": \"4\",\n        \"type\": \"CONTA_DEPOSITO_A_VISTA\",\n        \"subtype\": \"INDIVIDUAL\",\n        \"currency\": \"BRL\"\n      },\n      \"balance\": {\n        \"availableAmount\": {\n          \"amount\": \"100000000.04\",\n          \"currency\": \"BRL\"\n        },\n        \"blockedAmount\": {\n          \"amount\": \"12345.0001\",\n          \"currency\": \"BRL\"\n        },\n        \"automaticallyInvestedAmount\": {\n          \"amount\": \"15000.00\",\n          \"currency\": \"BRL\"\n        },\n        \"updateDateTime\": \"2024-09-09T16:47:45Z\"\n      },\n      \"overdraftLimits\": {\n        \"overdraftContractedLimit\": {\n          \"amount\": \"99.9999\",\n          \"currency\": \"BRL\"\n        },\n        \"overdraftUsedLimit\": {\n          \"amount\": \"10000.9999\",\n          \"currency\": \"BRL\"\n        },\n        \"unarrangedOverdraftAmount\": {\n          \"amount\": \"99.9999\",\n          \"currency\": \"BRL\"\n        }\n      }\n    }"
                   }
                 }
               }
