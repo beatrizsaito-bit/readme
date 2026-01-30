@@ -13372,7 +13372,7 @@
                             "currency": {
                               "type": "string",
                               "example": "BRL",
-                              "description": "Moeda referente ao valor monetário, seguindo o modelo ISO-4217."
+                              "description": "Moeda referente ao valor monetário, seguindo o modelo ISO-4217"
                             }
                           },
                           "description": "Saldo bloqueado, não disponível para utilização imediata",
@@ -13423,41 +13423,67 @@
                           "properties": {
                             "amount": {
                               "type": "string",
-                              "example": "99.9999"
+                              "example": "99.9999",
+                              "description": "Valor"
                             },
                             "currency": {
                               "type": "string",
-                              "example": "BRL"
+                              "example": "BRL",
+                              "description": "Moeda referente ao valor monetário, seguindo o modelo ISO-4217"
                             }
-                          }
+                          },
+                          "description": "Valor do limite contratado do cheque especial",
+                          "required": [
+                            "amount",
+                            "currency"
+                          ]
                         },
                         "overdraftUsedLimit": {
                           "type": "object",
                           "properties": {
                             "amount": {
                               "type": "string",
-                              "example": "12345.40"
+                              "example": "12345.40",
+                              "description": "Valor"
                             },
                             "currency": {
                               "type": "string",
-                              "example": "BRL"
+                              "example": "BRL",
+                              "description": "Moeda referente ao valor monetário, seguindo o modelo ISO-4217."
                             }
-                          }
+                          },
+                          "description": "Valor do limite contratado do cheque especial",
+                          "required": [
+                            "amount",
+                            "currency"
+                          ]
                         },
                         "unarrangedOverdraftAmount": {
                           "type": "object",
                           "properties": {
                             "amount": {
                               "type": "string",
-                              "example": "99.9999"
+                              "example": "99.9999",
+                              "description": "Valor"
                             },
                             "currency": {
                               "type": "string",
-                              "example": "BRL"
+                              "example": "BRL",
+                              "description": "Moeda referente ao valor monetário, seguindo o modelo ISO-4217."
                             }
-                          }
+                          },
+                          "description": "Valor de operação contratada em caráter emergencial para cobertura de saldo devedor em conta de depósitos à vista e de excesso sobre o limite pactuado de cheque especial",
+                          "required": [
+                            "amount",
+                            "currency"
+                          ]
                         }
-                      }
+                      },
+                      "required": [
+                        "unarrangedOverdraftAmount",
+                        "overdraftUsedLimit",
+                        "overdraftContractedLimit"
+                      ]
                     }
                   },
                   "required": [
