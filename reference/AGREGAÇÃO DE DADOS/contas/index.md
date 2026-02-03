@@ -43,7 +43,7 @@ Os subtipos de conta possíveis são
   É a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares
 </Accordion>
 
-# Status de transação
+# Status da transação
 
 <Accordion title="Transação efetivada">
   Corresponde a data de processamento/efetivação da transação
