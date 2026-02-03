@@ -43,26 +43,16 @@ Os subtipos de conta possíveis são
   É a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares
 </Accordion>
 
-# Tipos de transações
+# Status de transação
 
-Os tipos de transações possíveis são: 
+<Accordion title="Transação efetivada">
+  Corresponde a data de processamento/efetivação da transação
+</Accordion>
 
-* TED
-* TRANSFERENCIA MESMA INSTITUIÇÃO (TEF)
-* TARIFA SERVIÇOS AVULSOS
-* FOLHA DE PAGAMENTO
-* DOC
-* BOLETO
-* CONVÊNIO ARRECADAÇÃO 
-* PACOTE TARIFA SERVIÇOS
-* DEPÓSITO
-* SAQUE
-* CARTÃO
-* ENCARGOS JUROS CHEQUE ESPECIAL
-* RENDIMENTO APLICAÇÃO FINANCEIRA
-* PORTABILIDADE SALÁRIO 
-* RESGATE APLICAÇÃO FINANCEIRA
-* OPERAÇÃO DE CRÉDITO
-* OUTROS
+<Accordion title="Lançamento futuro">
+  Corresponde a data prevista de efetivação da transação
+</Accordion>
 
-<br />
+<Accordion title="Transação processando">
+  Corresponde a data de lançamento da transação
+</Accordion>
