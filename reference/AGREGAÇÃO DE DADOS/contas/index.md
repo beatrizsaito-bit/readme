@@ -42,3 +42,27 @@ Os subtipos de conta possíveis são
 <Accordion title="Conta conjunta solidária">
   É a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares
 </Accordion>
+
+# Tipos de transações
+
+Os tipos de transações possíveis são: 
+
+* TED
+* TRANSFERENCIA MESMA INSTITUIÇÃO (TEF)
+* TARIFA SERVIÇOS AVULSOS
+* FOLHA DE PAGAMENTO
+* DOC
+* BOLETO
+* CONVÊNIO ARRECADAÇÃO 
+* PACOTE TARIFA SERVIÇOS
+* DEPÓSITO
+* SAQUE
+* CARTÃO
+* ENCARGOS JUROS CHEQUE ESPECIAL
+* RENDIMENTO APLICAÇÃO FINANCEIRA
+* PORTABILIDADE SALÁRIO 
+* RESGATE APLICAÇÃO FINANCEIRA
+* OPERAÇÃO DE CRÉDITO
+* OUTROS
+
+<br />
