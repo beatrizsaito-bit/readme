@@ -29351,7 +29351,233 @@
         }
       }
     },
-    "/api/v1/users/{user_id}/exchanges": {},
+    "/api/v1/users/{user_id}/exchanges": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "userId": {
+                            "type": "string"
+                          },
+                          "authorisationServerId": {
+                            "type": "string"
+                          },
+                          "brandName": {
+                            "type": "string"
+                          },
+                          "companyCnpj": {
+                            "type": "string"
+                          },
+                          "operationId": {
+                            "type": "string"
+                          },
+                          "organisationId": {
+                            "type": "string"
+                          },
+                          "updatedAt": {
+                            "type": "string"
+                          },
+                          "details": {
+                            "type": "object",
+                            "properties": {
+                              "authorizedInstitutionCnpjNumber": {
+                                "type": "string"
+                              },
+                              "authorizedInstitutionName": {
+                                "type": "string"
+                              },
+                              "operationNumber": {
+                                "type": "string"
+                              },
+                              "operationType": {
+                                "type": "string"
+                              },
+                              "operationDate": {
+                                "type": "string"
+                              },
+                              "dueDate": {
+                                "type": "string"
+                              },
+                              "localCurrencyOperationTax": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "default": "BRL"
+                                  }
+                                }
+                              },
+                              "localCurrencyOperationValue": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "default": "BRL"
+                                  }
+                                }
+                              },
+                              "foreignOperationValue": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "default": "BRL"
+                                  }
+                                }
+                              },
+                              "vetAmount": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "default": "BRL"
+                                  }
+                                }
+                              },
+                              "deliveryForeignCurrency": {
+                                "type": "string"
+                              },
+                              "operationCategoryCode": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "localCurrencyOperationTax"
+                            ]
+                          },
+                          "events": {
+                            "type": "array",
+                            "items": {
+                              "properties": {
+                                "eventSequenceNumber": {
+                                  "type": "string",
+                                  "description": "Número sequência do registro do evento de câmbio no Bacen."
+                                },
+                                "eventType": {
+                                  "type": "string"
+                                },
+                                "eventDate": {
+                                  "type": "string"
+                                },
+                                "dueDate": {
+                                  "type": "string"
+                                },
+                                "localCurrencyOperationTax": {
+                                  "type": "string"
+                                },
+                                "localCurrencyOperationValue": {
+                                  "type": "string"
+                                },
+                                "foreignOperationValue": {
+                                  "type": "string"
+                                },
+                                "operationOutstandingBalance": {
+                                  "type": "string"
+                                },
+                                "vetAmount": {
+                                  "type": "string"
+                                },
+                                "deliveryForeignCurrency": {
+                                  "type": "string"
+                                },
+                                "operationCategoryCode": {
+                                  "type": "string",
+                                  "enum": [
+                                    "CONTA_DEPOSITO_MOEDA_ESTRANGEIRA_PAIS",
+                                    "CONTA_DEPOSITO_OU_PAGAMENTO_EXPORTADOR_INSTITUICAO_EXTERIOR",
+                                    "ESPECIE_CHEQUES_VIAGEM",
+                                    "CARTAO_PREPAGO",
+                                    "TELETRANSMISSAO",
+                                    "SEM_MOVIMENTACAO_VALORES",
+                                    "DEMAIS",
+                                    "CARTA_CREDITO_A_VISTA",
+                                    "CARTA_CREDITO_A_PRAZO",
+                                    "CONTA_DEPOSITO",
+                                    "CHEQUE",
+                                    "TITULOS_VALORES",
+                                    "SIMBOLICA",
+                                    "CONTA_DEPOSITO_EXPORTADOR_MANTIDA_NO_EXTERIOR",
+                                    "CONVENIO_PAGAMENTOS_E_CREDITOS_RECIPROCOS",
+                                    "OUTRO_NAO_MAPEADO_OFB"
+                                  ]
+                                },
+                                "foreignPartie": {
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object",
+                              "required": [
+                                "eventDate",
+                                "eventType",
+                                "eventSequenceNumber",
+                                "operationCategoryCode"
+                              ]
+                            }
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "totalRecords": {
+                      "type": "number"
+                    },
+                    "totalPages": {
+                      "type": "number"
+                    },
+                    "currentPage": {
+                      "type": "number"
+                    },
+                    "pageSize": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "totalRecords",
+                    "totalPages",
+                    "currentPage",
+                    "pageSize"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_api-v1-users-user-id-exchanges"
+      }
+    },
     "/api/v1/users/{user_id}/exchanges-1": {}
   },
   "x-readme": {}
