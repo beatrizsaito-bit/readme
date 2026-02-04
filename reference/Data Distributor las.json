@@ -23095,7 +23095,35 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "properties": {},
+                        "type": "object"
+                      }
+                    },
+                    "totalRecords": {
+                      "type": "number"
+                    },
+                    "totalPages": {
+                      "type": "number"
+                    },
+                    "currentPage": {
+                      "type": "integer"
+                    },
+                    "pageSize": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "currentPage",
+                    "totalPages",
+                    "totalRecords",
+                    "pageSize",
+                    "data"
+                  ]
                 },
                 "example": {
                   "data": [
