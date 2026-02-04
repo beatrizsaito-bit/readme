@@ -29463,7 +29463,119 @@
         "operationId": "get_api-v1-users-user-id-exchanges"
       }
     },
-    "/api/v1/users/{user_id}/exchanges-1": {}
+    "/api/v1/users/{user_id}/exchanges-1": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "userId": {
+                            "type": "string"
+                          },
+                          "authorisationServerId": {
+                            "type": "string"
+                          },
+                          "brandName": {
+                            "type": "string"
+                          },
+                          "companyCnpj": {
+                            "type": "string"
+                          },
+                          "operationId": {
+                            "type": "string"
+                          },
+                          "organisationId": {
+                            "type": "string"
+                          },
+                          "updatedAt": {
+                            "type": "string"
+                          },
+                          "details": {
+                            "type": "object",
+                            "properties": {
+                              "authorizedInstitutionCnpjNumber": {
+                                "type": "string"
+                              },
+                              "authorizedInstitutionName": {
+                                "type": "string"
+                              },
+                              "operationNumber": {
+                                "type": "string"
+                              },
+                              "operationType": {
+                                "type": "string"
+                              },
+                              "operationDate": {
+                                "type": "string"
+                              },
+                              "dueDate": {
+                                "type": "string"
+                              },
+                              "localCurrencyOperationTax": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string"
+                                  },
+                                  "nacurrencyme": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "totalRecords": {
+                      "type": "number"
+                    },
+                    "totalPages": {
+                      "type": "number"
+                    },
+                    "currentPage": {
+                      "type": "number"
+                    },
+                    "pageSize": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "totalRecords",
+                    "totalPages",
+                    "currentPage",
+                    "pageSize"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_api-v1-users-user-id-exchanges-1",
+        "summary": "Copy of "
+      }
+    }
   },
   "x-readme": {}
 }
