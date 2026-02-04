@@ -23095,35 +23095,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "properties": {},
-                        "type": "object"
-                      }
-                    },
-                    "totalRecords": {
-                      "type": "number"
-                    },
-                    "totalPages": {
-                      "type": "number"
-                    },
-                    "currentPage": {
-                      "type": "integer"
-                    },
-                    "pageSize": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "currentPage",
-                    "totalPages",
-                    "totalRecords",
-                    "pageSize",
-                    "data"
-                  ]
+                  "type": "object"
                 },
                 "example": {
                   "data": [
@@ -29377,6 +29349,35 @@
             }
           }
         }
+      }
+    },
+    "/api/v1/users/{user_id}/exchanges": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_api-v1-users-user-id-exchanges"
       }
     }
   },
