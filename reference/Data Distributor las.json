@@ -29379,6 +29379,36 @@
         ],
         "operationId": "get_api-v1-users-user-id-exchanges"
       }
+    },
+    "/api/v1/users/{user_id}/exchanges-1": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_api-v1-users-user-id-exchanges-1",
+        "summary": "Copy of "
+      }
     }
   },
   "x-readme": {}
