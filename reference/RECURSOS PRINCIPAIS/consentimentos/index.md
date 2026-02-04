@@ -5,8 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 # Permissões
 
 <Callout icon="❗️" theme="error">
