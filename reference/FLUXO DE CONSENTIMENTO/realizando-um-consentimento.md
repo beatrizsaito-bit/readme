@@ -6,8 +6,6 @@ icon: fab fa-confluence
 metadata:
   robots: index
 ---
-<br />
-
 # Passo 1 - Liste as instituições disponíveis
 
 <Callout icon="📘" theme="info">
