@@ -231,8 +231,6 @@ Neste momento ainda não estão definidos os recursos a serem compartilhados.
 
 ## Usuário responsável pela rejeição
 
-<br />
-
 <Accordion title="USER">
   Usuário
 </Accordion>
