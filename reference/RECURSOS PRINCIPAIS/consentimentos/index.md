@@ -13,21 +13,21 @@ metadata:
 
 Abaixo está a lista com as permissões necessários para cada agrupamento de dados
 
-<Accordion title="Dados cadastrais e de qualificação de usuário PF">
+<Accordion title="Dados cadastrais e de qualificação de usuário PF" icon="fa-user">
 **Permissões necessárias**
 
 - `CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ`
 - `CUSTOMERS_PERSONAL_ADITTIONALINFO_READ`
 </Accordion>
 
-<Accordion title="Dados cadastrais e de qualificação de usuário PJ">
+<Accordion title="Dados cadastrais e de qualificação de usuário PJ" icon="fa-building">
 **Permissões necessárias**
 
 - `CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ`
 - `CUSTOMERS_BUSINESS_ADITTIONALINFO_READ`
 </Accordion>
 
-<Accordion title="Dados de conta bancária">
+<Accordion title="Dados de conta bancária" icon="fa-university">
 **Permissões necessárias**
 
 - `ACCOUNTS_READ`
@@ -36,7 +36,7 @@ Abaixo está a lista com as permissões necessários para cada agrupamento de da
 - `ACCOUNTS_TRANSACTIONS_READ`
 </Accordion>
 
-<Accordion title="Dados de cartão de crédito">
+<Accordion title="Dados de cartão de crédito" icon="fa-credit-card">
 **Permissões necessárias**
 
 - `CREDIT_CARDS_ACCOUNTS_READ`
@@ -44,14 +44,14 @@ Abaixo está a lista com as permissões necessários para cada agrupamento de da
 - `CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ`
 </Accordion>
 
-<Accordion title="Dados de fatura de cartão de crédito">
+<Accordion title="Dados de fatura de cartão de crédito" icon="fa-file-invoice-dollar">
 **Permissões necessárias**
 
 - `CREDIT_CARDS_ACCOUNTS_BILLS_READ`
 - `CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ`
 </Accordion>
 
-<Accordion title="Dados de empréstimo">
+<Accordion title="Dados de empréstimo" icon="fa-hand-holding-usd">
 **Permissões necessárias**
 
 - `LOANS_READ`
@@ -60,7 +60,7 @@ Abaixo está a lista com as permissões necessários para cada agrupamento de da
 - `LOANS_PAYMENTS_READ`
 </Accordion>
 
-<Accordion title="Dados de financiamento">
+<Accordion title="Dados de financiamento" icon="fa-coins">
 **Permissões necessárias**
 
 - `FINANCINGS_READ`
@@ -69,7 +69,7 @@ Abaixo está a lista com as permissões necessários para cada agrupamento de da
 - `FINANCINGS_PAYMENTS_READ`
 </Accordion>
 
-<Accordion title="Dados de adiantamento a depositantes">
+<Accordion title="Dados de adiantamento a depositantes" icon="fa-money-bill-wave">
 **Permissões necessárias**
 
 - `UNARRANGED_ACCOUNTS_OVERDRAFT_READ`
@@ -78,7 +78,7 @@ Abaixo está a lista com as permissões necessários para cada agrupamento de da
 - `UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ`
 </Accordion>
 
-<Accordion title="Dados de direitos creditórios">
+<Accordion title="Dados de direitos creditórios" icon="fa-file-contract">
 **Permissões necessárias**
 
 - `INVOICE_FINANCINGS_READ`
@@ -87,31 +87,31 @@ Abaixo está a lista com as permissões necessários para cada agrupamento de da
 - `INVOICE_FINANCINGS_PAYMENTS_READ`
 </Accordion>
 
-<Accordion title="Dados de renda fixa bancária">
+<Accordion title="Dados de renda fixa bancária" icon="fa-piggy-bank">
 **Permissões necessárias**
 
 - `BANK_FIXED_INCOMES_READ`
 </Accordion>
 
-<Accordion title="Dados de renda fixa de crédito">
+<Accordion title="Dados de renda fixa de crédito" icon="fa-chart-line">
 **Permissões necessárias**
 
 - `CREDIT_FIXED_INCOMES_READ`
 </Accordion>
 
-<Accordion title="Dados de fundos">
+<Accordion title="Dados de fundos" icon="fa-layer-group">
 **Permissões necessárias**
 
 - `FUNDS_READ`
 </Accordion>
 
-<Accordion title="Dados de renda variável">
+<Accordion title="Dados de renda variável" icon="fa-chart-area">
 **Permissões necessárias**
 
 - `VARIABLE_INCOMES_READ`
 </Accordion>
 
-<Accordion title="Dados de títulos do tesouro">
+<Accordion title="Dados de títulos do tesouro" icon="fa-landmark">
 **Permissões necessárias**
 
 - `TREASURE_TITLES_READ`
