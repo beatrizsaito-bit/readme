@@ -13,6 +13,20 @@ metadata:
 
 Abaixo está a lista com as permissões necessários para cada agrupamento de dados
 
+<Accordion title="Dados cadastrais e de qualificação de usuário PF">
+  CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ, CUSTOMERS_PERSONAL_ADITTIONALINFO_READ
+</Accordion>
+
+<Accordion title="AUTHORISED">
+  Estado que indica que o consentimento foi aprovado pelo cliente e que é possível realizar o consumo de dados. Neste estado os recursos ao qual o consentimento dá acesso já foram selecionados. Apesar do consentimento estar aprovado, ainda poderão existir recursos cujo acesso dependa de uma aprovação de múltipla alçada (alguns casos de pessoa jurídica)
+</Accordion>
+
+<Accordion title="REJECTED">
+  Estado que indica que o consentimento foi revogado, que pode ocorrer por diferentes motivos,  como expiração do tempo máximo para autorização e aprovação do consentimento, vencimento da data de validade do consentimento após a sua aprovação ou ainda uma revogação explicita solicitada pelo cliente.
+</Accordion>
+
+<br />
+
 <Table align={["left","left"]}>
   <thead>
     <tr>
@@ -212,9 +226,9 @@ Abaixo está a lista com as permissões necessários para cada agrupamento de da
 # Estados do consentimento
 
 <Accordion title="AWAITING AUTHORISATION">
-  Estado inicial quando um consentimento é criado. Neste estado, o consentimento representa apenas uma intenção de compartilhamento, indicando quem é o cliente que irá realizar o compartilhamento, quais permissões estão sendo solicitadas e a sua data de validade. 
-  
-Neste momento ainda não estão definidos os recursos a serem compartilhados.
+  Estado inicial quando um consentimento é criado. Neste estado, o consentimento representa apenas uma intenção de compartilhamento, indicando quem é o cliente que irá realizar o compartilhamento, quais permissões estão sendo solicitadas e a sua data de validade.
+
+  Neste momento ainda não estão definidos os recursos a serem compartilhados.
 </Accordion>
 
 <Accordion title="AUTHORISED">
@@ -222,7 +236,7 @@ Neste momento ainda não estão definidos os recursos a serem compartilhados.
 </Accordion>
 
 <Accordion title="REJECTED">
-  Estado que indica que o consentimento foi revogado, que pode ocorrer por diferentes motivos,  como expiração do tempo máximo para autorização e aprovação do consentimento, vencimento da data de validade do consentimento após a sua aprovação ou ainda uma revogação explicita solicitada pelo cliente. 
+  Estado que indica que o consentimento foi revogado, que pode ocorrer por diferentes motivos,  como expiração do tempo máximo para autorização e aprovação do consentimento, vencimento da data de validade do consentimento após a sua aprovação ou ainda uma revogação explicita solicitada pelo cliente.
 </Accordion>
 
 <Image border={false} src="https://files.readme.io/b5b95799ad6e575d242d243f2779880f2e3f46b908e58de18d58899a07cf6895-image.png" />
