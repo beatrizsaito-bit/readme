@@ -29547,6 +29547,135 @@
         ],
         "operationId": "get_api-v1-users-user-id-investments-variable-incomes-broker-notes"
       }
+    },
+    "/new-endpoint": {
+      "get": {
+        "description": "",
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "data": [
+                        {
+                          "userId": "0a3cbeff-82ad-4bf2-9a75-f7c4d1fb5ddd",
+                          "authorisationServerId": "439a9b5c-2cfb-4e57-b60b-20eea83899ca",
+                          "brandName": "Banco Bradesco",
+                          "companyCnpj": "60746948000112",
+                          "operationId": "5aca4deb52f69108da4efc6b43043d83d8584a8c719d3ded97ac3018e628bb9180250b9724ed8c6bd2d04c35edfe1476",
+                          "organisationId": "a72a6d4f-79be-5362-afb6-f8d9c9c39cf5",
+                          "updatedAt": "2026-02-04T18:40:38.993Z",
+                          "details": {
+                            "authorizedInstitutionCnpjNumber": "60746948000201",
+                            "authorizedInstitutionName": "BANCO BRADESCO S.A.",
+                            "operationNumber": "000546219617",
+                            "operationType": "VENDA",
+                            "operationDate": "2025-12-23T10:01:16Z",
+                            "dueDate": "2025-12-23",
+                            "localCurrencyOperationTax": {
+                              "amount": "5.715700000000000",
+                              "currency": "BRL"
+                            },
+                            "localCurrencyOperationValue": {
+                              "amount": "428.67",
+                              "currency": "BRL"
+                            },
+                            "foreignOperationValue": {
+                              "amount": "75.00",
+                              "currency": "USD"
+                            },
+                            "vetAmount": {
+                              "amount": "5.915600000000000",
+                              "currency": "BRL"
+                            },
+                            "deliveryForeignCurrency": "TELETRANSMISSAO",
+                            "operationCategoryCode": "67995"
+                          },
+                          "events": [
+                            {
+                              "operationId": "5aca4deb52f69108da4efc6b43043d83d8584a8c719d3ded97ac3018e628bb9180250b9724ed8c6bd2d04c35edfe1476",
+                              "eventSequenceNumber": "001247781650",
+                              "userId": "0a3cbeff-82ad-4bf2-9a75-f7c4d1fb5ddd",
+                              "authorisationServerId": "439a9b5c-2cfb-4e57-b60b-20eea83899ca",
+                              "deliveryForeignCurrency": "TELETRANSMISSAO",
+                              "dueDate": "2025-10-10",
+                              "eventDate": "2025-10-10T16:11:11Z",
+                              "eventType": "1",
+                              "foreignOperationValue": {
+                                "amount": "87.00",
+                                "currency": "USD"
+                              },
+                              "localCurrencyOperationTax": {
+                                "amount": "5.552800000000000",
+                                "currency": "BRL"
+                              },
+                              "localCurrencyOperationValue": {
+                                "amount": "483.09",
+                                "currency": "BRL"
+                              },
+                              "operationCategoryCode": "67995",
+                              "organisationId": "a72a6d4f-79be-5362-afb6-f8d9c9c39cf5",
+                              "updatedAt": "2026-02-04T18:40:39.723Z",
+                              "vetAmount": {
+                                "amount": "5.747000000000000",
+                                "currency": "BRL"
+                              }
+                            },
+                            {
+                              "operationId": "5aca4deb52f69108da4efc6b43043d83d8584a8c719d3ded97ac3018e628bb9180250b9724ed8c6bd2d04c35edfe1476",
+                              "eventSequenceNumber": "001247783302",
+                              "userId": "0a3cbeff-82ad-4bf2-9a75-f7c4d1fb5ddd",
+                              "authorisationServerId": "439a9b5c-2cfb-4e57-b60b-20eea83899ca",
+                              "deliveryForeignCurrency": "TELETRANSMISSAO",
+                              "dueDate": "2025-10-10",
+                              "eventDate": "2025-10-10T16:17:32Z",
+                              "eventType": "4",
+                              "foreignOperationValue": {
+                                "amount": "87.00",
+                                "currency": "USD"
+                              },
+                              "foreignPartie": {
+                                "relationshipCode": "67",
+                                "foreignPartieName": "BRUNO GIOBINI MICAELA",
+                                "foreignPartieCountryCode": "KY"
+                              },
+                              "localCurrencyOperationTax": {
+                                "amount": "5.552800000000000",
+                                "currency": "BRL"
+                              },
+                              "localCurrencyOperationValue": {
+                                "amount": "483.09",
+                                "currency": "BRL"
+                              },
+                              "operationCategoryCode": "67995",
+                              "organisationId": "a72a6d4f-79be-5362-afb6-f8d9c9c39cf5",
+                              "updatedAt": "2026-02-04T18:40:39.933Z",
+                              "vetAmount": {
+                                "amount": "5.747000000000000",
+                                "currency": "BRL"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "totalRecords": 1,
+                      "totalPages": 1,
+                      "currentPage": 1,
+                      "pageSize": 100
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": []
+      }
     }
   },
   "x-readme": {}
