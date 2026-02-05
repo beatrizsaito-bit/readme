@@ -29351,7 +29351,291 @@
         }
       }
     },
-    "/api/v1/users/{user_id}/exchanges": {},
+    "/api/v1/users/{user_id}/exchanges": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": ""
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "userId": {
+                            "type": "string",
+                            "example": "0a3cbeff-82ad-4bf2-9a75-f7c4d1fb5ddd"
+                          },
+                          "authorisationServerId": {
+                            "type": "string",
+                            "example": "439a9b5c-2cfb-4e57-b60b-20eea83899ca"
+                          },
+                          "brandName": {
+                            "type": "string",
+                            "example": "Banco Bradesco"
+                          },
+                          "companyCnpj": {
+                            "type": "string",
+                            "example": "60746948000112"
+                          },
+                          "operationId": {
+                            "type": "string",
+                            "example": "5aca4deb52f69108da4efc6b43043d83d8584a8c719d3ded97ac3018e628bb9180250b9724ed8c6bd2d04c35edfe1476"
+                          },
+                          "organisationId": {
+                            "type": "string",
+                            "example": "a72a6d4f-79be-5362-afb6-f8d9c9c39cf5"
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "example": "2026-02-04T18:40:38.993Z"
+                          },
+                          "details": {
+                            "type": "object",
+                            "properties": {
+                              "authorizedInstitutionCnpjNumber": {
+                                "type": "string",
+                                "example": "60746948000201"
+                              },
+                              "authorizedInstitutionName": {
+                                "type": "string",
+                                "example": "BANCO BRADESCO S.A."
+                              },
+                              "operationNumber": {
+                                "type": "string",
+                                "example": "000546219617"
+                              },
+                              "operationType": {
+                                "type": "string",
+                                "example": "VENDA"
+                              },
+                              "operationDate": {
+                                "type": "string",
+                                "example": "2025-12-23T10:01:16Z"
+                              },
+                              "dueDate": {
+                                "type": "string",
+                                "example": "2025-12-23"
+                              },
+                              "localCurrencyOperationTax": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "5.715700000000000"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "localCurrencyOperationValue": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "428.67"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "foreignOperationValue": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "75.00"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "USD"
+                                  }
+                                }
+                              },
+                              "vetAmount": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "5.915600000000000"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "deliveryForeignCurrency": {
+                                "type": "string",
+                                "example": "TELETRANSMISSAO"
+                              },
+                              "operationCategoryCode": {
+                                "type": "string",
+                                "example": "67995"
+                              }
+                            }
+                          },
+                          "events": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "operationId": {
+                                  "type": "string",
+                                  "example": "5aca4deb52f69108da4efc6b43043d83d8584a8c719d3ded97ac3018e628bb9180250b9724ed8c6bd2d04c35edfe1476"
+                                },
+                                "eventSequenceNumber": {
+                                  "type": "string",
+                                  "example": "001247781650"
+                                },
+                                "userId": {
+                                  "type": "string",
+                                  "example": "0a3cbeff-82ad-4bf2-9a75-f7c4d1fb5ddd"
+                                },
+                                "authorisationServerId": {
+                                  "type": "string",
+                                  "example": "439a9b5c-2cfb-4e57-b60b-20eea83899ca"
+                                },
+                                "deliveryForeignCurrency": {
+                                  "type": "string",
+                                  "example": "TELETRANSMISSAO"
+                                },
+                                "dueDate": {
+                                  "type": "string",
+                                  "example": "2025-10-10"
+                                },
+                                "eventDate": {
+                                  "type": "string",
+                                  "example": "2025-10-10T16:11:11Z"
+                                },
+                                "eventType": {
+                                  "type": "string",
+                                  "example": "1"
+                                },
+                                "foreignOperationValue": {
+                                  "type": "object",
+                                  "properties": {
+                                    "amount": {
+                                      "type": "string",
+                                      "example": "87.00"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "USD"
+                                    }
+                                  }
+                                },
+                                "localCurrencyOperationTax": {
+                                  "type": "object",
+                                  "properties": {
+                                    "amount": {
+                                      "type": "string",
+                                      "example": "5.552800000000000"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "BRL"
+                                    }
+                                  }
+                                },
+                                "localCurrencyOperationValue": {
+                                  "type": "object",
+                                  "properties": {
+                                    "amount": {
+                                      "type": "string",
+                                      "example": "483.09"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "BRL"
+                                    }
+                                  }
+                                },
+                                "operationCategoryCode": {
+                                  "type": "string",
+                                  "example": "67995"
+                                },
+                                "organisationId": {
+                                  "type": "string",
+                                  "example": "a72a6d4f-79be-5362-afb6-f8d9c9c39cf5"
+                                },
+                                "updatedAt": {
+                                  "type": "string",
+                                  "example": "2026-02-04T18:40:39.723Z"
+                                },
+                                "vetAmount": {
+                                  "type": "object",
+                                  "properties": {
+                                    "amount": {
+                                      "type": "string",
+                                      "example": "5.747000000000000"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "BRL"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "totalRecords": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "totalPages": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "currentPage": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "pageSize": {
+                      "type": "integer",
+                      "example": 100,
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_api-v1-users-user-id-exchanges"
+      }
+    },
     "/api/v1/users/{user_id}/exchanges-1": {},
     "/api/v1/users/{user_id}/investments/variable-incomes/broker-notes": {
       "get": {
@@ -29547,8 +29831,7 @@
         ],
         "operationId": "get_api-v1-users-user-id-investments-variable-incomes-broker-notes"
       }
-    },
-    "/new-endpoint": {}
+    }
   },
   "x-readme": {}
 }
