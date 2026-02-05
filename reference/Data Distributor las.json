@@ -29578,7 +29578,202 @@
         "operationId": "get_api-v1-users-user-id-exchanges"
       }
     },
-    "/api/v1/users/{user_id}/exchanges-1": {}
+    "/api/v1/users/{user_id}/exchanges-1": {},
+    "/api/v1/users/{user_id}/investments/variable-incomes/broker-notes": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": ""
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "investmentId": {
+                            "type": "string",
+                            "example": "0046544181389672"
+                          },
+                          "brokerNoteId": {
+                            "type": "string",
+                            "example": "004654418638953056000000000"
+                          },
+                          "brokerNoteNumber": {
+                            "type": "string",
+                            "example": "20665725"
+                          },
+                          "grossValue": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "31291.00"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "brokerageFee": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "0.00"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "clearingSettlementFee": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "-7.81"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "clearingRegistrationFee": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "0.00"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "stockExchangeAssetTradeNoticeFee": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "-1.56"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "stockExchangeFee": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "-1.56"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "clearingCustodyFee": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "-31298.81"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "totalRecords": {
+                      "type": "integer",
+                      "example": 17,
+                      "default": 0
+                    },
+                    "totalPages": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "currentPage": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "pageSize": {
+                      "type": "integer",
+                      "example": 100,
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fromDate",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "toDate",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "get_api-v1-users-user-id-investments-variable-incomes-broker-notes"
+      }
+    }
   },
   "x-readme": {}
 }
