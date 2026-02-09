@@ -13954,7 +13954,186 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "creditCardAccountId": {
+                            "type": "string",
+                            "example": "62726dba-e4b4-41b3-a6f2-68dca70df313"
+                          },
+                          "userId": {
+                            "type": "string",
+                            "example": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017"
+                          },
+                          "authorisationServerId": {
+                            "type": "string",
+                            "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                          },
+                          "brandName": {
+                            "type": "string",
+                            "example": "Sib Bank"
+                          },
+                          "companyCnpj": {
+                            "type": "string",
+                            "example": "40156018000100"
+                          },
+                          "creditCardNetwork": {
+                            "type": "string",
+                            "example": "DINERS_CLUB"
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Dinners Grafite"
+                          },
+                          "networkAdditionalInfo": {
+                            "type": "string",
+                            "example": "NA"
+                          },
+                          "organisationId": {
+                            "type": "string",
+                            "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                          },
+                          "productAdditionalInfo": {
+                            "type": "string",
+                            "example": "Dinners Elo Grafite"
+                          },
+                          "productType": {
+                            "type": "string",
+                            "example": "GRAFITE"
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "example": "2024-09-09T00:15:05.010Z"
+                          },
+                          "details": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "example": "Dinners Grafite"
+                              },
+                              "productType": {
+                                "type": "string",
+                                "example": "GRAFITE"
+                              },
+                              "productAdditionalInfo": {
+                                "type": "string",
+                                "example": "Dinners Elo Grafite"
+                              },
+                              "creditCardNetwork": {
+                                "type": "string",
+                                "example": "DINERS_CLUB"
+                              },
+                              "networkAdditionalInfo": {
+                                "type": "string",
+                                "example": "NA"
+                              },
+                              "paymentMethod": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "identificationNumber": {
+                                      "type": "string",
+                                      "example": "8921"
+                                    },
+                                    "isMultipleCreditCard": {
+                                      "type": "boolean",
+                                      "example": false,
+                                      "default": true
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "bills": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {}
+                            }
+                          },
+                          "limits": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "creditLineLimitType": {
+                                  "type": "string",
+                                  "example": "LIMITE_CREDITO_TOTAL"
+                                },
+                                "consolidationType": {
+                                  "type": "string",
+                                  "example": "CONSOLIDADO"
+                                },
+                                "identificationNumber": {
+                                  "type": "string",
+                                  "example": "8921"
+                                },
+                                "lineName": {
+                                  "type": "string",
+                                  "example": "CREDITO_A_VISTA"
+                                },
+                                "lineNameAdditionalInfo": {
+                                  "type": "string",
+                                  "example": "NA"
+                                },
+                                "isLimitFlexible": {
+                                  "type": "boolean",
+                                  "example": true,
+                                  "default": true
+                                },
+                                "limitAmount": {
+                                  "type": "object",
+                                  "properties": {
+                                    "amount": {
+                                      "type": "string",
+                                      "example": "23000.9761"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "BRL"
+                                    }
+                                  }
+                                },
+                                "usedAmount": {
+                                  "type": "object",
+                                  "properties": {
+                                    "amount": {
+                                      "type": "string",
+                                      "example": "7500.05"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "BRL"
+                                    }
+                                  }
+                                },
+                                "availableAmount": {
+                                  "type": "object",
+                                  "properties": {
+                                    "amount": {
+                                      "type": "string",
+                                      "example": "15500.9261"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "BRL"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "Success": {
