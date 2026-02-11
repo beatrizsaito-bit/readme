@@ -14364,142 +14364,347 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "data": [
-                    {
-                      "creditCardAccountId": "62726dba-e4b4-41b3-a6f2-68dca70df313",
-                      "userId": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Sib Bank",
-                      "companyCnpj": "40156018000100",
-                      "creditCardNetwork": "DINERS_CLUB",
-                      "name": "Dinners Grafite",
-                      "networkAdditionalInfo": "NA",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "productAdditionalInfo": "Dinners Elo Grafite",
-                      "productType": "GRAFITE",
-                      "updatedAt": "2024-09-09T00:15:05.010Z",
-                      "details": {
-                        "name": "Dinners Grafite",
-                        "productType": "GRAFITE",
-                        "productAdditionalInfo": "Dinners Elo Grafite",
-                        "creditCardNetwork": "DINERS_CLUB",
-                        "networkAdditionalInfo": "NA",
-                        "paymentMethod": [
-                          {
-                            "identificationNumber": "8921",
-                            "isMultipleCreditCard": false
-                          }
-                        ]
-                      },
-                      "bills": [],
-                      "limits": [
-                        {
-                          "creditLineLimitType": "LIMITE_CREDITO_TOTAL",
-                          "consolidationType": "CONSOLIDADO",
-                          "identificationNumber": "8921",
-                          "lineName": "CREDITO_A_VISTA",
-                          "lineNameAdditionalInfo": "NA",
-                          "isLimitFlexible": true,
-                          "limitAmount": {
-                            "amount": "23000.9761",
-                            "currency": "BRL"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "creditCardAccountId": {
+                            "type": "string",
+                            "example": "62726dba-e4b4-41b3-a6f2-68dca70df313"
                           },
-                          "usedAmount": {
-                            "amount": "7500.05",
-                            "currency": "BRL"
+                          "userId": {
+                            "type": "string",
+                            "example": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017"
                           },
-                          "availableAmount": {
-                            "amount": "15500.9261",
-                            "currency": "BRL"
+                          "authorisationServerId": {
+                            "type": "string",
+                            "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                          },
+                          "brandName": {
+                            "type": "string",
+                            "example": "Sib Bank"
+                          },
+                          "companyCnpj": {
+                            "type": "string",
+                            "example": "40156018000100"
+                          },
+                          "creditCardNetwork": {
+                            "type": "string",
+                            "example": "DINERS_CLUB"
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Dinners Grafite"
+                          },
+                          "networkAdditionalInfo": {
+                            "type": "string",
+                            "example": "NA"
+                          },
+                          "organisationId": {
+                            "type": "string",
+                            "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                          },
+                          "productAdditionalInfo": {
+                            "type": "string",
+                            "example": "Dinners Elo Grafite"
+                          },
+                          "productType": {
+                            "type": "string",
+                            "example": "GRAFITE"
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "example": "2024-09-09T00:15:05.010Z"
+                          },
+                          "details": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "example": "Dinners Grafite"
+                              },
+                              "productType": {
+                                "type": "string",
+                                "example": "GRAFITE"
+                              },
+                              "productAdditionalInfo": {
+                                "type": "string",
+                                "example": "Dinners Elo Grafite"
+                              },
+                              "creditCardNetwork": {
+                                "type": "string",
+                                "example": "DINERS_CLUB"
+                              },
+                              "networkAdditionalInfo": {
+                                "type": "string",
+                                "example": "NA"
+                              },
+                              "paymentMethod": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "identificationNumber": {
+                                      "type": "string",
+                                      "example": "8921"
+                                    },
+                                    "isMultipleCreditCard": {
+                                      "type": "boolean",
+                                      "example": false,
+                                      "default": true
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "bills": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "billId": {
+                                  "type": "string"
+                                },
+                                "dueDate": {
+                                  "type": "string"
+                                },
+                                "billTotalAmount": {
+                                  "type": "array",
+                                  "items": {
+                                    "properties": {
+                                      "amount": {
+                                        "type": "string"
+                                      },
+                                      "currency": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "limits": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "creditLineLimitType": {
+                                  "type": "string",
+                                  "example": "LIMITE_CREDITO_TOTAL"
+                                },
+                                "consolidationType": {
+                                  "type": "string",
+                                  "example": "CONSOLIDADO"
+                                },
+                                "identificationNumber": {
+                                  "type": "string",
+                                  "example": "8921"
+                                },
+                                "lineName": {
+                                  "type": "string",
+                                  "example": "CREDITO_A_VISTA"
+                                },
+                                "lineNameAdditionalInfo": {
+                                  "type": "string",
+                                  "example": "NA"
+                                },
+                                "isLimitFlexible": {
+                                  "type": "boolean",
+                                  "example": true,
+                                  "default": true
+                                },
+                                "limitAmount": {
+                                  "type": "object",
+                                  "properties": {
+                                    "amount": {
+                                      "type": "string",
+                                      "example": "23000.9761"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "BRL"
+                                    }
+                                  }
+                                },
+                                "usedAmount": {
+                                  "type": "object",
+                                  "properties": {
+                                    "amount": {
+                                      "type": "string",
+                                      "example": "7500.05"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "BRL"
+                                    }
+                                  }
+                                },
+                                "availableAmount": {
+                                  "type": "object",
+                                  "properties": {
+                                    "amount": {
+                                      "type": "string",
+                                      "example": "15500.9261"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "BRL"
+                                    }
+                                  }
+                                }
+                              }
+                            }
                           }
                         }
-                      ]
-                    },
-                    {
-                      "userId": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017",
-                      "creditCardAccountId": "179b82f1-9a78-4a9d-83ac-106737d9aed7",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Sib Bank",
-                      "companyCnpj": "40156018000100",
-                      "creditCardNetwork": "DINERS_CLUB",
-                      "name": "Dinners Grafite",
-                      "networkAdditionalInfo": "NA",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "productAdditionalInfo": "Dinners Elo Grafite",
-                      "productType": "GRAFITE",
-                      "updatedAt": "2024-09-09T18:15:06.537Z",
-                      "details": {
-                        "name": "Dinners Grafite",
-                        "productType": "GRAFITE",
-                        "productAdditionalInfo": "Dinners Elo Grafite",
-                        "creditCardNetwork": "DINERS_CLUB",
-                        "networkAdditionalInfo": "NA",
-                        "paymentMethod": [
-                          {
-                            "identificationNumber": "8921",
-                            "isMultipleCreditCard": false
-                          }
-                        ]
-                      },
-                      "bills": [
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "data": [
                         {
-                          "billId": "5ebb8f3b-5235-411f-a450-17f74a1f3a3d",
-                          "dueDate": "2024-09-09",
-                          "billTotalAmount": {
-                            "amount": "100000.04",
-                            "currency": "BRL"
+                          "creditCardAccountId": "62726dba-e4b4-41b3-a6f2-68dca70df313",
+                          "userId": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Sib Bank",
+                          "companyCnpj": "40156018000100",
+                          "creditCardNetwork": "DINERS_CLUB",
+                          "name": "Dinners Grafite",
+                          "networkAdditionalInfo": "NA",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "productAdditionalInfo": "Dinners Elo Grafite",
+                          "productType": "GRAFITE",
+                          "updatedAt": "2024-09-09T00:15:05.010Z",
+                          "details": {
+                            "name": "Dinners Grafite",
+                            "productType": "GRAFITE",
+                            "productAdditionalInfo": "Dinners Elo Grafite",
+                            "creditCardNetwork": "DINERS_CLUB",
+                            "networkAdditionalInfo": "NA",
+                            "paymentMethod": [
+                              {
+                                "identificationNumber": "8921",
+                                "isMultipleCreditCard": false
+                              }
+                            ]
                           },
-                          "billMinimumAmount": {
-                            "amount": "1000.04",
-                            "currency": "BRL"
-                          },
-                          "isInstalment": false,
-                          "financeCharges": [
+                          "bills": [],
+                          "limits": [
                             {
-                              "type": "JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA",
-                              "additionalInfo": "Informações Adicionais",
-                              "amount": "100000.04",
-                              "currency": "BRL"
+                              "creditLineLimitType": "LIMITE_CREDITO_TOTAL",
+                              "consolidationType": "CONSOLIDADO",
+                              "identificationNumber": "8921",
+                              "lineName": "CREDITO_A_VISTA",
+                              "lineNameAdditionalInfo": "NA",
+                              "isLimitFlexible": true,
+                              "limitAmount": {
+                                "amount": "23000.9761",
+                                "currency": "BRL"
+                              },
+                              "usedAmount": {
+                                "amount": "7500.05",
+                                "currency": "BRL"
+                              },
+                              "availableAmount": {
+                                "amount": "15500.9261",
+                                "currency": "BRL"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "userId": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017",
+                          "creditCardAccountId": "179b82f1-9a78-4a9d-83ac-106737d9aed7",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Sib Bank",
+                          "companyCnpj": "40156018000100",
+                          "creditCardNetwork": "DINERS_CLUB",
+                          "name": "Dinners Grafite",
+                          "networkAdditionalInfo": "NA",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "productAdditionalInfo": "Dinners Elo Grafite",
+                          "productType": "GRAFITE",
+                          "updatedAt": "2024-09-09T18:15:06.537Z",
+                          "details": {
+                            "name": "Dinners Grafite",
+                            "productType": "GRAFITE",
+                            "productAdditionalInfo": "Dinners Elo Grafite",
+                            "creditCardNetwork": "DINERS_CLUB",
+                            "networkAdditionalInfo": "NA",
+                            "paymentMethod": [
+                              {
+                                "identificationNumber": "8921",
+                                "isMultipleCreditCard": false
+                              }
+                            ]
+                          },
+                          "bills": [
+                            {
+                              "billId": "5ebb8f3b-5235-411f-a450-17f74a1f3a3d",
+                              "dueDate": "2024-09-09",
+                              "billTotalAmount": {
+                                "amount": "100000.04",
+                                "currency": "BRL"
+                              },
+                              "billMinimumAmount": {
+                                "amount": "1000.04",
+                                "currency": "BRL"
+                              },
+                              "isInstalment": false,
+                              "financeCharges": [
+                                {
+                                  "type": "JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA",
+                                  "additionalInfo": "Informações Adicionais",
+                                  "amount": "100000.04",
+                                  "currency": "BRL"
+                                }
+                              ],
+                              "payments": [
+                                {
+                                  "valueType": "VALOR_PAGAMENTO_FATURA_PARCELADO",
+                                  "paymentDate": "2024-09-09",
+                                  "paymentMode": "DEBITO_CONTA_CORRENTE",
+                                  "amount": "100000.04",
+                                  "currency": "BRL"
+                                }
+                              ]
                             }
                           ],
-                          "payments": [
+                          "limits": [
                             {
-                              "valueType": "VALOR_PAGAMENTO_FATURA_PARCELADO",
-                              "paymentDate": "2024-09-09",
-                              "paymentMode": "DEBITO_CONTA_CORRENTE",
-                              "amount": "100000.04",
-                              "currency": "BRL"
+                              "creditLineLimitType": "LIMITE_CREDITO_TOTAL",
+                              "consolidationType": "CONSOLIDADO",
+                              "identificationNumber": "8921",
+                              "lineName": "CREDITO_A_VISTA",
+                              "lineNameAdditionalInfo": "NA",
+                              "isLimitFlexible": true,
+                              "limitAmount": {
+                                "amount": "23000.9761",
+                                "currency": "BRL"
+                              },
+                              "usedAmount": {
+                                "amount": "7500.05",
+                                "currency": "BRL"
+                              },
+                              "availableAmount": {
+                                "amount": "15500.9261",
+                                "currency": "BRL"
+                              }
                             }
                           ]
                         }
-                      ],
-                      "limits": [
-                        {
-                          "creditLineLimitType": "LIMITE_CREDITO_TOTAL",
-                          "consolidationType": "CONSOLIDADO",
-                          "identificationNumber": "8921",
-                          "lineName": "CREDITO_A_VISTA",
-                          "lineNameAdditionalInfo": "NA",
-                          "isLimitFlexible": true,
-                          "limitAmount": {
-                            "amount": "23000.9761",
-                            "currency": "BRL"
-                          },
-                          "usedAmount": {
-                            "amount": "7500.05",
-                            "currency": "BRL"
-                          },
-                          "availableAmount": {
-                            "amount": "15500.9261",
-                            "currency": "BRL"
-                          }
-                        }
                       ]
-                    }
-                  ]
+                    },
+                    "summary": "OK"
+                  }
                 }
               }
             }
