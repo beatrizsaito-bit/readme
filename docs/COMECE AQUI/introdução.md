@@ -19,11 +19,11 @@ O Data Link possui 3 camadas de dados disponíveis
 
 # Como funciona
 
-<Image border={false} src="https://files.readme.io/e8a19070f891846991837ea998c4d265aaaf182c5c642964f8ba8dfdb480828a-image.png" />
+![](https://files.readme.io/e8a19070f891846991837ea998c4d265aaaf182c5c642964f8ba8dfdb480828a-image.png)
 
 <br />
 
-1. **Jornada de consentimento: ** O usuário realiza o consentimento dos dados. Ele escolhe quais dados deseja compartilhar e de qual instituição financeira.
+1. Jornada de consentimento: O usuário realiza o consentimento dos dados. Ele escolhe quais dados deseja compartilhar e de qual instituição financeira.
 2. Enquanto o consentimento estiver autorizado, o Data Link atualiza os dados financeiros consentidos e disponibiliza para a consulta via APIs próprias da Lina
 
 <Callout icon="📘" theme="info">
