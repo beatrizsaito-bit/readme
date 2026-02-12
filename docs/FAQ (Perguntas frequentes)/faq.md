@@ -10,6 +10,8 @@ metadata:
 
 * [Como criar uma conta?](#como-criar-uma-conta)
 * [Como visualizar dados?](#como-visualizar-dados)
+* [Como obtenho minhas credenciais de desenvolvimento](#como-obtenho-minhas-credenciais) 
+  *
 
 <br />
 
@@ -18,5 +20,9 @@ metadata:
 (resposta...)
 
 # Como visualizar dados?
+
+(resposta...)
+
+# Como obtenho minhas credenciais de desenvolvimento?
 
 (resposta...)
