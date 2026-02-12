@@ -10,7 +10,7 @@ metadata:
 
 * [Como criar uma conta?](#como-criar-uma-conta)
 * [Como visualizar dados?](#como-visualizar-dados)
-* [Como obtenho minhas credenciais de desenvolvimento](#como-obtenho-minhas-credenciais) 
+* [Como obtenho minhas credenciais de desenvolvimento](https://lina-itp.readme.io/docs/faq#como-obtenho-minhas-credenciais-de-desenvolvimento)
   *
 
 <br />
