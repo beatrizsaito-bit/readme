@@ -9,7 +9,7 @@ metadata:
 # Sumário
 
 * [Como criar uma conta?](#como-criar-uma-conta)
-* [Como visualizar dados?](#como-visualizar-dados)
+* [Como visualizar dados?](https://lina-itp.readme.io/docs/faq#como-visualizar-dados)
 * [Como obtenho minhas credenciais de desenvolvimento](https://lina-itp.readme.io/docs/faq#como-obtenho-minhas-credenciais-de-desenvolvimento)
   *
 
