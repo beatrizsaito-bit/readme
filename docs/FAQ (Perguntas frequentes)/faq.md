@@ -17,7 +17,7 @@ metadata:
 
 # Como criar uma conta?
 
-(resposta...)
+Você pode criar sua conta de testes ou acessar a sua conta através do [ Data Link](https://console.datalink.linaopenx.com.br/). Dentro do período de testes gratuitos é possível 
 
 # Como visualizar dados?
 
