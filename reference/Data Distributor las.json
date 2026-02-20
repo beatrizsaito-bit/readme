@@ -502,59 +502,6 @@
           "1 - Fluxo de consentimento"
         ],
         "summary": "1.2 - Criação de consentimento",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "example": {
-                  "organisationId": "{{organisation_id}}",
-                  "authorisationServerId": "{{authorisation_server_id}}",
-                  "consent": {
-                    "loggedUser": {
-                      "cpf": "{{user_cpf}}"
-                    },
-                    "permissions": [
-                      "RESOURCES_READ",
-                      "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                      "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                      "ACCOUNTS_BALANCES_READ",
-                      "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                      "ACCOUNTS_READ",
-                      "ACCOUNTS_TRANSACTIONS_READ",
-                      "CREDIT_CARDS_ACCOUNTS_READ",
-                      "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                      "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                      "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                      "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                      "LOANS_READ",
-                      "LOANS_WARRANTIES_READ",
-                      "LOANS_SCHEDULED_INSTALMENTS_READ",
-                      "LOANS_PAYMENTS_READ",
-                      "FINANCINGS_READ",
-                      "FINANCINGS_WARRANTIES_READ",
-                      "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                      "FINANCINGS_PAYMENTS_READ",
-                      "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                      "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                      "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                      "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                      "INVOICE_FINANCINGS_READ",
-                      "INVOICE_FINANCINGS_WARRANTIES_READ",
-                      "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                      "INVOICE_FINANCINGS_PAYMENTS_READ",
-                      "BANK_FIXED_INCOMES_READ",
-                      "CREDIT_FIXED_INCOMES_READ",
-                      "FUNDS_READ",
-                      "VARIABLE_INCOMES_READ",
-                      "TREASURE_TITLES_READ"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "201": {
             "description": "Created",
@@ -626,6 +573,29 @@
                       "redirectUrl": "https://auth.mockbank.poc.raidiam.io/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3AD2AKVKARaSdsGQ5KF_8Q8&client_id=yXYqweXJXhxqMebXy7j_e&state=WD2D99Nhn3nse80JoBP87n0E1IA8utKYxpxxDONIba2UPpTNGKLDod38gWlhhLexDgu9Y8xmuWzAJGhpibmDaNNG4bg3HzDYTIo3"
                     }
                   }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              },
+              "examples": {
+                "New Example": {
+                  "summary": "New Example",
+                  "value": "{\n    \"organisationId\": \"{{organisation_id}}\",\n    \"authorisationServerId\": \"{{authorisation_server_id}}\",\n    \"consent\": {\n        \"loggedUser\": {\n            \"cpf\": \"{{user_cpf}}\"\n        },\n        \"permissions\": [\n            // Campo obrigatório\n            \"RESOURCES_READ\",\n            // Se PF, incluir PERSONAL, se PJ, incluir BUSINESS\n            \"CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ\",\n            \"CUSTOMERS_PERSONAL_ADITTIONALINFO_READ\",\n            // Permissões para contas bancárias\n            \"ACCOUNTS_BALANCES_READ\",\n            \"ACCOUNTS_OVERDRAFT_LIMITS_READ\",\n            \"ACCOUNTS_READ\",\n            \"ACCOUNTS_TRANSACTIONS_READ\",\n            // Permissões para Cartões de Crédito\n            \"CREDIT_CARDS_ACCOUNTS_READ\",\n            \"CREDIT_CARDS_ACCOUNTS_LIMITS_READ\",\n            \"CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ\",\n            \"CREDIT_CARDS_ACCOUNTS_BILLS_READ\",\n            \"CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ\",\n            // Permissões para Empréstimos\n            \"LOANS_READ\",\n            \"LOANS_WARRANTIES_READ\",\n            \"LOANS_SCHEDULED_INSTALMENTS_READ\",\n            \"LOANS_PAYMENTS_READ\",\n            // Permissões para Financiamentos\n            \"FINANCINGS_READ\",\n            \"FINANCINGS_WARRANTIES_READ\",\n            \"FINANCINGS_SCHEDULED_INSTALMENTS_READ\",\n            \"FINANCINGS_PAYMENTS_READ\",\n            // Permissões para Adiantamento a depositantes\n            \"UNARRANGED_ACCOUNTS_OVERDRAFT_READ\",\n            \"UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ\",\n            \"UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ\",\n            \"UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ\",\n            // Permissões para Direitos creditórios\n            \"INVOICE_FINANCINGS_READ\",\n            \"INVOICE_FINANCINGS_WARRANTIES_READ\",\n            \"INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ\",\n            \"INVOICE_FINANCINGS_PAYMENTS_READ\",\n            // Permissões para Renda Fixa Bancária\n            \"BANK_FIXED_INCOMES_READ\",\n            // Permissões para Renda Fixa de Crédito\n            \"CREDIT_FIXED_INCOMES_READ\",\n            // Permissões para Fundos\n            \"FUNDS_READ\",\n            // Permissões para Renda Variável\n            \"VARIABLE_INCOMES_READ\",\n            // Permissões para Títulos do Tesouro\n            \"TREASURE_TITLES_READ\"\n        ]\n    }\n}"
                 }
               }
             }
