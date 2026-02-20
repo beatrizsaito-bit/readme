@@ -584,12 +584,44 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "name": {
+                  "organisationId": {
+                    "type": "string",
+                    "description": ""
+                  },
+                  "authorisationServerId": {
                     "type": "string"
+                  },
+                  "consent": {
+                    "type": "object",
+                    "properties": {
+                      "loggedUser": {
+                        "type": "object",
+                        "properties": {
+                          "cpf": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "cpf"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "loggedUser"
+                    ]
+                  },
+                  "permissions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
-                  "name"
+                  "organisationId",
+                  "authorisationServerId",
+                  "consent",
+                  "permissions"
                 ]
               },
               "examples": {
