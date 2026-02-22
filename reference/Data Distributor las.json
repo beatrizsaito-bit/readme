@@ -960,7 +960,24 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "userId": {
+                      "type": "string"
+                    },
+                    "authorisationServerId": {
+                      "type": "string"
+                    },
+                    "organisationId": {
+                      "type": "string"
+                    },
+                    "consentId": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "userId"
+                  ]
                 },
                 "examples": {
                   "CREATED": {
