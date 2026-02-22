@@ -142,7 +142,78 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "OrganisationName": {
+                            "type": "string"
+                          },
+                          "OrganisationId": {
+                            "type": "string"
+                          },
+                          "LegalEntityName": {
+                            "type": "string"
+                          },
+                          "RegistrationNumber": {
+                            "type": "string"
+                          },
+                          "ParentOrganisationReference": {
+                            "type": "string"
+                          },
+                          "AuthorisationServers": {
+                            "type": "array",
+                            "items": {
+                              "properties": {
+                                "AuthorisationServerId": {
+                                  "type": "string"
+                                },
+                                "CustomerFriendlyName": {
+                                  "type": "string"
+                                },
+                                "CustomerFriendlyDescription": {
+                                  "type": "string"
+                                },
+                                "CustomerFriendlyLogoUri": {
+                                  "type": "string"
+                                },
+                                "OpenIDDiscoveryDocument": {
+                                  "type": "string"
+                                },
+                                "ApiResources": {
+                                  "type": "array",
+                                  "items": {
+                                    "properties": {
+                                      "ApiFamilyType": {
+                                        "type": "string"
+                                      },
+                                      "ApiVersion": {
+                                        "type": "string"
+                                      },
+                                      "ApiDiscoveryEndpoints": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                }
+                              },
+                              "type": "object"
+                            }
+                          }
+                        },
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ]
                 },
                 "example": {
                   "data": [
