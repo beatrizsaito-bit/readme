@@ -215,351 +215,356 @@
                     "data"
                   ]
                 },
-                "example": {
-                  "data": [
-                    {
-                      "OrganisationName": "Open Banking Brasil",
-                      "OrganisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "LegalEntityName": "Raidiam Services Ltd",
-                      "RegistrationNumber": "43142666000197",
-                      "ParentOrganisationReference": "43142666000197",
-                      "AuthorisationServers": [
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "data": [
                         {
-                          "AuthorisationServerId": "9d2b7710-b412-4a12-a385-02df9d56d6c6",
-                          "CustomerFriendlyName": "OPENDATA_INSTITUICAO",
-                          "CustomerFriendlyDescription": "Breve descrição do servidor",
-                          "CustomerFriendlyLogoUri": "https://www.instituicao.com.br/logo.png",
-                          "ApiResources": []
-                        },
-                        {
-                          "AuthorisationServerId": "3d7d6dba-d1a1-492f-8a2d-ee5c84e9f88f",
-                          "CustomerFriendlyName": "WebhookDevServer",
-                          "CustomerFriendlyDescription": null,
-                          "CustomerFriendlyLogoUri": "https://www.invalid.com",
-                          "ApiResources": []
-                        },
-                        {
-                          "AuthorisationServerId": "9e9b3556-9b2c-49a0-825d-c9b28b31d5c9",
-                          "CustomerFriendlyName": "Raidiam Mock Bank - Dev",
-                          "CustomerFriendlyDescription": null,
-                          "CustomerFriendlyLogoUri": "https://tpp.localhost/logo.png",
-                          "ApiResources": []
-                        },
-                        {
-                          "AuthorisationServerId": "9e9ee2ee-d74a-4817-9a00-878532d8f0e8",
-                          "CustomerFriendlyName": "Mock Authorization Server 2",
-                          "CustomerFriendlyDescription": null,
-                          "CustomerFriendlyLogoUri": "https://auth.mock.raidiam.io/logo.png",
-                          "ApiResources": []
-                        },
-                        {
-                          "AuthorisationServerId": "6ea8164b-4b6e-45ac-86ee-6b4595519d9e",
-                          "CustomerFriendlyName": "PRT AS 01062023-01",
-                          "CustomerFriendlyDescription": "test",
-                          "CustomerFriendlyLogoUri": "https://www.example.com/file.svg",
-                          "ApiResources": []
-                        },
-                        {
-                          "AuthorisationServerId": "03aec37e-2a7a-4a39-8cd7-4620f2cafd33",
-                          "CustomerFriendlyName": "Sandbox Directory",
-                          "CustomerFriendlyDescription": "1",
-                          "CustomerFriendlyLogoUri": "https://brazil-ob-tenants-static-files.s3.sa-east-1.amazonaws.com/bofa/Logo_BofA.svg",
-                          "ApiResources": []
-                        },
-                        {
-                          "AuthorisationServerId": "1bf948d5-3546-4cc4-af3e-b8a2ffb86f76",
-                          "CustomerFriendlyName": "PRT-2809-01",
-                          "CustomerFriendlyDescription": "test",
-                          "CustomerFriendlyLogoUri": "https://www.example.com/file.svg",
-                          "ApiResources": []
-                        },
-                        {
-                          "AuthorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                          "CustomerFriendlyName": "Mock Bank",
-                          "CustomerFriendlyDescription": "Mock Bank by Raidiam",
-                          "CustomerFriendlyLogoUri": "https://cdn.raidiam.io/directory-ui/brand/obbrazil/0.2.0.112/favicon.svg",
-                          "ApiResources": [
+                          "OrganisationName": "Open Banking Brasil",
+                          "OrganisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "LegalEntityName": "Raidiam Services Ltd",
+                          "RegistrationNumber": "43142666000197",
+                          "ParentOrganisationReference": "43142666000197",
+                          "AuthorisationServers": [
                             {
-                              "ApiFamilyType": "opendata-investments_funds",
-                              "ApiVersion": "1.0.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://obb.qa.oob.opus-software.com.br/open-banking/opendata-investments/v1/funds"
+                              "AuthorisationServerId": "9d2b7710-b412-4a12-a385-02df9d56d6c6",
+                              "CustomerFriendlyName": "OPENDATA_INSTITUICAO",
+                              "CustomerFriendlyDescription": "Breve descrição do servidor",
+                              "CustomerFriendlyLogoUri": "https://www.instituicao.com.br/logo.png",
+                              "ApiResources": []
+                            },
+                            {
+                              "AuthorisationServerId": "3d7d6dba-d1a1-492f-8a2d-ee5c84e9f88f",
+                              "CustomerFriendlyName": "WebhookDevServer",
+                              "CustomerFriendlyDescription": null,
+                              "CustomerFriendlyLogoUri": "https://www.invalid.com",
+                              "ApiResources": []
+                            },
+                            {
+                              "AuthorisationServerId": "9e9b3556-9b2c-49a0-825d-c9b28b31d5c9",
+                              "CustomerFriendlyName": "Raidiam Mock Bank - Dev",
+                              "CustomerFriendlyDescription": null,
+                              "CustomerFriendlyLogoUri": "https://tpp.localhost/logo.png",
+                              "ApiResources": []
+                            },
+                            {
+                              "AuthorisationServerId": "9e9ee2ee-d74a-4817-9a00-878532d8f0e8",
+                              "CustomerFriendlyName": "Mock Authorization Server 2",
+                              "CustomerFriendlyDescription": null,
+                              "CustomerFriendlyLogoUri": "https://auth.mock.raidiam.io/logo.png",
+                              "ApiResources": []
+                            },
+                            {
+                              "AuthorisationServerId": "6ea8164b-4b6e-45ac-86ee-6b4595519d9e",
+                              "CustomerFriendlyName": "PRT AS 01062023-01",
+                              "CustomerFriendlyDescription": "test",
+                              "CustomerFriendlyLogoUri": "https://www.example.com/file.svg",
+                              "ApiResources": []
+                            },
+                            {
+                              "AuthorisationServerId": "03aec37e-2a7a-4a39-8cd7-4620f2cafd33",
+                              "CustomerFriendlyName": "Sandbox Directory",
+                              "CustomerFriendlyDescription": "1",
+                              "CustomerFriendlyLogoUri": "https://brazil-ob-tenants-static-files.s3.sa-east-1.amazonaws.com/bofa/Logo_BofA.svg",
+                              "ApiResources": []
+                            },
+                            {
+                              "AuthorisationServerId": "1bf948d5-3546-4cc4-af3e-b8a2ffb86f76",
+                              "CustomerFriendlyName": "PRT-2809-01",
+                              "CustomerFriendlyDescription": "test",
+                              "CustomerFriendlyLogoUri": "https://www.example.com/file.svg",
+                              "ApiResources": []
+                            },
+                            {
+                              "AuthorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                              "CustomerFriendlyName": "Mock Bank",
+                              "CustomerFriendlyDescription": "Mock Bank by Raidiam",
+                              "CustomerFriendlyLogoUri": "https://cdn.raidiam.io/directory-ui/brand/obbrazil/0.2.0.112/favicon.svg",
+                              "ApiResources": [
+                                {
+                                  "ApiFamilyType": "opendata-investments_funds",
+                                  "ApiVersion": "1.0.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://obb.qa.oob.opus-software.com.br/open-banking/opendata-investments/v1/funds"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "variable-incomes",
+                                  "ApiVersion": "1.1.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/investments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/investments/{investmentId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/investments/{investmentId}/balances",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/investments/{investmentId}/transactions",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/investments/{investmentId}/transactions-current",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/broker-notes/{brokerNoteId}"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "enrollments",
+                                  "ApiVersion": "2.0.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments/{enrollmentId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments/{enrollmentId}/fido-registration-options",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments/{enrollmentId}/fido-registration",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments/{enrollmentId}/fido-sign-options",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments/{enrollmentId}/risk-signals",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/consents/{consentId}/authorise"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "consents",
+                                  "ApiVersion": "3.0.1",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/consents/v3/consents",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/consents/v3/consents/{consentId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/consents/v3/consents/{consentId}/extends",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/consents/v3/consents/{consentId}/extensions"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "bank-fixed-incomes",
+                                  "ApiVersion": "1.0.3",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/bank-fixed-incomes/v1/investments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/bank-fixed-incomes/v1/investments/{investmentId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/bank-fixed-incomes/v1/investments/{investmentId}/balances",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/bank-fixed-incomes/v1/investments/{investmentId}/transactions",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/bank-fixed-incomes/v1/investments/{investmentId}/transactions-current"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "treasure-titles",
+                                  "ApiVersion": "1.0.1",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/treasure-titles/v1/investments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/treasure-titles/v1/investments/{investmentId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/treasure-titles/v1/investments/{investmentId}/balances",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/treasure-titles/v1/investments/{investmentId}/transactions",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/treasure-titles/v1/investments/{investmentId}/transactions-current"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "credit-fixed-incomes",
+                                  "ApiVersion": "1.0.2",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-fixed-incomes/v1/investments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-fixed-incomes/v1/investments/{investmentId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-fixed-incomes/v1/investments/{investmentId}/balances",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-fixed-incomes/v1/investments/{investmentId}/transactions",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-fixed-incomes/v1/investments/{investmentId}/transactions-current"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "funds",
+                                  "ApiVersion": "1.0.2",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/balances",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/transactions",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/transactions-current",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/balances",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/transactions",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/transactions-current"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "accounts",
+                                  "ApiVersion": "2.4.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts/{accountId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts/{accountId}/balances",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts/{accountId}/transactions",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts/{accountId}/transactions-current",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts/{accountId}/overdraft-limits"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "credit-cards-accounts",
+                                  "ApiVersion": "2.3.1",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}/limits",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}/transactions",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}/transactions-current",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}/bills",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}/bills/{billId}/transactions"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "customers-business",
+                                  "ApiVersion": "2.1.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/business/identifications",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/business/qualifications",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/business/financial-relations"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "customers-personal",
+                                  "ApiVersion": "2.1.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/personal/identifications",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/personal/qualifications",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/personal/financial-relations"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "financings",
+                                  "ApiVersion": "2.2.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/financings/v2/contracts",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/financings/v2/contracts/{contractId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/financings/v2/contracts/{contractId}/warranties",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/financings/v2/contracts/{contractId}/payments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/financings/v2/contracts/{contractId}/scheduled-instalments"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "invoice-financings",
+                                  "ApiVersion": "2.2.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/invoice-financings/v2/contracts",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/invoice-financings/v2/contracts/{contractId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/invoice-financings/v2/contracts/{contractId}/warranties",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/invoice-financings/v2/contracts/{contractId}/payments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/invoice-financings/v2/contracts/{contractId}/scheduled-instalments"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "loans",
+                                  "ApiVersion": "2.2.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/loans/v2/contracts",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/loans/v2/contracts/{contractId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/loans/v2/contracts/{contractId}/warranties",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/loans/v2/contracts/{contractId}/payments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/loans/v2/contracts/{contractId}/scheduled-instalments"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "unarranged-accounts-overdraft",
+                                  "ApiVersion": "2.2.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/unarranged-accounts-overdraft/v2/contracts",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/unarranged-accounts-overdraft/v2/contracts/{contractId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/unarranged-accounts-overdraft/v2/contracts/{contractId}/warranties",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/unarranged-accounts-overdraft/v2/contracts/{contractId}/payments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/unarranged-accounts-overdraft/v2/contracts/{contractId}/scheduled-instalments"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "resources",
+                                  "ApiVersion": "3.0.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/resources/v3/resources"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "payments-consents",
+                                  "ApiVersion": "4.0.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/payments/v4/consents",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/payments/v4/consents/{consentId}"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "exchanges",
+                                  "ApiVersion": "1.0.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/exchanges/v1/operations",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/exchanges/v1/operations/{operationId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/exchanges/v1/operations/{operationId}/events"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "payments-recurring-consents",
+                                  "ApiVersion": "1.0.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/automatic-payments/v1/recurring-consents",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/automatic-payments/v1/recurring-consents/{recurringConsentId}"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "payments-pix-recurring-payments",
+                                  "ApiVersion": "1.0.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/automatic-payments/v1/pix/recurring-payments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/automatic-payments/v1/pix/recurring-payments/{recurringPaymentId}"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "payments-pix",
+                                  "ApiVersion": "4.0.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/payments/v4/pix/payments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/payments/v4/pix/payments/{paymentId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/payments/v4/pix/payments/consents/{consentId}"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "enrollments",
+                                  "ApiVersion": "1.3.1",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments/{enrollmentId}",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments/{enrollmentId}/fido-registration-options",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments/{enrollmentId}/fido-registration",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments/{enrollmentId}/fido-sign-options",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments/{enrollmentId}/risk-signals",
+                                    "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/consents/{consentId}/authorise"
+                                  ]
+                                }
                               ]
                             },
                             {
-                              "ApiFamilyType": "variable-incomes",
-                              "ApiVersion": "1.1.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/investments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/investments/{investmentId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/investments/{investmentId}/balances",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/investments/{investmentId}/transactions",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/investments/{investmentId}/transactions-current",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/variable-incomes/v1/broker-notes/{brokerNoteId}"
+                              "AuthorisationServerId": "8875181f-25c0-423c-b8e2-5576562b754a",
+                              "CustomerFriendlyName": "Phase3Publication",
+                              "CustomerFriendlyDescription": "Test AS",
+                              "CustomerFriendlyLogoUri": "https://www.example.com/file.svg",
+                              "ApiResources": []
+                            },
+                            {
+                              "AuthorisationServerId": "8b84d2b4-f05b-4521-b128-2ad83ad56a80",
+                              "CustomerFriendlyName": "40charstest",
+                              "CustomerFriendlyDescription": "Test",
+                              "CustomerFriendlyLogoUri": "https://www.example.com/file.svg",
+                              "ApiResources": [
+                                {
+                                  "ApiFamilyType": "opendata-investments_variable-incomes",
+                                  "ApiVersion": "1.0.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://openbanking-h.api.santander.com.br/open-banking/opendata-investments/v1/variable-incomes"
+                                  ]
+                                },
+                                {
+                                  "ApiFamilyType": "exchanges",
+                                  "ApiVersion": "1.0.0",
+                                  "ApiDiscoveryEndpoints": [
+                                    "https://www.example.com/open-banking/exchanges/v1/operations"
+                                  ]
+                                }
                               ]
                             },
                             {
-                              "ApiFamilyType": "enrollments",
-                              "ApiVersion": "2.0.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments/{enrollmentId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments/{enrollmentId}/fido-registration-options",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments/{enrollmentId}/fido-registration",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments/{enrollmentId}/fido-sign-options",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/enrollments/{enrollmentId}/risk-signals",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v2/consents/{consentId}/authorise"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "consents",
-                              "ApiVersion": "3.0.1",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/consents/v3/consents",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/consents/v3/consents/{consentId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/consents/v3/consents/{consentId}/extends",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/consents/v3/consents/{consentId}/extensions"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "bank-fixed-incomes",
-                              "ApiVersion": "1.0.3",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/bank-fixed-incomes/v1/investments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/bank-fixed-incomes/v1/investments/{investmentId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/bank-fixed-incomes/v1/investments/{investmentId}/balances",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/bank-fixed-incomes/v1/investments/{investmentId}/transactions",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/bank-fixed-incomes/v1/investments/{investmentId}/transactions-current"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "treasure-titles",
-                              "ApiVersion": "1.0.1",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/treasure-titles/v1/investments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/treasure-titles/v1/investments/{investmentId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/treasure-titles/v1/investments/{investmentId}/balances",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/treasure-titles/v1/investments/{investmentId}/transactions",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/treasure-titles/v1/investments/{investmentId}/transactions-current"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "credit-fixed-incomes",
-                              "ApiVersion": "1.0.2",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-fixed-incomes/v1/investments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-fixed-incomes/v1/investments/{investmentId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-fixed-incomes/v1/investments/{investmentId}/balances",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-fixed-incomes/v1/investments/{investmentId}/transactions",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-fixed-incomes/v1/investments/{investmentId}/transactions-current"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "funds",
-                              "ApiVersion": "1.0.2",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/balances",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/transactions",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/transactions-current",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/balances",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/transactions",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/funds/v1/investments/{investmentId}/transactions-current"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "accounts",
-                              "ApiVersion": "2.4.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts/{accountId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts/{accountId}/balances",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts/{accountId}/transactions",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts/{accountId}/transactions-current",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/accounts/v2/accounts/{accountId}/overdraft-limits"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "credit-cards-accounts",
-                              "ApiVersion": "2.3.1",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}/limits",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}/transactions",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}/transactions-current",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}/bills",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/credit-cards-accounts/v2/accounts/{creditCardAccountId}/bills/{billId}/transactions"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "customers-business",
-                              "ApiVersion": "2.1.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/business/identifications",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/business/qualifications",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/business/financial-relations"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "customers-personal",
-                              "ApiVersion": "2.1.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/personal/identifications",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/personal/qualifications",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/customers/v2/personal/financial-relations"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "financings",
-                              "ApiVersion": "2.2.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/financings/v2/contracts",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/financings/v2/contracts/{contractId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/financings/v2/contracts/{contractId}/warranties",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/financings/v2/contracts/{contractId}/payments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/financings/v2/contracts/{contractId}/scheduled-instalments"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "invoice-financings",
-                              "ApiVersion": "2.2.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/invoice-financings/v2/contracts",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/invoice-financings/v2/contracts/{contractId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/invoice-financings/v2/contracts/{contractId}/warranties",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/invoice-financings/v2/contracts/{contractId}/payments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/invoice-financings/v2/contracts/{contractId}/scheduled-instalments"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "loans",
-                              "ApiVersion": "2.2.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/loans/v2/contracts",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/loans/v2/contracts/{contractId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/loans/v2/contracts/{contractId}/warranties",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/loans/v2/contracts/{contractId}/payments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/loans/v2/contracts/{contractId}/scheduled-instalments"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "unarranged-accounts-overdraft",
-                              "ApiVersion": "2.2.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/unarranged-accounts-overdraft/v2/contracts",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/unarranged-accounts-overdraft/v2/contracts/{contractId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/unarranged-accounts-overdraft/v2/contracts/{contractId}/warranties",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/unarranged-accounts-overdraft/v2/contracts/{contractId}/payments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/unarranged-accounts-overdraft/v2/contracts/{contractId}/scheduled-instalments"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "resources",
-                              "ApiVersion": "3.0.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/resources/v3/resources"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "payments-consents",
-                              "ApiVersion": "4.0.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/payments/v4/consents",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/payments/v4/consents/{consentId}"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "exchanges",
-                              "ApiVersion": "1.0.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/exchanges/v1/operations",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/exchanges/v1/operations/{operationId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/exchanges/v1/operations/{operationId}/events"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "payments-recurring-consents",
-                              "ApiVersion": "1.0.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/automatic-payments/v1/recurring-consents",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/automatic-payments/v1/recurring-consents/{recurringConsentId}"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "payments-pix-recurring-payments",
-                              "ApiVersion": "1.0.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/automatic-payments/v1/pix/recurring-payments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/automatic-payments/v1/pix/recurring-payments/{recurringPaymentId}"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "payments-pix",
-                              "ApiVersion": "4.0.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/payments/v4/pix/payments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/payments/v4/pix/payments/{paymentId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/payments/v4/pix/payments/consents/{consentId}"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "enrollments",
-                              "ApiVersion": "1.3.1",
-                              "ApiDiscoveryEndpoints": [
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments/{enrollmentId}",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments/{enrollmentId}/fido-registration-options",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments/{enrollmentId}/fido-registration",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments/{enrollmentId}/fido-sign-options",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/enrollments/{enrollmentId}/risk-signals",
-                                "https://matls-api.mockbank.poc.raidiam.io/open-banking/enrollments/v1/consents/{consentId}/authorise"
-                              ]
+                              "AuthorisationServerId": "856e62aa-6891-48fa-b8de-4f365d4b22e5",
+                              "CustomerFriendlyName": "Webhook Test Server",
+                              "CustomerFriendlyDescription": "teste para webhook - edição",
+                              "CustomerFriendlyLogoUri": "https://www.naoseaplica.com/file.svg",
+                              "ApiResources": []
                             }
                           ]
-                        },
-                        {
-                          "AuthorisationServerId": "8875181f-25c0-423c-b8e2-5576562b754a",
-                          "CustomerFriendlyName": "Phase3Publication",
-                          "CustomerFriendlyDescription": "Test AS",
-                          "CustomerFriendlyLogoUri": "https://www.example.com/file.svg",
-                          "ApiResources": []
-                        },
-                        {
-                          "AuthorisationServerId": "8b84d2b4-f05b-4521-b128-2ad83ad56a80",
-                          "CustomerFriendlyName": "40charstest",
-                          "CustomerFriendlyDescription": "Test",
-                          "CustomerFriendlyLogoUri": "https://www.example.com/file.svg",
-                          "ApiResources": [
-                            {
-                              "ApiFamilyType": "opendata-investments_variable-incomes",
-                              "ApiVersion": "1.0.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://openbanking-h.api.santander.com.br/open-banking/opendata-investments/v1/variable-incomes"
-                              ]
-                            },
-                            {
-                              "ApiFamilyType": "exchanges",
-                              "ApiVersion": "1.0.0",
-                              "ApiDiscoveryEndpoints": [
-                                "https://www.example.com/open-banking/exchanges/v1/operations"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "AuthorisationServerId": "856e62aa-6891-48fa-b8de-4f365d4b22e5",
-                          "CustomerFriendlyName": "Webhook Test Server",
-                          "CustomerFriendlyDescription": "teste para webhook - edição",
-                          "CustomerFriendlyLogoUri": "https://www.naoseaplica.com/file.svg",
-                          "ApiResources": []
                         }
                       ]
-                    }
-                  ]
+                    },
+                    "summary": "OK"
+                  }
                 }
               }
             }
