@@ -603,25 +603,36 @@
                         },
                         "required": [
                           "cpf"
-                        ]
+                        ],
+                        "description": "Define o CPF do usuário logado"
+                      },
+                      "businessEntity": {
+                        "type": "object",
+                        "properties": {
+                          "cnpj": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "Campo obrigatório para consentimento em PJ"
+                      },
+                      "permissions": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": " Define as permissões do consentimento"
                       }
                     },
                     "required": [
-                      "loggedUser"
+                      "loggedUser",
+                      "permissions"
                     ]
-                  },
-                  "permissions": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
                   }
                 },
                 "required": [
                   "organisationId",
                   "authorisationServerId",
-                  "consent",
-                  "permissions"
+                  "consent"
                 ]
               },
               "examples": {
