@@ -11,19 +11,19 @@ metadata:
 
 Clique no botão "importar" no canto esquerdo superior da aplicação Postman e importe ambos os arquivos (Collection e Environment) para a aplicação.
 
-<Image border={false} src="https://files.readme.io/3ad062e2ec0d019c90b21a118ee8860d9b11fba86aa17f98007cff3adc577aa6-image.png" />
+![](https://files.readme.io/3ad062e2ec0d019c90b21a118ee8860d9b11fba86aa17f98007cff3adc577aa6-image.png)
 
 Clique no canto direito da aplicação e selecione o Environment enviado e previamente carregado na aplicação:
 
-<Image border={false} src="https://files.readme.io/b74b85c7254bdf774034f9b0c90f84fdd7bf980fe3085881c17e8fc66a876a56-image.png" />
+![](https://files.readme.io/b74b85c7254bdf774034f9b0c90f84fdd7bf980fe3085881c17e8fc66a876a56-image.png)
 
 Com o Environment carregado e a Postman Collection à esquerda, podemos realizar a primeira chamada para validar o funcionamento das credenciais enviadas:
 
-<Image border={false} src="https://files.readme.io/433ba4174da2b43719023b93da38b85d7d732fac87d2b08774f871b1b2a6da7c-image.png" />
+![](https://files.readme.io/433ba4174da2b43719023b93da38b85d7d732fac87d2b08774f871b1b2a6da7c-image.png)
 
 Ao acessar a collection, clique na aba Authorization ou Autorização, role ao final da página e clique no botão laranja. Caso tenha sucesso na chamada, a tela a seguir será exibida. Ao final, clique em Use Token ou Utilizar Token para confirmar e autenticar todas as chamadas subsequentes que serão realizadas a seguir
 
-<Image border={false} src="https://files.readme.io/89cc72838cba29587e8e0412352bda599a744be845182e47f966e93cea54fa57-image.png" />
+![](https://files.readme.io/89cc72838cba29587e8e0412352bda599a744be845182e47f966e93cea54fa57-image.png)
 
 <Callout icon="📘" theme="info">
   Postman Collection - Autenticação
@@ -50,6 +50,12 @@ Cada instituição possuem um **OrganisationId**  e do **AuthorisationServerId**
 Para caso de consentimento de pessoa física será necessário o CPF do usuário. Para casos de pessoa jurídica é necessário o CPF de um dos sócios e o CNPJ da pessoa jurídica.
 
 Você precisará enviar o `organisation_id`, `authorisation_server_id` e `user_cpf` preenchidos, além das permissões que deseja consultar.
+
+<Callout icon="📘" theme="info">
+  **Observação**
+
+  Para ambiente de homologação, utilize os valores de `organisation_id` e `authorisation_server_id` do **MockBank** e use um CPF mockado.
+</Callout>
 
 <Callout icon="❗️" theme="error">
   A permissão **RESOURCES_READ** deve ser preenchida em toda requisição
@@ -251,7 +257,7 @@ Abaixo está a lista com as permissões necessários para cada agrupamento de da
   </tbody>
 </Table>
 
-A partir desta definição, basta realizar a chamada POST para o endpoint listado. Em casos de sucesso, a resposta conterá uma redirectUrlque deve ser utilizada para o redirecionamento do usuário final, por exemplo:
+A partir desta definição, basta realizar a chamada POST para o endpoint listado. Em casos de sucesso, a resposta conterá uma redirectUrl que deve ser utilizada para o redirecionamento do usuário final, por exemplo:
 
 ```Text Redirect
 {
