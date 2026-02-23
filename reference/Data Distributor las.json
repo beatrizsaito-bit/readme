@@ -964,7 +964,7 @@
                   "properties": {
                     "userId": {
                       "type": "string",
-                      "description": "Identificador do usuário que criou o consentimento"
+                      "description": ""
                     },
                     "authorisationServerId": {
                       "type": "string",
