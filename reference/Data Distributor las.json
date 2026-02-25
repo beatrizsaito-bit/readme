@@ -12926,7 +12926,58 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cpf": {
+                            "type": "string",
+                            "example": "1094d9605cd90473ba681351289c4f6e"
+                          },
+                          "banks": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "authorisationServerId": {
+                                  "type": "string",
+                                  "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                                },
+                                "organisationId": {
+                                  "type": "string",
+                                  "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                                }
+                              }
+                            }
+                          },
+                          "cnpj": {
+                            "type": "string"
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "example": "2025-08-05T18:37:42.058Z"
+                          },
+                          "userId": {
+                            "type": "string",
+                            "example": "5566421e-a4db-4e8f-9047-1c7df9c558a2"
+                          }
+                        }
+                      }
+                    },
+                    "page": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "example": 50,
+                      "default": 0
+                    }
+                  }
                 },
                 "examples": {
                   "exampleFromExisting200": {
