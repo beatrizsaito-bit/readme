@@ -27168,7 +27168,100 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_id": {
+                            "type": "string",
+                            "example": "67af28cd4125a9cdfcf51957"
+                          },
+                          "userId": {
+                            "type": "string",
+                            "example": "9d9fe35d-8e12-46f3-807c-4bdaa1238d32"
+                          },
+                          "consentId": {
+                            "type": "string",
+                            "example": "urn:raidiambank:23f1a40c-6c9e-4c76-998c-d33d7c546818"
+                          },
+                          "creationDateTime": {
+                            "type": "string",
+                            "example": "2025-02-14T11:28:11Z",
+                            "format": "date-time"
+                          },
+                          "status": {
+                            "type": "string",
+                            "example": "REJECTED"
+                          },
+                          "statusUpdateDateTime": {
+                            "type": "string",
+                            "example": "2025-02-14T11:29:41Z",
+                            "format": "date-time"
+                          },
+                          "permissions": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "example": "RESOURCES_READ"
+                            }
+                          },
+                          "organisationId": {
+                            "type": "string",
+                            "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                          },
+                          "authorisationServerId": {
+                            "type": "string",
+                            "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                          },
+                          "version": {
+                            "type": "integer",
+                            "example": 3,
+                            "default": 0
+                          },
+                          "createdAt": {
+                            "type": "string",
+                            "example": "2025-02-14T11:28:13.604Z",
+                            "format": "date-time"
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "example": "2025-02-14T11:36:04.617Z",
+                            "format": "date-time"
+                          },
+                          "tenantId": {
+                            "type": "string",
+                            "example": "lina"
+                          },
+                          "rejection": {
+                            "type": "object",
+                            "properties": {
+                              "rejectedBy": {
+                                "type": "string",
+                                "example": "USER"
+                              },
+                              "reason": {
+                                "type": "object",
+                                "properties": {
+                                  "code": {
+                                    "type": "string",
+                                    "example": "CUSTOMER_MANUALLY_REVOKED"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "convertedStatusUpdateTime": {
+                            "type": "string",
+                            "example": "2025-02-14T11:29:41.000Z",
+                            "format": "date-time"
+                          }
+                        }
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "OK": {
