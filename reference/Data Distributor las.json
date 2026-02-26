@@ -29724,6 +29724,12 @@
                     }
                   ]
                 }
+              },
+              "examples": {
+                "New Example": {
+                  "summary": "New Example",
+                  "value": "{\n  \"tenantId\": \"tenant_id\",\n  \"channels\": [\n    {\n      \"type\": \"webhook\",\n      \"value\": \"exemplo\",\n      \"enable\": true,\n      \"secret\": null\n    },\n    {\n      \"type\": \"slack\",\n      \"value\": \"exemploURL\",\n      \"enable\": true\n    },\n    {\n      \"type\": \"email\",\n      \"value\": \"exemploEmail\",\n      \"enable\": true\n    },\n    {\n      \"type\": \"sms\",\n      \"value\": \"551234567\",\n      \"enable\": true\n    }\n  ],\n}"
+                }
               }
             }
           }
@@ -29850,35 +29856,77 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "tenantId": "tenant_id",
-                  "channels": [
-                    {
-                      "type": "webhook",
-                      "value": "exemplo",
-                      "enable": true,
-                      "secret": null
+                  "type": "object",
+                  "properties": {
+                    "tenantId": {
+                      "type": "string",
+                      "example": "tenant_id"
                     },
-                    {
-                      "type": "slack",
-                      "value": "exemploURL",
-                      "enable": true
+                    "channels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "example": "webhook"
+                          },
+                          "value": {
+                            "type": "string",
+                            "example": "exemplo"
+                          },
+                          "enable": {
+                            "type": "boolean",
+                            "example": true,
+                            "default": true
+                          },
+                          "secret": {}
+                        }
+                      }
                     },
-                    {
-                      "type": "email",
-                      "value": "exemploEmail",
-                      "enable": true
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2025-03-20T19:22:17.646Z",
+                      "format": "date-time"
                     },
-                    {
-                      "type": "sms",
-                      "value": "551234567",
-                      "enable": true
+                    "updatedAt": {
+                      "type": "string",
+                      "example": "2025-03-20T20:11:19.695Z",
+                      "format": "date-time"
                     }
-                  ],
-                  "createdAt": "2025-03-20T19:22:17.646Z",
-                  "updatedAt": "2025-03-20T20:11:19.695Z"
+                  }
+                },
+                "examples": {
+                  "exampleFromExisting201": {
+                    "value": {
+                      "tenantId": "tenant_id",
+                      "channels": [
+                        {
+                          "type": "webhook",
+                          "value": "exemplo",
+                          "enable": true,
+                          "secret": null
+                        },
+                        {
+                          "type": "slack",
+                          "value": "exemploURL",
+                          "enable": true
+                        },
+                        {
+                          "type": "email",
+                          "value": "exemploEmail",
+                          "enable": true
+                        },
+                        {
+                          "type": "sms",
+                          "value": "551234567",
+                          "enable": true
+                        }
+                      ],
+                      "createdAt": "2025-03-20T19:22:17.646Z",
+                      "updatedAt": "2025-03-20T20:11:19.695Z"
+                    }
+                  }
                 }
               }
             }
