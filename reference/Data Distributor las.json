@@ -12792,7 +12792,841 @@
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "data": {
+                        "cpf": "76109277673",
+                        "banks": [
+                          {
+                            "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                            "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                          },
+                          {
+                            "authorisationServerId": "",
+                            "organisationId": ""
+                          },
+                          {
+                            "authorisationServerId": "4ce36a87-f411-46eb-b2e4-03ccfde28551",
+                            "organisationId": "effb6cae-e6d6-5f0b-8f31-ee7922850300"
+                          },
+                          {
+                            "authorisationServerId": "41450c52-62f0-43a8-b72b-f7b6cd834155",
+                            "organisationId": "0add85e7-086c-41d0-bd35-a3641d7acc36"
+                          },
+                          {
+                            "authorisationServerId": "9c659052-7b7d-4860-9608-723cb8071625",
+                            "organisationId": "1e6aeb44-8b00-5e2a-bcf7-e3db7f3b7e6f"
+                          },
+                          {
+                            "authorisationServerId": "b00c3bbe-43f0-4786-91f8-fe5afbba50be",
+                            "organisationId": "52d0905b-0a8d-5fcb-a0d1-92ab96ab789e"
+                          },
+                          {
+                            "authorisationServerId": "54bb1fcb-d2d7-46b2-868b-552398305209",
+                            "organisationId": "12db6790-1ec9-4199-b20a-2820b7ec22c2"
+                          },
+                          {
+                            "authorisationServerId": "e70bc5a2-9b70-40f1-a3bb-7e6f41695c52",
+                            "organisationId": "4ae2cefb-e3c1-5624-9448-b3aa4777c539"
+                          }
+                        ],
+                        "updatedAt": "2026-02-25T20:42:51.079Z",
+                        "userId": "cd8bbefb-a0f6-4419-9b15-77c8823dfb65",
+                        "tenantIdList": [
+                          "teste-25-09-0001",
+                          "teste-25-09-0002",
+                          "ladybank",
+                          "lina",
+                          "data-link-finance-manager",
+                          "arvoh",
+                          "bia-teste",
+                          "brb",
+                          "idid",
+                          "pablo-teste",
+                          "data-tutor",
+                          "vale-mobi",
+                          "mastercard",
+                          "bia-teste2"
+                        ],
+                        "step": "COMPLETED",
+                        "userData": [
+                          {
+                            "userId": "cd8bbefb-a0f6-4419-9b15-77c8823dfb65",
+                            "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                            "encripted": true,
+                            "identification": {
+                              "updateDateTime": "2026-02-23T03:02:14Z",
+                              "personalId": "71041fa3-19c5-4243-8a4b-1264b0a78f82",
+                              "brandName": "Alana e Bianca Assessoria Jurídica Ltda",
+                              "civilName": "Tatiana Galvão",
+                              "socialName": "",
+                              "birthDate": "1989-03-23",
+                              "maritalStatusCode": "SOLTEIRO",
+                              "maritalStatusAdditionalInfo": "",
+                              "sex": "MASCULINO",
+                              "companiesCnpj": [
+                                "25349207000105"
+                              ],
+                              "documents": {
+                                "cpfNumber": "53580793004",
+                                "passport": {
+                                  "number": "34229643119827236458",
+                                  "country": "CAN",
+                                  "expirationDate": "2022-05-24",
+                                  "issueDate": "2018-05-24"
+                                }
+                              },
+                              "otherDocuments": [
+                                {
+                                  "type": "CNH",
+                                  "typeAdditionalInfo": "NA",
+                                  "number": "58438287",
+                                  "checkDigit": "P",
+                                  "additionalInfo": "SSP/RS",
+                                  "expirationDate": "2025-05-21"
+                                }
+                              ],
+                              "hasBrazilianNationality": false,
+                              "nationality": [
+                                {
+                                  "otherNationalitiesInfo": "BRA",
+                                  "documents": [
+                                    {
+                                      "type": "SOCIAL SEC",
+                                      "number": "423929299",
+                                      "expirationDate": "2022-08-21",
+                                      "issueDate": "2020-05-30",
+                                      "country": "Brasil",
+                                      "additionalInfo": ""
+                                    }
+                                  ]
+                                }
+                              ],
+                              "filiation": [
+                                {
+                                  "type": "MAE",
+                                  "civilName": "Andreia Galvao",
+                                  "socialName": "NA"
+                                }
+                              ],
+                              "contacts": {
+                                "postalAddresses": [
+                                  {
+                                    "isMain": true,
+                                    "address": "Rua Laguna 129",
+                                    "additionalInfo": "Casa Amarela",
+                                    "districtName": "Cavalhada",
+                                    "townName": "Porto Alegre",
+                                    "ibgeTownCode": "4314902",
+                                    "countrySubDivision": "RS",
+                                    "postCode": "90820060",
+                                    "country": "Brasil",
+                                    "countryCode": "BRA",
+                                    "geographicCoordinates": {
+                                      "latitude": "-30.0953952",
+                                      "longitude": "-51.2279909"
+                                    }
+                                  }
+                                ],
+                                "phones": [
+                                  {
+                                    "isMain": true,
+                                    "type": "FIXO",
+                                    "additionalInfo": "Informações adicionais.",
+                                    "countryCallingCode": "55",
+                                    "areaCode": "51",
+                                    "number": "325421328",
+                                    "phoneExtension": "258"
+                                  }
+                                ],
+                                "emails": [
+                                  {
+                                    "isMain": true,
+                                    "email": "tatiana.galvao@email.com"
+                                  }
+                                ]
+                              }
+                            },
+                            "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                            "qualification": {
+                              "updateDateTime": "2026-02-23T03:02:14Z",
+                              "companyCnpj": "50685362000131",
+                              "occupationCode": "OUTRO",
+                              "occupationDescription": "01",
+                              "informedIncome": {
+                                "frequency": "OUTROS",
+                                "amount": {
+                                  "amount": "100000.04",
+                                  "currency": "BRL"
+                                },
+                                "date": "2021-05-21"
+                              },
+                              "informedPatrimony": {
+                                "amount": {
+                                  "amount": "100000.04",
+                                  "currency": "BRL"
+                                },
+                                "year": 2010
+                              }
+                            },
+                            "relations": {
+                              "updateDateTime": "2026-02-23T03:02:14Z",
+                              "startDate": "2020-05-21T12:00:00Z",
+                              "productsServicesType": [
+                                "CONTA_DEPOSITO_A_VISTA"
+                              ],
+                              "productsServicesTypeAdditionalInfo": "Additional Information",
+                              "procurators": [
+                                {
+                                  "type": "PROCURADOR",
+                                  "cpfNumber": "76109277673",
+                                  "civilName": "NA",
+                                  "socialName": "NA"
+                                }
+                              ],
+                              "accounts": [
+                                {
+                                  "compeCode": "123",
+                                  "branchCode": "6272",
+                                  "number": "94088392",
+                                  "checkDigit": "4",
+                                  "type": "CONTA_DEPOSITO_A_VISTA",
+                                  "subtype": "INDIVIDUAL"
+                                },
+                                {
+                                  "compeCode": "123",
+                                  "branchCode": "6272",
+                                  "number": "11188222",
+                                  "checkDigit": "4",
+                                  "type": "CONTA_POUPANCA",
+                                  "subtype": "INDIVIDUAL"
+                                }
+                              ],
+                              "portabilitiesReceived": [
+                                {
+                                  "employerName": "Test",
+                                  "employerCnpjCpf": "94612232090",
+                                  "paycheckBankDetainerCnpj": "98620943347036",
+                                  "paycheckBankDetainerIspb": "39416146",
+                                  "portabilityApprovalDate": "2024-05-08"
+                                }
+                              ],
+                              "paychecksBankLink": [
+                                {
+                                  "employerName": "Test",
+                                  "employerCnpjCpf": "03888535872",
+                                  "paycheckBankCnpj": "00462736623620",
+                                  "paycheckBankIspb": "99708230",
+                                  "accountOpeningDate": "2024-05-08"
+                                }
+                              ]
+                            },
+                            "updatedAt": "2026-02-25T20:41:36.502Z"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "cpf": {
+                          "type": "string",
+                          "example": "76109277673"
+                        },
+                        "banks": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "authorisationServerId": {
+                                "type": "string",
+                                "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                              },
+                              "organisationId": {
+                                "type": "string",
+                                "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                              }
+                            }
+                          }
+                        },
+                        "updatedAt": {
+                          "type": "string",
+                          "example": "2026-02-25T20:42:51.079Z",
+                          "format": "date-time"
+                        },
+                        "userId": {
+                          "type": "string",
+                          "example": "cd8bbefb-a0f6-4419-9b15-77c8823dfb65"
+                        },
+                        "tenantIdList": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "example": "teste-25-09-0001"
+                          }
+                        },
+                        "step": {
+                          "type": "string",
+                          "example": "COMPLETED"
+                        },
+                        "userData": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "userId": {
+                                "type": "string",
+                                "example": "cd8bbefb-a0f6-4419-9b15-77c8823dfb65"
+                              },
+                              "authorisationServerId": {
+                                "type": "string",
+                                "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                              },
+                              "encripted": {
+                                "type": "boolean",
+                                "example": true,
+                                "default": true
+                              },
+                              "identification": {
+                                "type": "object",
+                                "properties": {
+                                  "updateDateTime": {
+                                    "type": "string",
+                                    "example": "2026-02-23T03:02:14Z",
+                                    "format": "date-time"
+                                  },
+                                  "personalId": {
+                                    "type": "string",
+                                    "example": "71041fa3-19c5-4243-8a4b-1264b0a78f82"
+                                  },
+                                  "brandName": {
+                                    "type": "string",
+                                    "example": "Alana e Bianca Assessoria Jurídica Ltda"
+                                  },
+                                  "civilName": {
+                                    "type": "string",
+                                    "example": "Tatiana Galvão"
+                                  },
+                                  "socialName": {
+                                    "type": "string",
+                                    "example": ""
+                                  },
+                                  "birthDate": {
+                                    "type": "string",
+                                    "example": "1989-03-23",
+                                    "format": "date"
+                                  },
+                                  "maritalStatusCode": {
+                                    "type": "string",
+                                    "example": "SOLTEIRO"
+                                  },
+                                  "maritalStatusAdditionalInfo": {
+                                    "type": "string",
+                                    "example": ""
+                                  },
+                                  "sex": {
+                                    "type": "string",
+                                    "example": "MASCULINO"
+                                  },
+                                  "companiesCnpj": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string",
+                                      "example": "25349207000105"
+                                    }
+                                  },
+                                  "documents": {
+                                    "type": "object",
+                                    "properties": {
+                                      "cpfNumber": {
+                                        "type": "string",
+                                        "example": "53580793004"
+                                      },
+                                      "passport": {
+                                        "type": "object",
+                                        "properties": {
+                                          "number": {
+                                            "type": "string",
+                                            "example": "34229643119827236458"
+                                          },
+                                          "country": {
+                                            "type": "string",
+                                            "example": "CAN"
+                                          },
+                                          "expirationDate": {
+                                            "type": "string",
+                                            "example": "2022-05-24",
+                                            "format": "date"
+                                          },
+                                          "issueDate": {
+                                            "type": "string",
+                                            "example": "2018-05-24",
+                                            "format": "date"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "otherDocuments": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "example": "CNH"
+                                        },
+                                        "typeAdditionalInfo": {
+                                          "type": "string",
+                                          "example": "NA"
+                                        },
+                                        "number": {
+                                          "type": "string",
+                                          "example": "58438287"
+                                        },
+                                        "checkDigit": {
+                                          "type": "string",
+                                          "example": "P"
+                                        },
+                                        "additionalInfo": {
+                                          "type": "string",
+                                          "example": "SSP/RS"
+                                        },
+                                        "expirationDate": {
+                                          "type": "string",
+                                          "example": "2025-05-21",
+                                          "format": "date"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "hasBrazilianNationality": {
+                                    "type": "boolean",
+                                    "example": false,
+                                    "default": true
+                                  },
+                                  "nationality": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "otherNationalitiesInfo": {
+                                          "type": "string",
+                                          "example": "BRA"
+                                        },
+                                        "documents": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "type": {
+                                                "type": "string",
+                                                "example": "SOCIAL SEC"
+                                              },
+                                              "number": {
+                                                "type": "string",
+                                                "example": "423929299"
+                                              },
+                                              "expirationDate": {
+                                                "type": "string",
+                                                "example": "2022-08-21",
+                                                "format": "date"
+                                              },
+                                              "issueDate": {
+                                                "type": "string",
+                                                "example": "2020-05-30",
+                                                "format": "date"
+                                              },
+                                              "country": {
+                                                "type": "string",
+                                                "example": "Brasil"
+                                              },
+                                              "additionalInfo": {
+                                                "type": "string",
+                                                "example": ""
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "filiation": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "example": "MAE"
+                                        },
+                                        "civilName": {
+                                          "type": "string",
+                                          "example": "Andreia Galvao"
+                                        },
+                                        "socialName": {
+                                          "type": "string",
+                                          "example": "NA"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "contacts": {
+                                    "type": "object",
+                                    "properties": {
+                                      "postalAddresses": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "isMain": {
+                                              "type": "boolean",
+                                              "example": true,
+                                              "default": true
+                                            },
+                                            "address": {
+                                              "type": "string",
+                                              "example": "Rua Laguna 129"
+                                            },
+                                            "additionalInfo": {
+                                              "type": "string",
+                                              "example": "Casa Amarela"
+                                            },
+                                            "districtName": {
+                                              "type": "string",
+                                              "example": "Cavalhada"
+                                            },
+                                            "townName": {
+                                              "type": "string",
+                                              "example": "Porto Alegre"
+                                            },
+                                            "ibgeTownCode": {
+                                              "type": "string",
+                                              "example": "4314902"
+                                            },
+                                            "countrySubDivision": {
+                                              "type": "string",
+                                              "example": "RS"
+                                            },
+                                            "postCode": {
+                                              "type": "string",
+                                              "example": "90820060"
+                                            },
+                                            "country": {
+                                              "type": "string",
+                                              "example": "Brasil"
+                                            },
+                                            "countryCode": {
+                                              "type": "string",
+                                              "example": "BRA"
+                                            },
+                                            "geographicCoordinates": {
+                                              "type": "object",
+                                              "properties": {
+                                                "latitude": {
+                                                  "type": "string",
+                                                  "example": "-30.0953952"
+                                                },
+                                                "longitude": {
+                                                  "type": "string",
+                                                  "example": "-51.2279909"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "phones": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "isMain": {
+                                              "type": "boolean",
+                                              "example": true,
+                                              "default": true
+                                            },
+                                            "type": {
+                                              "type": "string",
+                                              "example": "FIXO"
+                                            },
+                                            "additionalInfo": {
+                                              "type": "string",
+                                              "example": "Informações adicionais."
+                                            },
+                                            "countryCallingCode": {
+                                              "type": "string",
+                                              "example": "55"
+                                            },
+                                            "areaCode": {
+                                              "type": "string",
+                                              "example": "51"
+                                            },
+                                            "number": {
+                                              "type": "string",
+                                              "example": "325421328"
+                                            },
+                                            "phoneExtension": {
+                                              "type": "string",
+                                              "example": "258"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "emails": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "isMain": {
+                                              "type": "boolean",
+                                              "example": true,
+                                              "default": true
+                                            },
+                                            "email": {
+                                              "type": "string",
+                                              "example": "tatiana.galvao@email.com"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "organisationId": {
+                                "type": "string",
+                                "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                              },
+                              "qualification": {
+                                "type": "object",
+                                "properties": {
+                                  "updateDateTime": {
+                                    "type": "string",
+                                    "example": "2026-02-23T03:02:14Z",
+                                    "format": "date-time"
+                                  },
+                                  "companyCnpj": {
+                                    "type": "string",
+                                    "example": "50685362000131"
+                                  },
+                                  "occupationCode": {
+                                    "type": "string",
+                                    "example": "OUTRO"
+                                  },
+                                  "occupationDescription": {
+                                    "type": "string",
+                                    "example": "01"
+                                  },
+                                  "informedIncome": {
+                                    "type": "object",
+                                    "properties": {
+                                      "frequency": {
+                                        "type": "string",
+                                        "example": "OUTROS"
+                                      },
+                                      "amount": {
+                                        "type": "object",
+                                        "properties": {
+                                          "amount": {
+                                            "type": "string",
+                                            "example": "100000.04"
+                                          },
+                                          "currency": {
+                                            "type": "string",
+                                            "example": "BRL"
+                                          }
+                                        }
+                                      },
+                                      "date": {
+                                        "type": "string",
+                                        "example": "2021-05-21"
+                                      }
+                                    }
+                                  },
+                                  "informedPatrimony": {
+                                    "type": "object",
+                                    "properties": {
+                                      "amount": {
+                                        "type": "object",
+                                        "properties": {
+                                          "amount": {
+                                            "type": "string",
+                                            "example": "100000.04"
+                                          },
+                                          "currency": {
+                                            "type": "string",
+                                            "example": "BRL"
+                                          }
+                                        }
+                                      },
+                                      "year": {
+                                        "type": "integer",
+                                        "example": 2010,
+                                        "default": 0
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "relations": {
+                                "type": "object",
+                                "properties": {
+                                  "updateDateTime": {
+                                    "type": "string",
+                                    "example": "2026-02-23T03:02:14Z",
+                                    "format": "date-time"
+                                  },
+                                  "startDate": {
+                                    "type": "string",
+                                    "example": "2020-05-21T12:00:00Z"
+                                  },
+                                  "productsServicesType": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string",
+                                      "example": "CONTA_DEPOSITO_A_VISTA"
+                                    }
+                                  },
+                                  "productsServicesTypeAdditionalInfo": {
+                                    "type": "string",
+                                    "example": "Additional Information"
+                                  },
+                                  "procurators": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "example": "PROCURADOR"
+                                        },
+                                        "cpfNumber": {
+                                          "type": "string",
+                                          "example": "76109277673"
+                                        },
+                                        "civilName": {
+                                          "type": "string",
+                                          "example": "NA"
+                                        },
+                                        "socialName": {
+                                          "type": "string",
+                                          "example": "NA"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "accounts": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "compeCode": {
+                                          "type": "string",
+                                          "example": "123"
+                                        },
+                                        "branchCode": {
+                                          "type": "string",
+                                          "example": "6272"
+                                        },
+                                        "number": {
+                                          "type": "string",
+                                          "example": "94088392"
+                                        },
+                                        "checkDigit": {
+                                          "type": "string",
+                                          "example": "4"
+                                        },
+                                        "type": {
+                                          "type": "string",
+                                          "example": "CONTA_DEPOSITO_A_VISTA"
+                                        },
+                                        "subtype": {
+                                          "type": "string",
+                                          "example": "INDIVIDUAL"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "portabilitiesReceived": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "employerName": {
+                                          "type": "string",
+                                          "example": "Test"
+                                        },
+                                        "employerCnpjCpf": {
+                                          "type": "string",
+                                          "example": "94612232090"
+                                        },
+                                        "paycheckBankDetainerCnpj": {
+                                          "type": "string",
+                                          "example": "98620943347036"
+                                        },
+                                        "paycheckBankDetainerIspb": {
+                                          "type": "string",
+                                          "example": "39416146"
+                                        },
+                                        "portabilityApprovalDate": {
+                                          "type": "string",
+                                          "example": "2024-05-08"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "paychecksBankLink": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "employerName": {
+                                          "type": "string",
+                                          "example": "Test"
+                                        },
+                                        "employerCnpjCpf": {
+                                          "type": "string",
+                                          "example": "03888535872"
+                                        },
+                                        "paycheckBankCnpj": {
+                                          "type": "string",
+                                          "example": "00462736623620"
+                                        },
+                                        "paycheckBankIspb": {
+                                          "type": "string",
+                                          "example": "99708230"
+                                        },
+                                        "accountOpeningDate": {
+                                          "type": "string",
+                                          "example": "2024-05-08"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "updatedAt": {
+                                "type": "string",
+                                "example": "2026-02-25T20:41:36.502Z",
+                                "format": "date-time"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
