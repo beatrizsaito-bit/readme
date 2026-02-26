@@ -30480,128 +30480,213 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "monthlyData": [
-                    {
-                      "_id": {
-                        "month": 2,
-                        "year": 2024
-                      },
-                      "debits": 23145.6,
-                      "credits": 0,
-                      "debitCount": 30,
-                      "creditCount": 0,
-                      "averageDebit": 771.52,
-                      "averageCredit": null
+                  "type": "object",
+                  "properties": {
+                    "monthlyData": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_id": {
+                            "type": "object",
+                            "properties": {
+                              "month": {
+                                "type": "integer",
+                                "example": 2,
+                                "default": 0
+                              },
+                              "year": {
+                                "type": "integer",
+                                "example": 2024,
+                                "default": 0
+                              }
+                            }
+                          },
+                          "debits": {
+                            "type": "number",
+                            "example": 23145.6,
+                            "default": 0
+                          },
+                          "credits": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          },
+                          "debitCount": {
+                            "type": "integer",
+                            "example": 30,
+                            "default": 0
+                          },
+                          "creditCount": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          },
+                          "averageDebit": {
+                            "type": "number",
+                            "example": 771.52,
+                            "default": 0
+                          },
+                          "averageCredit": {}
+                        }
+                      }
                     },
-                    {
-                      "_id": {
-                        "month": 3,
-                        "year": 2024
-                      },
-                      "debits": 33946.88,
-                      "credits": 0,
-                      "debitCount": 44,
-                      "creditCount": 0,
-                      "averageDebit": 771.52,
-                      "averageCredit": null
+                    "totalDebitsAmount": {
+                      "type": "integer",
+                      "example": 77152,
+                      "default": 0
                     },
-                    {
-                      "_id": {
-                        "month": 4,
-                        "year": 2024
-                      },
-                      "debits": null,
-                      "credits": null,
-                      "debitCount": null,
-                      "creditCount": null,
-                      "averageDebit": null,
-                      "averageCredit": null,
-                      "totalValue": null,
-                      "transactionCount": null,
-                      "averageValue": null
+                    "totalCreditsAmount": {
+                      "type": "integer",
+                      "example": 0,
+                      "default": 0
                     },
-                    {
-                      "_id": {
-                        "month": 5,
-                        "year": 2024
-                      },
-                      "debits": null,
-                      "credits": null,
-                      "debitCount": null,
-                      "creditCount": null,
-                      "averageDebit": null,
-                      "averageCredit": null,
-                      "totalValue": null,
-                      "transactionCount": null,
-                      "averageValue": null
+                    "totalMonths": {
+                      "type": "integer",
+                      "example": 3,
+                      "default": 0
                     },
-                    {
-                      "_id": {
-                        "month": 6,
-                        "year": 2024
-                      },
-                      "debits": null,
-                      "credits": null,
-                      "debitCount": null,
-                      "creditCount": null,
-                      "averageDebit": null,
-                      "averageCredit": null,
-                      "totalValue": null,
-                      "transactionCount": null,
-                      "averageValue": null
+                    "overallAverageDebitAmount": {
+                      "type": "number",
+                      "example": 25717.333333333332,
+                      "default": 0
                     },
-                    {
-                      "_id": {
-                        "month": 7,
-                        "year": 2024
-                      },
-                      "debits": null,
-                      "credits": null,
-                      "debitCount": null,
-                      "creditCount": null,
-                      "averageDebit": null,
-                      "averageCredit": null,
-                      "totalValue": null,
-                      "transactionCount": null,
-                      "averageValue": null
+                    "overallAverageCreditAmount": {
+                      "type": "integer",
+                      "example": 0,
+                      "default": 0
                     },
-                    {
-                      "_id": {
-                        "month": 8,
-                        "year": 2024
-                      },
-                      "debits": null,
-                      "credits": null,
-                      "debitCount": null,
-                      "creditCount": null,
-                      "averageDebit": null,
-                      "averageCredit": null,
-                      "totalValue": null,
-                      "transactionCount": null,
-                      "averageValue": null
-                    },
-                    {
-                      "_id": {
-                        "month": 9,
-                        "year": 2024
-                      },
-                      "debits": 20059.52,
-                      "credits": 0,
-                      "debitCount": 26,
-                      "creditCount": 0,
-                      "averageDebit": 771.52,
-                      "averageCredit": null
+                    "totalTransactions": {
+                      "type": "integer",
+                      "example": 100,
+                      "default": 0
                     }
-                  ],
-                  "totalDebitsAmount": 77152,
-                  "totalCreditsAmount": 0,
-                  "totalMonths": 3,
-                  "overallAverageDebitAmount": 25717.333333333332,
-                  "overallAverageCreditAmount": 0,
-                  "totalTransactions": 100
+                  }
+                },
+                "examples": {
+                  "exampleFromExisting200": {
+                    "value": {
+                      "monthlyData": [
+                        {
+                          "_id": {
+                            "month": 2,
+                            "year": 2024
+                          },
+                          "debits": 23145.6,
+                          "credits": 0,
+                          "debitCount": 30,
+                          "creditCount": 0,
+                          "averageDebit": 771.52,
+                          "averageCredit": null
+                        },
+                        {
+                          "_id": {
+                            "month": 3,
+                            "year": 2024
+                          },
+                          "debits": 33946.88,
+                          "credits": 0,
+                          "debitCount": 44,
+                          "creditCount": 0,
+                          "averageDebit": 771.52,
+                          "averageCredit": null
+                        },
+                        {
+                          "_id": {
+                            "month": 4,
+                            "year": 2024
+                          },
+                          "debits": null,
+                          "credits": null,
+                          "debitCount": null,
+                          "creditCount": null,
+                          "averageDebit": null,
+                          "averageCredit": null,
+                          "totalValue": null,
+                          "transactionCount": null,
+                          "averageValue": null
+                        },
+                        {
+                          "_id": {
+                            "month": 5,
+                            "year": 2024
+                          },
+                          "debits": null,
+                          "credits": null,
+                          "debitCount": null,
+                          "creditCount": null,
+                          "averageDebit": null,
+                          "averageCredit": null,
+                          "totalValue": null,
+                          "transactionCount": null,
+                          "averageValue": null
+                        },
+                        {
+                          "_id": {
+                            "month": 6,
+                            "year": 2024
+                          },
+                          "debits": null,
+                          "credits": null,
+                          "debitCount": null,
+                          "creditCount": null,
+                          "averageDebit": null,
+                          "averageCredit": null,
+                          "totalValue": null,
+                          "transactionCount": null,
+                          "averageValue": null
+                        },
+                        {
+                          "_id": {
+                            "month": 7,
+                            "year": 2024
+                          },
+                          "debits": null,
+                          "credits": null,
+                          "debitCount": null,
+                          "creditCount": null,
+                          "averageDebit": null,
+                          "averageCredit": null,
+                          "totalValue": null,
+                          "transactionCount": null,
+                          "averageValue": null
+                        },
+                        {
+                          "_id": {
+                            "month": 8,
+                            "year": 2024
+                          },
+                          "debits": null,
+                          "credits": null,
+                          "debitCount": null,
+                          "creditCount": null,
+                          "averageDebit": null,
+                          "averageCredit": null,
+                          "totalValue": null,
+                          "transactionCount": null,
+                          "averageValue": null
+                        },
+                        {
+                          "_id": {
+                            "month": 9,
+                            "year": 2024
+                          },
+                          "debits": 20059.52,
+                          "credits": 0,
+                          "debitCount": 26,
+                          "creditCount": 0,
+                          "averageDebit": 771.52,
+                          "averageCredit": null
+                        }
+                      ],
+                      "totalDebitsAmount": 77152,
+                      "totalCreditsAmount": 0,
+                      "totalMonths": 3,
+                      "overallAverageDebitAmount": 25717.333333333332,
+                      "overallAverageCreditAmount": 0,
+                      "totalTransactions": 100
+                    }
+                  }
                 }
               }
             }
