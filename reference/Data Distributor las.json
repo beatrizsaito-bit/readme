@@ -14468,7 +14468,8 @@
                           },
                           "transactionDateTime": {
                             "type": "string",
-                            "example": "2024-03-13T00:00:00.000Z"
+                            "example": "2024-03-13T00:00:00.000Z",
+                            "format": "date-time"
                           },
                           "transactionName": {
                             "type": "string",
