@@ -31312,53 +31312,87 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "data": [
-                    {
-                      "year": 2024,
-                      "month": 3,
-                      "inflow": 108000.9936,
-                      "outflow": 0
-                    },
-                    {
-                      "year": 2024,
-                      "month": 4,
-                      "inflow": 0,
-                      "outflow": 0
-                    },
-                    {
-                      "year": 2024,
-                      "month": 5,
-                      "inflow": 0,
-                      "outflow": 0
-                    },
-                    {
-                      "year": 2024,
-                      "month": 6,
-                      "inflow": 0,
-                      "outflow": 0
-                    },
-                    {
-                      "year": 2024,
-                      "month": 7,
-                      "inflow": 0,
-                      "outflow": 0
-                    },
-                    {
-                      "year": 2024,
-                      "month": 8,
-                      "inflow": 0,
-                      "outflow": 0
-                    },
-                    {
-                      "year": 2024,
-                      "month": 9,
-                      "inflow": 190001.5808,
-                      "outflow": 1000.0004
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "year": {
+                            "type": "integer",
+                            "example": 2024,
+                            "default": 0
+                          },
+                          "month": {
+                            "type": "integer",
+                            "example": 3,
+                            "default": 0
+                          },
+                          "inflow": {
+                            "type": "number",
+                            "example": 108000.9936,
+                            "default": 0
+                          },
+                          "outflow": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          }
+                        }
+                      }
                     }
-                  ]
+                  }
+                },
+                "examples": {
+                  "exampleFromExisting200": {
+                    "value": {
+                      "data": [
+                        {
+                          "year": 2024,
+                          "month": 3,
+                          "inflow": 108000.9936,
+                          "outflow": 0
+                        },
+                        {
+                          "year": 2024,
+                          "month": 4,
+                          "inflow": 0,
+                          "outflow": 0
+                        },
+                        {
+                          "year": 2024,
+                          "month": 5,
+                          "inflow": 0,
+                          "outflow": 0
+                        },
+                        {
+                          "year": 2024,
+                          "month": 6,
+                          "inflow": 0,
+                          "outflow": 0
+                        },
+                        {
+                          "year": 2024,
+                          "month": 7,
+                          "inflow": 0,
+                          "outflow": 0
+                        },
+                        {
+                          "year": 2024,
+                          "month": 8,
+                          "inflow": 0,
+                          "outflow": 0
+                        },
+                        {
+                          "year": 2024,
+                          "month": 9,
+                          "inflow": 190001.5808,
+                          "outflow": 1000.0004
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
