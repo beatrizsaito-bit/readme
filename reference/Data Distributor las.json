@@ -30766,90 +30766,154 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "monthlyData": [
-                    {
-                      "_id": {
-                        "month": 2,
-                        "year": 2024
-                      },
-                      "totalValue": 24000009.599999998,
-                      "transactionCount": 240,
-                      "averageValue": 100000.04,
-                      "installmentPaymentCount": 240
+                  "type": "object",
+                  "properties": {
+                    "monthlyData": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_id": {
+                            "type": "object",
+                            "properties": {
+                              "month": {
+                                "type": "integer",
+                                "example": 2,
+                                "default": 0
+                              },
+                              "year": {
+                                "type": "integer",
+                                "example": 2024,
+                                "default": 0
+                              }
+                            }
+                          },
+                          "totalValue": {
+                            "type": "number",
+                            "example": 24000009.599999998,
+                            "default": 0
+                          },
+                          "transactionCount": {
+                            "type": "integer",
+                            "example": 240,
+                            "default": 0
+                          },
+                          "averageValue": {
+                            "type": "number",
+                            "example": 100000.04,
+                            "default": 0
+                          },
+                          "installmentPaymentCount": {
+                            "type": "integer",
+                            "example": 240,
+                            "default": 0
+                          }
+                        }
+                      }
                     },
-                    {
-                      "_id": {
-                        "month": 3,
-                        "year": 2024
-                      },
-                      "totalValue": 81900032.75999999,
-                      "transactionCount": 819,
-                      "averageValue": 100000.04,
-                      "installmentPaymentCount": 819
+                    "monthlyAverageValue": {
+                      "type": "number",
+                      "example": 53575021.42999999,
+                      "default": 0
                     },
-                    {
-                      "_id": {
-                        "month": 4,
-                        "year": 2024
-                      },
-                      "totalValue": 0,
-                      "transactionCount": 0,
-                      "averageValue": 0
+                    "lastMonthTotalValue": {
+                      "type": "number",
+                      "example": 37100014.839999996,
+                      "default": 0
                     },
-                    {
-                      "_id": {
-                        "month": 5,
-                        "year": 2024
-                      },
-                      "totalValue": 0,
-                      "transactionCount": 0,
-                      "averageValue": 0
-                    },
-                    {
-                      "_id": {
-                        "month": 6,
-                        "year": 2024
-                      },
-                      "totalValue": 0,
-                      "transactionCount": 0,
-                      "averageValue": 0
-                    },
-                    {
-                      "_id": {
-                        "month": 7,
-                        "year": 2024
-                      },
-                      "totalValue": 0,
-                      "transactionCount": 0,
-                      "averageValue": 0
-                    },
-                    {
-                      "_id": {
-                        "month": 8,
-                        "year": 2024
-                      },
-                      "totalValue": 71300028.52,
-                      "transactionCount": 713,
-                      "averageValue": 100000.04,
-                      "installmentPaymentCount": 713
-                    },
-                    {
-                      "_id": {
-                        "month": 9,
-                        "year": 2024
-                      },
-                      "totalValue": 37100014.839999996,
-                      "transactionCount": 371,
-                      "averageValue": 100000.04,
-                      "installmentPaymentCount": 371
+                    "lastMonthPercentageOfAverage": {
+                      "type": "number",
+                      "example": 69.24871675221652,
+                      "default": 0
                     }
-                  ],
-                  "monthlyAverageValue": 53575021.42999999,
-                  "lastMonthTotalValue": 37100014.839999996,
-                  "lastMonthPercentageOfAverage": 69.24871675221652
+                  }
+                },
+                "examples": {
+                  "exampleFromExisting200": {
+                    "value": {
+                      "monthlyData": [
+                        {
+                          "_id": {
+                            "month": 2,
+                            "year": 2024
+                          },
+                          "totalValue": 24000009.599999998,
+                          "transactionCount": 240,
+                          "averageValue": 100000.04,
+                          "installmentPaymentCount": 240
+                        },
+                        {
+                          "_id": {
+                            "month": 3,
+                            "year": 2024
+                          },
+                          "totalValue": 81900032.75999999,
+                          "transactionCount": 819,
+                          "averageValue": 100000.04,
+                          "installmentPaymentCount": 819
+                        },
+                        {
+                          "_id": {
+                            "month": 4,
+                            "year": 2024
+                          },
+                          "totalValue": 0,
+                          "transactionCount": 0,
+                          "averageValue": 0
+                        },
+                        {
+                          "_id": {
+                            "month": 5,
+                            "year": 2024
+                          },
+                          "totalValue": 0,
+                          "transactionCount": 0,
+                          "averageValue": 0
+                        },
+                        {
+                          "_id": {
+                            "month": 6,
+                            "year": 2024
+                          },
+                          "totalValue": 0,
+                          "transactionCount": 0,
+                          "averageValue": 0
+                        },
+                        {
+                          "_id": {
+                            "month": 7,
+                            "year": 2024
+                          },
+                          "totalValue": 0,
+                          "transactionCount": 0,
+                          "averageValue": 0
+                        },
+                        {
+                          "_id": {
+                            "month": 8,
+                            "year": 2024
+                          },
+                          "totalValue": 71300028.52,
+                          "transactionCount": 713,
+                          "averageValue": 100000.04,
+                          "installmentPaymentCount": 713
+                        },
+                        {
+                          "_id": {
+                            "month": 9,
+                            "year": 2024
+                          },
+                          "totalValue": 37100014.839999996,
+                          "transactionCount": 371,
+                          "averageValue": 100000.04,
+                          "installmentPaymentCount": 371
+                        }
+                      ],
+                      "monthlyAverageValue": 53575021.42999999,
+                      "lastMonthTotalValue": 37100014.839999996,
+                      "lastMonthPercentageOfAverage": 69.24871675221652
+                    }
+                  }
                 }
               }
             }
