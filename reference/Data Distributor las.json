@@ -15947,85 +15947,233 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "data": [
-                    {
-                      "creditCardAccountId": "202ab4fb-fc7b-4154-9da7-2f5677cda1a7",
-                      "billId": "86022663-1c68-4844-ad40-5866eab722be",
-                      "userId": "5566421e-a4db-4e8f-9047-1c7df9c558a2",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "billMinimumAmount": {
-                        "amount": "1000.04",
-                        "currency": "BRL"
-                      },
-                      "billTotalAmount": {
-                        "amount": "100000.04",
-                        "currency": "BRL"
-                      },
-                      "dueDate": "2025-06-02",
-                      "financeCharges": [
-                        {
-                          "type": "JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA",
-                          "additionalInfo": "Informações Adicionais",
-                          "amount": "100000.04",
-                          "currency": "BRL"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "creditCardAccountId": {
+                            "type": "string",
+                            "example": "202ab4fb-fc7b-4154-9da7-2f5677cda1a7"
+                          },
+                          "billId": {
+                            "type": "string",
+                            "example": "86022663-1c68-4844-ad40-5866eab722be"
+                          },
+                          "userId": {
+                            "type": "string",
+                            "example": "5566421e-a4db-4e8f-9047-1c7df9c558a2"
+                          },
+                          "authorisationServerId": {
+                            "type": "string",
+                            "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                          },
+                          "billMinimumAmount": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "1000.04"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "billTotalAmount": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "100000.04"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "dueDate": {
+                            "type": "string",
+                            "example": "2025-06-02",
+                            "format": "date"
+                          },
+                          "financeCharges": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "example": "JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA"
+                                },
+                                "additionalInfo": {
+                                  "type": "string",
+                                  "example": "Informações Adicionais"
+                                },
+                                "amount": {
+                                  "type": "string",
+                                  "example": "100000.04"
+                                },
+                                "currency": {
+                                  "type": "string",
+                                  "example": "BRL"
+                                }
+                              }
+                            }
+                          },
+                          "isInstalment": {
+                            "type": "boolean",
+                            "example": false,
+                            "default": true
+                          },
+                          "organisationId": {
+                            "type": "string",
+                            "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                          },
+                          "payments": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "valueType": {
+                                  "type": "string",
+                                  "example": "VALOR_PAGAMENTO_FATURA_PARCELADO"
+                                },
+                                "paymentDate": {
+                                  "type": "string",
+                                  "example": "2025-06-02",
+                                  "format": "date"
+                                },
+                                "paymentMode": {
+                                  "type": "string",
+                                  "example": "DEBITO_CONTA_CORRENTE"
+                                },
+                                "amount": {
+                                  "type": "string",
+                                  "example": "100000.04"
+                                },
+                                "currency": {
+                                  "type": "string",
+                                  "example": "BRL"
+                                }
+                              }
+                            }
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "example": "2025-06-06T12:53:47.064Z",
+                            "format": "date-time"
+                          }
                         }
-                      ],
-                      "isInstalment": false,
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "payments": [
-                        {
-                          "valueType": "VALOR_PAGAMENTO_FATURA_PARCELADO",
-                          "paymentDate": "2025-06-02",
-                          "paymentMode": "DEBITO_CONTA_CORRENTE",
-                          "amount": "100000.04",
-                          "currency": "BRL"
-                        }
-                      ],
-                      "updatedAt": "2025-06-06T12:53:47.064Z"
+                      }
                     },
-                    {
-                      "billId": "6826e2cc-3c7d-4f1f-90ff-a67bb02e46d8",
-                      "userId": "5566421e-a4db-4e8f-9047-1c7df9c558a2",
-                      "creditCardAccountId": "202ab4fb-fc7b-4154-9da7-2f5677cda1a7",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "billMinimumAmount": {
-                        "amount": "1000.04",
-                        "currency": "BRL"
-                      },
-                      "billTotalAmount": {
-                        "amount": "100000.04",
-                        "currency": "BRL"
-                      },
-                      "dueDate": "2022-05-21",
-                      "financeCharges": [
-                        {
-                          "type": "JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA",
-                          "additionalInfo": "Informações Adicionais",
-                          "amount": "100000.04",
-                          "currency": "BRL"
-                        }
-                      ],
-                      "isInstalment": false,
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "payments": [
-                        {
-                          "valueType": "VALOR_PAGAMENTO_FATURA_PARCELADO",
-                          "paymentDate": "2022-05-21",
-                          "paymentMode": "DEBITO_CONTA_CORRENTE",
-                          "amount": "100000.04",
-                          "currency": "BRL"
-                        }
-                      ],
-                      "updatedAt": "2025-06-06T12:53:47.064Z"
+                    "totalRecords": {
+                      "type": "integer",
+                      "example": 2,
+                      "default": 0
+                    },
+                    "totalPages": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "currentPage": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "pageSize": {
+                      "type": "integer",
+                      "example": 100,
+                      "default": 0
                     }
-                  ],
-                  "totalRecords": 2,
-                  "totalPages": 1,
-                  "currentPage": 1,
-                  "pageSize": 100
+                  }
+                },
+                "examples": {
+                  "exampleFromExisting200": {
+                    "value": {
+                      "data": [
+                        {
+                          "creditCardAccountId": "202ab4fb-fc7b-4154-9da7-2f5677cda1a7",
+                          "billId": "86022663-1c68-4844-ad40-5866eab722be",
+                          "userId": "5566421e-a4db-4e8f-9047-1c7df9c558a2",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "billMinimumAmount": {
+                            "amount": "1000.04",
+                            "currency": "BRL"
+                          },
+                          "billTotalAmount": {
+                            "amount": "100000.04",
+                            "currency": "BRL"
+                          },
+                          "dueDate": "2025-06-02",
+                          "financeCharges": [
+                            {
+                              "type": "JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA",
+                              "additionalInfo": "Informações Adicionais",
+                              "amount": "100000.04",
+                              "currency": "BRL"
+                            }
+                          ],
+                          "isInstalment": false,
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "payments": [
+                            {
+                              "valueType": "VALOR_PAGAMENTO_FATURA_PARCELADO",
+                              "paymentDate": "2025-06-02",
+                              "paymentMode": "DEBITO_CONTA_CORRENTE",
+                              "amount": "100000.04",
+                              "currency": "BRL"
+                            }
+                          ],
+                          "updatedAt": "2025-06-06T12:53:47.064Z"
+                        },
+                        {
+                          "billId": "6826e2cc-3c7d-4f1f-90ff-a67bb02e46d8",
+                          "userId": "5566421e-a4db-4e8f-9047-1c7df9c558a2",
+                          "creditCardAccountId": "202ab4fb-fc7b-4154-9da7-2f5677cda1a7",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "billMinimumAmount": {
+                            "amount": "1000.04",
+                            "currency": "BRL"
+                          },
+                          "billTotalAmount": {
+                            "amount": "100000.04",
+                            "currency": "BRL"
+                          },
+                          "dueDate": "2022-05-21",
+                          "financeCharges": [
+                            {
+                              "type": "JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA",
+                              "additionalInfo": "Informações Adicionais",
+                              "amount": "100000.04",
+                              "currency": "BRL"
+                            }
+                          ],
+                          "isInstalment": false,
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "payments": [
+                            {
+                              "valueType": "VALOR_PAGAMENTO_FATURA_PARCELADO",
+                              "paymentDate": "2022-05-21",
+                              "paymentMode": "DEBITO_CONTA_CORRENTE",
+                              "amount": "100000.04",
+                              "currency": "BRL"
+                            }
+                          ],
+                          "updatedAt": "2025-06-06T12:53:47.064Z"
+                        }
+                      ],
+                      "totalRecords": 2,
+                      "totalPages": 1,
+                      "currentPage": 1,
+                      "pageSize": 100
+                    }
+                  }
                 }
               }
             }
