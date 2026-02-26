@@ -19351,7 +19351,8 @@
                               },
                               "updatedAt": {
                                 "type": "string",
-                                "example": "2024-09-09T17:32:01.495Z"
+                                "example": "2024-09-09T17:32:01.495Z",
+                                "format": "date-time"
                               },
                               "details": {
                                 "type": "object",
@@ -19416,11 +19417,13 @@
                                   },
                                   "dueDate": {
                                     "type": "string",
-                                    "example": "2023-02-15"
+                                    "example": "2023-02-15",
+                                    "format": "date"
                                   },
                                   "issueDate": {
                                     "type": "string",
-                                    "example": "2023-02-16"
+                                    "example": "2023-02-16",
+                                    "format": "date"
                                   },
                                   "clearingCode": {
                                     "type": "string",
@@ -19428,11 +19431,13 @@
                                   },
                                   "purchaseDate": {
                                     "type": "string",
-                                    "example": "2023-02-15"
+                                    "example": "2023-02-15",
+                                    "format": "date"
                                   },
                                   "gracePeriodDate": {
                                     "type": "string",
-                                    "example": "2023-02-16"
+                                    "example": "2023-02-16",
+                                    "format": "date"
                                   }
                                 }
                               },
@@ -19441,7 +19446,8 @@
                                 "properties": {
                                   "referenceDateTime": {
                                     "type": "string",
-                                    "example": "2023-04-21T00:00:00Z"
+                                    "example": "2023-04-21T00:00:00Z",
+                                    "format": "date-time"
                                   },
                                   "quantity": {
                                     "type": "string",
@@ -19590,7 +19596,8 @@
                               },
                               "updatedAt": {
                                 "type": "string",
-                                "example": "2024-09-09T17:34:18.709Z"
+                                "example": "2024-09-09T17:34:18.709Z",
+                                "format": "date-time"
                               },
                               "details": {
                                 "type": "object",
@@ -19626,7 +19633,8 @@
                                 "properties": {
                                   "referenceDate": {
                                     "type": "string",
-                                    "example": "2023-01-07"
+                                    "example": "2023-01-07",
+                                    "format": "date"
                                   },
                                   "financialTransactionTaxProvision": {
                                     "type": "object",
@@ -20052,7 +20060,8 @@
                               },
                               "updatedAt": {
                                 "type": "string",
-                                "example": "2024-09-05T11:00:03.061Z"
+                                "example": "2024-09-05T11:00:03.061Z",
+                                "format": "date-time"
                               },
                               "details": {
                                 "type": "object",
@@ -20121,11 +20130,13 @@
                                   },
                                   "issueDate": {
                                     "type": "string",
-                                    "example": "2023-02-16"
+                                    "example": "2023-02-16",
+                                    "format": "date"
                                   },
                                   "dueDate": {
                                     "type": "string",
-                                    "example": "2023-02-15"
+                                    "example": "2023-02-15",
+                                    "format": "date"
                                   },
                                   "voucherPaymentIndicator": {
                                     "type": "string",
@@ -20141,11 +20152,13 @@
                                   },
                                   "purchaseDate": {
                                     "type": "string",
-                                    "example": "2023-02-15"
+                                    "example": "2023-02-15",
+                                    "format": "date"
                                   },
                                   "gracePeriodDate": {
                                     "type": "string",
-                                    "example": "2023-02-16"
+                                    "example": "2023-02-16",
+                                    "format": "date"
                                   }
                                 }
                               },
@@ -20154,7 +20167,8 @@
                                 "properties": {
                                   "referenceDateTime": {
                                     "type": "string",
-                                    "example": "2023-04-21T00:00:00Z"
+                                    "example": "2023-04-21T00:00:00Z",
+                                    "format": "date"
                                   },
                                   "updatedUnitPrice": {
                                     "type": "object",
