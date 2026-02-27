@@ -34320,6 +34320,231 @@
         ],
         "operationId": "post_new-endpoint"
       }
+    },
+    "/api/v1/webhook-events": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "data": [
+                        {
+                          "_id": "evt_019c9f741f617007ba5ad5ef22f6b47b",
+                          "type": "account.balance.updated",
+                          "tenantId": "go-assets",
+                          "clientId": "go-assets-prod",
+                          "created": 1772201713,
+                          "apiVersion": "2025-02-01",
+                          "status": "delivered",
+                          "endpoint": "https://prod.empresa.com/webhooks/lina",
+                          "attempts": [
+                            {
+                              "number": 1,
+                              "at": "2026-02-27T14:15:13Z",
+                              "statusCode": 200,
+                              "responseBody": "OK",
+                              "durationMs": 12
+                            }
+                          ],
+                          "nextRetryAt": null,
+                          "createdAt": "2026-02-27T14:15:13.502Z",
+                          "updatedAt": "2026-02-27T14:15:13Z",
+                          "expiresAt": "2026-03-29T14:15:13.502Z"
+                        }
+                      ],
+                      "meta": {
+                        "total": 42,
+                        "page": 1,
+                        "limit": 25
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_id": {
+                            "type": "string",
+                            "example": "evt_019c9f741f617007ba5ad5ef22f6b47b"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "account.balance.updated"
+                          },
+                          "tenantId": {
+                            "type": "string",
+                            "example": "go-assets"
+                          },
+                          "clientId": {
+                            "type": "string",
+                            "example": "go-assets-prod"
+                          },
+                          "created": {
+                            "type": "integer",
+                            "example": 1772201713,
+                            "default": 0
+                          },
+                          "apiVersion": {
+                            "type": "string",
+                            "example": "2025-02-01"
+                          },
+                          "status": {
+                            "type": "string",
+                            "example": "delivered"
+                          },
+                          "endpoint": {
+                            "type": "string",
+                            "example": "https://prod.empresa.com/webhooks/lina"
+                          },
+                          "attempts": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "number": {
+                                  "type": "integer",
+                                  "example": 1,
+                                  "default": 0
+                                },
+                                "at": {
+                                  "type": "string",
+                                  "example": "2026-02-27T14:15:13Z"
+                                },
+                                "statusCode": {
+                                  "type": "integer",
+                                  "example": 200,
+                                  "default": 0
+                                },
+                                "responseBody": {
+                                  "type": "string",
+                                  "example": "OK"
+                                },
+                                "durationMs": {
+                                  "type": "integer",
+                                  "example": 12,
+                                  "default": 0
+                                }
+                              }
+                            }
+                          },
+                          "nextRetryAt": {},
+                          "createdAt": {
+                            "type": "string",
+                            "example": "2026-02-27T14:15:13.502Z"
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "example": "2026-02-27T14:15:13Z"
+                          },
+                          "expiresAt": {
+                            "type": "string",
+                            "example": "2026-03-29T14:15:13.502Z"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "properties": {
+                        "total": {
+                          "type": "integer",
+                          "example": 42,
+                          "default": 0
+                        },
+                        "page": {
+                          "type": "integer",
+                          "example": 1,
+                          "default": 0
+                        },
+                        "limit": {
+                          "type": "integer",
+                          "example": 25,
+                          "default": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filtrar por tipo de evento (ver lista abaixo)"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Valores: pending, delivered, failed, endpoint_disabled"
+          },
+          {
+            "in": "query",
+            "name": "from",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Data de início (ex: 2026-02-01T00:00:00Z"
+          },
+          {
+            "in": "query",
+            "name": "to",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Data de fim"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "default": "1"
+            },
+            "description": "Página"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "string",
+              "default": "25"
+            },
+            "description": "Itens por página, máx 100"
+          }
+        ],
+        "operationId": "get_api-v1-webhook-events"
+      }
     }
   }
 }
