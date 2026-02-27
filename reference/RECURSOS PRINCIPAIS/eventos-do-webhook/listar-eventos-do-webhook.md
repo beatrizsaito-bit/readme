@@ -1,5 +1,5 @@
 ---
-title: Listar eventos do webhook
+title: Listar eventos
 excerpt: >-
   Retorna o histórico de eventos do tenant autenticado. Eventos ficam
   disponíveis por 30 dias.
