@@ -34037,25 +34037,47 @@
                         "properties": {
                           "clientId": {
                             "type": "string",
-                            "example": "go-assets-prod"
+                            "example": "go-assets-prod",
+                            "description": "Client ID Keycloak associado"
                           },
                           "value": {
                             "type": "string",
-                            "example": "https://prod.empresa.com/webhooks/lina"
+                            "example": "https://prod.empresa.com/webhooks/lina",
+                            "description": "URL do endpoint que receberá os eventos"
                           },
                           "enable": {
                             "type": "boolean",
                             "example": true,
-                            "default": true
+                            "default": true,
+                            "description": "true se o webhook está ativo"
                           },
                           "secret": {
                             "type": "string",
-                            "example": "88bccb89-0674-4e2e-a4f7-2ea2bf3fb2e2"
+                            "example": "88bccb89-0674-4e2e-a4f7-2ea2bf3fb2e2",
+                            "description": "Secret usado para verificar a assinatura X-Lina-Signature"
                           },
                           "consecutiveFailures": {
                             "type": "integer",
                             "example": 0,
-                            "default": 0
+                            "default": 0,
+                            "description": "Quantos eventos consecutivos falharam todas as tentativas"
+                          },
+                          "previousSecret": {
+                            "type": "string",
+                            "description": "(aparece após rotação) Secret anterior, válido por 24h"
+                          },
+                          "previousSecretExpiresAt": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "(aparece após rotação) Quando o secret anterior expira\n"
+                          },
+                          "disabledAt\t": {
+                            "type": "string",
+                            "description": "(aparece se desabilitado) Quando foi desabilitado automaticamente\n"
+                          },
+                          "disabledReason": {
+                            "type": "string",
+                            "description": "(aparece se desabilitado) Motivo da desabilitação\n"
                           }
                         }
                       }
