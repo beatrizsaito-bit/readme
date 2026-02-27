@@ -20694,6 +20694,117 @@
                     "summary": "OK",
                     "value": "{\r\n    \"data\": {\r\n        \"userId\": \"6e6e369f-fc97-44bf-9268-b6ae9a12b25e\",\r\n        \"contractId\": \"623ebf90-d2b6-40ad-bc51-81a3e06d65a0\",\r\n        \"contractOutstandingBalance\": \"14402.379\",\r\n        \"paidInstalments\": 3,\r\n        \"releases\": [\r\n            {\r\n                \"paymentId\": \"92d755e3-7f63-41da-b214-5a494cdc03b4\",\r\n                \"isOverParcelPayment\": true,\r\n                \"instalmentId\": \"99511562-efb0-4b0a-8717-25ec7b8fa4b3\",\r\n                \"paidDate\": \"2021-08-04\",\r\n                \"currency\": \"BRL\",\r\n                \"paidAmount\": \"220.587\",\r\n                \"overParcel\": {\r\n                    \"fees\": [\r\n                        {\r\n                            \"feeName\": \"Taxa de administracao\",\r\n                            \"feeCode\": \"ADMNISTRACAO\",\r\n                            \"feeAmount\": \"200.50\"\r\n                        }\r\n                    ],\r\n                    \"charges\": [\r\n                        {\r\n                            \"chargeType\": \"MULTA_ATRASO_PAGAMENTO\",\r\n                            \"chargeAdditionalInfo\": \"NA\",\r\n                            \"chargeAmount\": \"0.9921\"\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        ],\r\n        \"updatedAt\": \"2025-03-06T19:23:07.493Z\"\r\n    }\r\n}"
                   }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "userId": {
+                          "type": "string",
+                          "example": "6e6e369f-fc97-44bf-9268-b6ae9a12b25e"
+                        },
+                        "contractId": {
+                          "type": "string",
+                          "example": "623ebf90-d2b6-40ad-bc51-81a3e06d65a0"
+                        },
+                        "contractOutstandingBalance": {
+                          "type": "string",
+                          "example": "14402.379"
+                        },
+                        "paidInstalments": {
+                          "type": "integer",
+                          "example": 3,
+                          "default": 0
+                        },
+                        "releases": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "paymentId": {
+                                "type": "string",
+                                "example": "92d755e3-7f63-41da-b214-5a494cdc03b4"
+                              },
+                              "isOverParcelPayment": {
+                                "type": "boolean",
+                                "example": true,
+                                "default": true
+                              },
+                              "instalmentId": {
+                                "type": "string",
+                                "example": "99511562-efb0-4b0a-8717-25ec7b8fa4b3"
+                              },
+                              "paidDate": {
+                                "type": "string",
+                                "example": "2021-08-04",
+                                "format": "date"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              },
+                              "paidAmount": {
+                                "type": "string",
+                                "example": "220.587"
+                              },
+                              "overParcel": {
+                                "type": "object",
+                                "properties": {
+                                  "fees": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "feeName": {
+                                          "type": "string",
+                                          "example": "Taxa de administracao"
+                                        },
+                                        "feeCode": {
+                                          "type": "string",
+                                          "example": "ADMNISTRACAO"
+                                        },
+                                        "feeAmount": {
+                                          "type": "string",
+                                          "example": "200.50"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "charges": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "chargeType": {
+                                          "type": "string",
+                                          "example": "MULTA_ATRASO_PAGAMENTO"
+                                        },
+                                        "chargeAdditionalInfo": {
+                                          "type": "string",
+                                          "example": "NA"
+                                        },
+                                        "chargeAmount": {
+                                          "type": "string",
+                                          "example": "0.9921"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "updatedAt": {
+                          "type": "string",
+                          "example": "2025-03-06T19:23:07.493Z",
+                          "format": "date-time"
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
