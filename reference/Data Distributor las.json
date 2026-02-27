@@ -34548,6 +34548,172 @@
         ],
         "operationId": "get_api-v1-webhook-events"
       }
+    },
+    "/api/v1/webhook-events/{event_id}": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "data": {
+                        "_id": "evt_019c9f741f617007ba5ad5ef22f6b47b",
+                        "type": "account.balance.updated",
+                        "tenantId": "go-assets",
+                        "clientId": "go-assets-prod",
+                        "created": 1772201713,
+                        "apiVersion": "2025-02-01",
+                        "payload": "{\"id\":\"evt_019c9f74...\",\"eventType\":\"account.balance.updated\",...}",
+                        "status": "delivered",
+                        "endpoint": "https://prod.empresa.com/webhooks/lina",
+                        "attempts": [
+                          {
+                            "number": 1,
+                            "at": "2026-02-27T14:15:13Z",
+                            "statusCode": 500,
+                            "responseBody": "Internal Server Error",
+                            "durationMs": 3200
+                          },
+                          {
+                            "number": 2,
+                            "at": "2026-02-27T14:16:13Z",
+                            "statusCode": 200,
+                            "responseBody": "OK",
+                            "durationMs": 145
+                          }
+                        ],
+                        "nextRetryAt": null,
+                        "createdAt": "2026-02-27T14:15:13.502Z",
+                        "updatedAt": "2026-02-27T14:16:13Z",
+                        "expiresAt": "2026-03-29T14:15:13.502Z"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "_id": {
+                          "type": "string",
+                          "example": "evt_019c9f741f617007ba5ad5ef22f6b47b"
+                        },
+                        "type": {
+                          "type": "string",
+                          "example": "account.balance.updated"
+                        },
+                        "tenantId": {
+                          "type": "string",
+                          "example": "go-assets"
+                        },
+                        "clientId": {
+                          "type": "string",
+                          "example": "go-assets-prod"
+                        },
+                        "created": {
+                          "type": "integer",
+                          "example": 1772201713,
+                          "default": 0
+                        },
+                        "apiVersion": {
+                          "type": "string",
+                          "example": "2025-02-01"
+                        },
+                        "payload": {
+                          "type": "string",
+                          "example": "{\"id\":\"evt_019c9f74...\",\"eventType\":\"account.balance.updated\",...}"
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "delivered"
+                        },
+                        "endpoint": {
+                          "type": "string",
+                          "example": "https://prod.empresa.com/webhooks/lina"
+                        },
+                        "attempts": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "number": {
+                                "type": "integer",
+                                "example": 1,
+                                "default": 0
+                              },
+                              "at": {
+                                "type": "string",
+                                "example": "2026-02-27T14:15:13Z"
+                              },
+                              "statusCode": {
+                                "type": "integer",
+                                "example": 500,
+                                "default": 0
+                              },
+                              "responseBody": {
+                                "type": "string",
+                                "example": "Internal Server Error"
+                              },
+                              "durationMs": {
+                                "type": "integer",
+                                "example": 3200,
+                                "default": 0
+                              }
+                            }
+                          }
+                        },
+                        "nextRetryAt": {},
+                        "createdAt": {
+                          "type": "string",
+                          "example": "2026-02-27T14:15:13.502Z",
+                          "format": "date-time"
+                        },
+                        "updatedAt": {
+                          "type": "string",
+                          "example": "2026-02-27T14:16:13Z",
+                          "format": "date-time"
+                        },
+                        "expiresAt": {
+                          "type": "string",
+                          "example": "2026-03-29T14:15:13.502Z",
+                          "format": "date-time"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_api-v1-webhook-events-event-id"
+      }
     }
   }
 }
