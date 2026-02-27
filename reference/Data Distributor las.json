@@ -15043,7 +15043,8 @@
                           },
                           "updatedAt": {
                             "type": "string",
-                            "example": "2025-08-05T18:37:42.058Z"
+                            "example": "2025-08-05T18:37:42.058Z",
+                            "format": "date-time"
                           },
                           "userId": {
                             "type": "string",
