@@ -31594,15 +31594,51 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "bank-fixed-incomes": {
+                          "type": "number",
+                          "example": 1000.0004,
+                          "default": 0
+                        },
+                        "funds": {
+                          "type": "number",
+                          "example": 1000.04,
+                          "default": 0
+                        },
+                        "treasure-titles": {
+                          "type": "number",
+                          "example": 1000.04,
+                          "default": 0
+                        },
+                        "variable-incomes": {
+                          "type": "integer",
+                          "example": 0,
+                          "default": 0
+                        },
+                        "credit-fixed-incomes": {
+                          "type": "number",
+                          "example": 1000.04,
+                          "default": 0
+                        }
+                      }
+                    }
+                  }
                 },
-                "example": {
-                  "data": {
-                    "bank-fixed-incomes": 1000.0004,
-                    "funds": 1000.04,
-                    "treasure-titles": 1000.04,
-                    "variable-incomes": 0,
-                    "credit-fixed-incomes": 1000.04
+                "examples": {
+                  "exampleFromExisting200": {
+                    "value": {
+                      "data": {
+                        "bank-fixed-incomes": 1000.0004,
+                        "funds": 1000.04,
+                        "treasure-titles": 1000.04,
+                        "variable-incomes": 0,
+                        "credit-fixed-incomes": 1000.04
+                      }
+                    }
                   }
                 }
               }
