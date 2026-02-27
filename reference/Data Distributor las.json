@@ -15197,7 +15197,8 @@
                           },
                           "updatedAt": {
                             "type": "string",
-                            "example": "2024-09-09T18:00:46.349Z"
+                            "example": "2024-09-09T18:00:46.349Z",
+                            "format": "date-time"
                           },
                           "details": {
                             "type": "object",
@@ -15276,7 +15277,8 @@
                               },
                               "updateDateTime": {
                                 "type": "string",
-                                "example": "2024-09-09T10:53:52Z"
+                                "example": "2024-09-09T10:53:52Z",
+                                "format": "date-time"
                               }
                             }
                           },
