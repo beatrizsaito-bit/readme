@@ -34771,6 +34771,193 @@
         ],
         "operationId": "post_api-v1-webhook-events-event-id-retry"
       }
+    },
+    "/api/v1/users/{user_id}/credit-cards/{credit_card_account_id}/bills/{bill_id}/transactions": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "data": [
+                        {
+                          "transactionId": "TXN-001",
+                          "identificationNumber": "1234",
+                          "transactionName": "NETFLIX",
+                          "creditDebitType": "DEBITO",
+                          "transactionType": "COMPRA_CREDITO",
+                          "brazilianAmount": {
+                            "amount": "55.90",
+                            "currency": "BRL"
+                          },
+                          "amount": {
+                            "amount": "55.90",
+                            "currency": "BRL"
+                          },
+                          "transactionDateTime": "2026-02-01T12:00:00.000Z",
+                          "billPostDate": "2026-02-02"
+                        }
+                      ],
+                      "totalRecords": 24,
+                      "totalPages": 1,
+                      "currentPage": 1,
+                      "pageSize": 100
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "transactionId": {
+                            "type": "string",
+                            "example": "TXN-001"
+                          },
+                          "identificationNumber": {
+                            "type": "string",
+                            "example": "1234"
+                          },
+                          "transactionName": {
+                            "type": "string",
+                            "example": "NETFLIX"
+                          },
+                          "creditDebitType": {
+                            "type": "string",
+                            "example": "DEBITO"
+                          },
+                          "transactionType": {
+                            "type": "string",
+                            "example": "COMPRA_CREDITO"
+                          },
+                          "brazilianAmount": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "55.90"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "amount": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "55.90"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "transactionDateTime": {
+                            "type": "string",
+                            "example": "2026-02-01T12:00:00.000Z",
+                            "format": "date-time"
+                          },
+                          "billPostDate": {
+                            "type": "string",
+                            "example": "2026-02-02",
+                            "format": "date"
+                          }
+                        }
+                      }
+                    },
+                    "totalRecords": {
+                      "type": "integer",
+                      "example": 24,
+                      "default": 0
+                    },
+                    "totalPages": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "currentPage": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "pageSize": {
+                      "type": "integer",
+                      "example": 100,
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "credit_card_account_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "bill_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "default": "1"
+            },
+            "description": "Página"
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "schema": {
+              "type": "integer",
+              "default": "100"
+            },
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_api-v1-users-user-id-credit-cards-credit-card-account-id-bills-bill-id-transactions"
+      }
     }
   }
 }
