@@ -34079,7 +34079,8 @@
             "in": "header",
             "name": "Authorization",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "Bearer {token}"
             },
             "required": true
           }
