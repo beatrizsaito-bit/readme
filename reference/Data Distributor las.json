@@ -34143,7 +34143,20 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "properties": {}
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Body inválido"
+                    }
+                  }
+                },
+                "examples": {
+                  "Bad Request": {
+                    "summary": "Bad Request",
+                    "value": {
+                      "message": "Body inválido"
+                    }
+                  }
                 }
               }
             },
