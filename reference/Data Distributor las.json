@@ -31170,13 +31170,39 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "inferredIncome": {
+                          "type": "number",
+                          "example": 1230.12,
+                          "default": 0
+                        },
+                        "analyzedMonths": {
+                          "type": "integer",
+                          "example": 12,
+                          "default": 0
+                        },
+                        "analyzedTransactions": {
+                          "type": "integer",
+                          "example": 1420,
+                          "default": 0
+                        }
+                      }
+                    }
+                  }
                 },
-                "example": {
-                  "data": {
-                    "inferredIncome": 1230.12,
-                    "analyzedMonths": 12,
-                    "analyzedTransactions": 1420
+                "examples": {
+                  "exampleFromExisting200": {
+                    "value": {
+                      "data": {
+                        "inferredIncome": 1230.12,
+                        "analyzedMonths": 12,
+                        "analyzedTransactions": 1420
+                      }
+                    }
                   }
                 }
               }
