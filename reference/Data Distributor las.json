@@ -34224,6 +34224,59 @@
             }
           }
         }
+      },
+      "delete": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "No Content": {
+                    "summary": "No Content",
+                    "value": "{}"
+                  }
+                }
+              }
+            },
+            "description": "No Content"
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "delete_api-v1-notification-tenant-id-webhooks-client-id"
       }
     }
   }
