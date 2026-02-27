@@ -33596,36 +33596,38 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "tenantId": "alex-teste",
-                  "channels": [
-                    {
-                      "type": "webhook",
-                      "value": "exemplo",
-                      "enable": true,
-                      "secret": null
-                    },
-                    {
-                      "type": "slack",
-                      "value": "exemploURL2",
-                      "enable": true
-                    },
-                    {
-                      "type": "email",
-                      "value": "exemploEmail2",
-                      "enable": true
-                    },
-                    {
-                      "type": "sms",
-                      "value": "551234567",
-                      "enable": true
+                "properties": {
+                  "tenantId": {
+                    "type": "string"
+                  },
+                  "channels": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "enable": {
+                          "type": "boolean"
+                        },
+                        "secret": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
                     }
-                  ]
-                }
+                  }
+                },
+                "required": [
+                  "tenantId"
+                ]
               },
               "examples": {
-                "Request Example": {
-                  "summary": "Request Example",
+                "New Example": {
+                  "summary": "New Example",
                   "value": {
                     "tenantId": "alex-teste",
                     "channels": [
