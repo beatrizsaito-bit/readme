@@ -9,15 +9,17 @@ Todo evento enviado ao endpoint do cliente segue esta estrutura:
 
 ```json
 {
-  "id": "evt_019c9f741f617007ba5ad5ef22f6b47b",
-  "eventType": "account.balance.updated",
-  "created": 1772201713,
-  "tenantId": "go-assets",
+	"id": "evt_019c9fa546617331837c688f972450f6",
+  "eventType": "consent.created",
+  "created": 1772204934,
+  "dateTime": "2026-02-27T15:08:54.545Z",
+  "tenantId": "data-tutor",
   "apiVersion": "2025-02-01",
   "data": {
     "userId": "2b6737aa-53ec-4bf3-b93c-e0794463330c",
-    "object": { ... },
-    "previousAttributes": { ... }
+    "consentId": "urn:itau:1d7c356d-5569-4ca8-845a-50d85536c5a7",
+    "authorisationServerId": "68308291-ec0d-4398-83ce-68b6b1087e49",
+    "organisationId": "9c721898-9ce0-50f1-bf85-05075557850b"
   }
 }
 ```
