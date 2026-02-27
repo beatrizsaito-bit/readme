@@ -54,7 +54,7 @@ Você precisará enviar o `organisation_id`, `authorisation_server_id` e `user_c
 <Callout icon="📘" theme="info">
   **Observação**
 
-  Para ambiente de homologação, utilize os valores de `organisation_id` e `authorisation_server_id` do **MockBank** e use um CPF mockado.
+  Para ambiente de homologação, utilize os valores de `organisation_id` , `authorisation_server_id` e CPF mockados do  **Mock Bank**
 </Callout>
 
 <Callout icon="❗️" theme="error">
