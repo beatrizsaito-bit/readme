@@ -34441,15 +34441,18 @@
                           "nextRetryAt": {},
                           "createdAt": {
                             "type": "string",
-                            "example": "2026-02-27T14:15:13.502Z"
+                            "example": "2026-02-27T14:15:13.502Z",
+                            "format": "date-time"
                           },
                           "updatedAt": {
                             "type": "string",
-                            "example": "2026-02-27T14:15:13Z"
+                            "example": "2026-02-27T14:15:13Z",
+                            "format": "date-time"
                           },
                           "expiresAt": {
                             "type": "string",
-                            "example": "2026-03-29T14:15:13.502Z"
+                            "example": "2026-03-29T14:15:13.502Z",
+                            "format": "date-time"
                           }
                         }
                       }
