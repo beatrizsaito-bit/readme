@@ -31284,26 +31284,74 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "allRecurringExpenses": [
-                    {
-                      "count": 100,
-                      "frequency": "week",
-                      "transactionAmountNumber": 771.52
+                  "type": "object",
+                  "properties": {
+                    "allRecurringExpenses": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "count": {
+                            "type": "integer",
+                            "example": 100,
+                            "default": 0
+                          },
+                          "frequency": {
+                            "type": "string",
+                            "example": "week"
+                          },
+                          "transactionAmountNumber": {
+                            "type": "number",
+                            "example": 771.52,
+                            "default": 0
+                          }
+                        }
+                      }
                     },
-                    {
-                      "count": 2143,
-                      "frequency": "day",
-                      "transactionAmountNumber": 100000.04,
-                      "transactionName": "PGTO"
+                    "totals": {
+                      "type": "object",
+                      "properties": {
+                        "month": {
+                          "type": "integer",
+                          "example": 0,
+                          "default": 0
+                        },
+                        "week": {
+                          "type": "number",
+                          "example": 771.52,
+                          "default": 0
+                        },
+                        "day": {
+                          "type": "number",
+                          "example": 100000.04,
+                          "default": 0
+                        }
+                      }
                     }
-                  ],
-                  "totals": {
-                    "month": 0,
-                    "week": 771.52,
-                    "day": 100000.04
+                  }
+                },
+                "examples": {
+                  "exampleFromExisting200": {
+                    "value": {
+                      "allRecurringExpenses": [
+                        {
+                          "count": 100,
+                          "frequency": "week",
+                          "transactionAmountNumber": 771.52
+                        },
+                        {
+                          "count": 2143,
+                          "frequency": "day",
+                          "transactionAmountNumber": 100000.04,
+                          "transactionName": "PGTO"
+                        }
+                      ],
+                      "totals": {
+                        "month": 0,
+                        "week": 771.52,
+                        "day": 100000.04
+                      }
+                    }
                   }
                 }
               }
