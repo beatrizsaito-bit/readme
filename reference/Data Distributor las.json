@@ -34109,6 +34109,54 @@
         ],
         "operationId": "get_api-v1-notification-tenant-id-webhooks"
       }
+    },
+    "/api/v1/notification/{tenant_id}/webhooks/{client_id}": {
+      "put": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "description": "",
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            },
+            "description": ""
+          }
+        ],
+        "operationId": "put_api-v1-notification-tenant-id-webhooks-client-id"
+      }
     }
   }
 }
