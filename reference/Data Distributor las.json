@@ -28809,7 +28809,8 @@
                                 },
                                 "transactionConversionDate": {
                                   "type": "string",
-                                  "example": "2024-09-02"
+                                  "example": "2024-09-02",
+                                  "format": "date"
                                 },
                                 "transactionExitFee": {
                                   "type": "object",
