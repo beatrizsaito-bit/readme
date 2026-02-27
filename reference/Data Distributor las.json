@@ -33178,8 +33178,8 @@
                 }
               },
               "examples": {
-                "New Example": {
-                  "summary": "New Example",
+                "Request Example": {
+                  "summary": "Request Example",
                   "value": "{\n  \"tenantId\": \"tenant_id\",\n  \"channels\": [\n    {\n      \"type\": \"webhook\",\n      \"value\": \"exemplo\",\n      \"enable\": true,\n      \"secret\": null\n    },\n    {\n      \"type\": \"slack\",\n      \"value\": \"exemploURL\",\n      \"enable\": true\n    },\n    {\n      \"type\": \"email\",\n      \"value\": \"exemploEmail\",\n      \"enable\": true\n    },\n    {\n      \"type\": \"sms\",\n      \"value\": \"551234567\",\n      \"enable\": true\n    }\n  ],\n}"
                 }
               }
@@ -33349,7 +33349,7 @@
                   }
                 },
                 "examples": {
-                  "exampleFromExisting201": {
+                  "CREATED": {
                     "value": {
                       "tenantId": "tenant_id",
                       "channels": [
@@ -33377,7 +33377,8 @@
                       ],
                       "createdAt": "2025-03-20T19:22:17.646Z",
                       "updatedAt": "2025-03-20T20:11:19.695Z"
-                    }
+                    },
+                    "summary": "CREATED"
                   }
                 }
               }
