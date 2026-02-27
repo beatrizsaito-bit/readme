@@ -33981,6 +33981,97 @@
           }
         }
       }
+    },
+    "/api/v1/notification/{tenant_id}/webhooks": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "webhooks": [
+                        {
+                          "clientId": "go-assets-prod",
+                          "value": "https://prod.empresa.com/webhooks/lina",
+                          "enable": true,
+                          "secret": "88bccb89-0674-4e2e-a4f7-2ea2bf3fb2e2",
+                          "consecutiveFailures": 0
+                        },
+                        {
+                          "clientId": "go-assets-hml",
+                          "value": "https://hml.empresa.com/webhooks/lina",
+                          "enable": false,
+                          "secret": "aad157c8-0111-470a-94df-e86b6afa282b",
+                          "consecutiveFailures": 0
+                        }
+                      ]
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "webhooks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "clientId": {
+                            "type": "string",
+                            "example": "go-assets-prod"
+                          },
+                          "value": {
+                            "type": "string",
+                            "example": "https://prod.empresa.com/webhooks/lina"
+                          },
+                          "enable": {
+                            "type": "boolean",
+                            "example": true,
+                            "default": true
+                          },
+                          "secret": {
+                            "type": "string",
+                            "example": "88bccb89-0674-4e2e-a4f7-2ea2bf3fb2e2"
+                          },
+                          "consecutiveFailures": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_api-v1-notification-tenant-id-webhooks"
+      }
     }
   }
 }
