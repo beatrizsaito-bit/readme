@@ -34728,6 +34728,25 @@
                 }
               }
             }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Not Found": {
+                    "summary": "Not Found",
+                    "value": {
+                      "message": "Evento não encontrado ou pertence a outro tenant"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Not Found"
           }
         },
         "parameters": [
