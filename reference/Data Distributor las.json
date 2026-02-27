@@ -16811,7 +16811,8 @@
                                   "type": "string"
                                 },
                                 "dueDate": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "format": "date"
                                 },
                                 "billTotalAmount": {
                                   "type": "array",
