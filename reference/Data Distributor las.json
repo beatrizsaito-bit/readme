@@ -34803,6 +34803,49 @@
               }
             },
             "description": "Accepted"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Evento já entregue ou ID inválido"
+                    }
+                  }
+                },
+                "examples": {
+                  "Bad Request": {
+                    "summary": "Bad Request",
+                    "value": {
+                      "message": "Evento já entregue ou ID inválido"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Not Found": {
+                    "summary": "Not Found",
+                    "value": {
+                      "message": "Evento não encontrado"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Not Found"
           }
         },
         "parameters": [
