@@ -12780,1018 +12780,1189 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "data": [
-                    {
-                      "investmentId": "6d7692ae-d2af-47bd-8a3e-4defb0531bcb",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:13:22.533Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {
-                        "referenceDate": "2023-01-07",
-                        "financialTransactionTaxProvision": {
-                          "amount": "1000.04",
-                          "currency": "BRL"
-                        },
-                        "grossAmount": {
-                          "amount": "1000.04",
-                          "currency": "BRL"
-                        },
-                        "netAmount": {
-                          "amount": "1000.04",
-                          "currency": "BRL"
-                        },
-                        "incomeTaxProvision": {
-                          "amount": "1000.04",
-                          "currency": "BRL"
-                        },
-                        "blockedAmount": {
-                          "amount": "1000.04",
-                          "currency": "BRL"
-                        },
-                        "quotaQuantity": "42.25",
-                        "quotaGrossPriceValue": {
-                          "amount": "1000.000004",
-                          "currency": "BRL"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "investmentId": {
+                            "type": "string",
+                            "example": "6d7692ae-d2af-47bd-8a3e-4defb0531bcb"
+                          },
+                          "anbimaCategory": {
+                            "type": "string",
+                            "example": "RENDA_FIXA"
+                          },
+                          "anbimaClass": {
+                            "type": "string",
+                            "example": "Renda Fixa"
+                          },
+                          "anbimaSubclass": {
+                            "type": "string",
+                            "example": "Longo Prazo"
+                          },
+                          "authorisationServerId": {
+                            "type": "string",
+                            "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                          },
+                          "brandName": {
+                            "type": "string",
+                            "example": "Caixa Econômica Federal"
+                          },
+                          "companyCnpj": {
+                            "type": "string",
+                            "example": "00360305000104"
+                          },
+                          "organisationId": {
+                            "type": "string",
+                            "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "example": "2024-09-09T19:13:22.533Z",
+                            "format": "date-time"
+                          },
+                          "details": {
+                            "type": "object",
+                            "properties": {
+                              "isinCode": {
+                                "type": "string",
+                                "example": "BRCST4CTF001"
+                              },
+                              "cnpjNumber": {
+                                "type": "string",
+                                "example": "00360305000104"
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": "CONSTELLATION MASTER FIA"
+                              },
+                              "anbimaCategory": {
+                                "type": "string",
+                                "example": "RENDA_FIXA"
+                              },
+                              "anbimaClass": {
+                                "type": "string",
+                                "example": "Renda Fixa"
+                              },
+                              "anbimaSubclass": {
+                                "type": "string",
+                                "example": "Longo Prazo"
+                              }
+                            }
+                          },
+                          "balances": {
+                            "type": "object",
+                            "properties": {
+                              "referenceDate": {
+                                "type": "string",
+                                "example": "2023-01-07"
+                              },
+                              "financialTransactionTaxProvision": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "1000.04"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "grossAmount": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "1000.04"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "netAmount": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "1000.04"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "incomeTaxProvision": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "1000.04"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "blockedAmount": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "1000.04"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              },
+                              "quotaQuantity": {
+                                "type": "string",
+                                "example": "42.25"
+                              },
+                              "quotaGrossPriceValue": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "string",
+                                    "example": "1000.000004"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "example": "BRL"
+                                  }
+                                }
+                              }
+                            }
+                          }
                         }
                       }
-                    },
-                    {
-                      "investmentId": "024a8d3b-9f90-44c6-8f5b-f6a6582ccd53",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:52:57.649Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "3558b4bb-4cf8-4136-94c8-556578ff7f2d",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:02.794Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "5c7c3290-d1bd-432f-b9b9-cf7a5b5cf1b5",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:08.102Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "5bf13346-3348-4857-9b55-df67f89941e5",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:13.362Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "882407b0-f52a-4125-8374-84c3e28d6a4d",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:18.712Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "00ffaaa0-af32-4bf3-9b2e-64b16303b03c",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:23.820Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "cb5400c0-f654-46f2-9fea-ea4d29c8bf9c",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:28.911Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "d1173acf-4a9e-438e-9e5c-3775143c2f98",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:33.938Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "30a5a266-46f4-4f9c-8f51-fa1a6188b265",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:38.989Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "a7cb0f61-a7be-4a42-87d4-8b3376e923cc",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:43.964Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "d5c36d0d-2b31-4877-a280-6c1dc42b0abe",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:49.143Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "22ae71bd-579a-4931-ad0c-8e320cd24ecc",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:54.271Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "89db02ae-d0df-4873-ab87-425dcd9d232f",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:53:59.292Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "56d65ade-4e98-4e2d-95f2-ba8b650b5557",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:54:04.371Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "18126ee8-a0bc-4159-b5d9-b60c51f65e0f",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:54:09.465Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "842e1299-8705-4853-ac50-634d1a7741ab",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:54:14.627Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "45f65795-015c-4b07-bb18-41c9f2877c85",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:54:19.737Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "1217c678-f7ad-40f8-b1a0-5bdc6d2d6495",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:54:24.847Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "375f570e-9c96-479f-9aeb-e60d28e4e7b4",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:54:29.968Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "c666e164-64cf-4fc0-a645-75fea77cab8c",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:54:35.016Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "34d88798-face-4886-b7ce-5df7d745686e",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:54:40.152Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "5f48b02e-c05b-465c-9e96-e87a1b960d46",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:54:45.297Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "ac2ddb27-c037-442d-ad93-779965233f5b",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:54:50.375Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "68bc7786-d9af-4bdb-9147-17bac8b633ea",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-04T20:54:55.489Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "1f26d6e9-3aa1-413f-b404-4f2b43112b8b",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:13:28.419Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "3ad7424b-6ba4-4e09-811b-be177401d0dd",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:13:33.595Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "d6fb314b-4cef-410a-b862-ded0eeef4628",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:13:38.765Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "1252ab4c-2bc1-4d55-a565-272345ab5656",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:13:43.812Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "1f6d7870-d930-4c80-80db-880c929c7d71",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:13:48.897Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "bd0759a5-2240-495f-9cc0-b9b31d963f3b",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:13:54.203Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "8cda4550-493a-421c-8f56-f0a7453c1110",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:13:59.460Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "94006ce9-2ab0-47ca-ab2e-ff40237b7432",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:14:05.031Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "4882f2a4-edd9-4ad4-99a4-04fb1b94e03c",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:14:10.220Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "ce18810a-8f61-4195-bd44-b5d6bba9602a",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:14:15.358Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "ca47250e-0694-4887-bc42-f6e1531bcd66",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:14:20.707Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "61dc3982-f7aa-4cb9-bbd0-e50bd0baefb3",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:14:25.828Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "5a0929f9-9ca0-4c1e-ac18-81ee9da71d6f",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:14:30.844Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "0161a7be-2ad8-4ea9-91da-9d231b12fd73",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:14:36.049Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "6ee840dc-6212-4566-9e76-a95d892f7a4d",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:14:41.140Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "be65d854-6f89-4e50-8e70-9886313456db",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:14:46.323Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "5dcecf37-b1b1-4773-a9a3-9d009ed6c040",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:14:51.707Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "5e2f704d-6ac6-4eed-9bf3-93ef341eb0aa",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:14:56.873Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "08f220ea-23b4-4988-87ac-c847d5a648d7",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:15:02.108Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "d085894c-ab10-4a1e-afe5-436543a57b28",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:15:07.237Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "3f3e9889-272d-4e59-b1fa-e5842d131088",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:15:12.675Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "ea9b2890-485a-4eb5-824a-4c5d7ae21f19",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:15:17.918Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "454681f8-e0e3-42c8-87be-ca1af81c8cb1",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:15:24.161Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
-                    },
-                    {
-                      "investmentId": "0f26d869-b577-4fbb-a6ec-c343fc203202",
-                      "anbimaCategory": "RENDA_FIXA",
-                      "anbimaClass": "Renda Fixa",
-                      "anbimaSubclass": "Longo Prazo",
-                      "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                      "brandName": "Caixa Econômica Federal",
-                      "companyCnpj": "00360305000104",
-                      "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                      "updatedAt": "2024-09-09T19:15:29.385Z",
-                      "details": {
-                        "isinCode": "BRCST4CTF001",
-                        "cnpjNumber": "00360305000104",
-                        "name": "CONSTELLATION MASTER FIA",
-                        "anbimaCategory": "RENDA_FIXA",
-                        "anbimaClass": "Renda Fixa",
-                        "anbimaSubclass": "Longo Prazo"
-                      },
-                      "balances": {}
                     }
-                  ]
+                  }
+                },
+                "examples": {
+                  "exampleFromExisting200": {
+                    "value": {
+                      "data": [
+                        {
+                          "investmentId": "6d7692ae-d2af-47bd-8a3e-4defb0531bcb",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:13:22.533Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {
+                            "referenceDate": "2023-01-07",
+                            "financialTransactionTaxProvision": {
+                              "amount": "1000.04",
+                              "currency": "BRL"
+                            },
+                            "grossAmount": {
+                              "amount": "1000.04",
+                              "currency": "BRL"
+                            },
+                            "netAmount": {
+                              "amount": "1000.04",
+                              "currency": "BRL"
+                            },
+                            "incomeTaxProvision": {
+                              "amount": "1000.04",
+                              "currency": "BRL"
+                            },
+                            "blockedAmount": {
+                              "amount": "1000.04",
+                              "currency": "BRL"
+                            },
+                            "quotaQuantity": "42.25",
+                            "quotaGrossPriceValue": {
+                              "amount": "1000.000004",
+                              "currency": "BRL"
+                            }
+                          }
+                        },
+                        {
+                          "investmentId": "024a8d3b-9f90-44c6-8f5b-f6a6582ccd53",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:52:57.649Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "3558b4bb-4cf8-4136-94c8-556578ff7f2d",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:02.794Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "5c7c3290-d1bd-432f-b9b9-cf7a5b5cf1b5",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:08.102Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "5bf13346-3348-4857-9b55-df67f89941e5",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:13.362Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "882407b0-f52a-4125-8374-84c3e28d6a4d",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:18.712Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "00ffaaa0-af32-4bf3-9b2e-64b16303b03c",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:23.820Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "cb5400c0-f654-46f2-9fea-ea4d29c8bf9c",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:28.911Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "d1173acf-4a9e-438e-9e5c-3775143c2f98",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:33.938Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "30a5a266-46f4-4f9c-8f51-fa1a6188b265",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:38.989Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "a7cb0f61-a7be-4a42-87d4-8b3376e923cc",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:43.964Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "d5c36d0d-2b31-4877-a280-6c1dc42b0abe",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:49.143Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "22ae71bd-579a-4931-ad0c-8e320cd24ecc",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:54.271Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "89db02ae-d0df-4873-ab87-425dcd9d232f",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:53:59.292Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "56d65ade-4e98-4e2d-95f2-ba8b650b5557",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:54:04.371Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "18126ee8-a0bc-4159-b5d9-b60c51f65e0f",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:54:09.465Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "842e1299-8705-4853-ac50-634d1a7741ab",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:54:14.627Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "45f65795-015c-4b07-bb18-41c9f2877c85",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:54:19.737Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "1217c678-f7ad-40f8-b1a0-5bdc6d2d6495",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:54:24.847Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "375f570e-9c96-479f-9aeb-e60d28e4e7b4",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:54:29.968Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "c666e164-64cf-4fc0-a645-75fea77cab8c",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:54:35.016Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "34d88798-face-4886-b7ce-5df7d745686e",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:54:40.152Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "5f48b02e-c05b-465c-9e96-e87a1b960d46",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:54:45.297Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "ac2ddb27-c037-442d-ad93-779965233f5b",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:54:50.375Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "68bc7786-d9af-4bdb-9147-17bac8b633ea",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-04T20:54:55.489Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "1f26d6e9-3aa1-413f-b404-4f2b43112b8b",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:13:28.419Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "3ad7424b-6ba4-4e09-811b-be177401d0dd",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:13:33.595Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "d6fb314b-4cef-410a-b862-ded0eeef4628",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:13:38.765Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "1252ab4c-2bc1-4d55-a565-272345ab5656",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:13:43.812Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "1f6d7870-d930-4c80-80db-880c929c7d71",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:13:48.897Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "bd0759a5-2240-495f-9cc0-b9b31d963f3b",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:13:54.203Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "8cda4550-493a-421c-8f56-f0a7453c1110",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:13:59.460Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "94006ce9-2ab0-47ca-ab2e-ff40237b7432",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:14:05.031Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "4882f2a4-edd9-4ad4-99a4-04fb1b94e03c",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:14:10.220Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "ce18810a-8f61-4195-bd44-b5d6bba9602a",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:14:15.358Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "ca47250e-0694-4887-bc42-f6e1531bcd66",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:14:20.707Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "61dc3982-f7aa-4cb9-bbd0-e50bd0baefb3",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:14:25.828Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "5a0929f9-9ca0-4c1e-ac18-81ee9da71d6f",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:14:30.844Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "0161a7be-2ad8-4ea9-91da-9d231b12fd73",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:14:36.049Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "6ee840dc-6212-4566-9e76-a95d892f7a4d",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:14:41.140Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "be65d854-6f89-4e50-8e70-9886313456db",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:14:46.323Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "5dcecf37-b1b1-4773-a9a3-9d009ed6c040",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:14:51.707Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "5e2f704d-6ac6-4eed-9bf3-93ef341eb0aa",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:14:56.873Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "08f220ea-23b4-4988-87ac-c847d5a648d7",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:15:02.108Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "d085894c-ab10-4a1e-afe5-436543a57b28",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:15:07.237Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "3f3e9889-272d-4e59-b1fa-e5842d131088",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:15:12.675Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "ea9b2890-485a-4eb5-824a-4c5d7ae21f19",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:15:17.918Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "454681f8-e0e3-42c8-87be-ca1af81c8cb1",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:15:24.161Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        },
+                        {
+                          "investmentId": "0f26d869-b577-4fbb-a6ec-c343fc203202",
+                          "anbimaCategory": "RENDA_FIXA",
+                          "anbimaClass": "Renda Fixa",
+                          "anbimaSubclass": "Longo Prazo",
+                          "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                          "brandName": "Caixa Econômica Federal",
+                          "companyCnpj": "00360305000104",
+                          "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                          "updatedAt": "2024-09-09T19:15:29.385Z",
+                          "details": {
+                            "isinCode": "BRCST4CTF001",
+                            "cnpjNumber": "00360305000104",
+                            "name": "CONSTELLATION MASTER FIA",
+                            "anbimaCategory": "RENDA_FIXA",
+                            "anbimaClass": "Renda Fixa",
+                            "anbimaSubclass": "Longo Prazo"
+                          },
+                          "balances": {}
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
