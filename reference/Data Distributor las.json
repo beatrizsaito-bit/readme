@@ -35005,6 +35005,25 @@
                 }
               }
             }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Bad Request": {
+                    "summary": "Bad Request",
+                    "value": {
+                      "message": "Parâmetros inválidos"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Bad Request"
           }
         },
         "parameters": [
