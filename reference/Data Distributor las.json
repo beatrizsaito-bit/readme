@@ -14649,96 +14649,9 @@
             },
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "userId": {
-                            "type": "string",
-                            "example": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017"
-                          },
-                          "transactionId": {
-                            "type": "string",
-                            "example": "901827b9-aba7-40c4-96a1-dd48846f3f57"
-                          },
-                          "accountId": {
-                            "type": "string",
-                            "example": "291e5a29-49ed-401f-a583-193caa7acddd"
-                          },
-                          "completedAuthorisedPaymentType": {
-                            "type": "string",
-                            "example": "TRANSACAO_EFETIVADA"
-                          },
-                          "creditDebitType": {
-                            "type": "string",
-                            "example": "DEBITO"
-                          },
-                          "partieBranchCode": {
-                            "type": "string",
-                            "example": "6272"
-                          },
-                          "partieCheckDigit": {
-                            "type": "string",
-                            "example": "4"
-                          },
-                          "partieCnpjCpf": {
-                            "type": "string",
-                            "example": "87517400444"
-                          },
-                          "partieCompeCode": {
-                            "type": "string",
-                            "example": "123"
-                          },
-                          "partieNumber": {
-                            "type": "string",
-                            "example": "94088392"
-                          },
-                          "partiePersonType": {
-                            "type": "string",
-                            "example": "PESSOA_NATURAL"
-                          },
-                          "transactionAmount": {
-                            "type": "object",
-                            "properties": {
-                              "amount": {
-                                "type": "string",
-                                "example": "771.52"
-                              },
-                              "currency": {
-                                "type": "string",
-                                "example": "BRL"
-                              }
-                            }
-                          },
-                          "transactionDateTime": {
-                            "type": "string",
-                            "example": "2024-03-13T00:00:00.000Z",
-                            "format": "date-time"
-                          },
-                          "transactionName": {
-                            "type": "string",
-                            "example": "PAGAMENTO"
-                          },
-                          "type": {
-                            "type": "string",
-                            "example": "CARTAO"
-                          }
-                        }
-                      }
-                    },
-                    "totalRecords": {
-                      "type": "integer",
-                      "example": 50,
-                      "default": 0
-                    }
-                  }
-                },
                 "examples": {
                   "OK": {
+                    "summary": "OK",
                     "value": {
                       "data": [
                         {
@@ -15743,8 +15656,95 @@
                         }
                       ],
                       "totalRecords": 50
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "userId": {
+                            "type": "string",
+                            "example": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017"
+                          },
+                          "transactionId": {
+                            "type": "string",
+                            "example": "901827b9-aba7-40c4-96a1-dd48846f3f57"
+                          },
+                          "accountId": {
+                            "type": "string",
+                            "example": "291e5a29-49ed-401f-a583-193caa7acddd"
+                          },
+                          "completedAuthorisedPaymentType": {
+                            "type": "string",
+                            "example": "TRANSACAO_EFETIVADA"
+                          },
+                          "creditDebitType": {
+                            "type": "string",
+                            "example": "DEBITO"
+                          },
+                          "partieBranchCode": {
+                            "type": "string",
+                            "example": "6272"
+                          },
+                          "partieCheckDigit": {
+                            "type": "string",
+                            "example": "4"
+                          },
+                          "partieCnpjCpf": {
+                            "type": "string",
+                            "example": "87517400444"
+                          },
+                          "partieCompeCode": {
+                            "type": "string",
+                            "example": "123"
+                          },
+                          "partieNumber": {
+                            "type": "string",
+                            "example": "94088392"
+                          },
+                          "partiePersonType": {
+                            "type": "string",
+                            "example": "PESSOA_NATURAL"
+                          },
+                          "transactionAmount": {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "example": "771.52"
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "transactionDateTime": {
+                            "type": "string",
+                            "example": "2024-03-13T00:00:00.000Z",
+                            "format": "date-time"
+                          },
+                          "transactionName": {
+                            "type": "string",
+                            "example": "PAGAMENTO"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "CARTAO"
+                          }
+                        }
+                      }
                     },
-                    "summary": "OK"
+                    "totalRecords": {
+                      "type": "integer",
+                      "example": 50,
+                      "default": 0
+                    }
                   }
                 }
               }
