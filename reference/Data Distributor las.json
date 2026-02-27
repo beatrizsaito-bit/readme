@@ -33797,9 +33797,11 @@
             "name": "Authorization",
             "in": "header",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "Bearer {token}"
             },
-            "example": "Bearer YOUR_ACCESS_TOKEN"
+            "example": "Bearer YOUR_ACCESS_TOKEN",
+            "required": true
           },
           {
             "name": "tenant_id",
