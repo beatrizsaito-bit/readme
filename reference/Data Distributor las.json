@@ -33525,7 +33525,8 @@
             "schema": {
               "type": "string",
               "default": "Bearer {token}"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
