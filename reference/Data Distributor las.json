@@ -643,14 +643,14 @@
                   }
                 },
                 "examples": {
-                  "example-0": {
-                    "summary": "Consentimento PF",
+                  "Consentimento PJ": {
+                    "summary": "Consentimento PJ",
                     "value": {
                       "redirectUrl": "https://auth.mockbank.poc.raidiam.io/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3AD2AKVKARaSdsGQ5KF_8Q8&client_id=yXYqweXJXhxqMebXy7j_e&state=WD2D99Nhn3nse80JoBP87n0E1IA8utKYxpxxDONIba2UPpTNGKLDod38gWlhhLexDgu9Y8xmuWzAJGhpibmDaNNG4bg3HzDYTIo3"
                     }
                   },
-                  "example-1": {
-                    "summary": "Consentimento PJ",
+                  "Consentimento PF": {
+                    "summary": "Consentimento PF",
                     "value": {
                       "redirectUrl": "https://auth.mockbank.poc.raidiam.io/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3AD2AKVKARaSdsGQ5KF_8Q8&client_id=yXYqweXJXhxqMebXy7j_e&state=WD2D99Nhn3nse80JoBP87n0E1IA8utKYxpxxDONIba2UPpTNGKLDod38gWlhhLexDgu9Y8xmuWzAJGhpibmDaNNG4bg3HzDYTIo3"
                     }
