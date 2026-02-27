@@ -1,5 +1,5 @@
 ---
-title: Webhook Configuration
+title: Configuração de Webhook
 deprecated: false
 hidden: false
 metadata:
