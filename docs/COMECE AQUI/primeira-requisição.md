@@ -1,12 +1,10 @@
 ---
-title: Primeira requisição
+title: Sua primeira requisição
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 # Passo 1 - Carregando Collection e Environment para a primeira chamada
 
 Clique no botão "importar" no canto esquerdo superior da aplicação Postman e importe ambos os arquivos (Collection e Environment) para a aplicação.
