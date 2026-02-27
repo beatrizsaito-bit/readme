@@ -34714,6 +34714,63 @@
         ],
         "operationId": "get_api-v1-webhook-events-event-id"
       }
+    },
+    "/api/v1/webhook-events/{event_id}/retry": {
+      "post": {
+        "description": "",
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Event queued for retry"
+                    },
+                    "eventId": {
+                      "type": "string",
+                      "example": "evt_019c9f741f617007ba5ad5ef22f6b47b"
+                    }
+                  }
+                },
+                "examples": {
+                  "Accepted": {
+                    "summary": "Accepted",
+                    "value": {
+                      "message": "Event queued for retry",
+                      "eventId": "evt_019c9f741f617007ba5ad5ef22f6b47b"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Accepted"
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "description": "",
+            "required": true
+          }
+        ],
+        "operationId": "post_api-v1-webhook-events-event-id-retry"
+      }
     }
   }
 }
