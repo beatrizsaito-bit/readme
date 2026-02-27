@@ -33624,8 +33624,8 @@
                 }
               },
               "examples": {
-                "New Example": {
-                  "summary": "New Example",
+                "Request Example": {
+                  "summary": "Request Example",
                   "value": {
                     "tenantId": "alex-teste",
                     "channels": [
@@ -33829,7 +33829,7 @@
                   }
                 },
                 "examples": {
-                  "exampleFromExisting200": {
+                  "OK": {
                     "value": {
                       "tenantId": "tenant_id",
                       "channels": [
@@ -33857,7 +33857,8 @@
                       ],
                       "createdAt": "2025-03-20T19:22:17.646Z",
                       "updatedAt": "2025-03-20T20:12:11.715Z"
-                    }
+                    },
+                    "summary": "OK"
                   }
                 }
               }
