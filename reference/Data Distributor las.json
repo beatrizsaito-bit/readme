@@ -34115,7 +34115,28 @@
         "description": "",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "message": "Webhook updated"
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Webhook updated"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
@@ -34155,7 +34176,43 @@
             "description": ""
           }
         ],
-        "operationId": "put_api-v1-notification-tenant-id-webhooks-client-id"
+        "operationId": "put_api-v1-notification-tenant-id-webhooks-client-id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "description": "URL HTTPS do endpoint\n"
+                  },
+                  "enable": {
+                    "type": "string",
+                    "description": "true para ativar"
+                  },
+                  "secret": {
+                    "type": "string",
+                    "description": "Se omitido, é gerado automaticamente\n"
+                  }
+                },
+                "required": [
+                  "enable",
+                  "value"
+                ]
+              },
+              "examples": {
+                "New Example": {
+                  "summary": "New Example",
+                  "value": {
+                    "value": "https://prod.empresa.com/webhooks/lina",
+                    "enable": true
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
