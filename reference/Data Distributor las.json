@@ -35211,6 +35211,25 @@
                 }
               }
             }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Not Found": {
+                    "summary": "Not Found",
+                    "value": {
+                      "message": "Cartão não encontrado"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Not Found"
           }
         },
         "parameters": [
