@@ -33518,6 +33518,14 @@
             },
             "required": true,
             "example": "alex-teste"
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            }
           }
         ],
         "responses": {
