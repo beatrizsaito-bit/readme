@@ -1071,55 +1071,118 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "userId": {
+                          "type": "string",
+                          "example": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017"
+                        },
+                        "consentId": {
+                          "type": "string",
+                          "example": "urn:raidiambank:8345d4d3-750d-494d-823e-047d384790e8"
+                        },
+                        "creationDateTime": {
+                          "type": "string",
+                          "example": "2024-09-09T17:24:44Z",
+                          "format": "date-time"
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "AUTHORISED"
+                        },
+                        "statusUpdateDateTime": {
+                          "type": "string",
+                          "example": "2024-09-09T17:25:13Z",
+                          "format": "date-time"
+                        },
+                        "permissions": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "example": "RESOURCES_READ"
+                          }
+                        },
+                        "organisationId": {
+                          "type": "string",
+                          "example": "74e929d9-33b6-4d85-8ba7-c146c867a817"
+                        },
+                        "authorisationServerId": {
+                          "type": "string",
+                          "example": "c8f0bf49-4744-4933-8960-7add6e590841"
+                        },
+                        "version": {
+                          "type": "integer",
+                          "example": 3,
+                          "default": 0
+                        },
+                        "createdAt": {
+                          "type": "string",
+                          "example": "2024-09-09T17:24:47.098Z",
+                          "format": "date-time"
+                        },
+                        "updatedAt": {
+                          "type": "string",
+                          "example": "2024-09-09T17:28:26.432Z",
+                          "format": "date-time"
+                        }
+                      }
+                    }
+                  }
                 },
-                "example": {
-                  "data": {
-                    "userId": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017",
-                    "consentId": "urn:raidiambank:8345d4d3-750d-494d-823e-047d384790e8",
-                    "creationDateTime": "2024-09-09T17:24:44Z",
-                    "status": "AUTHORISED",
-                    "statusUpdateDateTime": "2024-09-09T17:25:13Z",
-                    "permissions": [
-                      "RESOURCES_READ",
-                      "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
-                      "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
-                      "ACCOUNTS_BALANCES_READ",
-                      "ACCOUNTS_OVERDRAFT_LIMITS_READ",
-                      "ACCOUNTS_READ",
-                      "ACCOUNTS_TRANSACTIONS_READ",
-                      "CREDIT_CARDS_ACCOUNTS_READ",
-                      "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
-                      "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
-                      "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
-                      "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
-                      "LOANS_READ",
-                      "LOANS_WARRANTIES_READ",
-                      "LOANS_SCHEDULED_INSTALMENTS_READ",
-                      "LOANS_PAYMENTS_READ",
-                      "FINANCINGS_READ",
-                      "FINANCINGS_WARRANTIES_READ",
-                      "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                      "FINANCINGS_PAYMENTS_READ",
-                      "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
-                      "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
-                      "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
-                      "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
-                      "INVOICE_FINANCINGS_READ",
-                      "INVOICE_FINANCINGS_WARRANTIES_READ",
-                      "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
-                      "INVOICE_FINANCINGS_PAYMENTS_READ",
-                      "BANK_FIXED_INCOMES_READ",
-                      "CREDIT_FIXED_INCOMES_READ",
-                      "FUNDS_READ",
-                      "VARIABLE_INCOMES_READ",
-                      "TREASURE_TITLES_READ"
-                    ],
-                    "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
-                    "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
-                    "version": 3,
-                    "createdAt": "2024-09-09T17:24:47.098Z",
-                    "updatedAt": "2024-09-09T17:28:26.432Z"
+                "examples": {
+                  "exampleFromExisting200": {
+                    "value": {
+                      "data": {
+                        "userId": "0e58fecb-5a34-4b2c-a1b2-d2f8626df017",
+                        "consentId": "urn:raidiambank:8345d4d3-750d-494d-823e-047d384790e8",
+                        "creationDateTime": "2024-09-09T17:24:44Z",
+                        "status": "AUTHORISED",
+                        "statusUpdateDateTime": "2024-09-09T17:25:13Z",
+                        "permissions": [
+                          "RESOURCES_READ",
+                          "CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ",
+                          "CUSTOMERS_PERSONAL_ADITTIONALINFO_READ",
+                          "ACCOUNTS_BALANCES_READ",
+                          "ACCOUNTS_OVERDRAFT_LIMITS_READ",
+                          "ACCOUNTS_READ",
+                          "ACCOUNTS_TRANSACTIONS_READ",
+                          "CREDIT_CARDS_ACCOUNTS_READ",
+                          "CREDIT_CARDS_ACCOUNTS_LIMITS_READ",
+                          "CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ",
+                          "CREDIT_CARDS_ACCOUNTS_BILLS_READ",
+                          "CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ",
+                          "LOANS_READ",
+                          "LOANS_WARRANTIES_READ",
+                          "LOANS_SCHEDULED_INSTALMENTS_READ",
+                          "LOANS_PAYMENTS_READ",
+                          "FINANCINGS_READ",
+                          "FINANCINGS_WARRANTIES_READ",
+                          "FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                          "FINANCINGS_PAYMENTS_READ",
+                          "UNARRANGED_ACCOUNTS_OVERDRAFT_READ",
+                          "UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ",
+                          "UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ",
+                          "UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ",
+                          "INVOICE_FINANCINGS_READ",
+                          "INVOICE_FINANCINGS_WARRANTIES_READ",
+                          "INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ",
+                          "INVOICE_FINANCINGS_PAYMENTS_READ",
+                          "BANK_FIXED_INCOMES_READ",
+                          "CREDIT_FIXED_INCOMES_READ",
+                          "FUNDS_READ",
+                          "VARIABLE_INCOMES_READ",
+                          "TREASURE_TITLES_READ"
+                        ],
+                        "organisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                        "authorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                        "version": 3,
+                        "createdAt": "2024-09-09T17:24:47.098Z",
+                        "updatedAt": "2024-09-09T17:28:26.432Z"
+                      }
+                    }
                   }
                 }
               }
