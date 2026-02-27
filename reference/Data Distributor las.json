@@ -34958,6 +34958,43 @@
         ],
         "operationId": "get_api-v1-users-user-id-credit-cards-credit-card-account-id-bills-bill-id-transactions"
       }
+    },
+    "/api/v1/users/{user_id}/credit-cards/{credit_card_account_id}/bills/{bill_id}/transactions/sync": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "credit_card_account_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "bill_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_api-v1-users-user-id-credit-cards-credit-card-account-id-bills-bill-id-transactions-sync"
+      }
     }
   }
 }
