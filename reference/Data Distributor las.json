@@ -34226,8 +34226,8 @@
                 ]
               },
               "examples": {
-                "New Example": {
-                  "summary": "New Example",
+                "Request Example": {
+                  "summary": "Request Example",
                   "value": {
                     "value": "https://prod.empresa.com/webhooks/lina",
                     "enable": true
