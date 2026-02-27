@@ -35220,8 +35220,14 @@
                   "properties": {}
                 },
                 "examples": {
-                  "Not Found": {
-                    "summary": "Not Found",
+                  "Consentimento não encontrado": {
+                    "summary": "Consentimento não encontrado",
+                    "value": {
+                      "message": "Consentimento ativo não encontrado"
+                    }
+                  },
+                  "Cartão não encontrado": {
+                    "summary": "Cartão não encontrado",
                     "value": {
                       "message": "Cartão não encontrado"
                     }
