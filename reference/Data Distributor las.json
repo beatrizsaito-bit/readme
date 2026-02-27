@@ -27520,7 +27520,8 @@
                           },
                           "updatedAt": {
                             "type": "string",
-                            "example": "2024-09-09T17:34:18.709Z"
+                            "example": "2024-09-09T17:34:18.709Z",
+                            "format": "date-time"
                           },
                           "details": {
                             "type": "object",
@@ -27556,7 +27557,8 @@
                             "properties": {
                               "referenceDate": {
                                 "type": "string",
-                                "example": "2023-01-07"
+                                "example": "2023-01-07",
+                                "format": "date"
                               },
                               "financialTransactionTaxProvision": {
                                 "type": "object",
