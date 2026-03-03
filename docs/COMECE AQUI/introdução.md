@@ -34,6 +34,4 @@ O Data Link possui 3 camadas de dados disponíveis
 
 <br />
 
-Saiba sobre o [consentimento no Open Finance](https://lina-itp.readme.io/update/docs/consentimento-no-open-finance)
-
 <br />
