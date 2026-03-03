@@ -5,7 +5,9 @@ hidden: false
 metadata:
   robots: index
 ---
-O Data Link é uma camada de integração e inteligência de dados financeiros baseada em Open Finance. Através do Data Link, o seu cliente realiza o consentimento de seus dados financeiros e esses dados podem ser utilizados para diferentes análises como hiperpersonalização de ofertas, análise de crédito, consolidação de carteira, entre outros.
+O Data Link é a plataforma da Lina que conecta mais de 50 instituições financeiras no Open Finance, possibilitando a integração de dados diretamente da conta bancária do cliente, seja ele uma pessoa física ou jurídica. Tudo isso com base no consentimento do cliente, em linha com os mais elevados padrões de segurança e privacidade, e em total conformidade com as normas do BCB e com a LGPD.
+
+ Através do Data Link, o seu cliente realiza o consentimento de seus dados financeiros e esses dados podem ser utilizados para diferentes análises como hiperpersonalização de ofertas, análise de crédito, consolidação de carteira, entre outros.
 
 <br />
 
@@ -27,7 +29,7 @@ O Data Link possui 3 camadas de dados disponíveis
 2. Enquanto o consentimento estiver autorizado, o Data Link atualiza os dados financeiros consentidos e disponibiliza para a consulta via APIs próprias da Lina
 
 <Callout icon="📘" theme="info">
-  O acesso é restrito aos dados explicitamente autorizados pelo seu cliente
+  O acesso é restrito aos dados explicitamente autorizados pelo seu usuário final, seguindo a regulamentação do Open Finance
 </Callout>
 
 <br />
