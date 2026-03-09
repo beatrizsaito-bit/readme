@@ -15197,7 +15197,8 @@
                           },
                           "type": {
                             "type": "string",
-                            "example": "CONTA_POUPANCA"
+                            "example": "CONTA_POUPANCA",
+                            "description": ""
                           },
                           "updatedAt": {
                             "type": "string",
@@ -15225,11 +15226,22 @@
                               },
                               "type": {
                                 "type": "string",
-                                "example": "CONTA_POUPANCA"
+                                "example": "CONTA_POUPANCA",
+                                "enum": [
+                                  "CONTA_DEPOSITO_A_VISTA",
+                                  "CONTA_POUPANCA",
+                                  "CONTA_PAGAMENTO_PRE_PAGA"
+                                ]
                               },
                               "subtype": {
                                 "type": "string",
-                                "example": "INDIVIDUAL"
+                                "example": "INDIVIDUAL",
+                                "description": "",
+                                "enum": [
+                                  "INDIVIDUAL",
+                                  "CONJUNTA_SIMPLES",
+                                  "CONJUNTA_SOLIDARIA"
+                                ]
                               },
                               "currency": {
                                 "type": "string",
