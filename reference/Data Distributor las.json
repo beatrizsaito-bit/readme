@@ -150,12 +150,7 @@
                           "type": {
                             "type": "string",
                             "example": "CONTA_POUPANCA",
-                            "description": "",
-                            "enum": [
-                              "CONTA_DEPOSITO_A_VISTA",
-                              "CONTA_POUPANCA",
-                              "CONTA_PAGAMENTO_PRE_PAGA"
-                            ]
+                            "description": ""
                           },
                           "updatedAt": {
                             "type": "string",
@@ -183,22 +178,12 @@
                               },
                               "type": {
                                 "type": "string",
-                                "example": "CONTA_POUPANCA",
-                                "enum": [
-                                  "CONTA_DEPOSITO_A_VISTA",
-                                  "CONTA_POUPANCA",
-                                  "CONTA_PAGAMENTO_PRE_PAGA"
-                                ]
+                                "example": "CONTA_POUPANCA"
                               },
                               "subtype": {
                                 "type": "string",
                                 "example": "INDIVIDUAL",
-                                "description": "",
-                                "enum": [
-                                  "INDIVIDUAL",
-                                  "CONJUNTA_SIMPLES",
-                                  "CONJUNTA_SOLIDARIA"
-                                ]
+                                "description": ""
                               },
                               "currency": {
                                 "type": "string",
