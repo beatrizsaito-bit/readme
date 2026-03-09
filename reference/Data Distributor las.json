@@ -16565,11 +16565,22 @@
                           },
                           "completedAuthorisedPaymentType": {
                             "type": "string",
-                            "example": "TRANSACAO_EFETIVADA"
+                            "example": "TRANSACAO_EFETIVADA",
+                            "description": "",
+                            "enum": [
+                              "TRANSACAO_EFETIVADA",
+                              "LANCAMENTO_FUTURO",
+                              "TRANSACAO_PROCESSANDO"
+                            ]
                           },
                           "creditDebitType": {
                             "type": "string",
-                            "example": "DEBITO"
+                            "example": "DEBITO",
+                            "description": "",
+                            "enum": [
+                              "CREDITO",
+                              "DEBITO"
+                            ]
                           },
                           "partieBranchCode": {
                             "type": "string",
@@ -16593,7 +16604,11 @@
                           },
                           "partiePersonType": {
                             "type": "string",
-                            "example": "PESSOA_NATURAL"
+                            "example": "PESSOA_NATURAL",
+                            "enum": [
+                              "PESSOA_NATURAL",
+                              "PESSOA_JURIDICA"
+                            ]
                           },
                           "transactionAmount": {
                             "type": "object",
@@ -16619,7 +16634,28 @@
                           },
                           "type": {
                             "type": "string",
-                            "example": "CARTAO"
+                            "example": "CARTAO",
+                            "description": "",
+                            "enum": [
+                              "TED",
+                              "DOC",
+                              "PIX",
+                              "TRANSFERENCIA_MESMA_INSTITUICAO",
+                              "BOLETO",
+                              "CONVENIO_ARRECADACAO",
+                              "PACOTE_TARIFA_SERVICOS",
+                              "TARIFA_SERVICOS_AVULSOS",
+                              "FOLHA_PAGAMENTO",
+                              "DEPOSITO",
+                              "SAQUE",
+                              "CARTAO",
+                              "ENCARGOS_JUROS_CHEQUE_ESPECIAL",
+                              "RENDIMENTO_APLIC_FINANCEIRA",
+                              "PORTABILIDADE_SALARIO",
+                              "REGATE_APLIC_FINANCEIRA",
+                              "OPERACAO_CREDITO",
+                              "OUTROS"
+                            ]
                           }
                         }
                       }
