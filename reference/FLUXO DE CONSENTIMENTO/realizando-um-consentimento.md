@@ -1,5 +1,6 @@
 ---
 title: Realizando um consentimento
+excerpt: .
 deprecated: false
 hidden: false
 icon: fab fa-confluence
