@@ -25,6 +25,7 @@ metadata:
 * `consent.revoked`
 * `user.data.insert.start`
 * `user.data.insert.finish`
+* `credit-card.transactions.updated`
 
 ***
 
