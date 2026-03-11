@@ -5,9 +5,9 @@ hidden: false
 metadata:
   robots: index
 ---
- A consulta de dados no Open Finance pode ser limitada mensalmente de acordo com o dados que será consultado. Quando o limite operacional é atingido, a consulta de dados retorna 423 e não permite a atualização do dado.
+O Open Finance limita a quantidade de vezes que dados podem ser consultados. Quando o limite operacional é atingido, a consulta de dados retorna 423 e não permite a atualização do dado.
 
-Considerando essas regras do Open Finance, o Data Link possui um motor de atualização para possibilitar a atualização dos dados ao longo de todo o mês. A tabela abaixo indica a frequência de atualização: 
+Considerando essas regras do Open Finance, o Data Link otimizou para permitir a consulta e atualização máxima de dados, a frequência de atualização pode ser consultada na tabela abaixo:
 
 | Produto              | Dados                                                                                                             | Frequência                   |
 | :------------------- | :---------------------------------------------------------------------------------------------------------------- | :--------------------------- |
