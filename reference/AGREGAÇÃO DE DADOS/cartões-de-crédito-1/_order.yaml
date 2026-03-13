@@ -1,0 +1,5 @@
+- get_api-v1-users-user-id-credit-cards
+- get_api-v1-users-user-id-credit-cards-credit-card-account-id-bills
+- get_api-v1-users-user-id-credit-cards-credit-card-account-id-transactions
+- buscar-transações-da-fatura
+- sincronizar-transações-da-fatura

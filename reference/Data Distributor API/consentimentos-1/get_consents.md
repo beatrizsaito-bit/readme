@@ -1,8 +1,0 @@
----
-title: Lista Consentimentos Detalhes
-excerpt: Sem campos de resposta documentados.
-api:
-  file: api_documentation_openapi.yaml
-  operationId: get_consents
-hidden: false
----
