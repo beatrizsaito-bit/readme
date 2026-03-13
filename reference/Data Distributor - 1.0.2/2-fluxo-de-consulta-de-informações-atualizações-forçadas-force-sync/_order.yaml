@@ -1,9 +1,0 @@
-- get_api-v1-consents-id-sync-1
-- get_api-v1-users-user-id-accounts-sync-1
-- get_api-v1-users-user-id-accounts-account-id-transactions-sync-1
-- get_api-v1-users-user-id-credit-cards-credit-card-account-id-bills-sync-1
-- get_api-v1-users-user-id-credit-cards-sync-1
-- get_api-v1-users-user-id-credit-contracts-credit-type-sync-1
-- get_api-v1-users-user-id-investments-investment-type-sync-1
-- >-
-  get_api-v1-users-user-id-investments-investment-type-investment-id-transactions-sync-1
