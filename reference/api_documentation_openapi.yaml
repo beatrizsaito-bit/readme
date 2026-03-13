@@ -7,7 +7,7 @@ info:
     Dicionário oficial Open Finance Brasil. Legenda: required = Obrigatório,
     conditional = Condicional (ver description), optional = Opcional.
 servers:
-  - url: '{{base_url}}/api/v1'
+  - url: https://itp-dados.hml.linaopenx.com.br
     description: Base URL configurável por ambiente
 components:
   securitySchemes:
@@ -2146,3 +2146,4 @@ tags:
   - name: Usuário
     description: Endpoints de Usuário
     x-section: INTELIGÊNCIA DE DADOS
+x-readme: {}
