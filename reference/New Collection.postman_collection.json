@@ -10,7 +10,137 @@
         "description": "",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "analysisId": {
+                            "type": "string",
+                            "example": "893b3dbc-d590-4d8e-bb4c-f6edb72cf62c"
+                          },
+                          "userId": {
+                            "type": "string",
+                            "example": "1ff15d07-d114-4426-8cb8-3ab9d5cf85c2"
+                          },
+                          "date": {
+                            "type": "string",
+                            "example": "2025-12-09T03:00:00.000Z"
+                          },
+                          "period": {
+                            "type": "object",
+                            "properties": {
+                              "startDate": {
+                                "type": "string",
+                                "example": "2024-12-09T22:49:07.713Z"
+                              },
+                              "endDate": {
+                                "type": "string",
+                                "example": "2025-12-09T22:49:07.713Z"
+                              }
+                            }
+                          },
+                          "status": {
+                            "type": "string",
+                            "example": "done"
+                          },
+                          "requestId": {
+                            "type": "string",
+                            "example": "893b3dbc-d590-4d8e-bb4c-f6edb72cf62c"
+                          },
+                          "analysis": {
+                            "type": "string",
+                            "example": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                          },
+                          "createdAt": {
+                            "type": "string",
+                            "example": "2025-12-09T22:49:07.922Z"
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "example": "2025-12-09T22:49:07.922Z"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "properties": {
+                        "page": {
+                          "type": "integer",
+                          "example": 1,
+                          "default": 0
+                        },
+                        "pageSize": {
+                          "type": "integer",
+                          "example": 100,
+                          "default": 0
+                        },
+                        "totalRecords": {
+                          "type": "integer",
+                          "example": 2,
+                          "default": 0
+                        },
+                        "totalPages": {
+                          "type": "integer",
+                          "example": 1,
+                          "default": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "data": [
+                        {
+                          "analysisId": "893b3dbc-d590-4d8e-bb4c-f6edb72cf62c",
+                          "userId": "1ff15d07-d114-4426-8cb8-3ab9d5cf85c2",
+                          "date": "2025-12-09T03:00:00.000Z",
+                          "period": {
+                            "startDate": "2024-12-09T22:49:07.713Z",
+                            "endDate": "2025-12-09T22:49:07.713Z"
+                          },
+                          "status": "done",
+                          "requestId": "893b3dbc-d590-4d8e-bb4c-f6edb72cf62c",
+                          "analysis": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                          "createdAt": "2025-12-09T22:49:07.922Z",
+                          "updatedAt": "2025-12-09T22:49:07.922Z"
+                        },
+                        {
+                          "analysisId": "82fcc445-2d2f-423a-b57c-8e8b2e114ea2",
+                          "userId": "1ff15d07-d114-4426-8cb8-3ab9d5cf85c2",
+                          "date": "2025-12-09T03:00:00.000Z",
+                          "period": {
+                            "startDate": "2024-12-09T22:46:59.582Z",
+                            "endDate": "2025-12-09T22:46:59.582Z"
+                          },
+                          "status": "done",
+                          "requestId": "82fcc445-2d2f-423a-b57c-8e8b2e114ea2",
+                          "analysis": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                          "createdAt": "2025-12-09T22:46:59.772Z",
+                          "updatedAt": "2025-12-09T22:46:59.772Z"
+                        }
+                      ],
+                      "meta": {
+                        "page": 1,
+                        "pageSize": 100,
+                        "totalRecords": 2,
+                        "totalPages": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
