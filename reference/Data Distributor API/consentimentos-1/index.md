@@ -2,8 +2,6 @@
 title: Consentimentos
 hidden: false
 ---
-<br />
-
 # Permissões
 
 <Callout icon="❗️" theme="error">
