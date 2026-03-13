@@ -1,0 +1,4 @@
+- listar-webhooks-do-tenant
+- criar-ou-atualizar-webhook
+- rotacionar-secret-do-webhook
+- remover-webhook
