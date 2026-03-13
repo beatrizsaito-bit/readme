@@ -1,5 +1,6 @@
 ---
 title: Movimentações de investimentos
+excerpt: .
 api:
   file: Data Distributor las.json
   operationId: >-
