@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "http://{{base_url}}"
+      "url": "https://itp-dados.hml.linaopenx.com.br"
     },
     {
       "url": "http://localhost:3001"
@@ -406,5 +406,8 @@
         }
       }
     }
+  },
+  "x-readme": {
+    "explorer-enabled": false
   }
 }
