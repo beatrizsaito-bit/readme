@@ -1,2 +1,6 @@
 - get_api-v1-consents
 - delete_api-v1-users-user-id-consents-id-1
+- get_api-v1-consents-1
+- delete_api-v1-users-user-id-consents-id
+- get_api-v1-users-user-id-consents-2
+- get_api-v1-users-user-id-consents-consent-id
