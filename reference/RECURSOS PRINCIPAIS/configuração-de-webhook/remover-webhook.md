@@ -1,5 +1,6 @@
 ---
 title: Remover webhook
+excerpt: .
 api:
   file: Data Distributor las.json
   operationId: delete_api-v1-notification-tenant-id-webhooks-client-id
