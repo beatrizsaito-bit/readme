@@ -803,17 +803,7 @@ paths:
           required: true
           schema:
             type: string
-  /metrics:
-    get:
-      tags:
-        - Métricas
-      summary: Métricas de uso
-      security:
-        - bearerAuth: []
-      responses:
-        '200':
-          description: Resposta 200
-      description: Sem campos de resposta documentados.
+  /metrics: {}
   /:
     get:
       tags:
