@@ -1,0 +1,7 @@
+- get_organisations
+- post_consents
+- get_consents
+- post_consents-callback
+- delete_users-user-id-consents-id
+- get_users-user-id-consents
+- get_users-user-id-consents-consent-id
