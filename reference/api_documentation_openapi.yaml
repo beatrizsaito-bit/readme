@@ -2,12 +2,9 @@ openapi: 3.0.3
 info:
   title: Data Distributor API
   version: 1.0.2
-  description: >-
-    API de distribuição de dados Open Finance Brasil. Fonte de obrigatoriedade:
-    Dicionário oficial Open Finance Brasil. Legenda: required = Obrigatório,
-    conditional = Condicional (ver description), optional = Opcional.
+  description: API de distribuição de dados Open Finance Brasil.
 servers:
-  - url: https://itp-dados.hml.linaopenx.com.br
+  - url: '{{base_url}}/api/v1'
     description: Base URL configurável por ambiente
 components:
   securitySchemes:
@@ -64,7 +61,7 @@ paths:
   /organisations:
     get:
       tags:
-        - Consentimentos
+        - Realizando um Consentimento
       summary: 1.1 - Listagem de participantes
       security:
         - bearerAuth: []
@@ -75,7 +72,7 @@ paths:
   /consents:
     post:
       tags:
-        - Consentimentos
+        - Realizando um Consentimento
       summary: 1.2 - Criação de consentimento
       security:
         - bearerAuth: []
@@ -122,7 +119,7 @@ paths:
   /consents/callback:
     post:
       tags:
-        - Consentimentos
+        - Realizando um Consentimento
       summary: 1.3 - Validar Callback
       security:
         - bearerAuth: []
@@ -803,18 +800,6 @@ paths:
           required: true
           schema:
             type: string
-  /metrics: {}
-  /:
-    get:
-      tags:
-        - Outros
-      summary: New Request
-      security:
-        - bearerAuth: []
-      responses:
-        '200':
-          description: Resposta 200
-      description: Sem campos de resposta documentados.
   /users/{user_id}/accounts:
     get:
       tags:
@@ -2096,6 +2081,9 @@ paths:
           schema:
             type: string
 tags:
+  - name: Realizando um Consentimento
+    description: Endpoints de Realizando um Consentimento
+    x-section: RECURSOS PRINCIPAIS
   - name: Consentimentos
     description: Endpoints de Consentimentos
     x-section: RECURSOS PRINCIPAIS
@@ -2115,12 +2103,6 @@ tags:
   - name: Eventos do Webhook
     description: Histórico de eventos disparados. Eventos ficam disponíveis por 30 dias.
     x-section: RECURSOS PRINCIPAIS
-  - name: Métricas
-    description: Endpoints de Métricas
-    x-section: RECURSOS PRINCIPAIS
-  - name: Outros
-    description: Endpoints de Outros
-    x-section: RECURSOS PRINCIPAIS
   - name: Contas
     description: Endpoints de Contas
     x-section: AGREGAÇÃO DE DADOS
@@ -2136,4 +2118,3 @@ tags:
   - name: Usuário
     description: Endpoints de Usuário
     x-section: INTELIGÊNCIA DE DADOS
-x-readme: {}
