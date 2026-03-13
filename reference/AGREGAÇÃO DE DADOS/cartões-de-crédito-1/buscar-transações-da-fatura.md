@@ -1,7 +1,7 @@
 ---
 title: Buscar transações da fatura
 excerpt: >-
-  .Retorna as transações de uma fatura específica, paginadas. Os dados são
+  Retorna as transações de uma fatura específica, paginadas. Os dados são
   retornados do cache local (MongoDB) — use o endpoint /sync para buscar dados
   atualizados da instituição.
 api:
