@@ -1,7 +1,7 @@
 ---
 title: Rotacionar secret do webhook
 excerpt: >-
-  .Gera um novo secret para o webhook. O secret anterior permanece válido por 24
+  Gera um novo secret para o webhook. O secret anterior permanece válido por 24
   horas para que o cliente possa migrar sem downtime.
 api:
   file: Data Distributor las.json
