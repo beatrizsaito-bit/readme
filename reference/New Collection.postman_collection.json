@@ -1,0 +1,46 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "New Collection",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/users/{user_id}/analysis/financial/{type}": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Copy of ",
+        "operationId": "get_api-v1-users-user-id-analysis-financial-type"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://itp-dados.hml.linaopenx.com.br"
+    }
+  ],
+  "components": {},
+  "x-readme": {}
+}
