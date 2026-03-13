@@ -1726,16 +1726,8 @@ paths:
                 type: object
                 properties:
                   data:
-                    type: array
-                    items:
-                      properties:
-                        investmentId:
-                          type: string
-                        anbimaCategory:
-                          type: string
-                          description: >-
-                            Conforme classificação ANBIMA, que segue a
-                            deliberação 77 da ANBIMA.
+                    type: object
+                    properties: {}
       description: ℹ️ Campos extraídos do exemplo de resposta da collection.
       parameters:
         - name: user_id
