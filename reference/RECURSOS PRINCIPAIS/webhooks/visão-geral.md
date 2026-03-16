@@ -280,3 +280,50 @@ import javax.crypto.Mac;
   }
 
 ```
+
+<br />
+
+<br />
+
+# Política de Retentativas
+
+Se seu endpoint não retornar um status **2xx** dentro de **10 segundos**, o webhook
+é reagendado automaticamente com backoff exponencial.
+
+## Tabela de tentativas
+
+| Tentativa | Delay após falha | Tempo acumulado |
+| --------- | ---------------- | --------------- |
+| 1         | imediato         | —               |
+| 2         | 1 minuto         | 1 min           |
+| 3         | 5 minutos        | 6 min           |
+| 4         | 30 minutos       | 36 min          |
+| 5         | 2 horas          | ~2h 36min       |
+| 6         | 8 horas          | ~10h 36min      |
+| 7         | 24 horas         | ~34h 36min      |
+
+> Cada delay tem uma variação aleatória de **±10%** (jitter) para evitar
+> picos de carga simultâneos.
+
+## Status do evento
+
+| Status              | Descrição                               |
+| ------------------- | --------------------------------------- |
+| `pending`           | Aguardando entrega ou retentativa       |
+| `delivered`         | Entregue com sucesso (2xx)              |
+| `failed`            | Todas as 7 tentativas falharam          |
+| `endpoint_disabled` | Endpoint desabilitado (circuit breaker) |
+
+## Circuit breaker
+
+Para proteger ambos os lados, endpoints que falham consistentemente são
+desabilitados automaticamente:
+
+* **5 eventos consecutivos** com todas as 7 tentativas esgotadas → endpoint desabilitado
+* **HTTP 410 Gone** → endpoint desabilitado imediatamente
+* **Entrega bem-sucedida** → contador de falhas resetado para zero
+
+Quando um endpoint é desabilitado, novos eventos recebem status `endpoint_disabled`
+e nenhuma tentativa de entrega é feita. Você pode reativar o endpoint via API.
+
+<br />
