@@ -1,5 +1,5 @@
 ---
-title: Como eu posso ver dados de contas garantida?
+title: Como eu posso ver dados de conta garantida?
 deprecated: false
 hidden: false
 metadata:
