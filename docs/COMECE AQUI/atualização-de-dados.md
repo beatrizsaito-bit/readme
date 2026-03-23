@@ -11,30 +11,21 @@ Considerando essas regras do Open Finance, o Data Link possui um motor de atuali
 
 <br />
 
-| Endpoint de recurso                                                       | Periodicidade | Execuções/dia | Execuções/mês |
-| ------------------------------------------------------------------------- | ------------- | ------------- | ------------- |
-| **Consentimentos**                                                        |               |               |               |
-| `consents/{consentId}`                                                    | 1x por dia    | 1             | 30            |
-| **Accounts**                                                              |               |               |               |
-| `accounts`                                                                | semanal       | 0,14 em média | 4,3 aprox.    |
-| `accounts/{accountId}/balances`                                           | a cada 2h     | 12            | 360           |
-| `accounts/{accountId}/transactions-current`                               | a cada 3h     | 8             | 240           |
-| **Cartão de Crédito**                                                     |               |               |               |
-| `credit-cards-accounts`                                                   | semanal       | 0,14 em média | 4,3 aprox.    |
-| `credit-cards-accounts/{creditCardAccountId}/limits`                      | a cada 3h     | 8             | 240           |
-| `credit-cards-accounts/{creditCardAccountId}/transactions-current`        | a cada 3h     | 8             | 240           |
-| `credit-cards-accounts/{creditCardAccountId}/bills`                       | 1x por dia    | 1             | 30            |
-| `credit-cards-accounts/{creditCardAccountId}/bills/{billId}/transactions` | 1x por dia    | 1             | 30            |
-| **Investimentos**                                                         |               |               |               |
-| `bank-fixed-incomes/investments`                                          | 1x por dia    | 1             | 30            |
-| `credit-fixed-incomes/investments`                                        | 1x por dia    | 1             | 30            |
-| `funds/investments`                                                       | 1x por dia    | 1             | 30            |
-| `variable-incomes/investments`                                            | 1x por dia    | 1             | 30            |
-| `treasure-titles/investments`                                             | 1x por dia    | 1             | 30            |
-| `{investmentType}/investments/{investmentId}/balances`                    | 1x por dia    | 1             | 30            |
-| `{investmentType}/investments/{investmentId}/transactions-current`        | 1x por dia    | 1             | 30            |
-| `variable-incomes/broker-notes/{brokerNoteId}`                            | 1x por dia    | 1             | 30            |
-| **Câmbio**                                                                |               |               |               |
-| `exchanges/operations`                                                    | semanal       | 0,14 em média | 4,3 aprox.    |
-| `exchanges/operations/{operationId}`                                      | 1x por dia    | 1             | 30            |
-| `exchanges/operations/{operationId}/events`                               | 1x por dia    | 1             | 30            |
+<br />
+
+| Endpoint de recurso                   | Periodicidade | Execuções/mês |
+| ------------------------------------- | ------------- | ------------- |
+| Consentimentos                        | 1x por dia    | 30            |
+| Contas                                | semanal       | 4,3 aprox.    |
+| Saldo da conta                        | a cada 2h     | 360           |
+| Transações de conta                   | a cada 3h     | 240           |
+| Cartões de crédito                    | semanal       | 4,3 aprox.    |
+| Limite de cartões de crédito          | a cada 3h     | 240           |
+| `Transações de cartões de crédito     | a cada 3h     | 240           |
+| Faturas de cartões de crédito         | 1x por dia    | 30            |
+| Listagem de investimentos             | 1x por dia    | 30            |
+| Saldos de investimentos               | 1x por dia    | 30            |
+| Transações de investimentos           | 1x por dia    | 30            |
+| Notas de corretagem de renda variáve; | 1x por dia    | 30            |
+| Listagem de câmbio                    | semanal       | 4,3 aprox.    |
+| Operações de câmbio                   | 1x por dia    | 30            |
