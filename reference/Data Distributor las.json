@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "http://{{base_url}}"
+      "url": "https://itp-dados.hml.linaopenx.com.br"
     },
     {
       "url": "http://localhost:3001"
@@ -35267,5 +35267,6 @@
         "operationId": "get_api-v1-users-user-id-credit-cards-credit-card-account-id-bills-bill-id-transactions-sync"
       }
     }
-  }
+  },
+  "x-readme": {}
 }
