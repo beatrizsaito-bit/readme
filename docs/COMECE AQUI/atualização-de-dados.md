@@ -26,6 +26,6 @@ Considerando essas regras do Open Finance, o Data Link possui um motor de atuali
 | Listagem de investimentos             | 1x por dia    | 30            |
 | Saldos de investimentos               | 1x por dia    | 30            |
 | Transações de investimentos           | 1x por dia    | 30            |
-| Notas de corretagem de renda variáve; | 1x por dia    | 30            |
+| Notas de corretagem de renda variável | 1x por dia    | 30            |
 | Listagem de câmbio                    | semanal       | 4,3 aprox.    |
 | Operações de câmbio                   | 1x por dia    | 30            |
