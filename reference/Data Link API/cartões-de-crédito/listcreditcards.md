@@ -1,6 +1,0 @@
----
-api:
-  file: datalink_openapi_1.yaml
-  operationId: listCreditCards
-hidden: false
----
