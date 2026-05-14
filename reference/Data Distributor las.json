@@ -577,7 +577,7 @@
         "tags": [
           "1 - Fluxo de consentimento"
         ],
-        "summary": "1.2 - Criação de consentimento",
+        "summary": "2. Criar consentimento",
         "responses": {
           "201": {
             "description": "Created",
