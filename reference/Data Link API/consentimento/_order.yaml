@@ -1,0 +1,8 @@
+- listorganisations
+- createconsent
+- listconsentsbytenant
+- validatecallback
+- syncconsent
+- listuserconsents
+- getconsent
+- revokeconsent
