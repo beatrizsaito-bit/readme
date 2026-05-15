@@ -1608,52 +1608,7 @@ paths:
                       O consentimento está com status AWAITING_AUTHORISATION. Os
                       dados ficam disponíveis somente após confirmação na
                       instituição financeira.
-  /api/v1/users/{user_id}/accounts/sync:
-    get:
-      tags:
-        - Contas
-      summary: Sync de contas
-      operationId: syncAccounts
-      description: >-
-        Força atualização direto na instituição. Mesma estrutura de resposta que
-        `GET /accounts`.
-      parameters:
-        - name: user_id
-          in: path
-          required: true
-          description: ID do usuário — obtido no callback de consentimento
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Contas atualizadas
-        '401':
-          description: Token inválido ou expirado
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: string
-                          description: Código do erro
-                        title:
-                          type: string
-                          description: Título legível
-                        detail:
-                          type: string
-                          description: Descrição detalhada do problema
-                  meta:
-                    type: object
-                    properties:
-                      requestDateTime:
-                        type: string
-                        format: date-time
+  /api/v1/users/{user_id}/accounts/sync: {}
   /api/v1/users/{user_id}/accounts/{account_id}/transactions:
     get:
       tags:
