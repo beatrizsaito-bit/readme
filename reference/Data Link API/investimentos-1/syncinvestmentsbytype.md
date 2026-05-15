@@ -1,6 +1,0 @@
----
-api:
-  file: datalink_openapi_inlined.yaml
-  operationId: syncInvestmentsByType
-hidden: false
----
