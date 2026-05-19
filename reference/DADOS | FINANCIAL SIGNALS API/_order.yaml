@@ -1,8 +1,8 @@
 - getincomeinference
 - getrecurringexpenses
 - getportfoliocomposition
-- getaccountmonthlyinsights
 - getcreditcardmonthlyinsights
 - getcreditcardcategories
 - getportfoliotransactions
+- getaccountmonthlyinsights
 - movimentações-mensais
