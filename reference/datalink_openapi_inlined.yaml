@@ -4034,7 +4034,7 @@ paths:
     get:
       tags:
         - Análise de dados
-      summary: Histórico de movimentações da carteira
+      summary: Movimentações da carteira de investimentos
       operationId: getPortfolioTransactions
       description: >-
         Retorna aportes e resgates consolidados por mês em todos os tipos de
