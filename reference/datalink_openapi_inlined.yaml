@@ -988,7 +988,16 @@ paths:
             type: string
       responses:
         '200':
-          description: Usuário encontrado
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                required:
+                  - name
         '401':
           description: Token inválido ou expirado
           content:
