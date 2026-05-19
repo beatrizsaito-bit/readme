@@ -1,4 +1,4 @@
 ---
-title: Usuários
+title: Dados cadastrais
 hidden: false
 ---
