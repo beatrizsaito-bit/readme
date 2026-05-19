@@ -165,7 +165,15 @@ paths:
                       requestDateTime:
                         type: string
                         format: date-time
-      parameters: []
+      parameters:
+        - in: query
+          name: param
+          schema:
+            type: string
+        - in: query
+          name: param1
+          schema:
+            type: string
   /api/v1/consents:
     post:
       tags:
