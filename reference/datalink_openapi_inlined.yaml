@@ -978,7 +978,7 @@ paths:
     get:
       tags:
         - Usuários
-      summary: Recuperar usuário
+      summary: Dados cadastrais de um usuário
       operationId: getUser
       parameters:
         - name: user_id
