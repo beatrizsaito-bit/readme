@@ -448,7 +448,7 @@ paths:
     get:
       tags:
         - Consentimento
-      summary: Listar consentimentos por tenant (admin)
+      summary: Listar todos os consentimentos
       operationId: listConsentsByTenant
       description: >-
         Visão administrativa de todos os consentimentos do tenant com filtros e
