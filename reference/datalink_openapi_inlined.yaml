@@ -871,7 +871,7 @@ paths:
     get:
       tags:
         - Usuários
-      summary: Listar usuários do tenant
+      summary: Listar todos os usuários
       operationId: listUsers
       description: >
         Retorna todos os usuários com consentimento no tenant.
