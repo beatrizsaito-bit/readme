@@ -3636,7 +3636,7 @@ paths:
     get:
       tags:
         - Análise de dados
-      summary: Custos recorrentes
+      summary: Despesas recorrentes
       operationId: getRecurringExpenses
       description: >
         Identifica despesas recorrentes por padrão de frequência (assinaturas,
