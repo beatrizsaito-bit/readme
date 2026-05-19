@@ -3850,7 +3850,7 @@ paths:
     get:
       tags:
         - Análise de dados
-      summary: Movimentações mensais — cartões
+      summary: Movimentações mensais de cartões
       operationId: getCreditCardMonthlyInsights
       description: |
         Agrega gastos de cartão por mês com média histórica e comparativo.
