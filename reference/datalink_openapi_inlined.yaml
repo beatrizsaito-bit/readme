@@ -3738,7 +3738,7 @@ paths:
     get:
       tags:
         - Análise de dados
-      summary: Movimentações mensais — contas
+      summary: Movimentações mensais de contas
       operationId: getAccountMonthlyInsights
       description: >
         Agrega débitos e créditos das contas por mês.
