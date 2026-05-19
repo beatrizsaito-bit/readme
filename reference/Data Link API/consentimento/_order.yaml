@@ -1,7 +1,6 @@
 - listorganisations
 - createconsent
 - listconsentsbytenant
-- validatecallback
 - listuserconsents
 - getconsent
 - revokeconsent
