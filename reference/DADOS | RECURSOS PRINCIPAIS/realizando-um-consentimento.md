@@ -1,5 +1,5 @@
 ---
-title: Realizando um consentimento
+title: Passo a passo para realizar um consentimento
 deprecated: false
 hidden: false
 icon: fab fa-confluence
