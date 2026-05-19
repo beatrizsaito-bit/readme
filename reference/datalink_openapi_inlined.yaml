@@ -60,7 +60,7 @@ paths:
     get:
       tags:
         - Consentimento
-      summary: Listar participantes
+      summary: Instituições participantes do Open Finance
       operationId: listOrganisations
       description: |
         Retorna as instituições financeiras disponíveis para consentimento.
