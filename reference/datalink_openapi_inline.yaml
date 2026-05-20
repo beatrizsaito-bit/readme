@@ -5593,7 +5593,6 @@ paths:
           description: Identificador único do usuário na plataforma DataLink.
           schema:
             type: string
-            format: uuid
             example: 9d9fe35d-8e12-46f3-807c-4bdaa1238d32
       responses:
         '200':
