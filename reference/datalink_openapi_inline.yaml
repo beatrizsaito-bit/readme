@@ -506,7 +506,6 @@ paths:
                     example: AWAITING_AUTHORISATION
                   redirectUrl:
                     type: string
-                    format: uri
                     description: >
                       URL para redirecionar o usuário final à tela de
                       autorização na instituição financeira. Válida apenas
