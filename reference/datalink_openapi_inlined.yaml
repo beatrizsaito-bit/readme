@@ -4222,16 +4222,11 @@ paths:
     post:
       tags:
         - Notificações
-      summary: Criar configuração de notificações
+      summary: Criar canais
       operationId: createNotification
-      description: >
-        Configura os canais de notificação do tenant.
-
-
-        > **Atenção:** este endpoint utiliza uma base URL distinta dos endpoints
-        de dados.
-
-        > Consulte seu contrato para obter a URL de produção correta.
+      description: >-
+        Configura os canais de notificação do tenant. Consulte seu contrato para
+        obter a URL de produção correta.
       requestBody:
         required: true
         content:
