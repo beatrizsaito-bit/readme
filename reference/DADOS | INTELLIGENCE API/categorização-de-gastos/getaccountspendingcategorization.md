@@ -2,5 +2,5 @@
 api:
   file: datalink_openapi_inline.yaml
   operationId: getAccountSpendingCategorization
-hidden: false
+hidden: true
 ---
