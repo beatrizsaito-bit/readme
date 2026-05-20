@@ -6522,10 +6522,10 @@ paths:
       tags:
         - Dados Cadastrais
       summary: 'Dados cadastrais '
-      description: >
-        Retorna os dados cadastrais completos de pessoa natural (PF) do usuário,
-        incluindo identificações, documentos, qualificações profissionais,
-        relações financeiras e informações de contato.
+      description: >-
+        Retorna os dados cadastrais completos, incluindo identificações,
+        documentos, qualificações profissionais, relações financeiras e
+        informações de contato.
       operationId: getPersonalData
       parameters:
         - name: user_id
