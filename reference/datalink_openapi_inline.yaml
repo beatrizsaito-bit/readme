@@ -113,7 +113,6 @@ paths:
                           example: BCO BMG S.A.
                         OrganisationId:
                           type: string
-                          format: uuid
                           description: >-
                             Identificador único da organização no diretório Open
                             Finance.
@@ -148,7 +147,6 @@ paths:
                             properties:
                               AuthorisationServerId:
                                 type: string
-                                format: uuid
                                 description: >-
                                   Identificador único do servidor de
                                   autorização.
@@ -169,7 +167,6 @@ paths:
                                 example: Auth Server SBX
                               CustomerFriendlyLogoUri:
                                 type: string
-                                format: uri
                                 description: >-
                                   URL do logotipo da instituição para exibição
                                   no widget de consentimento.
@@ -177,7 +174,6 @@ paths:
                                   https://www.bancobmg.com.br/lumis-theme/br/com/bmg/portal/theme/bmg-portal/img/logo.svg
                               OpenIDDiscoveryDocument:
                                 type: string
-                                format: uri
                                 description: >
                                   URL do documento de descoberta OpenID Connect
                                   (well-known). Contém os endpoints de
@@ -269,7 +265,6 @@ paths:
                                         para esta família de API na instituição.
                                       items:
                                         type: string
-                                        format: uri
                                       example:
                                         - >-
                                           https://api-openfinance-dev-m.bancobmg.com.br/open-banking/accounts/v2/accounts
