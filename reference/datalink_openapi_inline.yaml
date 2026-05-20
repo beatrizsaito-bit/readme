@@ -6537,7 +6537,7 @@ paths:
             example: 9d9fe35d-8e12-46f3-807c-4bdaa1238d32
       responses:
         '200':
-          description: Dados cadastrais de pessoa física retornados com sucesso.
+          description: Dados cadastrais retornados com sucesso.
           content:
             application/json:
               schema:
