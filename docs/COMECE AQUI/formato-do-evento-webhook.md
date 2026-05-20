@@ -1,7 +1,7 @@
 ---
 title: Formato do Evento Webhook
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
