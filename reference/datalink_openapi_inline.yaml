@@ -341,7 +341,6 @@ paths:
               properties:
                 organisationId:
                   type: string
-                  format: uuid
                   description: >
                     Identificador único da organização (instituição financeira)
                     onde o consentimento será criado. Obtido no endpoint de
@@ -349,7 +348,6 @@ paths:
                   example: 74e929d9-33b6-4d85-8ba7-c146c867a817
                 authorisationServerId:
                   type: string
-                  format: uuid
                   description: >
                     Identificador do servidor de autorização da instituição.
                     Obtido no campo AuthorisationServerId dentro de
@@ -384,11 +382,13 @@ paths:
                           example: '11222333000181'
                     permissions:
                       type: array
-                      description: >
+                      description: >+
                         Lista de permissões de acesso a dados solicitadas para o
                         consentimento. Deve incluir ao menos uma permissão.
                         Algumas permissões possuem dependência entre si (ex.:
                         `ACCOUNTS_BALANCES_READ` requer `ACCOUNTS_READ`).
+
+
                       minItems: 1
                       items:
                         type: string
