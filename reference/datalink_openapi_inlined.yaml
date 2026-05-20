@@ -4339,7 +4339,7 @@ paths:
     get:
       tags:
         - Notificações
-      summary: Consultar configurações de notificação
+      summary: Buscar canais
       operationId: getNotification
       parameters:
         - name: tenant_id
