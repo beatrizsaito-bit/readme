@@ -1,5 +1,5 @@
 ---
-title: Consentimento no Open Finance
+title: Consentimento de dados no Open Finance
 deprecated: false
 hidden: false
 metadata:
