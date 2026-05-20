@@ -791,7 +791,6 @@ paths:
                     properties:
                       userId:
                         type: string
-                        format: uuid
                         description: Identificador único do usuário na plataforma DataLink.
                         example: 9d9fe35d-8e12-46f3-807c-4bdaa1238d32
                       consentId:
@@ -822,7 +821,6 @@ paths:
                           - AUTHORISED
                           - AWAITING_AUTHORISATION
                           - REJECTED
-                          - REVOKED
                         example: AUTHORISED
                       statusUpdateDateTime:
                         type: string
@@ -891,14 +889,12 @@ paths:
                         example: '2027-05-21T08:30:00Z'
                       organisationId:
                         type: string
-                        format: uuid
                         description: >-
                           Identificador da instituição financeira vinculada ao
                           consentimento.
                         example: 74e929d9-33b6-4d85-8ba7-c146c867a817
                       authorisationServerId:
                         type: string
-                        format: uuid
                         description: >-
                           Identificador do servidor de autorização da
                           instituição.
@@ -918,6 +914,9 @@ paths:
                             description: >-
                               Identifica o agente responsável pela rejeição do
                               consentimento.
+
+                              USER - usuário; ASPSP - instituição transmissora;
+                              TPP - instituição receptora
                             enum:
                               - USER
                               - ASPSP
