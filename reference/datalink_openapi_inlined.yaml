@@ -4354,118 +4354,18 @@ paths:
           content:
             application/json:
               schema:
-                allOf:
-                  - type: object
-                    required:
-                      - tenantId
-                      - channels
-                    properties:
-                      tenantId:
-                        type: string
-                      channels:
-                        type: array
-                        items:
-                          type: object
-                          required:
-                            - type
-                            - value
-                            - enable
-                          properties:
-                            type:
-                              type: string
-                              enum:
-                                - webhook
-                                - slack
-                                - email
-                                - sms
-                              description: >-
-                                Tipo de conta de depósito.
-                                CONTA_DEPOSITO_A_VISTA: conta corrente.
-                                CONTA_POUPANCA: poupança.
-                                CONTA_PAGAMENTO_PRE_PAGA: conta pré-paga.
-                            value:
-                              type: string
-                              description: URL, e-mail ou número de acordo com o tipo
-                            enable:
-                              type: boolean
-                            secret:
-                              type: string
-                              nullable: true
-                              description: >-
-                                Secret HMAC para validação do webhook (apenas
-                                para type=webhook)
-                  - type: object
-                    properties:
-                      createdAt:
-                        type: string
-                        format: date-time
-                      updatedAt:
-                        type: string
-                        format: date-time
-        '401':
-          description: Token inválido ou expirado
-          content:
-            application/json:
-              schema:
                 type: object
                 properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: string
-                          description: Código do erro
-                        title:
-                          type: string
-                          description: Título legível
-                        detail:
-                          type: string
-                          description: Descrição detalhada do problema
-                  meta:
-                    type: object
-                    properties:
-                      requestDateTime:
-                        type: string
-                        format: date-time
-        '404':
-          description: >-
-            Recurso não encontrado — user_id, account_id ou consent_id
-            inexistente
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: string
-                          description: Código do erro
-                        title:
-                          type: string
-                          description: Título legível
-                        detail:
-                          type: string
-                          description: Descrição detalhada do problema
-                  meta:
-                    type: object
-                    properties:
-                      requestDateTime:
-                        type: string
-                        format: date-time
-              example:
-                errors:
-                  - code: USUARIO_NAO_ENCONTRADO
-                    title: Usuário não encontrado
-                    detail: >-
-                      Nenhum usuário encontrado para o userId informado.
-                      Verifique se o callback de consentimento foi concluído com
-                      sucesso.
+                  tenantId:
+                    type: string
+                  channels:
+                    type: string
+                  createdAt:
+                    type: string
+                  updatedAt:
+                    type: string
+                required:
+                  - tenantId
     patch:
       tags:
         - Notificações
