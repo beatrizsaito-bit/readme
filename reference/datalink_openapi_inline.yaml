@@ -502,8 +502,8 @@ paths:
                       - AWAITING_AUTHORISATION
                       - AUTHORISED
                       - REJECTED
-                      - REVOKED
                     example: AWAITING_AUTHORISATION
+                    default: REJECTED
                   redirectUrl:
                     type: string
                     description: >
@@ -526,16 +526,21 @@ paths:
                       consentimento seja ativado.
                     example: '2026-05-20T10:45:00Z'
                   permissions:
-                    type: array
-                    description: Lista de permissões solicitadas no consentimento.
-                    items:
-                      type: string
+                    type: object
+                    description: |
+                      Lista de permissões solicitadas no consentimento.
                     example:
                       - RESOURCES_READ
                       - CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ
                       - ACCOUNTS_READ
                       - ACCOUNTS_BALANCES_READ
                       - ACCOUNTS_TRANSACTIONS_READ
+                    properties:
+                      name:
+                        type: string
+                required:
+                  - permissions
+                  - consentId
               example:
                 consentId: >-
                   urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:3fa85f64-5717-4562-b3fc-2c963f66afa6
