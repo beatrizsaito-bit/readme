@@ -280,43 +280,46 @@ paths:
                                         - Inactive
                                         - Deprecated
                                       example: Active
-              example:
-                data:
-                  - OrganisationName: BCO BMG S.A.
-                    OrganisationId: 4ae2cefb-e3c1-5624-9448-b3aa4777c539
-                    LegalEntityName: BANCO BMG S.A.
-                    RegistrationNumber: '61186680000174'
-                    ParentOrganisationReference: ''
-                    AuthorisationServers:
-                      - AuthorisationServerId: e70bc5a2-9b70-40f1-a3bb-7e6f41695c52
-                        CustomerFriendlyName: BANCO BMG
-                        CustomerFriendlyDescription: Auth Server SBX
-                        CustomerFriendlyLogoUri: >-
-                          https://www.bancobmg.com.br/lumis-theme/br/com/bmg/portal/theme/bmg-portal/img/logo.svg
-                        OpenIDDiscoveryDocument: >-
-                          https://api-openfinance-dev.bancobmg.com.br/of-auth/realms/bmg-sbx/.well-known/openid-configuration
-                        Flags:
-                          Suporta Contas PF:
-                            - Suporta Contas PF
-                          Suporta Contas PJ:
-                            - Suporta Contas PJ
-                        ApiResources:
-                          - ApiFamilyType: consents
-                            ApiVersion: 3.3.0
-                            ApiDiscoveryEndpoints:
-                              - >-
-                                https://api-openfinance-dev-m.bancobmg.com.br/open-banking/consents/v3/consents
-                              - >-
-                                https://api-openfinance-dev-m.bancobmg.com.br/open-banking/consents/v3/consents/{consentId}
-                            Status: Active
-                          - ApiFamilyType: accounts
-                            ApiVersion: 2.4.2
-                            ApiDiscoveryEndpoints:
-                              - >-
-                                https://api-openfinance-dev-m.bancobmg.com.br/open-banking/accounts/v2/accounts
-                              - >-
-                                https://api-openfinance-dev-m.bancobmg.com.br/open-banking/accounts/v2/accounts/{accountId}/transactions
-                            Status: Active
+              examples:
+                OK:
+                  value:
+                    data:
+                      - OrganisationName: BCO BMG S.A.
+                        OrganisationId: 4ae2cefb-e3c1-5624-9448-b3aa4777c539
+                        LegalEntityName: BANCO BMG S.A.
+                        RegistrationNumber: '61186680000174'
+                        ParentOrganisationReference: ''
+                        AuthorisationServers:
+                          - AuthorisationServerId: e70bc5a2-9b70-40f1-a3bb-7e6f41695c52
+                            CustomerFriendlyName: BANCO BMG
+                            CustomerFriendlyDescription: Auth Server SBX
+                            CustomerFriendlyLogoUri: >-
+                              https://www.bancobmg.com.br/lumis-theme/br/com/bmg/portal/theme/bmg-portal/img/logo.svg
+                            OpenIDDiscoveryDocument: >-
+                              https://api-openfinance-dev.bancobmg.com.br/of-auth/realms/bmg-sbx/.well-known/openid-configuration
+                            Flags:
+                              Suporta Contas PF:
+                                - Suporta Contas PF
+                              Suporta Contas PJ:
+                                - Suporta Contas PJ
+                            ApiResources:
+                              - ApiFamilyType: consents
+                                ApiVersion: 3.3.0
+                                ApiDiscoveryEndpoints:
+                                  - >-
+                                    https://api-openfinance-dev-m.bancobmg.com.br/open-banking/consents/v3/consents
+                                  - >-
+                                    https://api-openfinance-dev-m.bancobmg.com.br/open-banking/consents/v3/consents/{consentId}
+                                Status: Active
+                              - ApiFamilyType: accounts
+                                ApiVersion: 2.4.2
+                                ApiDiscoveryEndpoints:
+                                  - >-
+                                    https://api-openfinance-dev-m.bancobmg.com.br/open-banking/accounts/v2/accounts
+                                  - >-
+                                    https://api-openfinance-dev-m.bancobmg.com.br/open-banking/accounts/v2/accounts/{accountId}/transactions
+                                Status: Active
+                  summary: OK
   /api/v1/consents:
     post:
       tags:
