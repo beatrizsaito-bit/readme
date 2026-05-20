@@ -1,6 +1,6 @@
 ---
 title: Consentimento
-hidden: false
+hidden: true
 ---
 <br />
 
