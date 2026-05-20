@@ -2412,22 +2412,6 @@ paths:
       responses:
         '200':
           description: ''
-  /aggregation/{consentId}/business-data:
-    get:
-      tags:
-        - Dados Cadastrais
-      summary: Dados cadastrais de pessoa jurídica
-      description: ''
-      operationId: getBusinessData
-      parameters:
-        - name: consentId
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: ''
   /api/v1/users/{user_id}/accounts:
     get:
       tags:
