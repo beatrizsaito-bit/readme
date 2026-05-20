@@ -2412,724 +2412,6 @@ paths:
       responses:
         '200':
           description: ''
-  /api/v1/users/{user_id}/personal-data:
-    get:
-      tags:
-        - Dados Cadastrais
-      summary: Dados cadastrais de pessoa física
-      description: >
-        Retorna os dados cadastrais completos de pessoa natural (PF) do usuário,
-        incluindo identificações, documentos, qualificações profissionais,
-        relações financeiras e informações de contato.
-      operationId: getPersonalData
-      parameters:
-        - name: user_id
-          in: path
-          required: true
-          description: Identificador único do usuário na plataforma DataLink.
-          schema:
-            type: string
-            format: uuid
-            example: 9d9fe35d-8e12-46f3-807c-4bdaa1238d32
-      responses:
-        '200':
-          description: Dados cadastrais de pessoa física retornados com sucesso.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      type: object
-                      description: >-
-                        Dados cadastrais completos de pessoa natural (PF) via
-                        Open Finance.
-                      required:
-                        - updateDateTime
-                        - personalId
-                        - brandName
-                        - civilName
-                        - birthDate
-                        - hasBrazilianNationality
-                        - companiesCnpj
-                        - documents
-                        - contacts
-                      properties:
-                        updateDateTime:
-                          type: string
-                          format: date-time
-                          description: >-
-                            Data e hora da última atualização dos dados
-                            cadastrais (ISO 8601, UTC).
-                          example: '2024-09-09T18:00:00Z'
-                        personalId:
-                          type: string
-                          description: >-
-                            Identificador único e imutável da pessoa natural na
-                            instituição transmissora.
-                          example: 578-psd-71md6971kjh-2d414
-                        brandName:
-                          type: string
-                          description: >-
-                            Nome da marca da instituição reportada no Open
-                            Finance.
-                          example: Sib Bank
-                        civilName:
-                          type: string
-                          description: Nome civil completo da pessoa natural.
-                          example: Juan Kaique Cláudio Fernandes
-                        socialName:
-                          type: string
-                          description: Nome social da pessoa natural, se houver.
-                          example: Jaqueline de Freitas
-                        birthDate:
-                          type: string
-                          format: date
-                          description: Data de nascimento (RFC-3339).
-                          example: '1989-03-23'
-                        maritalStatusCode:
-                          type: string
-                          description: Estado marital do cliente.
-                          enum:
-                            - SOLTEIRO
-                            - CASADO
-                            - VIUVO
-                            - SEPARADO_JUDICIALMENTE
-                            - DIVORCIADO
-                            - UNIAO_ESTAVEL
-                            - OUTRO
-                          example: CASADO
-                        maritalStatusAdditionalInfo:
-                          type: string
-                          description: >
-                            Campo livre para complementar o estado marital.
-                            **[Restrição]** Obrigatório quando
-                            `maritalStatusCode` for `OUTRO`.
-                          example: Amasiado
-                        sex:
-                          type: string
-                          description: >-
-                            Sexo biológico do cliente. Quando não se enquadrar
-                            em feminino nem masculino, classificar como `OUTRO`.
-                          enum:
-                            - FEMININO
-                            - MASCULINO
-                            - OUTRO
-                          example: MASCULINO
-                        hasBrazilianNationality:
-                          type: boolean
-                          description: Indica se o cliente possui nacionalidade brasileira.
-                          example: true
-                        companiesCnpj:
-                          type: array
-                          description: >-
-                            Lista de CNPJs das instituições responsáveis pelo
-                            cadastro (14 dígitos, sem máscara).
-                          items:
-                            type: string
-                          example:
-                            - '40156018000100'
-                        documents:
-                          type: object
-                          description: Documentos de identificação da pessoa natural.
-                          properties:
-                            cpfNumber:
-                              type: string
-                              description: >
-                                CPF completo (11 dígitos, sem máscara).
-                                **[Restrição]** Obrigatório quando `passport`
-                                não for informado.
-                              example: '25872252137'
-                            passport:
-                              type: object
-                              description: >
-                                Passaporte. Aplicável somente a pessoa natural
-                                residente no exterior desobrigada de inscrição
-                                no CPF. **[Restrição]** Obrigatório quando
-                                `cpfNumber` não for informado.
-                              properties:
-                                number:
-                                  type: string
-                                  description: Número do passaporte.
-                                  example: '75253468744594820620'
-                                country:
-                                  type: string
-                                  description: País de emissão (código alpha3 ISO-3166).
-                                  example: CAN
-                                expirationDate:
-                                  type: string
-                                  format: date
-                                  description: Data de validade do passaporte.
-                                  example: '2028-05-21'
-                                issueDate:
-                                  type: string
-                                  format: date
-                                  description: Data de emissão do passaporte.
-                                  example: '2018-05-21'
-                        otherDocuments:
-                          type: array
-                          description: >-
-                            Outros documentos de identificação da pessoa
-                            natural.
-                          items:
-                            type: object
-                            properties:
-                              type:
-                                type: string
-                                description: Tipo de documento.
-                                enum:
-                                  - CNH
-                                  - RG
-                                  - NIF
-                                  - RNE
-                                  - OUTROS
-                                example: CNH
-                              typeAdditionalInfo:
-                                type: string
-                                description: >
-                                  Campo livre. Obrigatório quando `type` for
-                                  `OUTROS`.
-                                example: CREA-RJ
-                              number:
-                                type: string
-                                description: Número do documento.
-                                example: '15291908'
-                              checkDigit:
-                                type: string
-                                description: >-
-                                  Dígito verificador do documento, quando
-                                  houver.
-                                example: P
-                              additionalInfo:
-                                type: string
-                                description: >
-                                  Local de emissão do documento (órgão e UF).
-                                  **[Restrição]** Obrigatório quando o local de
-                                  emissão for relevante. Ex: RG → `SSP/SP`.
-                                example: SSP/SP
-                              expirationDate:
-                                type: string
-                                format: date
-                                description: Data de validade do documento.
-                                example: '2028-05-21'
-                        nationality:
-                          type: array
-                          description: >
-                            Outras nacionalidades do cliente. Obrigatório quando
-                            `hasBrazilianNationality` for `false`.
-                          items:
-                            type: object
-                            properties:
-                              otherNationalitiesInfo:
-                                type: string
-                                description: >-
-                                  Código da outra nacionalidade (alpha3
-                                  ISO-3166).
-                                example: CAN
-                              documents:
-                                type: array
-                                description: Documentos da nacionalidade estrangeira.
-                                items:
-                                  type: object
-                                  properties:
-                                    type:
-                                      type: string
-                                      description: Tipo do documento estrangeiro.
-                                      example: SOCIAL SEC
-                                    number:
-                                      type: string
-                                      description: Número do documento.
-                                      example: '423929299'
-                                    expirationDate:
-                                      type: string
-                                      format: date
-                                      example: '2030-01-01'
-                                    issueDate:
-                                      type: string
-                                      format: date
-                                      example: '2010-01-01'
-                                    country:
-                                      type: string
-                                      description: Nome do país.
-                                      example: Canadá
-                                    additionalInfo:
-                                      type: string
-                                      example: Informações adicionais
-                        filiation:
-                          type: array
-                          description: Informações de filiação da pessoa natural.
-                          items:
-                            type: object
-                            required:
-                              - type
-                              - civilName
-                            properties:
-                              type:
-                                type: string
-                                description: Tipo de filiação.
-                                enum:
-                                  - MAE
-                                  - PAI
-                                example: MAE
-                              civilName:
-                                type: string
-                                description: Nome civil completo do familiar.
-                                example: Maria Fernandes
-                              socialName:
-                                type: string
-                                description: Nome social do familiar, se houver.
-                        contacts:
-                          type: object
-                          description: Informações de contato da pessoa natural.
-                          required:
-                            - postalAddresses
-                            - phones
-                            - emails
-                          properties:
-                            postalAddresses:
-                              type: array
-                              description: Endereços postais da pessoa natural.
-                              items:
-                                type: object
-                                required:
-                                  - isMain
-                                  - address
-                                  - townName
-                                  - postCode
-                                  - country
-                                properties:
-                                  isMain:
-                                    type: boolean
-                                    description: Indica se é o endereço principal.
-                                    example: true
-                                  address:
-                                    type: string
-                                    description: Logradouro completo.
-                                    example: Av Naburo Ykesaki, 1270
-                                  additionalInfo:
-                                    type: string
-                                    description: Complemento do endereço.
-                                    example: Fundos
-                                  districtName:
-                                    type: string
-                                    description: Bairro. Obrigatório se houver.
-                                    example: Centro
-                                  townName:
-                                    type: string
-                                    description: Nome do município.
-                                    example: Marília
-                                  ibgeTownCode:
-                                    type: string
-                                    description: Código IBGE do município (7 dígitos).
-                                    example: '3550308'
-                                  countrySubDivision:
-                                    type: string
-                                    description: Sigla do estado brasileiro (UF).
-                                    enum:
-                                      - AC
-                                      - AL
-                                      - AP
-                                      - AM
-                                      - BA
-                                      - CE
-                                      - DF
-                                      - ES
-                                      - GO
-                                      - MA
-                                      - MT
-                                      - MS
-                                      - MG
-                                      - PA
-                                      - PB
-                                      - PR
-                                      - PE
-                                      - PI
-                                      - RJ
-                                      - RN
-                                      - RS
-                                      - RO
-                                      - RR
-                                      - SC
-                                      - SP
-                                      - SE
-                                      - TO
-                                    example: SP
-                                  postCode:
-                                    type: string
-                                    description: CEP (8 dígitos, sem hífen).
-                                    example: '17500001'
-                                  country:
-                                    type: string
-                                    description: Nome do país.
-                                    example: Brasil
-                                  countryCode:
-                                    type: string
-                                    description: Código do país (alpha3 ISO-3166).
-                                    example: BRA
-                                  geographicCoordinates:
-                                    type: object
-                                    description: Coordenadas geográficas (WGS84).
-                                    properties:
-                                      latitude:
-                                        type: string
-                                        example: '-23.5475000'
-                                      longitude:
-                                        type: string
-                                        example: '-46.6361100'
-                            phones:
-                              type: array
-                              description: Telefones de contato da pessoa natural.
-                              items:
-                                type: object
-                                required:
-                                  - isMain
-                                  - type
-                                  - areaCode
-                                  - number
-                                properties:
-                                  isMain:
-                                    type: boolean
-                                    description: Indica se é o telefone principal.
-                                    example: true
-                                  type:
-                                    type: string
-                                    description: Tipo de telefone.
-                                    enum:
-                                      - FIXO
-                                      - MOVEL
-                                      - OUTRO
-                                    example: MOVEL
-                                  additionalInfo:
-                                    type: string
-                                    description: >
-                                      Informação complementar. Obrigatório
-                                      quando `type` for `OUTRO`.
-                                    example: Informações adicionais
-                                  countryCallingCode:
-                                    type: string
-                                    description: DDI. Obrigatório quando diferente de `55`.
-                                    example: '55'
-                                  areaCode:
-                                    type: string
-                                    description: DDD (2 ou 3 dígitos).
-                                    example: '11'
-                                  number:
-                                    type: string
-                                    description: Número do telefone (6 a 13 dígitos).
-                                    example: '99875132'
-                                  phoneExtension:
-                                    type: string
-                                    description: Ramal, quando aplicável.
-                                    example: '932'
-                            emails:
-                              type: array
-                              description: E-mails de contato da pessoa natural.
-                              items:
-                                type: object
-                                required:
-                                  - isMain
-                                  - email
-                                properties:
-                                  isMain:
-                                    type: boolean
-                                    description: Indica se é o e-mail principal.
-                                    example: true
-                                  email:
-                                    type: string
-                                    description: Endereço de e-mail.
-                                    example: juan.fernandes@email.com
-                        qualifications:
-                          type: object
-                          description: >-
-                            Informações de qualificação profissional e renda
-                            declarada.
-                          properties:
-                            updateDateTime:
-                              type: string
-                              format: date-time
-                              description: >-
-                                Data e hora da última atualização (ISO 8601,
-                                UTC).
-                              example: '2024-09-09T18:00:00Z'
-                            companyCnpj:
-                              type: string
-                              description: CNPJ da instituição responsável (14 dígitos).
-                              example: '40156018000100'
-                            occupationCode:
-                              type: string
-                              description: Código de ocupação utilizado.
-                              enum:
-                                - RECEITA_FEDERAL
-                                - CBO
-                                - OUTRO
-                              example: RECEITA_FEDERAL
-                            occupationDescription:
-                              type: string
-                              description: >
-                                Código da ocupação (quando `RECEITA_FEDERAL` ou
-                                `CBO`) ou descrição livre (quando `OUTRO`).
-                              example: '211110'
-                            informedIncome:
-                              type: object
-                              description: Renda declarada pelo cliente na instituição.
-                              properties:
-                                frequency:
-                                  type: string
-                                  description: Frequência da renda declarada.
-                                  enum:
-                                    - DIARIA
-                                    - SEMANAL
-                                    - QUINZENAL
-                                    - MENSAL
-                                    - BIMESTRAL
-                                    - TRIMESTRAL
-                                    - SEMESTRAL
-                                    - ANUAL
-                                    - OUTROS
-                                  example: MENSAL
-                                amount:
-                                  type: object
-                                  description: Valor total da renda declarada.
-                                  properties:
-                                    amount:
-                                      type: string
-                                      example: '8500.00'
-                                    currency:
-                                      type: string
-                                      example: BRL
-                        financialRelations:
-                          type: object
-                          description: >-
-                            Relações financeiras do cliente com a instituição
-                            transmissora.
-                          properties:
-                            procurators:
-                              type: array
-                              description: Lista de representantes legais ou procuradores.
-                              items:
-                                type: object
-                                required:
-                                  - type
-                                  - cpfNumber
-                                  - civilName
-                                properties:
-                                  type:
-                                    type: string
-                                    description: Tipo de representante.
-                                    enum:
-                                      - REPRESENTANTE_LEGAL
-                                      - PROCURADOR
-                                    example: PROCURADOR
-                                  cpfNumber:
-                                    type: string
-                                    description: CPF do representante (11 dígitos).
-                                    example: '73677831148'
-                                  civilName:
-                                    type: string
-                                    description: Nome civil completo do representante.
-                                    example: Elza Milena Stefany Teixeira
-                                  socialName:
-                                    type: string
-                                    description: Nome social do representante, se houver.
-                            accounts:
-                              type: array
-                              description: Contas do cliente na instituição transmissora.
-                              items:
-                                type: object
-                                required:
-                                  - compeCode
-                                  - number
-                                  - checkDigit
-                                  - type
-                                  - subtype
-                                properties:
-                                  compeCode:
-                                    type: string
-                                    description: Código COMPE da instituição (3 dígitos).
-                                    example: '001'
-                                  branchCode:
-                                    type: string
-                                    description: >
-                                      Código da agência (4 dígitos).
-                                      **[Restrição]** Obrigatório quando `type`
-                                      ≠ `CONTA_PAGAMENTO_PRE_PAGA`.
-                                    example: '6272'
-                                  number:
-                                    type: string
-                                    description: Número da conta.
-                                    example: '11188222'
-                                  checkDigit:
-                                    type: string
-                                    description: Dígito verificador da conta.
-                                    example: '4'
-                                  type:
-                                    type: string
-                                    description: Tipo da conta.
-                                    enum:
-                                      - CONTA_DEPOSITO_A_VISTA
-                                      - CONTA_POUPANCA
-                                      - CONTA_PAGAMENTO_PRE_PAGA
-                                    example: CONTA_DEPOSITO_A_VISTA
-                                  subtype:
-                                    type: string
-                                    description: Subtipo de conta conforme a titularidade.
-                                    enum:
-                                      - INDIVIDUAL
-                                      - CONJUNTA_SIMPLES
-                                      - CONJUNTA_SOLIDARIA
-                                    example: INDIVIDUAL
-                            portabilitiesReceived:
-                              type: array
-                              description: >-
-                                Portabilidades de salário recebidas pelo
-                                cliente.
-                              items:
-                                type: object
-                                required:
-                                  - employerName
-                                  - employerCnpjCpf
-                                  - paycheckBankDetainerCnpj
-                                  - paycheckBankDetainerIspb
-                                  - portabilityApprovalDate
-                                properties:
-                                  employerName:
-                                    type: string
-                                    description: >-
-                                      Nome do empregador conforme comunicação de
-                                      portabilidade.
-                                    example: Empresa XYZ Ltda
-                                  employerCnpjCpf:
-                                    type: string
-                                    description: CPF ou CNPJ do empregador (sem máscara).
-                                    example: '12345678000195'
-                                  paycheckBankDetainerCnpj:
-                                    type: string
-                                    description: >-
-                                      CNPJ do banco-folha detentor da conta
-                                      salário.
-                                    example: '60746948000112'
-                                  paycheckBankDetainerIspb:
-                                    type: string
-                                    description: Número ISPB do banco-folha (8 dígitos).
-                                    example: '60746948'
-                                  portabilityApprovalDate:
-                                    type: string
-                                    format: date
-                                    description: >-
-                                      Data de aprovação da portabilidade de
-                                      salário.
-                                    example: '2023-01-15'
-                            paychecksBankLink:
-                              type: array
-                              description: >-
-                                Vínculos empregatícios com conta salário na
-                                instituição transmissora.
-                              items:
-                                type: object
-                                required:
-                                  - employerName
-                                  - employerCnpjCpf
-                                  - paycheckBankCnpj
-                                  - paycheckBankIspb
-                                  - accountOpeningDate
-                                properties:
-                                  employerName:
-                                    type: string
-                                    description: >-
-                                      Nome do empregador conforme registro da
-                                      conta salário.
-                                    example: Empresa ABC S.A.
-                                  employerCnpjCpf:
-                                    type: string
-                                    description: CPF ou CNPJ do empregador (sem máscara).
-                                    example: '98765432000101'
-                                  paycheckBankCnpj:
-                                    type: string
-                                    description: >-
-                                      CNPJ do banco-folha prestador do serviço
-                                      de pagamento de salário.
-                                    example: '40156018000100'
-                                  paycheckBankIspb:
-                                    type: string
-                                    description: ISPB do banco-folha (8 dígitos).
-                                    example: '40156018'
-                                  accountOpeningDate:
-                                    type: string
-                                    format: date
-                                    description: Data de abertura da conta salário.
-                                    example: '2020-03-01'
-              example:
-                data:
-                  - updateDateTime: '2024-09-09T18:00:00Z'
-                    personalId: 578-psd-71md6971kjh-2d414
-                    brandName: Sib Bank
-                    civilName: Juan Kaique Cláudio Fernandes
-                    socialName: Jaqueline de Freitas
-                    birthDate: '1989-03-23'
-                    maritalStatusCode: CASADO
-                    sex: MASCULINO
-                    hasBrazilianNationality: true
-                    companiesCnpj:
-                      - '40156018000100'
-                    documents:
-                      cpfNumber: '25872252137'
-                    otherDocuments:
-                      - type: CNH
-                        number: '15291908'
-                        checkDigit: P
-                        additionalInfo: SSP/SP
-                        expirationDate: '2028-05-21'
-                    filiation:
-                      - type: MAE
-                        civilName: Maria Fernandes
-                      - type: PAI
-                        civilName: Marcelo Cláudio Fernandes
-                    contacts:
-                      postalAddresses:
-                        - isMain: true
-                          address: Av Naburo Ykesaki, 1270
-                          additionalInfo: Fundos
-                          districtName: Centro
-                          townName: Marília
-                          ibgeTownCode: '3550308'
-                          countrySubDivision: SP
-                          postCode: '17500001'
-                          country: Brasil
-                          countryCode: BRA
-                      phones:
-                        - isMain: true
-                          type: MOVEL
-                          areaCode: '11'
-                          number: '99875132'
-                          countryCallingCode: '55'
-                      emails:
-                        - isMain: true
-                          email: juan.fernandes@email.com
-                    qualifications:
-                      updateDateTime: '2024-09-09T18:00:00Z'
-                      companyCnpj: '40156018000100'
-                      occupationCode: RECEITA_FEDERAL
-                      occupationDescription: '211110'
-                      informedIncome:
-                        frequency: MENSAL
-                        amount:
-                          amount: '8500.00'
-                          currency: BRL
-                    financialRelations:
-                      procurators: []
-                      accounts:
-                        - compeCode: '123'
-                          branchCode: '6272'
-                          number: '11188222'
-                          checkDigit: '4'
-                          type: CONTA_DEPOSITO_A_VISTA
-                          subtype: INDIVIDUAL
-        '401':
-          description: Não autorizado. Token ausente ou inválido.
-        '404':
-          description: Usuário não encontrado.
   /aggregation/{consentId}/business-data:
     get:
       tags:
@@ -7247,6 +6529,723 @@ paths:
                     amount: '3250.75'
                     currency: BRL
                   utilizationRate: 0.13
+        '401':
+          description: Não autorizado. Token ausente ou inválido.
+        '404':
+          description: Usuário não encontrado.
+  /api/v1/users/{user_id}:
+    get:
+      tags:
+        - Dados Cadastrais
+      summary: Dados cadastrais de pessoa física
+      description: >
+        Retorna os dados cadastrais completos de pessoa natural (PF) do usuário,
+        incluindo identificações, documentos, qualificações profissionais,
+        relações financeiras e informações de contato.
+      operationId: getPersonalData
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: Identificador único do usuário na plataforma DataLink.
+          schema:
+            type: string
+            example: 9d9fe35d-8e12-46f3-807c-4bdaa1238d32
+      responses:
+        '200':
+          description: Dados cadastrais de pessoa física retornados com sucesso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      description: >-
+                        Dados cadastrais completos de pessoa natural (PF) via
+                        Open Finance.
+                      required:
+                        - updateDateTime
+                        - personalId
+                        - brandName
+                        - civilName
+                        - birthDate
+                        - hasBrazilianNationality
+                        - companiesCnpj
+                        - documents
+                        - contacts
+                      properties:
+                        updateDateTime:
+                          type: string
+                          format: date-time
+                          description: >-
+                            Data e hora da última atualização dos dados
+                            cadastrais (ISO 8601, UTC).
+                          example: '2024-09-09T18:00:00Z'
+                        personalId:
+                          type: string
+                          description: >-
+                            Identificador único e imutável da pessoa natural na
+                            instituição transmissora.
+                          example: 578-psd-71md6971kjh-2d414
+                        brandName:
+                          type: string
+                          description: >-
+                            Nome da marca da instituição reportada no Open
+                            Finance.
+                          example: Sib Bank
+                        civilName:
+                          type: string
+                          description: Nome civil completo da pessoa natural.
+                          example: Juan Kaique Cláudio Fernandes
+                        socialName:
+                          type: string
+                          description: Nome social da pessoa natural, se houver.
+                          example: Jaqueline de Freitas
+                        birthDate:
+                          type: string
+                          format: date
+                          description: Data de nascimento (RFC-3339).
+                          example: '1989-03-23'
+                        maritalStatusCode:
+                          type: string
+                          description: Estado marital do cliente.
+                          enum:
+                            - SOLTEIRO
+                            - CASADO
+                            - VIUVO
+                            - SEPARADO_JUDICIALMENTE
+                            - DIVORCIADO
+                            - UNIAO_ESTAVEL
+                            - OUTRO
+                          example: CASADO
+                        maritalStatusAdditionalInfo:
+                          type: string
+                          description: >
+                            Campo livre para complementar o estado marital.
+                            **[Restrição]** Obrigatório quando
+                            `maritalStatusCode` for `OUTRO`.
+                          example: Amasiado
+                        sex:
+                          type: string
+                          description: >-
+                            Sexo biológico do cliente. Quando não se enquadrar
+                            em feminino nem masculino, classificar como `OUTRO`.
+                          enum:
+                            - FEMININO
+                            - MASCULINO
+                            - OUTRO
+                          example: MASCULINO
+                        hasBrazilianNationality:
+                          type: boolean
+                          description: Indica se o cliente possui nacionalidade brasileira.
+                          example: true
+                        companiesCnpj:
+                          type: array
+                          description: >-
+                            Lista de CNPJs das instituições responsáveis pelo
+                            cadastro (14 dígitos, sem máscara).
+                          items:
+                            type: string
+                          example:
+                            - '40156018000100'
+                        documents:
+                          type: object
+                          description: Documentos de identificação da pessoa natural.
+                          properties:
+                            cpfNumber:
+                              type: string
+                              description: >
+                                CPF completo (11 dígitos, sem máscara).
+                                **[Restrição]** Obrigatório quando `passport`
+                                não for informado.
+                              example: '25872252137'
+                            passport:
+                              type: object
+                              description: >
+                                Passaporte. Aplicável somente a pessoa natural
+                                residente no exterior desobrigada de inscrição
+                                no CPF. **[Restrição]** Obrigatório quando
+                                `cpfNumber` não for informado.
+                              properties:
+                                number:
+                                  type: string
+                                  description: Número do passaporte.
+                                  example: '75253468744594820620'
+                                country:
+                                  type: string
+                                  description: País de emissão (código alpha3 ISO-3166).
+                                  example: CAN
+                                expirationDate:
+                                  type: string
+                                  format: date
+                                  description: Data de validade do passaporte.
+                                  example: '2028-05-21'
+                                issueDate:
+                                  type: string
+                                  format: date
+                                  description: Data de emissão do passaporte.
+                                  example: '2018-05-21'
+                        otherDocuments:
+                          type: array
+                          description: >-
+                            Outros documentos de identificação da pessoa
+                            natural.
+                          items:
+                            type: object
+                            properties:
+                              type:
+                                type: string
+                                description: Tipo de documento.
+                                enum:
+                                  - CNH
+                                  - RG
+                                  - NIF
+                                  - RNE
+                                  - OUTROS
+                                example: CNH
+                              typeAdditionalInfo:
+                                type: string
+                                description: >
+                                  Campo livre. Obrigatório quando `type` for
+                                  `OUTROS`.
+                                example: CREA-RJ
+                              number:
+                                type: string
+                                description: Número do documento.
+                                example: '15291908'
+                              checkDigit:
+                                type: string
+                                description: >-
+                                  Dígito verificador do documento, quando
+                                  houver.
+                                example: P
+                              additionalInfo:
+                                type: string
+                                description: >
+                                  Local de emissão do documento (órgão e UF).
+                                  **[Restrição]** Obrigatório quando o local de
+                                  emissão for relevante. Ex: RG → `SSP/SP`.
+                                example: SSP/SP
+                              expirationDate:
+                                type: string
+                                format: date
+                                description: Data de validade do documento.
+                                example: '2028-05-21'
+                        nationality:
+                          type: array
+                          description: >
+                            Outras nacionalidades do cliente. Obrigatório quando
+                            `hasBrazilianNationality` for `false`.
+                          items:
+                            type: object
+                            properties:
+                              otherNationalitiesInfo:
+                                type: string
+                                description: >-
+                                  Código da outra nacionalidade (alpha3
+                                  ISO-3166).
+                                example: CAN
+                              documents:
+                                type: array
+                                description: Documentos da nacionalidade estrangeira.
+                                items:
+                                  type: object
+                                  properties:
+                                    type:
+                                      type: string
+                                      description: Tipo do documento estrangeiro.
+                                      example: SOCIAL SEC
+                                    number:
+                                      type: string
+                                      description: Número do documento.
+                                      example: '423929299'
+                                    expirationDate:
+                                      type: string
+                                      format: date
+                                      example: '2030-01-01'
+                                    issueDate:
+                                      type: string
+                                      format: date
+                                      example: '2010-01-01'
+                                    country:
+                                      type: string
+                                      description: Nome do país.
+                                      example: Canadá
+                                    additionalInfo:
+                                      type: string
+                                      example: Informações adicionais
+                        filiation:
+                          type: array
+                          description: Informações de filiação da pessoa natural.
+                          items:
+                            type: object
+                            required:
+                              - type
+                              - civilName
+                            properties:
+                              type:
+                                type: string
+                                description: Tipo de filiação.
+                                enum:
+                                  - MAE
+                                  - PAI
+                                example: MAE
+                              civilName:
+                                type: string
+                                description: Nome civil completo do familiar.
+                                example: Maria Fernandes
+                              socialName:
+                                type: string
+                                description: Nome social do familiar, se houver.
+                        contacts:
+                          type: object
+                          description: Informações de contato da pessoa natural.
+                          required:
+                            - postalAddresses
+                            - phones
+                            - emails
+                          properties:
+                            postalAddresses:
+                              type: array
+                              description: Endereços postais da pessoa natural.
+                              items:
+                                type: object
+                                required:
+                                  - isMain
+                                  - address
+                                  - townName
+                                  - postCode
+                                  - country
+                                properties:
+                                  isMain:
+                                    type: boolean
+                                    description: Indica se é o endereço principal.
+                                    example: true
+                                  address:
+                                    type: string
+                                    description: Logradouro completo.
+                                    example: Av Naburo Ykesaki, 1270
+                                  additionalInfo:
+                                    type: string
+                                    description: Complemento do endereço.
+                                    example: Fundos
+                                  districtName:
+                                    type: string
+                                    description: Bairro. Obrigatório se houver.
+                                    example: Centro
+                                  townName:
+                                    type: string
+                                    description: Nome do município.
+                                    example: Marília
+                                  ibgeTownCode:
+                                    type: string
+                                    description: Código IBGE do município (7 dígitos).
+                                    example: '3550308'
+                                  countrySubDivision:
+                                    type: string
+                                    description: Sigla do estado brasileiro (UF).
+                                    enum:
+                                      - AC
+                                      - AL
+                                      - AP
+                                      - AM
+                                      - BA
+                                      - CE
+                                      - DF
+                                      - ES
+                                      - GO
+                                      - MA
+                                      - MT
+                                      - MS
+                                      - MG
+                                      - PA
+                                      - PB
+                                      - PR
+                                      - PE
+                                      - PI
+                                      - RJ
+                                      - RN
+                                      - RS
+                                      - RO
+                                      - RR
+                                      - SC
+                                      - SP
+                                      - SE
+                                      - TO
+                                    example: SP
+                                  postCode:
+                                    type: string
+                                    description: CEP (8 dígitos, sem hífen).
+                                    example: '17500001'
+                                  country:
+                                    type: string
+                                    description: Nome do país.
+                                    example: Brasil
+                                  countryCode:
+                                    type: string
+                                    description: Código do país (alpha3 ISO-3166).
+                                    example: BRA
+                                  geographicCoordinates:
+                                    type: object
+                                    description: Coordenadas geográficas (WGS84).
+                                    properties:
+                                      latitude:
+                                        type: string
+                                        example: '-23.5475000'
+                                      longitude:
+                                        type: string
+                                        example: '-46.6361100'
+                            phones:
+                              type: array
+                              description: Telefones de contato da pessoa natural.
+                              items:
+                                type: object
+                                required:
+                                  - isMain
+                                  - type
+                                  - areaCode
+                                  - number
+                                properties:
+                                  isMain:
+                                    type: boolean
+                                    description: Indica se é o telefone principal.
+                                    example: true
+                                  type:
+                                    type: string
+                                    description: Tipo de telefone.
+                                    enum:
+                                      - FIXO
+                                      - MOVEL
+                                      - OUTRO
+                                    example: MOVEL
+                                  additionalInfo:
+                                    type: string
+                                    description: >
+                                      Informação complementar. Obrigatório
+                                      quando `type` for `OUTRO`.
+                                    example: Informações adicionais
+                                  countryCallingCode:
+                                    type: string
+                                    description: DDI. Obrigatório quando diferente de `55`.
+                                    example: '55'
+                                  areaCode:
+                                    type: string
+                                    description: DDD (2 ou 3 dígitos).
+                                    example: '11'
+                                  number:
+                                    type: string
+                                    description: Número do telefone (6 a 13 dígitos).
+                                    example: '99875132'
+                                  phoneExtension:
+                                    type: string
+                                    description: Ramal, quando aplicável.
+                                    example: '932'
+                            emails:
+                              type: array
+                              description: E-mails de contato da pessoa natural.
+                              items:
+                                type: object
+                                required:
+                                  - isMain
+                                  - email
+                                properties:
+                                  isMain:
+                                    type: boolean
+                                    description: Indica se é o e-mail principal.
+                                    example: true
+                                  email:
+                                    type: string
+                                    description: Endereço de e-mail.
+                                    example: juan.fernandes@email.com
+                        qualifications:
+                          type: object
+                          description: >-
+                            Informações de qualificação profissional e renda
+                            declarada.
+                          properties:
+                            updateDateTime:
+                              type: string
+                              format: date-time
+                              description: >-
+                                Data e hora da última atualização (ISO 8601,
+                                UTC).
+                              example: '2024-09-09T18:00:00Z'
+                            companyCnpj:
+                              type: string
+                              description: CNPJ da instituição responsável (14 dígitos).
+                              example: '40156018000100'
+                            occupationCode:
+                              type: string
+                              description: Código de ocupação utilizado.
+                              enum:
+                                - RECEITA_FEDERAL
+                                - CBO
+                                - OUTRO
+                              example: RECEITA_FEDERAL
+                            occupationDescription:
+                              type: string
+                              description: >
+                                Código da ocupação (quando `RECEITA_FEDERAL` ou
+                                `CBO`) ou descrição livre (quando `OUTRO`).
+                              example: '211110'
+                            informedIncome:
+                              type: object
+                              description: Renda declarada pelo cliente na instituição.
+                              properties:
+                                frequency:
+                                  type: string
+                                  description: Frequência da renda declarada.
+                                  enum:
+                                    - DIARIA
+                                    - SEMANAL
+                                    - QUINZENAL
+                                    - MENSAL
+                                    - BIMESTRAL
+                                    - TRIMESTRAL
+                                    - SEMESTRAL
+                                    - ANUAL
+                                    - OUTROS
+                                  example: MENSAL
+                                amount:
+                                  type: object
+                                  description: Valor total da renda declarada.
+                                  properties:
+                                    amount:
+                                      type: string
+                                      example: '8500.00'
+                                    currency:
+                                      type: string
+                                      example: BRL
+                        financialRelations:
+                          type: object
+                          description: >-
+                            Relações financeiras do cliente com a instituição
+                            transmissora.
+                          properties:
+                            procurators:
+                              type: array
+                              description: Lista de representantes legais ou procuradores.
+                              items:
+                                type: object
+                                required:
+                                  - type
+                                  - cpfNumber
+                                  - civilName
+                                properties:
+                                  type:
+                                    type: string
+                                    description: Tipo de representante.
+                                    enum:
+                                      - REPRESENTANTE_LEGAL
+                                      - PROCURADOR
+                                    example: PROCURADOR
+                                  cpfNumber:
+                                    type: string
+                                    description: CPF do representante (11 dígitos).
+                                    example: '73677831148'
+                                  civilName:
+                                    type: string
+                                    description: Nome civil completo do representante.
+                                    example: Elza Milena Stefany Teixeira
+                                  socialName:
+                                    type: string
+                                    description: Nome social do representante, se houver.
+                            accounts:
+                              type: array
+                              description: Contas do cliente na instituição transmissora.
+                              items:
+                                type: object
+                                required:
+                                  - compeCode
+                                  - number
+                                  - checkDigit
+                                  - type
+                                  - subtype
+                                properties:
+                                  compeCode:
+                                    type: string
+                                    description: Código COMPE da instituição (3 dígitos).
+                                    example: '001'
+                                  branchCode:
+                                    type: string
+                                    description: >
+                                      Código da agência (4 dígitos).
+                                      **[Restrição]** Obrigatório quando `type`
+                                      ≠ `CONTA_PAGAMENTO_PRE_PAGA`.
+                                    example: '6272'
+                                  number:
+                                    type: string
+                                    description: Número da conta.
+                                    example: '11188222'
+                                  checkDigit:
+                                    type: string
+                                    description: Dígito verificador da conta.
+                                    example: '4'
+                                  type:
+                                    type: string
+                                    description: Tipo da conta.
+                                    enum:
+                                      - CONTA_DEPOSITO_A_VISTA
+                                      - CONTA_POUPANCA
+                                      - CONTA_PAGAMENTO_PRE_PAGA
+                                    example: CONTA_DEPOSITO_A_VISTA
+                                  subtype:
+                                    type: string
+                                    description: Subtipo de conta conforme a titularidade.
+                                    enum:
+                                      - INDIVIDUAL
+                                      - CONJUNTA_SIMPLES
+                                      - CONJUNTA_SOLIDARIA
+                                    example: INDIVIDUAL
+                            portabilitiesReceived:
+                              type: array
+                              description: >-
+                                Portabilidades de salário recebidas pelo
+                                cliente.
+                              items:
+                                type: object
+                                required:
+                                  - employerName
+                                  - employerCnpjCpf
+                                  - paycheckBankDetainerCnpj
+                                  - paycheckBankDetainerIspb
+                                  - portabilityApprovalDate
+                                properties:
+                                  employerName:
+                                    type: string
+                                    description: >-
+                                      Nome do empregador conforme comunicação de
+                                      portabilidade.
+                                    example: Empresa XYZ Ltda
+                                  employerCnpjCpf:
+                                    type: string
+                                    description: CPF ou CNPJ do empregador (sem máscara).
+                                    example: '12345678000195'
+                                  paycheckBankDetainerCnpj:
+                                    type: string
+                                    description: >-
+                                      CNPJ do banco-folha detentor da conta
+                                      salário.
+                                    example: '60746948000112'
+                                  paycheckBankDetainerIspb:
+                                    type: string
+                                    description: Número ISPB do banco-folha (8 dígitos).
+                                    example: '60746948'
+                                  portabilityApprovalDate:
+                                    type: string
+                                    format: date
+                                    description: >-
+                                      Data de aprovação da portabilidade de
+                                      salário.
+                                    example: '2023-01-15'
+                            paychecksBankLink:
+                              type: array
+                              description: >-
+                                Vínculos empregatícios com conta salário na
+                                instituição transmissora.
+                              items:
+                                type: object
+                                required:
+                                  - employerName
+                                  - employerCnpjCpf
+                                  - paycheckBankCnpj
+                                  - paycheckBankIspb
+                                  - accountOpeningDate
+                                properties:
+                                  employerName:
+                                    type: string
+                                    description: >-
+                                      Nome do empregador conforme registro da
+                                      conta salário.
+                                    example: Empresa ABC S.A.
+                                  employerCnpjCpf:
+                                    type: string
+                                    description: CPF ou CNPJ do empregador (sem máscara).
+                                    example: '98765432000101'
+                                  paycheckBankCnpj:
+                                    type: string
+                                    description: >-
+                                      CNPJ do banco-folha prestador do serviço
+                                      de pagamento de salário.
+                                    example: '40156018000100'
+                                  paycheckBankIspb:
+                                    type: string
+                                    description: ISPB do banco-folha (8 dígitos).
+                                    example: '40156018'
+                                  accountOpeningDate:
+                                    type: string
+                                    format: date
+                                    description: Data de abertura da conta salário.
+                                    example: '2020-03-01'
+              example:
+                data:
+                  - updateDateTime: '2024-09-09T18:00:00Z'
+                    personalId: 578-psd-71md6971kjh-2d414
+                    brandName: Sib Bank
+                    civilName: Juan Kaique Cláudio Fernandes
+                    socialName: Jaqueline de Freitas
+                    birthDate: '1989-03-23'
+                    maritalStatusCode: CASADO
+                    sex: MASCULINO
+                    hasBrazilianNationality: true
+                    companiesCnpj:
+                      - '40156018000100'
+                    documents:
+                      cpfNumber: '25872252137'
+                    otherDocuments:
+                      - type: CNH
+                        number: '15291908'
+                        checkDigit: P
+                        additionalInfo: SSP/SP
+                        expirationDate: '2028-05-21'
+                    filiation:
+                      - type: MAE
+                        civilName: Maria Fernandes
+                      - type: PAI
+                        civilName: Marcelo Cláudio Fernandes
+                    contacts:
+                      postalAddresses:
+                        - isMain: true
+                          address: Av Naburo Ykesaki, 1270
+                          additionalInfo: Fundos
+                          districtName: Centro
+                          townName: Marília
+                          ibgeTownCode: '3550308'
+                          countrySubDivision: SP
+                          postCode: '17500001'
+                          country: Brasil
+                          countryCode: BRA
+                      phones:
+                        - isMain: true
+                          type: MOVEL
+                          areaCode: '11'
+                          number: '99875132'
+                          countryCallingCode: '55'
+                      emails:
+                        - isMain: true
+                          email: juan.fernandes@email.com
+                    qualifications:
+                      updateDateTime: '2024-09-09T18:00:00Z'
+                      companyCnpj: '40156018000100'
+                      occupationCode: RECEITA_FEDERAL
+                      occupationDescription: '211110'
+                      informedIncome:
+                        frequency: MENSAL
+                        amount:
+                          amount: '8500.00'
+                          currency: BRL
+                    financialRelations:
+                      procurators: []
+                      accounts:
+                        - compeCode: '123'
+                          branchCode: '6272'
+                          number: '11188222'
+                          checkDigit: '4'
+                          type: CONTA_DEPOSITO_A_VISTA
+                          subtype: INDIVIDUAL
         '401':
           description: Não autorizado. Token ausente ou inválido.
         '404':
