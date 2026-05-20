@@ -6537,7 +6537,7 @@ paths:
     get:
       tags:
         - Dados Cadastrais
-      summary: Dados cadastrais de pessoa física
+      summary: 'Dados cadastrais '
       description: >
         Retorna os dados cadastrais completos de pessoa natural (PF) do usuário,
         incluindo identificações, documentos, qualificações profissionais,
