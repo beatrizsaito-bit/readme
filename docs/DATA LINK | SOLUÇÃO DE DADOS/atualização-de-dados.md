@@ -11,8 +11,6 @@ Considerando essas regras do Open Finance, o Data Link possui um motor de atuali
 
 <br />
 
-<br />
-
 | Endpoint de recurso                   | Periodicidade | Execuções/mês |
 | ------------------------------------- | ------------- | ------------- |
 | Consentimentos                        | 1x por dia    | 30            |
