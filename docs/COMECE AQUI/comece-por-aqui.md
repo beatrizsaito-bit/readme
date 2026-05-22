@@ -16,7 +16,7 @@ A Lina Open X é uma empresa de soluções de infraestrutura para o mundo Open, 
     Faça a gestão das suas cobranças pix em um só lugar
   </Card>
 
-  <Card title="Data Link" href="#" icon="fa-comments" target="_blank">
+  <Card title="Data Link" href="https://lina-itp.readme.io/v1.0.1/docs/introdu%C3%A7%C3%A3o" icon="fa-comments" target="_blank">
     Você acessa a inteligência de dados financeiros de forma rápida e segura
   </Card>
 </Cards>
