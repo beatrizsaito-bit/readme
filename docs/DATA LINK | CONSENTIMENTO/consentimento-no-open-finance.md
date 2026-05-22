@@ -7,16 +7,16 @@ metadata:
 ---
 O consentimento no Open Finance é a autorização que o seu cliente deve conceder para que ocorra o envio de dados entre a instituição financeira e o Data Link. O seu cliente pode ser **pessoa física** ou **pessoa jurídica**, em ambos os casos é possível realizar o consentimento de dados.
 
-Dentro do Open Finance é possível obter consentimento dos seguintes dados: **cadastrais**, **contas**,  **cartões de crédito**, **contratos de crédito**, **investimentos** e **câmbio**.  
+Dentro do Open Finance é possível obter consentimento dos seguintes dados: **cadastrais**, **contas**,  **cartões de crédito**, **contratos de crédito**, **investimentos** e **câmbio**.    
 
-O consentimento
+  
 
-# **Validade do consentimento**
+## Revogação e validade do consentimento
 
-A validade do consentimento pode ser modificada pelo usuário, sendo que há a opção de o consentimento ficar disponível por tempo _indeterminado, ou seja, não ocorrerá a revogação automática do consentimento.
+O consentimento por ser **revogado a qualquer momento pelo usuário**ou pode ser que tenha sido revogado pela **expiração do prazo de validade**. 
 
-# **Revogação**
+ A expiração automática do consentimento é definida em sua criação no campo **validade do consentimento**, caso esse campo esteja como indeterminado não haverá revogação automática. 
 
-**Solicitada pelo usuário:** A revogação de um consentimento realizado pode ser solicitada a qualquer momento pelo usuário e tem efeito imediato, assim a partir desse momento novos dados não serão atualizados.
+<br />
 
-**Automática pelo prazo de validade:** Caso o consentimento tenha um tempo de expiração determinado, ao atingir essa data, o consentimento é revogado e novos dados param de ser atualizados.
+<br />
