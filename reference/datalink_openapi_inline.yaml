@@ -488,15 +488,6 @@ paths:
                       agregados.
                     example: >-
                       urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:3fa85f64-5717-4562-b3fc-2c963f66afa6
-                  status:
-                    type: string
-                    description: Status atual do consentimento.
-                    enum:
-                      - AWAITING_AUTHORISATION
-                      - AUTHORISED
-                      - REJECTED
-                      - REVOKED
-                    example: AWAITING_AUTHORISATION
                   redirectUrl:
                     type: string
                     format: uri
@@ -506,10 +497,12 @@ paths:
                       quando o status é `AWAITING_AUTHORISATION`.
                     example: >-
                       https://auth.bancobmg.com.br/of-auth/realms/bmg/protocol/openid-connect/auth?client_id=datalink&redirect_uri=https%3A%2F%2Fcallback.datalink.com.br&response_type=code&scope=openid
-                  creationDateTime:
+                  redirectUserUrl:
                     type: string
-                    format: date-time
-                    description: Data e hora de criação do consentimento (ISO 8601, UTC).
+                    description: >-
+                      URL se resolve para redirecionar o usuário final à tela de
+                      autorização na instituição financeira. Válida apenas
+                      quando o status é `AWAITING_AUTHORISATION`.
                     example: '2026-05-20T10:30:00Z'
                   expirationDateTime:
                     type: string
@@ -519,17 +512,6 @@ paths:
                       autorizar o acesso antes deste prazo para que o
                       consentimento seja ativado.
                     example: '2026-05-20T10:45:00Z'
-                  permissions:
-                    type: array
-                    description: Lista de permissões solicitadas no consentimento.
-                    items:
-                      type: string
-                    example:
-                      - RESOURCES_READ
-                      - CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ
-                      - ACCOUNTS_READ
-                      - ACCOUNTS_BALANCES_READ
-                      - ACCOUNTS_TRANSACTIONS_READ
               example:
                 consentId: >-
                   urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:3fa85f64-5717-4562-b3fc-2c963f66afa6
