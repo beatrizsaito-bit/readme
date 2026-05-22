@@ -1,5 +1,5 @@
 ---
-title: 'O que é o Data Link? '
+title: 'Data Link '
 deprecated: false
 hidden: false
 metadata:
