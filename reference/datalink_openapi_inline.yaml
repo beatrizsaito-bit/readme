@@ -504,21 +504,6 @@ paths:
                       quando o status é `AWAITING_AUTHORISATION`.
                     example: '2026-05-20T10:30:00Z'
               examples:
-                exampleFromExisting200:
-                  value:
-                    consentId: >-
-                      urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:3fa85f64-5717-4562-b3fc-2c963f66afa6
-                    status: AWAITING_AUTHORISATION
-                    redirectUrl: >-
-                      https://auth.bancobmg.com.br/of-auth/realms/bmg/protocol/openid-connect/auth?client_id=datalink&redirect_uri=https%3A%2F%2Fcallback.datalink.com.br&response_type=code&scope=openid
-                    creationDateTime: '2026-05-20T10:30:00Z'
-                    expirationDateTime: '2026-05-20T10:45:00Z'
-                    permissions:
-                      - RESOURCES_READ
-                      - CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ
-                      - ACCOUNTS_READ
-                      - ACCOUNTS_BALANCES_READ
-                      - ACCOUNTS_TRANSACTIONS_READ
                 OK:
                   summary: OK
                   value:
