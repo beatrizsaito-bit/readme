@@ -1,5 +1,5 @@
 ---
-title: Credenciais de API
+title: Autenticação
 deprecated: false
 hidden: false
 metadata:
@@ -22,5 +22,3 @@ Você pode alternar entre os dados de **Homologação** e **Produção** de form
 <Callout icon="❗️">
   Confira se você está utilizando as credenciais do ambiente correto
 </Callout>
-
-  
