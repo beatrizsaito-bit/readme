@@ -25,6 +25,10 @@ Dentro do Open Finance é possível obter consentimento dos seguintes dados: **c
   <Card title="Contratos de crédito" href="https://lina-itp.readme.io/reference/listcreditcontracts">
     Empréstimos, financeimentos, antecipáveis e pagamentos dos contratos
   </Card>
+
+  <Card title="Investimentos" href="https://api.datalink.com.br/v1/api/v1/users/{user_id}/investments">
+    Movimentações de renda fixa bancária, renda fixa de crédito, renda variável, títulos de tesouro direto e fundos de investimento 
+  </Card>
 </Cards>
 
 ## Revogação e validade do consentimento
