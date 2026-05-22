@@ -490,7 +490,6 @@ paths:
                       urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:3fa85f64-5717-4562-b3fc-2c963f66afa6
                   redirectUrl:
                     type: string
-                    format: uri
                     description: >
                       URL para redirecionar o usuário final à tela de
                       autorização na instituição financeira. Válida apenas
