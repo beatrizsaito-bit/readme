@@ -11,6 +11,24 @@ Dentro do Open Finance é possível obter consentimento dos seguintes dados: **c
 
   
 
+<Cards>
+  <Card title="Dados cadastrais" href="https://lina-itp.readme.io/reference/getpersonaldata">
+    Informações do dono da conta (PF/PJ), relacionamento com banco e qualificação
+  </Card>
+
+ <Card title="Contas" href="https://api.datalink.com.br/v1/api/v1/users/{user_id}/accounts" target="_blank">
+    Join our community or checkout our FAQ.
+  </Card>
+
+  <Card title="Cartões" href="https://lina-itp.readme.io/reference/listcreditcards" icon="fa-code">
+    Informações do cartão (bandeira, produto, etc),saldos, limites e transações
+  </Card>
+
+  <Card title="Contratos de crédito" href="https://lina-itp.readme.io/reference/listcreditcontracts" target="_blank">
+    Empréstimos, financeimentos, antecipáveis e pagamentos dos contratos
+  </Card>
+</Cards>
+
 ## Revogação e validade do consentimento
 
 O consentimento por ser **revogado a qualquer momento pelo usuário**ou pode ser que tenha sido revogado pela **expiração do prazo de validade**. 
