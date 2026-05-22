@@ -504,14 +504,6 @@ paths:
                       autorização na instituição financeira. Válida apenas
                       quando o status é `AWAITING_AUTHORISATION`.
                     example: '2026-05-20T10:30:00Z'
-                  expirationDateTime:
-                    type: string
-                    format: date-time
-                    description: >
-                      Data e hora de expiração do consentimento. O usuário deve
-                      autorizar o acesso antes deste prazo para que o
-                      consentimento seja ativado.
-                    example: '2026-05-20T10:45:00Z'
               example:
                 consentId: >-
                   urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:3fa85f64-5717-4562-b3fc-2c963f66afa6
