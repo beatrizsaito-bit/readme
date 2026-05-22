@@ -11,7 +11,7 @@ Através do Data Link, o seu cliente realiza o consentimento de seus dados finan
 
 <br />
 
-O Data Link possui 3 camadas de dados disponíveis  
+O Data Link possui 3 camadas de dados disponíveis
 
 <Cards>
   <Card title="AGGREGATION API" href="#" icon="fa-rocket">
@@ -19,11 +19,11 @@ O Data Link possui 3 camadas de dados disponíveis
   </Card>
 
   <Card title="INTELLIGENCE API" href="#" icon="fa-code">
-   Cálculos financeiros, categorização de gastos e a consolidação de informações podem ser consultadas e implementadas a motores de decisão
+    Cálculos financeiros, categorização de gastos e a consolidação de informações podem ser consultadas e implementadas a motores de decisão
   </Card>
 
   <Card title="CREDIT SIGNALS" href="#" icon="fa-comments" target="_blank">
-   	modelos de machine learning e sinais finaceiros voltados para o caso de uso de crédito.
+    Modelos de machine learning e sinais finaceiros voltados para o caso de uso de crédito.
   </Card>
 </Cards>
 
