@@ -1,11 +1,29 @@
 ---
-title: Consentimento de dados no Open Finance
+title: 'Consentimento de dados '
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-No Open Finance, o usuário não precisa autorizar um compartilhamento único de todos os dados, há uma granularidade nos níveis de permissão. Por exemplo, é possível compartilhar os dados de **conta** e não compartilhar os dados de **investimentos**.
+O consentimento no Open Finance é a autorização que o seu cliente deve conceder para que ocorra o envio de dados entre a instituição financeira e o Data Link. O seu cliente pode ser **pessoa física** ou **pessoa jurídica**, em ambos os casos é possível realizar o consentimento de dados.
+
+Dentro do Open Finance é possível obter consentimento dos seguintes dados:  
+
+<Cards>
+  <Card title="Dados Cadastrais">
+    Nome completo e nome social, endereço completo, CPF, passaporte, telefone, e-mail, documento de identificação, filiação, data de nascimento, estado civil, sexo, nacionalidade, residência brasileira, documento estrangeiro.
+  </Card>
+
+  <Card title="API Reference" href="#" icon="fa-code">
+    Explore our interactive API reference.
+  </Card>
+
+  <Card title="Support & Community" href="#" icon="fa-comments" target="_blank">
+    Join our community or checkout our FAQ.
+  </Card>
+</Cards>
+
+<br />
 
 # **Validade do consentimento**
 
