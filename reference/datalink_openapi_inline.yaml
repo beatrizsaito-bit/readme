@@ -7236,6 +7236,21 @@ paths:
                         partieCheckDigit:
                           type: string
                           example: '0'
+                        category:
+                          type: array
+                          items:
+                            properties:
+                              category:
+                                type: string
+                                description: >-
+                                  A categoria a qual pertence a transação, por
+                                  exemplo, alimentação
+                              subcategory:
+                                type: string
+                                description: >-
+                                  A subcategoria a qual pertence uma transação
+                                  de conta, por exemplo, restaurantes e bares
+                            type: object
                       required:
                         - transactionName
                         - creditDebitType
