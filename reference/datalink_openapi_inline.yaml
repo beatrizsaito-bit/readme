@@ -2892,6 +2892,25 @@ paths:
                         type:
                           type: string
                           example: PIX
+                          enum:
+                            - TED
+                            - DOC
+                            - PIX
+                            - TRANSFERENCIA_MESMA_INSTITUICAO
+                            - BOLETO
+                            - CONVENIO_ARRECADACAO
+                            - PACOTE_TARIFA_SERVICOS
+                            - TARIFA_SERVICOS_AVULSOS
+                            - FOLHA_PAGAMENTO
+                            - DEPOSITO
+                            - SAQUE
+                            - CARTAO
+                            - ENCARGOS_JUROS_CHEQUE_ESPECIAL
+                            - RENDIMENTO_APLIC_FINANCEIRA
+                            - PORTABILIDADE_SALARIO
+                            - RESGATE_APLIC_FINANCEIRA
+                            - OPERACAO_CREDITO
+                            - OUTROS
                         transactionAmount:
                           type: object
                           properties:
@@ -2927,6 +2946,7 @@ paths:
                         - creditDebitType
                         - completedAuthorisedPaymentType
                         - transactionId
+                        - type
               examples:
                 OK:
                   value:
