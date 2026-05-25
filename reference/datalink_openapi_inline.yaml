@@ -3039,32 +3039,35 @@ paths:
                             Dígito verificador da conta da contraparte envolvida
                             na transação.
                           example: '0'
-              example:
-                data:
-                  - transactionId: TXN-001-20240909
-                    completedAuthorisedPaymentType: TRANSACAO_EFETIVADA
-                    creditDebitType: CREDITO
-                    transactionName: PIX RECEBIDO - JOAO SILVA
-                    type: PIX
-                    transactionAmount:
-                      amount: '1500.00'
-                      currency: BRL
-                    transactionDateTime: '2024-09-09T10:30:00Z'
-                    partieCnpjCpf: '12345678909'
-                    partiePersonType: PESSOA_NATURAL
-                    partieCompeCode: '341'
-                    partieBranchCode: '1234'
-                    partieNumber: '56789'
-                    partieCheckDigit: '0'
-                  - transactionId: TXN-002-20240909
-                    completedAuthorisedPaymentType: TRANSACAO_EFETIVADA
-                    creditDebitType: DEBITO
-                    transactionName: BOLETO CONTA DE LUZ
-                    type: BOLETO
-                    transactionAmount:
-                      amount: '234.50'
-                      currency: BRL
-                    transactionDateTime: '2024-09-09T14:15:00Z'
+              examples:
+                OK:
+                  value:
+                    data:
+                      - transactionId: TXN-001-20240909
+                        completedAuthorisedPaymentType: TRANSACAO_EFETIVADA
+                        creditDebitType: CREDITO
+                        transactionName: PIX RECEBIDO - JOAO SILVA
+                        type: PIX
+                        transactionAmount:
+                          amount: '1500.00'
+                          currency: BRL
+                        transactionDateTime: '2024-09-09T10:30:00Z'
+                        partieCnpjCpf: '12345678909'
+                        partiePersonType: PESSOA_NATURAL
+                        partieCompeCode: '341'
+                        partieBranchCode: '1234'
+                        partieNumber: '56789'
+                        partieCheckDigit: '0'
+                      - transactionId: TXN-002-20240909
+                        completedAuthorisedPaymentType: TRANSACAO_EFETIVADA
+                        creditDebitType: DEBITO
+                        transactionName: BOLETO CONTA DE LUZ
+                        type: BOLETO
+                        transactionAmount:
+                          amount: '234.50'
+                          currency: BRL
+                        transactionDateTime: '2024-09-09T14:15:00Z'
+                  summary: OK
         '401':
           description: Não autorizado. Token ausente ou inválido.
         '404':
