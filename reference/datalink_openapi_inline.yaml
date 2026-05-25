@@ -3904,59 +3904,7 @@ paths:
                           example: 5137
               examples:
                 OK:
-                  value:
-                    data:
-                      - transactionId: 65b65cee-0905-40ff-8a32-65741f436fb1
-                        creditCardAccountId: 62726dba-e4b4-41b3-a6f2-68dca70df313
-                        userId: 0e58fecb-5a34-4b2c-a1b2-d2f8626df017
-                        amount:
-                          amount: '100000.04'
-                          currency: BRL
-                        billId: cb92d13c-1253-426a-b0d8-d7dd7c089531
-                        billPostDate: '2024-09-03'
-                        brazilianAmount:
-                          amount: '100000.04'
-                          currency: BRL
-                        chargeIdentificator: 1
-                        chargeNumber: 3
-                        creditDebitType: DEBITO
-                        feeType: ANUIDADE
-                        feeTypeAdditionalInfo: string
-                        identificationNumber: '4454'
-                        otherCreditsAdditionalInfo: string
-                        otherCreditsType: CREDITO_ROTATIVO
-                        payeeMCC: 5137
-                        paymentType: A_VISTA
-                        transactionDateTime: '2024-09-03T00:00:00.000Z'
-                        transactionName: PGTO
-                        transactionType: CASHBACK
-                        transactionalAdditionalInfo: string
-                      - transactionId: 2ef26b1e-f18d-47e6-b962-b3acffd05aae
-                        creditCardAccountId: 62726dba-e4b4-41b3-a6f2-68dca70df313
-                        userId: 0e58fecb-5a34-4b2c-a1b2-d2f8626df017
-                        amount:
-                          amount: '100000.04'
-                          currency: BRL
-                        billId: cb92d13c-1253-426a-b0d8-d7dd7c089531
-                        billPostDate: '2024-09-03'
-                        brazilianAmount:
-                          amount: '100000.04'
-                          currency: BRL
-                        chargeIdentificator: 1
-                        chargeNumber: 3
-                        creditDebitType: DEBITO
-                        feeType: ANUIDADE
-                        feeTypeAdditionalInfo: string
-                        identificationNumber: '4454'
-                        otherCreditsAdditionalInfo: string
-                        otherCreditsType: CREDITO_ROTATIVO
-                        payeeMCC: 5137
-                        paymentType: A_VISTA
-                        transactionDateTime: '2024-09-03T00:00:00.000Z'
-                        transactionName: PGTO
-                        transactionType: CASHBACK
-                        transactionalAdditionalInfo: string
-                    totalRecords: 2118
+                  value: "{\n  \"data\": [\n    {\n      \"transactionId\": \"65b65cee-0905-40ff-8a32-65741f436fb1\",\n      \"creditCardAccountId\": \"62726dba-e4b4-41b3-a6f2-68dca70df313\",\n      \"userId\": \"0e58fecb-5a34-4b2c-a1b2-d2f8626df017\",\n      \"amount\": {\n        \"amount\": \"100000.04\",\n        \"currency\": \"BRL\"\n      },\n      \"billId\": \"cb92d13c-1253-426a-b0d8-d7dd7c089531\",\n      \"billPostDate\": \"2024-09-03\",\n      \"brazilianAmount\": {\n        \"amount\": \"100000.04\",\n        \"currency\": \"BRL\"\n      },\n      \"chargeIdentificator\": 1,\n      \"chargeNumber\": 3,\n      \"creditDebitType\": \"DEBITO\",\n      \"feeType\": \"ANUIDADE\",\n      \"feeTypeAdditionalInfo\": \"string\",\n      \"identificationNumber\": \"4454\",\n      \"otherCreditsAdditionalInfo\": \"string\",\n      \"otherCreditsType\": \"CREDITO_ROTATIVO\",\n      \"payeeMCC\": 5137,\n      \"paymentType\": \"A_VISTA\",\n      \"transactionDateTime\": \"2024-09-03T00:00:00.000Z\",\n      \"transactionName\": \"PGTO\",\n      \"transactionType\": \"CASHBACK\",\n      \"transactionalAdditionalInfo\": \"string\"\n    },\n    {\n      \"transactionId\": \"2ef26b1e-f18d-47e6-b962-b3acffd05aae\",\n      \"creditCardAccountId\": \"62726dba-e4b4-41b3-a6f2-68dca70df313\",\n      \"userId\": \"0e58fecb-5a34-4b2c-a1b2-d2f8626df017\",\n      \"amount\": {\n        \"amount\": \"100000.04\",\n        \"currency\": \"BRL\"\n      },\n      \"billId\": \"cb92d13c-1253-426a-b0d8-d7dd7c089531\",\n      \"billPostDate\": \"2024-09-03\",\n      \"brazilianAmount\": {\n        \"amount\": \"100000.04\",\n        \"currency\": \"BRL\"\n      },\n\t    \"category\": {\n         \"category\": \"Taxas e Tarifas Bancarias\",\n          \"subcategory\": \"Anuidade Cartao\",\n          \"processedAt\": {\n               \"$date\": \"2026-03-10T06:49:48.705Z\"\n                }\n      \"chargeIdentificator\": 1,\n      \"chargeNumber\": 3,\n      \"creditDebitType\": \"DEBITO\",\n      \"feeType\": \"ANUIDADE\",\n      \"feeTypeAdditionalInfo\": \"string\",\n      \"identificationNumber\": \"4454\",\n      \"otherCreditsAdditionalInfo\": \"string\",\n      \"otherCreditsType\": \"CREDITO_ROTATIVO\",\n      \"payeeMCC\": 5137,\n      \"paymentType\": \"A_VISTA\",\n      \"transactionDateTime\": \"2024-09-03T00:00:00.000Z\",\n      \"transactionName\": \"PGTO\",\n      \"transactionType\": \"CASHBACK\",\n      \"transactionalAdditionalInfo\": \"string\"\n    }\n  ],\n  \"totalRecords\": 2118\n"
                   summary: OK
   /api/v1/users/{user_id}/credit-cards/{credit_card_account_id}/bills:
     get:
