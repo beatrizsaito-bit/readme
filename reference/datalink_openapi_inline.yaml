@@ -6,7 +6,7 @@ info:
     A DataLink API fornece acesso estruturado a dados financeiros via Open
     Finance Brasil.
 servers:
-  - url: https://api.datalink.com.br/v1
+  - url: https://itp-dados.hml.linaopenx.com.br
     description: Produção
   - url: https://sandbox.datalink.com.br/v1
     description: Sandbox
@@ -7209,3 +7209,4 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+x-readme: {}
