@@ -2874,169 +2874,59 @@ paths:
                 properties:
                   data:
                     type: array
-                    description: Lista de transações da conta.
                     items:
                       type: object
-                      description: >-
-                        Transação realizada ou lançamento futuro de uma conta
-                        bancária.
-                      required:
-                        - transactionId
-                        - completedAuthorisedPaymentType
-                        - creditDebitType
-                        - transactionName
-                        - type
-                        - transactionAmount
-                        - transactionDateTime
                       properties:
                         transactionId:
                           type: string
-                          description: >
-                            Identificador único da transação prestado pela
-                            instituição detentora da conta. Deve ser imutável
-                            após o status `TRANSACAO_EFETIVADA`, conforme tabela
-                            de imutabilidade da API de Contas Open Finance.
                           example: TXN-001-20240909
                         completedAuthorisedPaymentType:
                           type: string
-                          description: Indicador do status de efetivação da transação.
-                          enum:
-                            - TRANSACAO_EFETIVADA
-                            - LANCAMENTO_FUTURO
-                            - TRANSACAO_PROCESSANDO
-                          x-enumDescriptions:
-                            TRANSACAO_EFETIVADA: >-
-                              Transação concluída — o transactionId torna-se
-                              imutável.
-                            LANCAMENTO_FUTURO: >-
-                              Transação será efetivada em momento futuro — o
-                              transactionId pode mudar.
-                            TRANSACAO_PROCESSANDO: >-
-                              Transação em processamento — o transactionId pode
-                              mudar.
                           example: TRANSACAO_EFETIVADA
                         creditDebitType:
                           type: string
-                          description: Indicador do tipo de lançamento na conta.
-                          enum:
-                            - CREDITO
-                            - DEBITO
-                          x-enumDescriptions:
-                            CREDITO: >-
-                              Entrada de dinheiro na conta (marcado com "C" no
-                              extrato).
-                            DEBITO: >-
-                              Saída de dinheiro da conta (marcado com "D" no
-                              extrato).
                           example: CREDITO
                         transactionName:
                           type: string
-                          description: >
-                            Literal utilizada pela instituição financeira para
-                            identificar a transação, idêntica à exibida nos
-                            canais digitais. Em transações com descrição em
-                            múltiplas linhas, todas devem ser concatenadas neste
-                            campo.
                           example: PIX RECEBIDO - JOAO SILVA
                         type:
                           type: string
-                          description: >
-                            Classificação da transação. O valor `OUTROS` deve
-                            ser usado apenas quando a transação não se enquadrar
-                            em nenhum dos demais tipos (ex: pensão alimentícia).
-                          enum:
-                            - TED
-                            - DOC
-                            - PIX
-                            - TRANSFERENCIA_MESMA_INSTITUICAO
-                            - BOLETO
-                            - CONVENIO_ARRECADACAO
-                            - PACOTE_TARIFA_SERVICOS
-                            - TARIFA_SERVICOS_AVULSOS
-                            - FOLHA_PAGAMENTO
-                            - DEPOSITO
-                            - SAQUE
-                            - CARTAO
-                            - ENCARGOS_JUROS_CHEQUE_ESPECIAL
-                            - RENDIMENTO_APLIC_FINANCEIRA
-                            - PORTABILIDADE_SALARIO
-                            - RESGATE_APLIC_FINANCEIRA
-                            - OPERACAO_CREDITO
-                            - OUTROS
                           example: PIX
                         transactionAmount:
                           type: object
-                          description: >-
-                            Valor da transação com no mínimo 2 e no máximo 4
-                            casas decimais.
-                          required:
-                            - amount
-                            - currency
                           properties:
                             amount:
                               type: string
-                              description: Valor monetário da transação.
                               example: '1500.00'
                             currency:
                               type: string
-                              description: Moeda do valor conforme ISO-4217.
                               example: BRL
                         transactionDateTime:
                           type: string
-                          format: date-time
-                          description: >-
-                            Data e hora original em que a transação foi
-                            realizada (ISO 8601, UTC).
                           example: '2024-09-09T10:30:00Z'
                         partieCnpjCpf:
                           type: string
-                          description: >
-                            CPF ou CNPJ da contraparte envolvida na transação
-                            (pagador ou recebedor), sem formatação. Obrigatório
-                            a partir de 02/05/23 para transações de pagamento
-                            (IN BCB nº 371).
-
-                            **[Restrição]** Quando `type` for `FOLHA_PAGAMENTO`
-                            e a transmissora for o banco-folha, deve ser
-                            informado o CNPJ do empregador.
                           example: '12345678909'
                         partiePersonType:
                           type: string
-                          description: >-
-                            Tipo de pessoa da contraparte envolvida na
-                            transação.
-                          enum:
-                            - PESSOA_NATURAL
-                            - PESSOA_JURIDICA
-                          x-enumDescriptions:
-                            PESSOA_NATURAL: Pessoa física — informar CPF em partieCnpjCpf.
-                            PESSOA_JURIDICA: Pessoa jurídica — informar CNPJ em partieCnpjCpf.
                           example: PESSOA_NATURAL
                         partieCompeCode:
                           type: string
-                          description: >
-                            Código identificador atribuído pelo Banco Central do
-                            Brasil à instituição da contraparte, participante do
-                            STR (Sistema de Transferência de Reservas).
                           example: '341'
                         partieBranchCode:
                           type: string
-                          description: >-
-                            Código da agência da contraparte envolvida na
-                            transação.
                           example: '1234'
                         partieNumber:
                           type: string
-                          description: >-
-                            Número da conta da contraparte envolvida na
-                            transação.
                           example: '56789'
                         partieCheckDigit:
                           type: string
-                          description: >-
-                            Dígito verificador da conta da contraparte envolvida
-                            na transação.
                           example: '0'
+                      required:
+                        - transactionName
+                        - creditDebitType
+                        - completedAuthorisedPaymentType
+                        - transactionId
               examples:
                 OK:
                   value:
