@@ -5914,22 +5914,6 @@ paths:
           description: Não autorizado. Token ausente ou inválido.
         '404':
           description: Usuário não encontrado.
-  /intelligence/{consentId}/spending-categorization/cards:
-    get:
-      tags:
-        - Categorização de Gastos
-      summary: Categorização de gastos de cartão
-      description: ''
-      operationId: getCardSpendingCategorization
-      parameters:
-        - name: consentId
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: ''
   /intelligence/{consentId}/spending-categorization/accounts:
     get:
       tags:
