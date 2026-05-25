@@ -6038,6 +6038,53 @@ paths:
       responses:
         '200':
           description: ''
+          content:
+            application/json:
+              examples:
+                OK:
+                  summary: OK
+                  value: |-
+                    {
+                      "data": [
+                        {
+                          "transactionId": "TXN-001-20240909",
+                          "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+                          "creditDebitType": "CREDITO",
+                          "transactionName": "PIX RECEBIDO - JOAO SILVA",
+                          "type": "PIX",
+                    "category": {
+                                    "category": "Transferências",
+                                    "subcategory": "Transferência entre Pessoas",
+                                    "model": "01",
+                                    "processedAt": {
+                                        "$date": "2026-01-30T03:08:29.627Z"
+                                    }
+                          "transactionAmount": {
+                            "amount": "1500.00",
+                            "currency": "BRL"
+                          },
+                          "transactionDateTime": "2024-09-09T10:30:00Z",
+                          "partieCnpjCpf": "12345678909",
+                          "partiePersonType": "PESSOA_NATURAL",
+                          "partieCompeCode": "341",
+                          "partieBranchCode": "1234",
+                          "partieNumber": "56789",
+                          "partieCheckDigit": "0"
+                        },
+                        {
+                          "transactionId": "TXN-002-20240909",
+                          "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+                          "creditDebitType": "DEBITO",
+                          "transactionName": "BOLETO CONTA DE LUZ",
+                          "type": "BOLETO",
+                          "transactionAmount": {
+                            "amount": "234.50",
+                            "currency": "BRL"
+                          },
+                          "transactionDateTime": "2024-09-09T14:15:00Z"
+                        }
+                      ]
+                    }
   /api/v1/users/{user_id}/analysis/credit-cards-transactions/categories:
     get:
       tags:
