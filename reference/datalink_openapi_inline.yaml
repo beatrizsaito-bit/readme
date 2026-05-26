@@ -4195,7 +4195,6 @@ paths:
           description: Identificador único do usuário na plataforma DataLink.
           schema:
             type: string
-            format: uuid
             example: 9d9fe35d-8e12-46f3-807c-4bdaa1238d32
         - name: credit_card_account_id
           in: path
@@ -4431,53 +4430,56 @@ paths:
                             (MCC — Merchant Category Code). Classifica o negócio
                             pelo tipo de bens ou serviços fornecidos.
                           example: 5999
-              example:
-                data:
-                  - transactionId: TXpRMU9UQTROMWhZV2xSU1FUazJSMDl
-                    identificationNumber: '1234'
-                    transactionName: COMPRA AMAZON.COM.BR
-                    billId: BILL-2024-09
-                    creditDebitType: DEBITO
-                    transactionType: OUTROS
-                    brazilianAmount:
-                      amount: '299.9900'
-                      currency: BRL
-                    amount:
-                      amount: '299.9900'
-                      currency: BRL
-                    transactionDateTime: '2024-09-05T14:22:03.000Z'
-                    billPostDate: '2024-09-06'
-                    payeeMCC: 5999
-                  - transactionId: TXpSMlBUUTVOMWhZV2xSU1FUazJSMDk
-                    identificationNumber: '1234'
-                    transactionName: ANUIDADE CARTAO
-                    creditDebitType: DEBITO
-                    transactionType: TARIFA
-                    feeType: ANUIDADE
-                    brazilianAmount:
-                      amount: '45.00'
-                      currency: BRL
-                    amount:
-                      amount: '45.00'
-                      currency: BRL
-                    transactionDateTime: '2024-09-01T08:00:00.000Z'
-                    billPostDate: '2024-09-01'
-                  - transactionId: TXpTM1BUUTZOMWhZV2xTU1FUazJSMDk
-                    identificationNumber: '1234'
-                    transactionName: COMPRA PARCELADA VIAGEM 2/6
-                    creditDebitType: DEBITO
-                    transactionType: PAGAMENTO
-                    paymentType: A_PRAZO
-                    chargeIdentificator: 2
-                    chargeNumber: 6
-                    brazilianAmount:
-                      amount: '500.0000'
-                      currency: BRL
-                    amount:
-                      amount: '500.0000'
-                      currency: BRL
-                    transactionDateTime: '2024-08-15T10:00:00.000Z'
-                    billPostDate: '2024-09-03'
+              examples:
+                OK:
+                  value:
+                    data:
+                      - transactionId: TXpRMU9UQTROMWhZV2xSU1FUazJSMDl
+                        identificationNumber: '1234'
+                        transactionName: COMPRA AMAZON.COM.BR
+                        billId: BILL-2024-09
+                        creditDebitType: DEBITO
+                        transactionType: OUTROS
+                        brazilianAmount:
+                          amount: '299.9900'
+                          currency: BRL
+                        amount:
+                          amount: '299.9900'
+                          currency: BRL
+                        transactionDateTime: '2024-09-05T14:22:03.000Z'
+                        billPostDate: '2024-09-06'
+                        payeeMCC: 5999
+                      - transactionId: TXpSMlBUUTVOMWhZV2xSU1FUazJSMDk
+                        identificationNumber: '1234'
+                        transactionName: ANUIDADE CARTAO
+                        creditDebitType: DEBITO
+                        transactionType: TARIFA
+                        feeType: ANUIDADE
+                        brazilianAmount:
+                          amount: '45.00'
+                          currency: BRL
+                        amount:
+                          amount: '45.00'
+                          currency: BRL
+                        transactionDateTime: '2024-09-01T08:00:00.000Z'
+                        billPostDate: '2024-09-01'
+                      - transactionId: TXpTM1BUUTZOMWhZV2xTU1FUazJSMDk
+                        identificationNumber: '1234'
+                        transactionName: COMPRA PARCELADA VIAGEM 2/6
+                        creditDebitType: DEBITO
+                        transactionType: PAGAMENTO
+                        paymentType: A_PRAZO
+                        chargeIdentificator: 2
+                        chargeNumber: 6
+                        brazilianAmount:
+                          amount: '500.0000'
+                          currency: BRL
+                        amount:
+                          amount: '500.0000'
+                          currency: BRL
+                        transactionDateTime: '2024-08-15T10:00:00.000Z'
+                        billPostDate: '2024-09-03'
+                  summary: OK
         '401':
           description: Não autorizado. Token ausente ou inválido.
         '404':
