@@ -7220,7 +7220,7 @@ paths:
     get:
       tags:
         - Cartões de Crédito
-      summary: Copy of Transações de cartões
+      summary: Categorizaçaõ de gastos de cartões
       description: >
         Retorna as transações do cartão de crédito do usuário. Apenas transações
         após conciliação são compartilhadas, garantindo a imutabilidade do
