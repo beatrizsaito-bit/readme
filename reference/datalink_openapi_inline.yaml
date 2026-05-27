@@ -7287,14 +7287,12 @@ paths:
                           example: 65b65cee-0905-40ff-8a32-65741f436fb1
                         creditCardAccountId:
                           type: string
-                          format: uuid
                           description: >-
                             Identificador único da conta de cartão de crédito
                             vinculada à transação.
                           example: 62726dba-e4b4-41b3-a6f2-68dca70df313
                         userId:
                           type: string
-                          format: uuid
                           description: >-
                             Identificador único do usuário na plataforma
                             DataLink.
