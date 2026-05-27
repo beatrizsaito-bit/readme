@@ -7259,258 +7259,171 @@ paths:
                 properties:
                   data:
                     type: array
-                    description: Lista de transações do cartão de crédito.
                     items:
                       type: object
-                      description: >-
-                        Transação do cartão de crédito. Apenas transações após
-                        conciliação são compartilhadas.
-                      required:
-                        - transactionId
-                        - creditCardAccountId
-                        - userId
-                        - identificationNumber
-                        - transactionName
-                        - creditDebitType
-                        - transactionType
-                        - brazilianAmount
-                        - amount
-                        - transactionDateTime
-                        - billPostDate
                       properties:
                         transactionId:
                           type: string
-                          description: >
-                            Identificador único e imutável da transação prestado
-                            pela instituição. Só são compartilhadas transações
-                            após conciliação.
                           example: 65b65cee-0905-40ff-8a32-65741f436fb1
                         creditCardAccountId:
                           type: string
-                          description: >-
-                            Identificador único da conta de cartão de crédito
-                            vinculada à transação.
                           example: 62726dba-e4b4-41b3-a6f2-68dca70df313
                         userId:
                           type: string
-                          description: >-
-                            Identificador único do usuário na plataforma
-                            DataLink.
                           example: 0e58fecb-5a34-4b2c-a1b2-d2f8626df017
-                        identificationNumber:
-                          type: string
-                          description: >
-                            Número de identificação do cartão — últimos 4
-                            dígitos para PF, ou identificador definido pelo Open
-                            Finance para PJ.
-                          example: '4453'
-                        transactionName:
-                          type: string
-                          description: >
-                            Literal utilizada pela instituição para identificar
-                            a transação, idêntica à exibida nos canais
-                            eletrônicos (extrato e fatura).
-                          example: PGTO
+                        amount:
+                          type: object
+                          properties:
+                            amount:
+                              type: string
+                              example: '100000.04'
+                            currency:
+                              type: string
+                              example: BRL
+                        category:
+                          type: object
+                          properties:
+                            category:
+                              type: string
+                              example: Compras
+                            subcategory:
+                              type: string
+                              example: Vestuario
+                            processedAt:
+                              type: object
+                              properties:
+                                $date:
+                                  type: string
+                                  example: '2026-01-30T03:08:29.627Z'
                         billId:
                           type: string
-                          description: >
-                            Identificador único e imutável da fatura onde consta
-                            a transação. Preencher apenas para transações em
-                            fatura **fechada**. Não deve ser enviado para
-                            transações em fatura aberta.
-                          example: MTU0OTU1NjI2NTk4OTRmc2ZhZDRmc2Q1NmZkM
+                          example: cb92d13c-1253-426a-b0d8-d7dd7c089531
+                        billPostDate:
+                          type: string
+                          example: '2024-09-03'
+                        brazilianAmount:
+                          type: object
+                          properties:
+                            amount:
+                              type: string
+                              example: '100000.04'
+                            currency:
+                              type: string
+                              example: BRL
+                        chargeIdentificator:
+                          type: integer
+                          example: 1
+                          default: 0
+                        chargeNumber:
+                          type: integer
+                          example: 3
+                          default: 0
                         creditDebitType:
                           type: string
-                          description: Indicador do tipo de lançamento na fatura.
-                          enum:
-                            - CREDITO
-                            - DEBITO
-                          x-enumDescriptions:
-                            CREDITO: >-
-                              Entrada de crédito na fatura (marcado com "C" no
-                              extrato).
-                            DEBITO: >-
-                              Saída/débito na fatura (marcado com "D" no
-                              extrato).
                           example: DEBITO
-                        transactionType:
-                          type: string
-                          description: >
-                            Tipo da transação. `PAGAMENTO_FATURA` deve ser usado
-                            para pagamentos parciais (mínimo, liberação de
-                            limite) ou totais da fatura.
-                          enum:
-                            - PAGAMENTO
-                            - PAGAMENTO_FATURA
-                            - TARIFA
-                            - OPERACOES_CREDITO_CONTRATADAS_CARTAO
-                            - ESTORNO
-                            - CASHBACK
-                            - OUTROS
-                          example: CASHBACK
-                        transactionalAdditionalInfo:
-                          type: string
-                          description: >
-                            Campo livre. **[Restrição]** Obrigatório quando
-                            `transactionType` for `OUTROS`.
-                          example: Descrição adicional da transação
-                        paymentType:
-                          type: string
-                          description: >
-                            Tipo de pagamento. **[Restrição]** Obrigatório
-                            quando `transactionType` for `PAGAMENTO`.
-                          enum:
-                            - A_VISTA
-                            - A_PRAZO
-                          example: A_VISTA
                         feeType:
                           type: string
-                          description: >
-                            Tipo de tarifa cobrada. **[Restrição]** Obrigatório
-                            quando `transactionType` for `TARIFA`.
-                          enum:
-                            - ANUIDADE
-                            - SAQUE_CARTAO_BRASIL
-                            - SAQUE_CARTAO_EXTERIOR
-                            - AVALIACAO_EMERGENCIAL_CREDITO
-                            - EMISSAO_SEGUNDA_VIA
-                            - TARIFA_PAGAMENTO_CONTAS
-                            - SMS
-                            - OUTRA
-                          x-enumDescriptions:
-                            ANUIDADE: Anuidade do cartão.
-                            SAQUE_CARTAO_BRASIL: Saque com cartão no Brasil.
-                            SAQUE_CARTAO_EXTERIOR: Saque com cartão no exterior.
-                            AVALIACAO_EMERGENCIAL_CREDITO: Avaliação emergencial de crédito.
-                            EMISSAO_SEGUNDA_VIA: Emissão de segunda via do cartão.
-                            TARIFA_PAGAMENTO_CONTAS: Tarifa de pagamento de contas.
-                            SMS: Tarifa de SMS.
-                            OUTRA: Outra tarifa não listada.
                           example: ANUIDADE
                         feeTypeAdditionalInfo:
                           type: string
-                          description: >
-                            Campo livre. **[Restrição]** Obrigatório quando
-                            `feeType` for `OUTRA`.
-                          example: Tarifa de manutenção especial
-                        otherCreditsType:
+                          example: string
+                        identificationNumber:
                           type: string
-                          description: >
-                            Outros tipos de crédito contratados no cartão.
-                            **[Restrição]** Obrigatório quando `transactionType`
-                            for `OPERACOES_CREDITO_CONTRATADAS_CARTAO`.
-                          enum:
-                            - CREDITO_ROTATIVO
-                            - PARCELAMENTO_FATURA
-                            - EMPRESTIMO
-                            - OUTROS
-                          example: CREDITO_ROTATIVO
+                          example: '4454'
                         otherCreditsAdditionalInfo:
                           type: string
-                          description: >
-                            Campo livre para dados adicionais de outros tipos de
-                            crédito. **[Restrição]** Obrigatório quando
-                            `otherCreditsType` for `OUTROS`.
-                          example: Crédito especial negociado
-                        chargeIdentificator:
-                          type: integer
-                          description: >
-                            Número da parcela sendo informada (mínimo 1, máximo
-                            999). **[Restrição]** Obrigatório quando
-                            `paymentType` for `A_PRAZO`.
-                          minimum: 1
-                          maximum: 999
-                          example: 3
-                        chargeNumber:
-                          type: integer
-                          description: >
-                            Quantidade total de parcelas (máximo 999).
-                            **[Restrição]** Obrigatório quando houver parcelas
-                            relacionadas à transação.
-                          maximum: 999
-                          example: 6
-                        brazilianAmount:
-                          type: object
-                          description: >
-                            Valor da transação em moeda corrente do Brasil
-                            (BRL). Em compras internacionais, deve ser o valor
-                            de `amount` convertido para BRL. Em compras
-                            parceladas, deve corresponder ao valor da parcela.
-                          required:
-                            - amount
-                            - currency
-                          properties:
-                            amount:
-                              type: string
-                              description: >-
-                                Valor em BRL com no mínimo 2 e no máximo 4 casas
-                                decimais.
-                              example: '1000.0400'
-                            currency:
-                              type: string
-                              description: >-
-                                Moeda conforme ISO-4217. Sempre `BRL` para este
-                                campo.
-                              example: BRL
-                        amount:
-                          type: object
-                          description: >
-                            Valor original da transação, sem conversão de moeda.
-                            Em compras parceladas, deve corresponder ao valor da
-                            parcela.
-                          required:
-                            - amount
-                            - currency
-                          properties:
-                            amount:
-                              type: string
-                              description: >-
-                                Valor original com no mínimo 2 e no máximo 4
-                                casas decimais.
-                              example: '1000.0400'
-                            currency:
-                              type: string
-                              description: Moeda original da transação conforme ISO-4217.
-                              example: BRL
-                        transactionDateTime:
+                          example: string
+                        otherCreditsType:
                           type: string
-                          format: date-time
-                          description: >
-                            Data e hora da transação (ISO 8601, UTC, com
-                            precisão de milissegundos). Em compras parceladas,
-                            deve ser idêntico em todas as parcelas. Deve
-                            refletir a informação exibida ao cliente nos canais
-                            digitais.
-                          example: '2016-01-29T12:29:03.374Z'
-                        billPostDate:
-                          type: string
-                          format: date
-                          description: >
-                            Data em que a transação foi inserida na fatura.
-                            Preencher com `0001-01-01` quando a data de inserção
-                            ainda não estiver disponível.
-                          example: '2021-05-21'
-                        billForecastDate:
-                          type: string
-                          description: >
-                            Mês e ano (YYYY-MM) em que a transação/parcela será
-                            faturada. Pode ser fatura aberta, futura ou fechada.
-                            Em transações futuras, a data pode ser ajustada
-                            conforme alterações nos ciclos de fatura do cliente.
-                          example: 2021-05
+                          example: CREDITO_ROTATIVO
                         payeeMCC:
                           type: integer
-                          description: >
-                            Código de categoria do estabelecimento comercial
-                            (MCC — Merchant Category Code). Classifica o negócio
-                            pelo tipo de bens ou serviços fornecidos.
-                            **[Restrição]** Obrigatório quando `transactionType`
-                            for `PAGAMENTO`.
-                          maximum: 2147483647
                           example: 5137
+                          default: 0
+                        paymentType:
+                          type: string
+                          example: A_VISTA
+                        transactionDateTime:
+                          type: string
+                          example: '2024-09-03T00:00:00.000Z'
+                        transactionName:
+                          type: string
+                          example: PGTO
+                        transactionType:
+                          type: string
+                          example: CASHBACK
+                        transactionalAdditionalInfo:
+                          type: string
+                          example: string
+                  totalRecords:
+                    type: integer
+                    example: 2118
+                    default: 0
               examples:
                 OK:
-                  value: "{\n  \"data\": [\n    {\n      \"transactionId\": \"65b65cee-0905-40ff-8a32-65741f436fb1\",\n      \"creditCardAccountId\": \"62726dba-e4b4-41b3-a6f2-68dca70df313\",\n      \"userId\": \"0e58fecb-5a34-4b2c-a1b2-d2f8626df017\",\n      \"amount\": {\n        \"amount\": \"100000.04\",\n        \"currency\": \"BRL\"\n      },\n      \"billId\": \"cb92d13c-1253-426a-b0d8-d7dd7c089531\",\n      \"billPostDate\": \"2024-09-03\",\n      \"brazilianAmount\": {\n        \"amount\": \"100000.04\",\n        \"currency\": \"BRL\"\n      },\n      \"chargeIdentificator\": 1,\n      \"chargeNumber\": 3,\n      \"creditDebitType\": \"DEBITO\",\n      \"feeType\": \"ANUIDADE\",\n      \"feeTypeAdditionalInfo\": \"string\",\n      \"identificationNumber\": \"4454\",\n      \"otherCreditsAdditionalInfo\": \"string\",\n      \"otherCreditsType\": \"CREDITO_ROTATIVO\",\n      \"payeeMCC\": 5137,\n      \"paymentType\": \"A_VISTA\",\n      \"transactionDateTime\": \"2024-09-03T00:00:00.000Z\",\n      \"transactionName\": \"PGTO\",\n      \"transactionType\": \"CASHBACK\",\n      \"transactionalAdditionalInfo\": \"string\"\n    },\n    {\n      \"transactionId\": \"2ef26b1e-f18d-47e6-b962-b3acffd05aae\",\n      \"creditCardAccountId\": \"62726dba-e4b4-41b3-a6f2-68dca70df313\",\n      \"userId\": \"0e58fecb-5a34-4b2c-a1b2-d2f8626df017\",\n      \"amount\": {\n        \"amount\": \"100000.04\",\n        \"currency\": \"BRL\"\n      },\n      \"billId\": \"cb92d13c-1253-426a-b0d8-d7dd7c089531\",\n      \"billPostDate\": \"2024-09-03\",\n      \"brazilianAmount\": {\n        \"amount\": \"100000.04\",\n        \"currency\": \"BRL\"\n      },\n\t    \"category\": {\n         \"category\": \"Taxas e Tarifas Bancarias\",\n          \"subcategory\": \"Anuidade Cartao\",\n          \"processedAt\": {\n               \"$date\": \"2026-03-10T06:49:48.705Z\"\n                }\n      \"chargeIdentificator\": 1,\n      \"chargeNumber\": 3,\n      \"creditDebitType\": \"DEBITO\",\n      \"feeType\": \"ANUIDADE\",\n      \"feeTypeAdditionalInfo\": \"string\",\n      \"identificationNumber\": \"4454\",\n      \"otherCreditsAdditionalInfo\": \"string\",\n      \"otherCreditsType\": \"CREDITO_ROTATIVO\",\n      \"payeeMCC\": 5137,\n      \"paymentType\": \"A_VISTA\",\n      \"transactionDateTime\": \"2024-09-03T00:00:00.000Z\",\n      \"transactionName\": \"PGTO\",\n      \"transactionType\": \"CASHBACK\",\n      \"transactionalAdditionalInfo\": \"string\"\n    }\n  ],\n  \"totalRecords\": 2118\n"
+                  value:
+                    data:
+                      - transactionId: 65b65cee-0905-40ff-8a32-65741f436fb1
+                        creditCardAccountId: 62726dba-e4b4-41b3-a6f2-68dca70df313
+                        userId: 0e58fecb-5a34-4b2c-a1b2-d2f8626df017
+                        amount:
+                          amount: '100000.04'
+                          currency: BRL
+                        category:
+                          category: Compras
+                          subcategory: Vestuario
+                          processedAt:
+                            $date: '2026-01-30T03:08:29.627Z'
+                        billId: cb92d13c-1253-426a-b0d8-d7dd7c089531
+                        billPostDate: '2024-09-03'
+                        brazilianAmount:
+                          amount: '100000.04'
+                          currency: BRL
+                        chargeIdentificator: 1
+                        chargeNumber: 3
+                        creditDebitType: DEBITO
+                        feeType: ANUIDADE
+                        feeTypeAdditionalInfo: string
+                        identificationNumber: '4454'
+                        otherCreditsAdditionalInfo: string
+                        otherCreditsType: CREDITO_ROTATIVO
+                        payeeMCC: 5137
+                        paymentType: A_VISTA
+                        transactionDateTime: '2024-09-03T00:00:00.000Z'
+                        transactionName: PGTO
+                        transactionType: CASHBACK
+                        transactionalAdditionalInfo: string
+                      - transactionId: 2ef26b1e-f18d-47e6-b962-b3acffd05aae
+                        creditCardAccountId: 62726dba-e4b4-41b3-a6f2-68dca70df313
+                        userId: 0e58fecb-5a34-4b2c-a1b2-d2f8626df017
+                        amount:
+                          amount: '100000.04'
+                          currency: BRL
+                        billId: cb92d13c-1253-426a-b0d8-d7dd7c089531
+                        billPostDate: '2024-09-03'
+                        brazilianAmount:
+                          amount: '100000.04'
+                          currency: BRL
+                        category:
+                          category: Taxas e Tarifas Bancarias
+                          subcategory: Anuidade Cartao
+                          processedAt:
+                            $date: '2026-03-10T06:49:48.705Z'
+                        chargeIdentificator: 1
+                        chargeNumber: 3
+                        creditDebitType: DEBITO
+                        feeType: ANUIDADE
+                        feeTypeAdditionalInfo: string
+                        identificationNumber: '4454'
+                        otherCreditsAdditionalInfo: string
+                        otherCreditsType: CREDITO_ROTATIVO
+                        payeeMCC: 5137
+                        paymentType: A_VISTA
+                        transactionDateTime: '2024-09-03T00:00:00.000Z'
+                        transactionName: PGTO
+                        transactionType: CASHBACK
+                        transactionalAdditionalInfo: string
+                    totalRecords: 2118
                   summary: OK
 components:
   securitySchemes:
