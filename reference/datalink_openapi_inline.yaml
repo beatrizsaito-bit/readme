@@ -5865,28 +5865,6 @@ paths:
           description: Não autorizado. Token ausente ou inválido.
         '404':
           description: Usuário não encontrado.
-  /intelligence/{consentId}/spending-categorization/accounts:
-    get:
-      tags:
-        - Categorização de Gastos
-      summary: Categorização de gastos de contas
-      description: ''
-      operationId: getAccountSpendingCategorization
-      parameters:
-        - name: consentId
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              examples:
-                OK:
-                  summary: OK
-                  value: "{\n  \"data\": [\n    {\n      \"transactionId\": \"TXN-001-20240909\",\n      \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n      \"creditDebitType\": \"CREDITO\",\n      \"transactionName\": \"PIX RECEBIDO - JOAO SILVA\",\n      \"type\": \"PIX\",\n\t\t\t\"category\": {\n                \"category\": \"Transferências\",\n                \"subcategory\": \"Transferência entre Pessoas\",\n                \"model\": \"01\",\n                \"processedAt\": {\n                    \"$date\": \"2026-01-30T03:08:29.627Z\"\n                },\n      \"transactionAmount\": {\n        \"amount\": \"1500.00\",\n        \"currency\": \"BRL\"\n      },\n      \"transactionDateTime\": \"2024-09-09T10:30:00Z\",\n      \"partieCnpjCpf\": \"12345678909\",\n      \"partiePersonType\": \"PESSOA_NATURAL\",\n      \"partieCompeCode\": \"341\",\n      \"partieBranchCode\": \"1234\",\n      \"partieNumber\": \"56789\",\n      \"partieCheckDigit\": \"0\"\n    },\n  ]\n}\t\t"
   /api/v1/users/{user_id}/analysis/credit-cards-transactions/categories:
     get:
       tags:
