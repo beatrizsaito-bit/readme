@@ -1,7 +1,7 @@
 ---
 title: 'Categorização de transações '
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
