@@ -7429,7 +7429,7 @@ paths:
     post:
       tags:
         - Consentimento
-      summary: Copy of Criar consentimento
+      summary: Criar consentimento (new)
       description: >
         Inicia o fluxo de criação de um consentimento Open Finance para um
         usuário final (pessoa física ou jurídica). Retorna uma URL de
@@ -7489,7 +7489,7 @@ paths:
                             caracteres). Informar para PJ.
                           example: '11222333000181'
                     permissions:
-                      type: array
+                      type: string
                       description: >+
                         Lista de permissões de acesso a dados solicitadas para o
                         consentimento. Deve incluir ao menos uma permissão.
@@ -7498,39 +7498,43 @@ paths:
 
 
                       minItems: 1
-                      items:
-                        type: string
-                        description: >-
-                          Valores permitidos: `RESOURCES_READ`,
-                          `CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ`,
-                          `CUSTOMERS_PERSONAL_ADITTIONALINFO_READ`,
-                          `CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ`,
-                          `CUSTOMERS_BUSINESS_ADITTIONALINFO_READ`,
-                          `ACCOUNTS_READ`, `ACCOUNTS_BALANCES_READ`,
-                          `ACCOUNTS_OVERDRAFT_LIMITS_READ`,
-                          `ACCOUNTS_TRANSACTIONS_READ`,
-                          `CREDIT_CARDS_ACCOUNTS_READ`,
-                          `CREDIT_CARDS_ACCOUNTS_LIMITS_READ`,
-                          `CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ`,
-                          `CREDIT_CARDS_ACCOUNTS_BILLS_READ`,
-                          `CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ`,
-                          `LOANS_READ`, `LOANS_WARRANTIES_READ`,
-                          `LOANS_SCHEDULED_INSTALMENTS_READ`,
-                          `LOANS_PAYMENTS_READ`, `FINANCINGS_READ`,
-                          `FINANCINGS_WARRANTIES_READ`,
-                          `FINANCINGS_SCHEDULED_INSTALMENTS_READ`,
-                          `FINANCINGS_PAYMENTS_READ`,
-                          `UNARRANGED_ACCOUNTS_OVERDRAFT_READ`,
-                          `UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ`,
-                          `UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ`,
-                          `UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ`,
-                          `INVOICE_FINANCINGS_READ`,
-                          `INVOICE_FINANCINGS_WARRANTIES_READ`,
-                          `INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ`,
-                          `INVOICE_FINANCINGS_PAYMENTS_READ`,
-                          `BANK_FIXED_INCOMES_READ`,
-                          `CREDIT_FIXED_INCOMES_READ`, `FUNDS_READ`,
-                          `VARIABLE_INCOMES_READ`, `TREASURE_TITLES_READ`
+                      enum:
+                        - RESOURCES_READ
+                        - CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ
+                        - CUSTOMERS_PERSONAL_ADITTIONALINFO_READ
+                        - CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ
+                        - CUSTOMERS_BUSINESS_ADITTIONALINFO_READ
+                        - ACCOUNTS_READ
+                        - ACCOUNTS_BALANCES_READ
+                        - ACCOUNTS_OVERDRAFT_LIMITS_READ
+                        - ACCOUNTS_TRANSACTIONS_READ
+                        - CREDIT_CARDS_ACCOUNTS_READ
+                        - CREDIT_CARDS_ACCOUNTS_LIMITS_READ
+                        - CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ
+                        - CREDIT_CARDS_ACCOUNTS_BILLS_READ
+                        - CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ
+                        - LOANS_READ
+                        - LOANS_WARRANTIES_READ
+                        - LOANS_SCHEDULED_INSTALMENTS_READ
+                        - LOANS_PAYMENTS_READ
+                        - FINANCINGS_READ
+                        - FINANCINGS_WARRANTIES_READ
+                        - FINANCINGS_SCHEDULED_INSTALMENTS_READ
+                        - FINANCINGS_PAYMENTS_READ
+                        - UNARRANGED_ACCOUNTS_OVERDRAFT_READ
+                        - UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ
+                        - >-
+                          UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ
+                        - UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ
+                        - INVOICE_FINANCINGS_READ
+                        - INVOICE_FINANCINGS_WARRANTIES_READ
+                        - INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ
+                        - INVOICE_FINANCINGS_PAYMENTS_READ
+                        - BANK_FIXED_INCOMES_READ
+                        - CREDIT_FIXED_INCOMES_READ
+                        - FUNDS_READ
+                        - VARIABLE_INCOMES_READ
+                        - TREASURE_TITLES_READ
             examples:
               pessoa_fisica:
                 summary: Pessoa Física (PF)
