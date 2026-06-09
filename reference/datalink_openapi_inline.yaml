@@ -8955,7 +8955,7 @@ paths:
     get:
       tags:
         - Webhooks de Notificação
-      summary: Copy of Buscar canais
+      summary: Buscar canais (new)
       description: >
         Retorna os canais de notificação configurados para o tenant, incluindo
         webhooks, Slack, e-mail e SMS.
@@ -8968,6 +8968,7 @@ paths:
           schema:
             type: string
             example: alex-teste
+            default: minha-empresa
       responses:
         '200':
           description: Canais de notificação retornados com sucesso.
@@ -8981,6 +8982,7 @@ paths:
                     type: string
                     description: Identificador único do tenant.
                     example: tenant_id
+                    default: minha-empresa
                   channels:
                     type: array
                     description: Lista de canais de notificação configurados.
@@ -8997,6 +8999,7 @@ paths:
                             - email
                             - sms
                           example: webhook
+                          default: webhook
                         value:
                           type: string
                           description: >
@@ -9004,28 +9007,33 @@ paths:
                             `slack`, endereço de e-mail para `email`, número com
                             DDI para `sms`.
                           example: https://prod.empresa.com/webhooks/lina
+                          default: https://seuapp.com.br/webhook/datalink
                         enable:
                           type: boolean
                           description: Indica se o canal está ativo.
-                          default: true
+                          default: 'true'
                           example: true
                         secret:
                           type: string
                           nullable: true
                           description: >-
-                            Secret de assinatura. Aplicável apenas ao tipo
-                            `webhook`.
+                            Segredo HMAC para validação da assinatura (apenas
+                            para webhook). Exibido somente na criação ou
+                            rotação.
                           example: null
+                          default: wh_secret_abc123
                   createdAt:
                     type: string
                     format: date-time
                     description: Data e hora de criação do registro (ISO 8601, UTC).
                     example: '2025-03-20T19:22:17.646Z'
+                    default: '2025-01-10T09:00:00Z'
                   updatedAt:
                     type: string
                     format: date-time
                     description: Data e hora da última atualização (ISO 8601, UTC).
                     example: '2025-03-20T20:12:11.715Z'
+                    default: '2025-05-20T14:30:00Z'
               examples:
                 OK:
                   summary: OK
