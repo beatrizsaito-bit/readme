@@ -8889,28 +8889,17 @@ paths:
                   summary: OK
                   value:
                     data:
-                      - _id: evt_019c9f741f617007ba5ad5ef22f6b47b
-                        type: account.balance.updated
-                        tenantId: go-assets
-                        clientId: go-assets-prod
-                        created: 1772201713
-                        apiVersion: '2025-02-01'
+                      - id: evt_abc123
+                        type: consent.confirmed
                         status: delivered
-                        endpoint: https://prod.empresa.com/webhooks/lina
-                        attempts:
-                          - number: 1
-                            at: '2026-02-27T14:15:13Z'
-                            statusCode: 200
-                            responseBody: OK
-                            durationMs: 12
+                        created: 1749081600
+                        attempts: 1
                         nextRetryAt: null
-                        createdAt: '2026-02-27T14:15:13.502Z'
-                        updatedAt: '2026-02-27T14:15:13Z'
-                        expiresAt: '2026-03-29T14:15:13.502Z'
-                    meta:
-                      total: 42
+                    pagination:
                       page: 1
-                      limit: 25
+                      limit: 20
+                      total: 45
+                      totalPages: 3
         '401':
           description: Não autorizado. Token ausente ou inválido.
 components:
