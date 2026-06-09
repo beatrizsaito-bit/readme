@@ -1,5 +1,5 @@
 ---
-title: Copy of Configuração de Webhooks
+title: Configuração de Webhooks (new)
 deprecated: false
 hidden: true
 metadata:
