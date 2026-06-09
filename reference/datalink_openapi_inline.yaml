@@ -8105,13 +8105,58 @@ paths:
     get:
       tags:
         - Usuários
-      summary: Copy of Listar todos os usuários
+      summary: Listar todos os usuários (new)
       description: ''
       operationId: listUsers-1
       parameters: []
       responses:
         '200':
           description: ''
+          content:
+            application/json:
+              examples:
+                OK:
+                  summary: OK
+                  value: "{\n  \"data\": [\n    {\n      \"userId\": \"9d9fe35d-8e12-46f3-807c-4bdaa1238d32\",\n      \"createdAt\": \"2025-01-10T09:15:00Z\",\n      \"updatedAt\": \"2025-06-01T14:30:00Z\"\n    },\n\t\t{\n      \"userId\": \"7e9cfe35d-8e12-46f3-807c-4bdaa1238d32\",\n      \"createdAt\": \"2025-01-14T09:15:00Z\",\n      \"updatedAt\": \"2025-03-01T14:30:00Z\"\n    },\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"limit\": 20,\n    \"total\": 320,\n    \"totalPages\": 16\n  }\n}"
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      properties:
+                        userId:
+                          type: string
+                          description: >-
+                            Identificador único do usuário na plataforma
+                            DataLink.
+                          default: 9d9fe35d-8e12-46f3-807c-4bdaa1238d32
+                        createdAt:
+                          type: string
+                          description: Data de criação do usuário.
+                          default: '2025-01-10T09:15:00Z'
+                        updatedAt:
+                          type: string
+                          description: Data da última atualização do usuário.
+                          default: '2025-06-01T14:30:00Z'
+                      type: object
+                  pagination:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                        default: '1'
+                      limit:
+                        type: integer
+                        default: '20'
+                      total:
+                        type: integer
+                        default: '320'
+                      totalPages:
+                        type: integer
+                        default: '16'
+                required:
+                  - data
 components:
   securitySchemes:
     bearerAuth:
