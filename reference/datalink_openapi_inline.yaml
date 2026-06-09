@@ -8028,6 +8028,17 @@ paths:
           description: Não autorizado. Token ausente ou inválido.
         '404':
           description: Consentimento não encontrado para o usuário informado.
+  /metrics/usage-1:
+    get:
+      tags:
+        - Métricas
+      summary: Copy of Métricas de uso
+      description: ''
+      operationId: getUsageMetrics-1
+      parameters: []
+      responses:
+        '200':
+          description: ''
 components:
   securitySchemes:
     bearerAuth:
