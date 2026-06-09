@@ -8032,13 +8032,75 @@ paths:
     get:
       tags:
         - Métricas
-      summary: Copy of Métricas de uso
-      description: ''
+      summary: Métricas de uso (new)
+      description: >-
+        Retorna os indicadores de consumo da integração, incluindo totais de
+        usuários, consentimentos por status e volume de requisições no período.
       operationId: getUsageMetrics-1
       parameters: []
       responses:
         '200':
           description: ''
+          content:
+            application/json:
+              examples:
+                OK:
+                  summary: OK
+                  value:
+                    summary: OK
+                    value:
+                      users:
+                        total: 1250
+                      consents:
+                        total: 3800
+                        authorised: 2100
+                        awaitingAuthorisation: 45
+                        rejected: 1655
+                      requests:
+                        total: 128500
+                        currentMonth: 12300
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: object
+                    description: ''
+                    default: '1250'
+                    properties:
+                      total:
+                        type: integer
+                        default: '1250'
+                        description: Total de usuários com ao menos um consentimento.
+                  consents:
+                    type: object
+                    properties:
+                      total:
+                        type: integer
+                        default: '3800'
+                        description: Total de consentimentos criados.
+                      authorised:
+                        type: integer
+                        description: Consentimentos ativos (AUTHORISED).
+                        default: '2100'
+                      awaitingAuthorisation:
+                        type: integer
+                        description: Consentimentos aguardando autorização.
+                        default: '45'
+                      rejected:
+                        type: integer
+                        description: Consentimentos rejeitados ou revogados.
+                        default: '1655'
+                  requests:
+                    type: object
+                    properties:
+                      total:
+                        type: integer
+                        description: Total de requisições no período.
+                        default: '128500'
+                      currentMonth:
+                        type: integer
+                        description: Requisições no mês atual.
+                        default: '12300'
 components:
   securitySchemes:
     bearerAuth:
