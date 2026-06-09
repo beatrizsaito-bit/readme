@@ -8538,6 +8538,7 @@ paths:
           schema:
             type: string
             example: go-assets
+            default: minha-empresa
         - name: client_id
           in: path
           required: true
@@ -8545,9 +8546,10 @@ paths:
           schema:
             type: string
             example: go-assets-prod
+            default: client_abc123
       responses:
         '204':
-          description: Webhook removido com sucesso. Sem conteúdo na resposta.
+          description: Webhook removido com sucesso.
         '401':
           description: Não autorizado. Token ausente ou inválido.
         '404':
