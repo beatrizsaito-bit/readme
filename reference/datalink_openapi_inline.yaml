@@ -8760,7 +8760,7 @@ paths:
     get:
       tags:
         - Eventos de Webhooks
-      summary: Copy of Listar eventos
+      summary: Listar eventos (new)
       description: >
         Retorna todos os eventos de webhook da organização com suporte a filtros
         por tipo, status e período, além de paginação.
