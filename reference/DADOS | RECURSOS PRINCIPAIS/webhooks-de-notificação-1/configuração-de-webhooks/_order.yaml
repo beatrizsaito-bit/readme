@@ -1,5 +1,4 @@
 - listwebhooks
 - upsertwebhook
-- upsertwebhook-1
 - deletewebhook
 - rotatewebhooksecret
