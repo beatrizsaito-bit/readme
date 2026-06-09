@@ -7635,7 +7635,7 @@ paths:
     get:
       tags:
         - Consentimento
-      summary: Copy of Instituições participantes
+      summary: Instituições participantes (new)
       description: >
         Retorna a lista de instituições financeiras participantes do Open
         Finance Brasil disponíveis para iniciar um fluxo de consentimento. Cada
@@ -7759,121 +7759,33 @@ paths:
                                     - Suporta Contas PF
                                   Suporta Contas PJ:
                                     - Suporta Contas PJ
-                              ApiResources:
-                                type: array
-                                description: >-
-                                  Lista de famílias de APIs disponíveis para
-                                  esta instituição.
-                                items:
-                                  type: object
-                                  description: >-
-                                    Recurso de API disponível para uma
-                                    instituição participante do Open Finance.
-                                  properties:
-                                    ApiFamilyType:
-                                      type: string
-                                      description: >-
-                                        Tipo de família de API Open Finance
-                                        disponível na instituição.
-                                      enum:
-                                        - accounts
-                                        - consents
-                                        - credit-cards-accounts
-                                        - customers-personal
-                                        - customers-business
-                                        - loans
-                                        - bank-fixed-incomes
-                                        - enrollments
-                                        - resources
-                                        - payments-consents
-                                        - payments-pix
-                                        - payments-pix-recurring-payments
-                                        - >-
-                                          payments-pix-recurring-payments-automatic
-                                        - payments-recurring-consents
-                                        - payments-recurring-consents-automatic
-                                        - credit-portability
-                                        - payroll-credit-portability
-                                        - opendata-accounts_personal-accounts
-                                        - >-
-                                          opendata-creditcards_personal-credit-cards
-                                        - >-
-                                          opendata-creditcards_business-credit-cards
-                                        - opendata-loans_business-loans
-                                        - opendata-financings_business-financings
-                                        - opendata-insurance_personals
-                                        - channels_electronic-channels
-                                        - channels_phone-channels
-                                      example: accounts
-                                    ApiVersion:
-                                      type: string
-                                      description: >-
-                                        Versão da especificação Open Finance
-                                        implementada pela instituição para esta
-                                        família de API.
-                                      example: 2.4.2
-                                    ApiDiscoveryEndpoints:
-                                      type: array
-                                      description: >-
-                                        Lista de URLs dos endpoints disponíveis
-                                        para esta família de API na instituição.
-                                      items:
-                                        type: string
-                                      example:
-                                        - >-
-                                          https://api-openfinance-dev-m.bancobmg.com.br/open-banking/accounts/v2/accounts
-                                        - >-
-                                          https://api-openfinance-dev-m.bancobmg.com.br/open-banking/accounts/v2/accounts/{accountId}/transactions
-                                    Status:
-                                      type: string
-                                      description: >-
-                                        Status de disponibilidade do recurso de
-                                        API na instituição.
-                                      enum:
-                                        - Active
-                                        - Inactive
-                                        - Deprecated
-                                      example: Active
               examples:
                 OK:
-                  value:
-                    data:
-                      - OrganisationName: BCO BMG S.A.
-                        OrganisationId: 4ae2cefb-e3c1-5624-9448-b3aa4777c539
-                        LegalEntityName: BANCO BMG S.A.
-                        RegistrationNumber: '61186680000174'
-                        ParentOrganisationReference: ''
-                        AuthorisationServers:
-                          - AuthorisationServerId: e70bc5a2-9b70-40f1-a3bb-7e6f41695c52
-                            CustomerFriendlyName: BANCO BMG
-                            CustomerFriendlyDescription: Auth Server SBX
-                            CustomerFriendlyLogoUri: >-
-                              https://www.bancobmg.com.br/lumis-theme/br/com/bmg/portal/theme/bmg-portal/img/logo.svg
-                            OpenIDDiscoveryDocument: >-
-                              https://api-openfinance-dev.bancobmg.com.br/of-auth/realms/bmg-sbx/.well-known/openid-configuration
-                            Flags:
-                              Suporta Contas PF:
-                                - Suporta Contas PF
-                              Suporta Contas PJ:
-                                - Suporta Contas PJ
-                            ApiResources:
-                              - ApiFamilyType: consents
-                                ApiVersion: 3.3.0
-                                ApiDiscoveryEndpoints:
-                                  - >-
-                                    https://api-openfinance-dev-m.bancobmg.com.br/open-banking/consents/v3/consents
-                                  - >-
-                                    https://api-openfinance-dev-m.bancobmg.com.br/open-banking/consents/v3/consents/{consentId}
-                                Status: Active
-                              - ApiFamilyType: accounts
-                                ApiVersion: 2.4.2
-                                ApiDiscoveryEndpoints:
-                                  - >-
-                                    https://api-openfinance-dev-m.bancobmg.com.br/open-banking/accounts/v2/accounts
-                                  - >-
-                                    https://api-openfinance-dev-m.bancobmg.com.br/open-banking/accounts/v2/accounts/{accountId}/transactions
-                                Status: Active
+                  value: |-
+                    {
+                      "data": [
+                            {
+                              "OrganisationId": "74e929d9-33b6-4d85-8ba7-c146c867a817",
+                              "OrganisationName": "Banco BMG S.A.",
+                              "LegalEntityName": "Banco BMG S.A.",
+                              "RegistrationNumber": "61186680000174",
+                              "AuthorisationServers": [
+                                {
+                                  "AuthorisationServerId": "c8f0bf49-4744-4933-8960-7add6e590841",
+                                  "CustomerFriendlyName": "Banco BMG",
+                                  "CustomerFriendlyLogoUri": "https://logo.bmg.com.br/logo.png",
+                                  "Flags": ["SUPPORTS_PERSONAL"]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
                   summary: OK
+        '401':
+          description: Não autorizado. Token ausente ou inválido.
+          content: {}
 components:
   securitySchemes:
     bearerAuth:
