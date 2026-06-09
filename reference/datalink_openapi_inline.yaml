@@ -8902,6 +8902,57 @@ paths:
                       totalPages: 3
         '401':
           description: Não autorizado. Token ausente ou inválido.
+  /api/v1/webhook-events/{event_id}/retry-1:
+    post:
+      tags:
+        - Eventos de Webhooks
+      summary: Copy of Reenviar evento manualmente
+      description: >
+        Enfileira manualmente um evento para reenvio ao endpoint configurado. Só
+        é possível reenviar eventos com status `failed` ou `pending`.
+      operationId: resendWebhookEvent-1
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: Identificador único do evento no formato `evt_`.
+          schema:
+            type: string
+            example: evt_019c9f741f617007ba5ad5ef22f6b47b
+      responses:
+        '202':
+          description: Evento enfileirado para reenvio com sucesso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Event queued for retry
+                  eventId:
+                    type: string
+                    example: evt_019c9f741f617007ba5ad5ef22f6b47b
+              examples:
+                Accepted:
+                  summary: Accepted
+                  value:
+                    message: Event queued for retry
+                    eventId: evt_019c9f741f617007ba5ad5ef22f6b47b
+        '400':
+          description: Evento já entregue ou ID inválido.
+          content:
+            application/json:
+              example:
+                message: Evento já entregue ou ID inválido
+        '401':
+          description: Não autorizado. Token ausente ou inválido.
+        '404':
+          description: Evento não encontrado.
+          content:
+            application/json:
+              example:
+                message: Evento não encontrado
 components:
   securitySchemes:
     bearerAuth:
