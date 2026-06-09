@@ -8433,6 +8433,108 @@ paths:
           description: Não autorizado. Token ausente ou inválido.
         '404':
           description: Usuário não encontrado.
+  /api/v1/notification/{tenant_id}/webhooks-1:
+    get:
+      tags:
+        - Configuração de Webhooks
+      summary: Copy of Listar seus webhooks
+      description: >
+        Retorna todos os webhooks configurados para o tenant, incluindo status,
+        secret e histórico de falhas consecutivas.
+      operationId: listWebhooks-1
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          description: Identificador único do tenant na plataforma.
+          schema:
+            type: string
+            example: go-assets
+      responses:
+        '200':
+          description: Webhooks retornados com sucesso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  webhooks:
+                    type: array
+                    items:
+                      type: object
+                      description: Configuração de um webhook registrado para o tenant.
+                      properties:
+                        clientId:
+                          type: string
+                          description: Client ID Keycloak associado ao webhook.
+                          example: go-assets-prod
+                        value:
+                          type: string
+                          format: uri
+                          description: URL HTTPS do endpoint que receberá os eventos.
+                          example: https://prod.empresa.com/webhooks/lina
+                        enable:
+                          type: boolean
+                          description: Indica se o webhook está ativo.
+                          default: true
+                          example: true
+                        secret:
+                          type: string
+                          description: >-
+                            Secret usado para verificar a assinatura
+                            `X-Lina-Signature`.
+                          example: 88bccb89-0674-4e2e-a4f7-2ea2bf3fb2e2
+                        consecutiveFailures:
+                          type: integer
+                          description: >-
+                            Número de eventos consecutivos que falharam em todas
+                            as tentativas de entrega.
+                          default: 0
+                          example: 0
+                        previousSecret:
+                          type: string
+                          description: >
+                            Secret anterior, válido por 24h após a rotação.
+                            Presente apenas imediatamente após rotacionar o
+                            secret.
+                          example: whsec_anterior...
+                        previousSecretExpiresAt:
+                          type: string
+                          format: date-time
+                          description: >-
+                            Data e hora de expiração do secret anterior.
+                            Presente apenas após rotação.
+                          example: '2026-05-21T10:00:00Z'
+                        disabledAt:
+                          type: string
+                          format: date-time
+                          description: >-
+                            Data e hora em que o webhook foi desabilitado
+                            automaticamente. Presente apenas se desabilitado.
+                          example: '2026-05-19T08:00:00Z'
+                        disabledReason:
+                          type: string
+                          description: >-
+                            Motivo pelo qual o webhook foi desabilitado
+                            automaticamente. Presente apenas se desabilitado.
+                          example: Too many consecutive failures
+              examples:
+                OK:
+                  summary: OK
+                  value:
+                    webhooks:
+                      - clientId: go-assets-prod
+                        value: https://prod.empresa.com/webhooks/lina
+                        enable: true
+                        secret: 88bccb89-0674-4e2e-a4f7-2ea2bf3fb2e2
+                        consecutiveFailures: 0
+                      - clientId: go-assets-hml
+                        value: https://hml.empresa.com/webhooks/lina
+                        enable: false
+                        secret: aad157c8-0111-470a-94df-e86b6afa282b
+                        consecutiveFailures: 0
+        '401':
+          description: Não autorizado. Token ausente ou inválido.
 components:
   securitySchemes:
     bearerAuth:
