@@ -8607,6 +8607,60 @@ paths:
                 message: Body inválido
         '401':
           description: Não autorizado. Token ausente ou inválido.
+  /api/v1/notification/{tenant_id}/webhooks/{client_id}/rotate-secret-1:
+    post:
+      tags:
+        - Configuração de Webhooks
+      summary: Copy of Rotacionar secret do webhook
+      description: >
+        Gera um novo secret para o webhook. O secret anterior permanece válido
+        por 24 horas para garantir a transição sem interrupção na verificação de
+        assinatura `X-Lina-Signature`.
+      operationId: rotateWebhookSecret-1
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          description: Identificador único do tenant na plataforma.
+          schema:
+            type: string
+            example: go-assets
+        - name: client_id
+          in: path
+          required: true
+          description: Client ID Keycloak associado ao webhook.
+          schema:
+            type: string
+            example: go-assets-prod
+      responses:
+        '200':
+          description: Secret rotacionado com sucesso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  secret:
+                    type: string
+                    description: >-
+                      Novo secret gerado para validação da assinatura
+                      X-Lina-Signature.
+                    example: >-
+                      whsec_a3f8b2c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1
+              examples:
+                OK:
+                  summary: OK
+                  value:
+                    secret: >-
+                      whsec_a3f8b2c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1
+        '401':
+          description: Não autorizado. Token ausente ou inválido.
+        '404':
+          description: Tenant ou clientId não encontrado.
+          content:
+            application/json:
+              example:
+                message: Tenant ou clientId não encontrado
 components:
   securitySchemes:
     bearerAuth:
