@@ -7773,7 +7773,7 @@ paths:
     get:
       tags:
         - Consentimento
-      summary: Copy of Recuperar consentimento
+      summary: Recuperar consentimento (new)
       description: >
         Retorna os detalhes completos de um consentimento específico vinculado a
         um usuário, incluindo status atual, permissões concedidas e, quando
