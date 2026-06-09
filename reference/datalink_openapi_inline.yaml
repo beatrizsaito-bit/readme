@@ -8437,7 +8437,7 @@ paths:
     get:
       tags:
         - Configuração de Webhooks
-      summary: Copy of Listar seus webhooks
+      summary: Listar seus webhooks (new)
       description: >
         Retorna todos os webhooks configurados para o tenant, incluindo status,
         secret e histórico de falhas consecutivas.
@@ -8468,43 +8468,25 @@ paths:
                           type: string
                           description: Client ID Keycloak associado ao webhook.
                           example: go-assets-prod
-                        value:
+                          default: client_abc123
+                        url:
                           type: string
                           format: uri
                           description: URL HTTPS do endpoint que receberá os eventos.
                           example: https://prod.empresa.com/webhooks/lina
+                          default: https://seuapp.com.br/webhook/datalink
                         enable:
                           type: boolean
                           description: Indica se o webhook está ativo.
-                          default: true
+                          default: 'true'
                           example: true
-                        secret:
-                          type: string
-                          description: >-
-                            Secret usado para verificar a assinatura
-                            `X-Lina-Signature`.
-                          example: 88bccb89-0674-4e2e-a4f7-2ea2bf3fb2e2
                         consecutiveFailures:
                           type: integer
                           description: >-
                             Número de eventos consecutivos que falharam em todas
                             as tentativas de entrega.
-                          default: 0
+                          default: '0'
                           example: 0
-                        previousSecret:
-                          type: string
-                          description: >
-                            Secret anterior, válido por 24h após a rotação.
-                            Presente apenas imediatamente após rotacionar o
-                            secret.
-                          example: whsec_anterior...
-                        previousSecretExpiresAt:
-                          type: string
-                          format: date-time
-                          description: >-
-                            Data e hora de expiração do secret anterior.
-                            Presente apenas após rotação.
-                          example: '2026-05-21T10:00:00Z'
                         disabledAt:
                           type: string
                           format: date-time
@@ -8512,27 +8494,32 @@ paths:
                             Data e hora em que o webhook foi desabilitado
                             automaticamente. Presente apenas se desabilitado.
                           example: '2026-05-19T08:00:00Z'
-                        disabledReason:
+                          default: '2025-01-15T10:00:00Z'
+                        updatedAt:
                           type: string
                           description: >-
                             Motivo pelo qual o webhook foi desabilitado
                             automaticamente. Presente apenas se desabilitado.
                           example: Too many consecutive failures
+                          format: date-time
+                          default: '2025-05-20T14:30:00Z'
               examples:
                 OK:
                   summary: OK
                   value:
                     webhooks:
-                      - clientId: go-assets-prod
-                        value: https://prod.empresa.com/webhooks/lina
-                        enable: true
-                        secret: 88bccb89-0674-4e2e-a4f7-2ea2bf3fb2e2
+                      - clientId: client_abc123
+                        url: https://seuapp.com.br/webhook/datalink
+                        enabled: true
                         consecutiveFailures: 0
-                      - clientId: go-assets-hml
-                        value: https://hml.empresa.com/webhooks/lina
-                        enable: false
-                        secret: aad157c8-0111-470a-94df-e86b6afa282b
+                        createdAt: '2025-01-15T10:00:00Z'
+                        updatedAt: '2025-05-20T14:30:00Z'
+                      - clientId: client_abc456
+                        url: https://seuapp.com.br/webhook-novo/datalink
+                        enabled: true
                         consecutiveFailures: 0
+                        createdAt: '2025-01-15T10:00:00Z'
+                        updatedAt: '2025-05-20T14:30:00Z'
         '401':
           description: Não autorizado. Token ausente ou inválido.
 components:
