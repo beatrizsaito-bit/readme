@@ -8773,6 +8773,14 @@ paths:
           schema:
             type: string
             example: account.balance.updated
+            enum:
+              - consent.created
+              - consent.confirmed
+              - consent.rejected
+              - user.data.insert.start
+              - user.data.insert.finish
+              - account.balance.updated
+            default: consent.confirmed
         - name: status
           in: query
           required: false
@@ -8785,22 +8793,7 @@ paths:
               - failed
               - endpoint_disabled
             example: delivered
-        - name: from
-          in: query
-          required: false
-          description: 'Data de início do filtro (ISO 8601, UTC). Ex: 2026-02-01T00:00:00Z'
-          schema:
-            type: string
-            format: date-time
-            example: '2026-02-01T00:00:00Z'
-        - name: to
-          in: query
-          required: false
-          description: Data de fim do filtro (ISO 8601, UTC).
-          schema:
-            type: string
-            format: date-time
-            example: '2026-02-28T23:59:59Z'
+            default: delivered
         - name: page
           in: query
           required: false
@@ -8831,30 +8824,16 @@ paths:
                       type: object
                       description: Evento de webhook registrado na plataforma.
                       properties:
-                        _id:
+                        id:
                           type: string
                           description: Identificador único do evento no formato `evt_`.
                           example: evt_019c9f741f617007ba5ad5ef22f6b47b
+                          default: evt_abc123
                         type:
                           type: string
                           description: Tipo do evento disparado.
                           example: account.balance.updated
-                        tenantId:
-                          type: string
-                          description: Identificador do tenant ao qual o evento pertence.
-                          example: go-assets
-                        clientId:
-                          type: string
-                          description: Client ID Keycloak do webhook de destino.
-                          example: go-assets-prod
-                        created:
-                          type: integer
-                          description: Timestamp Unix (segundos) da criação do evento.
-                          example: 1772201713
-                        apiVersion:
-                          type: string
-                          description: Versão da API que gerou o evento.
-                          example: '2025-02-01'
+                          default: consent.confirmed
                         status:
                           type: string
                           description: Status atual de entrega do evento.
@@ -8864,47 +8843,16 @@ paths:
                             - failed
                             - endpoint_disabled
                           example: delivered
-                        endpoint:
-                          type: string
-                          format: uri
-                          description: URL do endpoint de destino do evento.
-                          example: https://prod.empresa.com/webhooks/lina
+                          default: delivered
+                        created:
+                          type: integer
+                          description: Timestamp Unix (segundos) da criação do evento.
+                          example: 1772201713
+                          default: '1749081600'
                         attempts:
-                          type: array
+                          type: integer
                           description: Lista de tentativas de entrega do evento.
-                          items:
-                            type: object
-                            description: Tentativa de entrega de um evento de webhook.
-                            properties:
-                              number:
-                                type: integer
-                                description: Número sequencial da tentativa.
-                                example: 1
-                              at:
-                                type: string
-                                format: date-time
-                                description: >-
-                                  Data e hora em que a tentativa foi realizada
-                                  (ISO 8601, UTC).
-                                example: '2026-02-27T14:15:13Z'
-                              statusCode:
-                                type: integer
-                                description: >-
-                                  HTTP status code retornado pelo endpoint do
-                                  cliente.
-                                example: 200
-                              responseBody:
-                                type: string
-                                description: >-
-                                  Corpo da resposta retornada pelo endpoint do
-                                  cliente.
-                                example: OK
-                              durationMs:
-                                type: integer
-                                description: >-
-                                  Tempo de resposta do endpoint em
-                                  milissegundos.
-                                example: 145
+                          default: '1'
                         nextRetryAt:
                           type: string
                           format: date-time
@@ -8913,41 +8861,29 @@ paths:
                             Data e hora da próxima tentativa programada. `null`
                             quando não há reenvio pendente.
                           example: null
-                        createdAt:
-                          type: string
-                          format: date-time
-                          description: Data e hora de criação do evento (ISO 8601, UTC).
-                          example: '2026-02-27T14:15:13.502Z'
-                        updatedAt:
-                          type: string
-                          format: date-time
-                          description: >-
-                            Data e hora da última atualização do evento (ISO
-                            8601, UTC).
-                          example: '2026-02-27T14:15:13Z'
-                        expiresAt:
-                          type: string
-                          format: date-time
-                          description: >-
-                            Data e hora de expiração do registro do evento (ISO
-                            8601, UTC).
-                          example: '2026-03-29T14:15:13.502Z'
-                  meta:
+                          default: 'null'
+                  pagination:
                     type: object
                     description: Metadados de paginação da listagem de eventos.
                     properties:
-                      total:
-                        type: integer
-                        description: Total de eventos encontrados com os filtros aplicados.
-                        example: 42
                       page:
                         type: integer
                         description: Página atual.
                         example: 1
+                        default: '1'
                       limit:
                         type: integer
                         description: Itens retornados por página.
                         example: 25
+                        default: '20'
+                      total:
+                        type: integer
+                        description: Total de eventos encontrados com os filtros aplicados.
+                        example: 42
+                        default: '45'
+                      totalPages:
+                        type: integer
+                        default: '3'
               examples:
                 OK:
                   summary: OK
