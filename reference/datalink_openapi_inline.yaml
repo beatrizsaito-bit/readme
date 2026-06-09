@@ -7429,7 +7429,7 @@ paths:
     get:
       tags:
         - Consentimento
-      summary: Copy of Listar todos os consentimentos
+      summary: Listar todos os consentimentos (new)
       description: >
         Retorna todos os consentimentos criados pela organização, com suporte a
         filtros por status e busca por CPF/CNPJ, além de paginação e ordenação.
@@ -7579,36 +7579,39 @@ paths:
                         type: integer
                         description: Total de páginas disponíveis.
                         example: 1
-              example:
-                data:
-                  - consentId: >-
-                      urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:3fa85f64-5717-4562-b3fc-2c963f66afa6
-                    status: AUTHORISED
-                    creationDateTime: '2026-05-18T09:00:00Z'
-                    expirationDateTime: '2027-05-18T09:00:00Z'
-                    permissions:
-                      - RESOURCES_READ
-                      - ACCOUNTS_READ
-                      - ACCOUNTS_BALANCES_READ
-                      - ACCOUNTS_TRANSACTIONS_READ
-                    loggedUser:
-                      cpf: '12345678909'
-                  - consentId: >-
-                      urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:7cb12a30-1234-4abc-a001-9f3e2d1c4b5a
-                    status: AWAITING_AUTHORISATION
-                    creationDateTime: '2026-05-20T10:30:00Z'
-                    expirationDateTime: '2026-05-20T10:45:00Z'
-                    permissions:
-                      - RESOURCES_READ
-                      - CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ
-                      - ACCOUNTS_READ
-                    loggedUser:
-                      cnpj: '11222333000181'
-                pagination:
-                  page: 1
-                  limit: 20
-                  total: 2
-                  totalPages: 1
+              examples:
+                OK:
+                  value:
+                    data:
+                      - consentId: >-
+                          urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:3fa85f64-5717-4562-b3fc-2c963f66afa6
+                        status: AUTHORISED
+                        creationDateTime: '2026-05-18T09:00:00Z'
+                        expirationDateTime: '2027-05-18T09:00:00Z'
+                        permissions:
+                          - RESOURCES_READ
+                          - ACCOUNTS_READ
+                          - ACCOUNTS_BALANCES_READ
+                          - ACCOUNTS_TRANSACTIONS_READ
+                        loggedUser:
+                          cpf: '12345678909'
+                      - consentId: >-
+                          urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:7cb12a30-1234-4abc-a001-9f3e2d1c4b5a
+                        status: AWAITING_AUTHORISATION
+                        creationDateTime: '2026-05-20T10:30:00Z'
+                        expirationDateTime: '2026-05-20T10:45:00Z'
+                        permissions:
+                          - RESOURCES_READ
+                          - CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ
+                          - ACCOUNTS_READ
+                        loggedUser:
+                          cnpj: '11222333000181'
+                    pagination:
+                      page: 1
+                      limit: 20
+                      total: 2
+                      totalPages: 1
+                  summary: OK
         '401':
           description: Não autorizado. Token ausente ou inválido.
   /api/v1/organisations-1:
