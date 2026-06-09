@@ -7426,211 +7426,191 @@ paths:
                     totalRecords: 2118
                   summary: OK
   /api/v1/consents-1:
-    post:
+    get:
       tags:
         - Consentimento
-      summary: Criar consentimento (new)
+      summary: Copy of Listar todos os consentimentos
       description: >
-        Inicia o fluxo de criação de um consentimento Open Finance para um
-        usuário final (pessoa física ou jurídica). Retorna uma URL de
-        redirecionamento para que o usuário autorize o acesso aos dados na
-        instituição financeira selecionada.
-      operationId: createConsent-1
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - organisationId
-                - authorisationServerId
-                - consent
-              properties:
-                organisationId:
-                  type: string
-                  description: >
-                    Identificador único da organização (instituição financeira)
-                    onde o consentimento será criado. Obtido no endpoint de
-                    Instituições participantes.
-                  example: 74e929d9-33b6-4d85-8ba7-c146c867a817
-                authorisationServerId:
-                  type: string
-                  description: >
-                    Identificador do servidor de autorização da instituição.
-                    Obtido no campo AuthorisationServerId dentro de
-                    AuthorisationServers no endpoint de Instituições
-                    participantes.
-                  example: c8f0bf49-4744-4933-8960-7add6e590841
-                consent:
-                  type: object
-                  required:
-                    - loggedUser
-                    - permissions
-                  description: Objeto com os dados do usuário e as permissões solicitadas.
-                  properties:
-                    loggedUser:
-                      type: object
-                      description: >
-                        Identificação do usuário para o qual o consentimento
-                        será criado. Informe `cpf` para Pessoa Física ou `cnpj`
-                        para Pessoa Jurídica.
-                      properties:
-                        cpf:
-                          type: string
-                          description: >-
-                            CPF do usuário pessoa física (apenas dígitos, 11
-                            caracteres). Informar para PF.
-                          example: '12345678909'
-                        cnpj:
-                          type: string
-                          description: >-
-                            CNPJ do usuário pessoa jurídica (apenas dígitos, 14
-                            caracteres). Informar para PJ.
-                          example: '11222333000181'
-                    permissions:
-                      type: string
-                      description: >+
-                        Lista de permissões de acesso a dados solicitadas para o
-                        consentimento. Deve incluir ao menos uma permissão.
-                        Algumas permissões possuem dependência entre si (ex.:
-                        `ACCOUNTS_BALANCES_READ` requer `ACCOUNTS_READ`).
-
-
-                      minItems: 1
-                      enum:
-                        - RESOURCES_READ
-                        - CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ
-                        - CUSTOMERS_PERSONAL_ADITTIONALINFO_READ
-                        - CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ
-                        - CUSTOMERS_BUSINESS_ADITTIONALINFO_READ
-                        - ACCOUNTS_READ
-                        - ACCOUNTS_BALANCES_READ
-                        - ACCOUNTS_OVERDRAFT_LIMITS_READ
-                        - ACCOUNTS_TRANSACTIONS_READ
-                        - CREDIT_CARDS_ACCOUNTS_READ
-                        - CREDIT_CARDS_ACCOUNTS_LIMITS_READ
-                        - CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ
-                        - CREDIT_CARDS_ACCOUNTS_BILLS_READ
-                        - CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ
-                        - LOANS_READ
-                        - LOANS_WARRANTIES_READ
-                        - LOANS_SCHEDULED_INSTALMENTS_READ
-                        - LOANS_PAYMENTS_READ
-                        - FINANCINGS_READ
-                        - FINANCINGS_WARRANTIES_READ
-                        - FINANCINGS_SCHEDULED_INSTALMENTS_READ
-                        - FINANCINGS_PAYMENTS_READ
-                        - UNARRANGED_ACCOUNTS_OVERDRAFT_READ
-                        - UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ
-                        - >-
-                          UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ
-                        - UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ
-                        - INVOICE_FINANCINGS_READ
-                        - INVOICE_FINANCINGS_WARRANTIES_READ
-                        - INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ
-                        - INVOICE_FINANCINGS_PAYMENTS_READ
-                        - BANK_FIXED_INCOMES_READ
-                        - CREDIT_FIXED_INCOMES_READ
-                        - FUNDS_READ
-                        - VARIABLE_INCOMES_READ
-                        - TREASURE_TITLES_READ
-            examples:
-              pessoa_fisica:
-                summary: Pessoa Física (PF)
-                value:
-                  organisationId: 74e929d9-33b6-4d85-8ba7-c146c867a817
-                  authorisationServerId: c8f0bf49-4744-4933-8960-7add6e590841
-                  consent:
-                    loggedUser:
-                      cpf: '12345678909'
-                    permissions:
-                      - RESOURCES_READ
-                      - CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ
-                      - CUSTOMERS_PERSONAL_ADITTIONALINFO_READ
-                      - ACCOUNTS_READ
-                      - ACCOUNTS_BALANCES_READ
-                      - ACCOUNTS_OVERDRAFT_LIMITS_READ
-                      - ACCOUNTS_TRANSACTIONS_READ
-                      - CREDIT_CARDS_ACCOUNTS_READ
-                      - CREDIT_CARDS_ACCOUNTS_LIMITS_READ
-                      - CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ
-                      - CREDIT_CARDS_ACCOUNTS_BILLS_READ
-                      - CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ
-                      - LOANS_READ
-                      - LOANS_WARRANTIES_READ
-                      - LOANS_SCHEDULED_INSTALMENTS_READ
-                      - LOANS_PAYMENTS_READ
-                      - BANK_FIXED_INCOMES_READ
-                      - FUNDS_READ
-                      - VARIABLE_INCOMES_READ
-                      - TREASURE_TITLES_READ
-              pessoa_juridica:
-                summary: Pessoa Jurídica (PJ)
-                value:
-                  organisationId: 74e929d9-33b6-4d85-8ba7-c146c867a817
-                  authorisationServerId: c8f0bf49-4744-4933-8960-7add6e590841
-                  consent:
-                    loggedUser:
-                      cnpj: '11222333000181'
-                    permissions:
-                      - RESOURCES_READ
-                      - CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ
-                      - CUSTOMERS_BUSINESS_ADITTIONALINFO_READ
-                      - ACCOUNTS_READ
-                      - ACCOUNTS_BALANCES_READ
-                      - ACCOUNTS_TRANSACTIONS_READ
+        Retorna todos os consentimentos criados pela organização, com suporte a
+        filtros por status e busca por CPF/CNPJ, além de paginação e ordenação.
+      operationId: listConsents-1
+      parameters:
+        - name: page
+          in: query
+          required: false
+          description: Número da página para paginação dos resultados.
+          schema:
+            type: integer
+            example: 1
+        - name: limit
+          in: query
+          required: false
+          description: Quantidade de registros retornados por página.
+          schema:
+            type: integer
+            example: 20
+        - name: sortBy
+          in: query
+          required: false
+          description: Campo utilizado para ordenação dos resultados.
+          schema:
+            type: string
+            example: creationDateTime
+        - name: sortOrder
+          in: query
+          required: false
+          description: Direção da ordenação dos resultados.
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            example: desc
+        - name: status
+          in: query
+          required: false
+          description: Filtra os consentimentos pelo status atual.
+          schema:
+            type: string
+            enum:
+              - AUTHORISED
+              - AWAITING_AUTHORISATION
+              - REJECTED
+              - REVOKED
+            example: AUTHORISED
+        - name: search
+          in: query
+          required: false
+          description: >
+            Busca por documento do usuário. Aceita CPF (11 dígitos) ou CNPJ (14
+            dígitos), somente números.
+          schema:
+            type: string
+            pattern: ^(\d{11}|\d{14})$
+            example: '12345678909'
       responses:
         '200':
-          description: Consentimento criado com sucesso.
+          description: Lista de consentimentos retornada com sucesso.
           content:
             application/json:
               schema:
                 type: object
-                description: Resposta da criação de um consentimento Open Finance.
+                description: Resposta paginada da listagem de consentimentos.
                 properties:
-                  consentId:
-                    type: string
-                    description: >
-                      Identificador único do consentimento gerado, no formato
-                      URN. Utilizado em todas as chamadas subsequentes de dados
-                      agregados.
-                    example: >-
+                  data:
+                    type: array
+                    description: Lista de consentimentos retornados.
+                    items:
+                      type: object
+                      description: Resumo de um consentimento na listagem.
+                      properties:
+                        consentId:
+                          type: string
+                          description: Identificador único do consentimento no formato URN.
+                          example: >-
+                            urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:3fa85f64-5717-4562-b3fc-2c963f66afa6
+                        status:
+                          type: string
+                          description: Status atual do consentimento.
+                          enum:
+                            - AUTHORISED
+                            - AWAITING_AUTHORISATION
+                            - REJECTED
+                            - REVOKED
+                          example: AUTHORISED
+                        creationDateTime:
+                          type: string
+                          format: date-time
+                          description: >-
+                            Data e hora de criação do consentimento (ISO 8601,
+                            UTC).
+                          example: '2026-05-18T09:00:00Z'
+                        expirationDateTime:
+                          type: string
+                          format: date-time
+                          description: >-
+                            Data e hora de expiração do consentimento (ISO 8601,
+                            UTC).
+                          example: '2027-05-18T09:00:00Z'
+                        permissions:
+                          type: array
+                          description: Lista de permissões autorizadas no consentimento.
+                          items:
+                            type: string
+                          example:
+                            - RESOURCES_READ
+                            - ACCOUNTS_READ
+                            - ACCOUNTS_BALANCES_READ
+                        loggedUser:
+                          type: object
+                          description: Documento do usuário vinculado ao consentimento.
+                          properties:
+                            cpf:
+                              type: string
+                              description: >-
+                                CPF do usuário pessoa física (apenas dígitos, 11
+                                caracteres). Presente quando o consentimento for
+                                de PF.
+                              example: '12345678909'
+                            cnpj:
+                              type: string
+                              description: >-
+                                CNPJ do usuário pessoa jurídica (apenas dígitos,
+                                14 caracteres). Presente quando o consentimento
+                                for de PJ.
+                              example: '11222333000181'
+                  pagination:
+                    type: object
+                    description: Metadados de paginação da resposta.
+                    properties:
+                      page:
+                        type: integer
+                        description: Número da página atual.
+                        example: 1
+                      limit:
+                        type: integer
+                        description: Quantidade de registros por página.
+                        example: 20
+                      total:
+                        type: integer
+                        description: Total de registros encontrados.
+                        example: 2
+                      totalPages:
+                        type: integer
+                        description: Total de páginas disponíveis.
+                        example: 1
+              example:
+                data:
+                  - consentId: >-
                       urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:3fa85f64-5717-4562-b3fc-2c963f66afa6
-                  redirectUrl:
-                    type: string
-                    description: >
-                      URL para redirecionar o usuário final à tela de
-                      autorização na instituição financeira. Válida apenas
-                      quando o status é `AWAITING_AUTHORISATION`.
-                    example: >-
-                      https://auth.bancobmg.com.br/of-auth/realms/bmg/protocol/openid-connect/auth?client_id=datalink&redirect_uri=https%3A%2F%2Fcallback.datalink.com.br&response_type=code&scope=openid
-                  redirectUserUrl:
-                    type: string
-                    description: >-
-                      URL se resolve para redirecionar o usuário final à tela de
-                      autorização na instituição financeira. Válida apenas
-                      quando o status é `AWAITING_AUTHORISATION`.
-                    example: '2026-05-20T10:30:00Z'
-              examples:
-                OK:
-                  summary: OK
-                  value:
-                    redirectUrl: >-
-                      https://banco.com.br/open-banking/authorize?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3Ay7LWk9TMDFgi0n3QTlu5pTUrACEibYFWAexmwv9CC1M&client_id=25548518981519&state=FCfO8NcqKExDIo8s9q4BKMTUKscMtybEgDzngRFWFKZ4PUOpPQQW0c9z7jsr3rXtisWEaoPS6S2S4Z9vUcH9g44TbcSph9D3F0eu
-                    redirectUserUrl: >-
-                      https://itp-dados.linaopenx.com.br/api/v1/consents/redirect/urn:banco:6a10b48f-0479-4214-83d5-5ffb6a1f16aa?tenant=lina
-                    consentId: urn:banco:6a10b48f-0479-4214-83d5-5ffb6a1f16aa
-        '400':
-          description: >-
-            Requisição inválida. Verifique os campos obrigatórios e o formato
-            dos dados.
+                    status: AUTHORISED
+                    creationDateTime: '2026-05-18T09:00:00Z'
+                    expirationDateTime: '2027-05-18T09:00:00Z'
+                    permissions:
+                      - RESOURCES_READ
+                      - ACCOUNTS_READ
+                      - ACCOUNTS_BALANCES_READ
+                      - ACCOUNTS_TRANSACTIONS_READ
+                    loggedUser:
+                      cpf: '12345678909'
+                  - consentId: >-
+                      urn:datalink:74e929d9-33b6-4d85-8ba7-c146c867a817:7cb12a30-1234-4abc-a001-9f3e2d1c4b5a
+                    status: AWAITING_AUTHORISATION
+                    creationDateTime: '2026-05-20T10:30:00Z'
+                    expirationDateTime: '2026-05-20T10:45:00Z'
+                    permissions:
+                      - RESOURCES_READ
+                      - CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ
+                      - ACCOUNTS_READ
+                    loggedUser:
+                      cnpj: '11222333000181'
+                pagination:
+                  page: 1
+                  limit: 20
+                  total: 2
+                  totalPages: 1
         '401':
           description: Não autorizado. Token ausente ou inválido.
-        '422':
-          description: >-
-            Entidade não processável. A instituição ou servidor de autorização
-            informado não foi encontrado.
   /api/v1/organisations-1:
     get:
       tags:
