@@ -8611,7 +8611,7 @@ paths:
     post:
       tags:
         - Configuração de Webhooks
-      summary: Copy of Rotacionar secret do webhook
+      summary: Rotacionar secret do webhook (new)
       description: >
         Gera um novo secret para o webhook. O secret anterior permanece válido
         por 24 horas para garantir a transição sem interrupção na verificação de
@@ -8625,6 +8625,7 @@ paths:
           schema:
             type: string
             example: go-assets
+            default: minha-empresa
         - name: client_id
           in: path
           required: true
@@ -8632,6 +8633,7 @@ paths:
           schema:
             type: string
             example: go-assets-prod
+            default: client_abc123
       responses:
         '200':
           description: Secret rotacionado com sucesso.
@@ -8640,6 +8642,9 @@ paths:
               schema:
                 type: object
                 properties:
+                  clientId:
+                    type: string
+                    default: client_abc123
                   secret:
                     type: string
                     description: >-
@@ -8647,12 +8652,13 @@ paths:
                       X-Lina-Signature.
                     example: >-
                       whsec_a3f8b2c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1
+                    default: wh_secret_newXyZ9kLmPq2rStU
               examples:
                 OK:
                   summary: OK
                   value:
-                    secret: >-
-                      whsec_a3f8b2c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1
+                    clientId: client_abc123
+                    secret: wh_secret_newXyZ9kLmPq2rStU
         '401':
           description: Não autorizado. Token ausente ou inválido.
         '404':
@@ -8661,6 +8667,21 @@ paths:
             application/json:
               example:
                 message: Tenant ou clientId não encontrado
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientId:
+                  type: string
+                  default: client_abc123
+                secret:
+                  type: string
+                  description: Novo segredo HMAC. Armazene com segurança.
+                  default: wh_secret_newXyZ9kLmPq2rStU
+              required:
+                - clientId
 components:
   securitySchemes:
     bearerAuth:
