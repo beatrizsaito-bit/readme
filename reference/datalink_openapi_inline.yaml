@@ -8906,7 +8906,7 @@ paths:
     post:
       tags:
         - Eventos de Webhooks
-      summary: Copy of Reenviar evento manualmente
+      summary: Reenviar evento manualmente (new)
       description: >
         Enfileira manualmente um evento para reenvio ao endpoint configurado. Só
         é possível reenviar eventos com status `failed` ou `pending`.
@@ -8919,6 +8919,7 @@ paths:
           schema:
             type: string
             example: evt_019c9f741f617007ba5ad5ef22f6b47b
+            default: evt_abc123
       responses:
         '202':
           description: Evento enfileirado para reenvio com sucesso.
@@ -8930,15 +8931,12 @@ paths:
                   message:
                     type: string
                     example: Event queued for retry
-                  eventId:
-                    type: string
-                    example: evt_019c9f741f617007ba5ad5ef22f6b47b
+                    default: Event queued for retry
               examples:
                 Accepted:
                   summary: Accepted
                   value:
                     message: Event queued for retry
-                    eventId: evt_019c9f741f617007ba5ad5ef22f6b47b
         '400':
           description: Evento já entregue ou ID inválido.
           content:
