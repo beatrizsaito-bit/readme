@@ -8522,6 +8522,86 @@ paths:
                         updatedAt: '2025-05-20T14:30:00Z'
         '401':
           description: Não autorizado. Token ausente ou inválido.
+  /api/v1/notification/{tenant_id}/webhooks/{client_id}-1:
+    put:
+      tags:
+        - Configuração de Webhooks
+      summary: Copy of Criar ou atualizar webhook
+      description: >
+        Cria um novo webhook ou atualiza o endpoint de um webhook existente para
+        o `client_id` informado.
+      operationId: upsertWebhook-1
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          description: Identificador único do tenant na plataforma.
+          schema:
+            type: string
+            example: go-assets
+        - name: client_id
+          in: path
+          required: true
+          description: Client ID Keycloak associado ao webhook.
+          schema:
+            type: string
+            example: go-assets-prod
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - value
+                - enable
+              description: Payload para criação ou atualização de um webhook.
+              properties:
+                value:
+                  type: string
+                  format: uri
+                  description: URL HTTPS do endpoint que receberá os eventos.
+                  example: https://prod.empresa.com/webhooks/lina
+                enable:
+                  type: boolean
+                  description: Define se o webhook estará ativo após a operação.
+                  example: true
+                secret:
+                  type: string
+                  description: >-
+                    Secret personalizado para assinatura. Se omitido, é gerado
+                    automaticamente.
+                  example: meu-secret-customizado
+            examples:
+              Request Example:
+                summary: Criar ou atualizar webhook
+                value:
+                  value: https://prod.empresa.com/webhooks/lina
+                  enable: true
+      responses:
+        '200':
+          description: Webhook criado ou atualizado com sucesso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Webhook updated
+              examples:
+                OK:
+                  summary: OK
+                  value:
+                    message: Webhook updated
+        '400':
+          description: Body inválido.
+          content:
+            application/json:
+              example:
+                message: Body inválido
+        '401':
+          description: Não autorizado. Token ausente ou inválido.
 components:
   securitySchemes:
     bearerAuth:
