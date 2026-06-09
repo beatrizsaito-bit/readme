@@ -8955,7 +8955,7 @@ paths:
     patch:
       tags:
         - Webhooks de Notificação
-      summary: Copy of Atualizar canais
+      summary: Atualizar canais (new)
       description: >
         Atualiza os canais de notificação de um tenant. Permite adicionar,
         alterar ou desabilitar canais existentes.
@@ -8968,20 +8968,15 @@ paths:
           schema:
             type: string
             example: alex-teste
+            default: minha-empresa
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required:
-                - tenantId
               description: Payload para criação ou atualização dos canais de notificação.
               properties:
-                tenantId:
-                  type: string
-                  description: Identificador único do tenant.
-                  example: alex-teste
                 channels:
                   type: array
                   description: Lista de canais a criar ou atualizar.
@@ -8998,6 +8993,7 @@ paths:
                           - email
                           - sms
                         example: webhook
+                        default: webhook
                       value:
                         type: string
                         description: >
@@ -9005,18 +9001,12 @@ paths:
                           `slack`, endereço de e-mail para `email`, número com
                           DDI para `sms`.
                         example: https://prod.empresa.com/webhooks/lina
+                        default: https://seuapp.com.br/webhook/v2
                       enable:
                         type: boolean
                         description: Indica se o canal está ativo.
-                        default: true
+                        default: 'false'
                         example: true
-                      secret:
-                        type: string
-                        nullable: true
-                        description: >-
-                          Secret de assinatura. Aplicável apenas ao tipo
-                          `webhook`.
-                        example: null
             examples:
               New Example:
                 summary: Atualizar múltiplos canais
@@ -9039,82 +9029,7 @@ paths:
       responses:
         '200':
           description: Canais atualizados com sucesso.
-          content:
-            application/json:
-              schema:
-                type: object
-                description: Resposta com os canais de notificação do tenant.
-                properties:
-                  tenantId:
-                    type: string
-                    description: Identificador único do tenant.
-                    example: tenant_id
-                  channels:
-                    type: array
-                    description: Lista de canais de notificação configurados.
-                    items:
-                      type: object
-                      description: Canal de notificação configurado para o tenant.
-                      properties:
-                        type:
-                          type: string
-                          description: Tipo do canal de notificação.
-                          enum:
-                            - webhook
-                            - slack
-                            - email
-                            - sms
-                          example: webhook
-                        value:
-                          type: string
-                          description: >
-                            Valor do canal conforme o tipo: URL para `webhook` e
-                            `slack`, endereço de e-mail para `email`, número com
-                            DDI para `sms`.
-                          example: https://prod.empresa.com/webhooks/lina
-                        enable:
-                          type: boolean
-                          description: Indica se o canal está ativo.
-                          default: true
-                          example: true
-                        secret:
-                          type: string
-                          nullable: true
-                          description: >-
-                            Secret de assinatura. Aplicável apenas ao tipo
-                            `webhook`.
-                          example: null
-                  createdAt:
-                    type: string
-                    format: date-time
-                    description: Data e hora de criação do registro (ISO 8601, UTC).
-                    example: '2025-03-20T19:22:17.646Z'
-                  updatedAt:
-                    type: string
-                    format: date-time
-                    description: Data e hora da última atualização (ISO 8601, UTC).
-                    example: '2025-03-20T20:12:11.715Z'
-              examples:
-                OK:
-                  summary: OK
-                  value:
-                    tenantId: tenant_id
-                    channels:
-                      - type: webhook
-                        value: exemplo
-                        enable: true
-                        secret: null
-                      - type: slack
-                        value: exemploURL2
-                        enable: true
-                      - type: email
-                        value: exemploEmail2
-                        enable: true
-                      - type: sms
-                        value: '551234567'
-                        enable: true
-                    createdAt: '2025-03-20T19:22:17.646Z'
-                    updatedAt: '2025-03-20T20:12:11.715Z'
+          content: {}
         '401':
           description: Não autorizado. Token ausente ou inválido.
 components:
