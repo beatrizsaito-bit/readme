@@ -8101,6 +8101,17 @@ paths:
                         type: integer
                         description: Requisições no mês atual.
                         default: '12300'
+  /users-1:
+    get:
+      tags:
+        - Usuários
+      summary: Copy of Listar todos os usuários
+      description: ''
+      operationId: listUsers-1
+      parameters: []
+      responses:
+        '200':
+          description: ''
 components:
   securitySchemes:
     bearerAuth:
