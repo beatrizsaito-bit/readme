@@ -8526,7 +8526,7 @@ paths:
     put:
       tags:
         - Configuração de Webhooks
-      summary: Copy of Criar ou atualizar webhook
+      summary: Criar ou atualizar webhook (new)
       description: >
         Cria um novo webhook ou atualiza o endpoint de um webhook existente para
         o `client_id` informado.
@@ -8539,6 +8539,7 @@ paths:
           schema:
             type: string
             example: go-assets
+            default: minha-empresa
         - name: client_id
           in: path
           required: true
@@ -8546,6 +8547,7 @@ paths:
           schema:
             type: string
             example: go-assets-prod
+            default: client_abc123
       requestBody:
         required: true
         content:
@@ -8562,16 +8564,19 @@ paths:
                   format: uri
                   description: URL HTTPS do endpoint que receberá os eventos.
                   example: https://prod.empresa.com/webhooks/lina
+                  default: https://seuapp.com.br/webhook/datalink
                 enable:
                   type: boolean
                   description: Define se o webhook estará ativo após a operação.
                   example: true
+                  default: 'true'
                 secret:
                   type: string
                   description: >-
                     Secret personalizado para assinatura. Se omitido, é gerado
                     automaticamente.
                   example: meu-secret-customizado
+                  default: ''
             examples:
               Request Example:
                 summary: Criar ou atualizar webhook
