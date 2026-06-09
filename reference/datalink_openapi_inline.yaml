@@ -8629,6 +8629,180 @@ paths:
           description: Não autorizado. Token ausente ou inválido.
         '404':
           description: Webhook não encontrado.
+  /api/v1/webhook-events/{event_id}-1:
+    get:
+      tags:
+        - Eventos de Webhooks
+      summary: Copy of Buscar eventos
+      description: >
+        Retorna os detalhes completos de um evento específico, incluindo todas
+        as tentativas de entrega com seus respectivos status codes e tempos de
+        resposta.
+      operationId: getWebhookEvent-1
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: Identificador único do evento no formato `evt_`.
+          schema:
+            type: string
+            example: evt_019c9f741f617007ba5ad5ef22f6b47b
+      responses:
+        '200':
+          description: Evento retornado com sucesso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    description: Evento de webhook registrado na plataforma.
+                    properties:
+                      _id:
+                        type: string
+                        description: Identificador único do evento no formato `evt_`.
+                        example: evt_019c9f741f617007ba5ad5ef22f6b47b
+                      type:
+                        type: string
+                        description: Tipo do evento disparado.
+                        example: account.balance.updated
+                      tenantId:
+                        type: string
+                        description: Identificador do tenant ao qual o evento pertence.
+                        example: go-assets
+                      clientId:
+                        type: string
+                        description: Client ID Keycloak do webhook de destino.
+                        example: go-assets-prod
+                      created:
+                        type: integer
+                        description: Timestamp Unix (segundos) da criação do evento.
+                        example: 1772201713
+                      apiVersion:
+                        type: string
+                        description: Versão da API que gerou o evento.
+                        example: '2025-02-01'
+                      status:
+                        type: string
+                        description: Status atual de entrega do evento.
+                        enum:
+                          - pending
+                          - delivered
+                          - failed
+                          - endpoint_disabled
+                        example: delivered
+                      endpoint:
+                        type: string
+                        format: uri
+                        description: URL do endpoint de destino do evento.
+                        example: https://prod.empresa.com/webhooks/lina
+                      attempts:
+                        type: array
+                        description: Lista de tentativas de entrega do evento.
+                        items:
+                          type: object
+                          description: Tentativa de entrega de um evento de webhook.
+                          properties:
+                            number:
+                              type: integer
+                              description: Número sequencial da tentativa.
+                              example: 1
+                            at:
+                              type: string
+                              format: date-time
+                              description: >-
+                                Data e hora em que a tentativa foi realizada
+                                (ISO 8601, UTC).
+                              example: '2026-02-27T14:15:13Z'
+                            statusCode:
+                              type: integer
+                              description: >-
+                                HTTP status code retornado pelo endpoint do
+                                cliente.
+                              example: 200
+                            responseBody:
+                              type: string
+                              description: >-
+                                Corpo da resposta retornada pelo endpoint do
+                                cliente.
+                              example: OK
+                            durationMs:
+                              type: integer
+                              description: Tempo de resposta do endpoint em milissegundos.
+                              example: 145
+                      nextRetryAt:
+                        type: string
+                        format: date-time
+                        nullable: true
+                        description: >-
+                          Data e hora da próxima tentativa programada. `null`
+                          quando não há reenvio pendente.
+                        example: null
+                      createdAt:
+                        type: string
+                        format: date-time
+                        description: Data e hora de criação do evento (ISO 8601, UTC).
+                        example: '2026-02-27T14:15:13.502Z'
+                      updatedAt:
+                        type: string
+                        format: date-time
+                        description: >-
+                          Data e hora da última atualização do evento (ISO 8601,
+                          UTC).
+                        example: '2026-02-27T14:15:13Z'
+                      expiresAt:
+                        type: string
+                        format: date-time
+                        description: >-
+                          Data e hora de expiração do registro do evento (ISO
+                          8601, UTC).
+                        example: '2026-03-29T14:15:13.502Z'
+                      payload:
+                        type: string
+                        description: >-
+                          Payload JSON completo enviado ao endpoint no momento
+                          do disparo do evento.
+                        example: >-
+                          {"id":"evt_019c9f74...","eventType":"account.balance.updated"}
+              examples:
+                OK:
+                  summary: OK
+                  value:
+                    data:
+                      _id: evt_019c9f741f617007ba5ad5ef22f6b47b
+                      type: account.balance.updated
+                      tenantId: go-assets
+                      clientId: go-assets-prod
+                      created: 1772201713
+                      apiVersion: '2025-02-01'
+                      payload: >-
+                        {"id":"evt_019c9f74...","eventType":"account.balance.updated"}
+                      status: delivered
+                      endpoint: https://prod.empresa.com/webhooks/lina
+                      attempts:
+                        - number: 1
+                          at: '2026-02-27T14:15:13Z'
+                          statusCode: 500
+                          responseBody: Internal Server Error
+                          durationMs: 3200
+                        - number: 2
+                          at: '2026-02-27T14:16:13Z'
+                          statusCode: 200
+                          responseBody: OK
+                          durationMs: 145
+                      nextRetryAt: null
+                      createdAt: '2026-02-27T14:15:13.502Z'
+                      updatedAt: '2026-02-27T14:16:13Z'
+                      expiresAt: '2026-03-29T14:15:13.502Z'
+        '401':
+          description: Não autorizado. Token ausente ou inválido.
+        '404':
+          description: Evento não encontrado ou pertence a outro tenant.
+          content:
+            application/json:
+              example:
+                message: Evento não encontrado ou pertence a outro tenant
 components:
   securitySchemes:
     bearerAuth:
