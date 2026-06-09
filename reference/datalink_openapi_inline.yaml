@@ -8161,7 +8161,7 @@ paths:
     get:
       tags:
         - Usuários
-      summary: Copy of Listar todos os consentimentos de usuário
+      summary: Listar todos os consentimentos de usuário (new)
       description: >
         Retorna todos os consentimentos vinculados a um usuário específico,
         incluindo o status atual, permissões concedidas e, quando aplicável, os
