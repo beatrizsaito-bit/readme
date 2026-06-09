@@ -8522,38 +8522,6 @@ paths:
                         updatedAt: '2025-05-20T14:30:00Z'
         '401':
           description: Não autorizado. Token ausente ou inválido.
-  /api/v1/notification/{tenant_id}/webhooks/{client_id}-1:
-    delete:
-      tags:
-        - Configuração de Webhooks
-      summary: Copy of Remover webhook
-      description: |
-        Remove permanentemente o webhook associado ao `client_id` informado.
-      operationId: deleteWebhook-1
-      parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          description: Identificador único do tenant na plataforma.
-          schema:
-            type: string
-            example: go-assets
-            default: minha-empresa
-        - name: client_id
-          in: path
-          required: true
-          description: Client ID Keycloak associado ao webhook.
-          schema:
-            type: string
-            example: go-assets-prod
-            default: client_abc123
-      responses:
-        '204':
-          description: Webhook removido com sucesso.
-        '401':
-          description: Não autorizado. Token ausente ou inválido.
-        '404':
-          description: Webhook não encontrado.
   /api/v1/notification/{tenant_id}/webhooks/{client_id}/rotate-secret-1:
     post:
       tags:
@@ -8629,6 +8597,38 @@ paths:
                   default: wh_secret_newXyZ9kLmPq2rStU
               required:
                 - clientId
+  /api/v1/notification/{tenant_id}/webhooks/{client_id}-1:
+    delete:
+      tags:
+        - Configuração de Webhooks
+      summary: Remover webhook (new)
+      description: |
+        Remove permanentemente o webhook associado ao `client_id` informado.
+      operationId: deleteWebhook-1
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          description: Identificador único do tenant na plataforma.
+          schema:
+            type: string
+            example: go-assets
+            default: minha-empresa
+        - name: client_id
+          in: path
+          required: true
+          description: Client ID Keycloak associado ao webhook.
+          schema:
+            type: string
+            example: go-assets-prod
+            default: client_abc123
+      responses:
+        '204':
+          description: Webhook removido com sucesso.
+        '401':
+          description: Não autorizado. Token ausente ou inválido.
+        '404':
+          description: Webhook não encontrado.
 components:
   securitySchemes:
     bearerAuth:
