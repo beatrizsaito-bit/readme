@@ -7425,6 +7425,26 @@ paths:
                         transactionalAdditionalInfo: string
                     totalRecords: 2118
                   summary: OK
+  /new-endpoint:
+    get:
+      operationId: ''
+      responses:
+        '200':
+          description: ''
+      parameters: []
+      x-readme:
+        code-samples:
+          - code: ''
+            language: shell
+            name: ''
+        samples-languages:
+          - shell
+      summary: Criar consentimento
+      description: >-
+        Inicia o fluxo de criação de um consentimento Open Finance para um
+        usuário final (pessoa física ou jurídica). Retorna uma URL de
+        redirecionamento para que o usuário autorize o acesso aos dados na
+        instituição financeira selecionada.
 components:
   securitySchemes:
     bearerAuth:
