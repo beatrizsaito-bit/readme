@@ -8157,6 +8157,266 @@ paths:
                         default: '16'
                 required:
                   - data
+  /api/v1/users/{user_id}/consents-1:
+    get:
+      tags:
+        - Usuários
+      summary: Copy of Listar todos os consentimentos de usuário
+      description: >
+        Retorna todos os consentimentos vinculados a um usuário específico,
+        incluindo o status atual, permissões concedidas e, quando aplicável, os
+        detalhes de rejeição conforme especificação Open Finance Brasil.
+      operationId: listUserConsents-1
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: Identificador único do usuário na plataforma DataLink.
+          schema:
+            type: string
+            format: uuid
+            example: 9d9fe35d-8e12-46f3-807c-4bdaa1238d32
+      responses:
+        '200':
+          description: Lista de consentimentos do usuário retornada com sucesso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    description: Lista de consentimentos do usuário.
+                    items:
+                      type: object
+                      description: Consentimento Open Finance vinculado a um usuário.
+                      required:
+                        - userId
+                        - consentId
+                        - creationDateTime
+                        - status
+                        - statusUpdateDateTime
+                        - permissions
+                        - organisationId
+                        - authorisationServerId
+                      properties:
+                        userId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            Identificador único do usuário na plataforma
+                            DataLink.
+                          example: 9d9fe35d-8e12-46f3-807c-4bdaa1238d32
+                        consentId:
+                          type: string
+                          pattern: >-
+                            ^urn:[a-zA-Z0-9][a-zA-Z0-9-]{0,31}:[a-zA-Z0-9()+,\-.:=@;$_!*'%\/?#]+$
+                          description: >
+                            Identificador único do consentimento no formato URN
+                            (Uniform Resource Name), conforme RFC 8141. Composto
+                            por namespace `urn`, identificador da instituição
+                            transmissora e identificador específico do
+                            consentimento.
+                          example: urn:raidiambank:23f1a40c-6c9e-4c76-998c-d33d7c546818
+                        creationDateTime:
+                          type: string
+                          format: date-time
+                          pattern: >-
+                            ^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$
+                          description: >
+                            Data e hora de criação do consentimento (ISO 8601,
+                            UTC). Conforme especificação RFC-3339, sempre em
+                            timezone UTC.
+                          example: '2025-02-14T11:28:11Z'
+                        status:
+                          type: string
+                          description: Status atual do consentimento.
+                          enum:
+                            - AUTHORISED
+                            - AWAITING_AUTHORISATION
+                            - REJECTED
+                            - REVOKED
+                          example: AUTHORISED
+                        statusUpdateDateTime:
+                          type: string
+                          format: date-time
+                          pattern: >-
+                            ^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$
+                          description: >
+                            Data e hora da última atualização de status do
+                            consentimento (ISO 8601, UTC). Conforme
+                            especificação RFC-3339, sempre em timezone UTC.
+                          example: '2025-02-14T11:29:41Z'
+                        permissions:
+                          type: array
+                          minItems: 1
+                          description: >
+                            Lista de permissões de acesso concedidas no escopo
+                            do consentimento, conforme Open Finance Brasil. O
+                            array não deve conter itens duplicados.
+                          items:
+                            type: string
+                            description: >-
+                              Valores permitidos: `RESOURCES_READ`,
+                              `CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ`,
+                              `CUSTOMERS_PERSONAL_ADITTIONALINFO_READ`,
+                              `CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ`,
+                              `CUSTOMERS_BUSINESS_ADITTIONALINFO_READ`,
+                              `ACCOUNTS_READ`, `ACCOUNTS_BALANCES_READ`,
+                              `ACCOUNTS_OVERDRAFT_LIMITS_READ`,
+                              `ACCOUNTS_TRANSACTIONS_READ`,
+                              `CREDIT_CARDS_ACCOUNTS_READ`,
+                              `CREDIT_CARDS_ACCOUNTS_LIMITS_READ`,
+                              `CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ`,
+                              `CREDIT_CARDS_ACCOUNTS_BILLS_READ`,
+                              `CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ`,
+                              `LOANS_READ`, `LOANS_WARRANTIES_READ`,
+                              `LOANS_SCHEDULED_INSTALMENTS_READ`,
+                              `LOANS_PAYMENTS_READ`, `FINANCINGS_READ`,
+                              `FINANCINGS_WARRANTIES_READ`,
+                              `FINANCINGS_SCHEDULED_INSTALMENTS_READ`,
+                              `FINANCINGS_PAYMENTS_READ`,
+                              `UNARRANGED_ACCOUNTS_OVERDRAFT_READ`,
+                              `UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ`,
+                              `UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ`,
+                              `UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ`,
+                              `INVOICE_FINANCINGS_READ`,
+                              `INVOICE_FINANCINGS_WARRANTIES_READ`,
+                              `INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ`,
+                              `INVOICE_FINANCINGS_PAYMENTS_READ`,
+                              `BANK_FIXED_INCOMES_READ`,
+                              `CREDIT_FIXED_INCOMES_READ`, `FUNDS_READ`,
+                              `VARIABLE_INCOMES_READ`, `TREASURE_TITLES_READ`
+                          example:
+                            - RESOURCES_READ
+                            - ACCOUNTS_READ
+                            - ACCOUNTS_BALANCES_READ
+                        expirationDateTime:
+                          type: string
+                          format: date-time
+                          pattern: >-
+                            ^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$
+                          description: >
+                            Data e hora de expiração do consentimento (ISO 8601,
+                            UTC). Obrigatório quando houver validade
+                            determinada. Não deve ser preenchido em
+                            consentimentos com prazo indeterminado.
+                          example: '2027-05-21T08:30:00Z'
+                        organisationId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            Identificador da instituição financeira vinculada ao
+                            consentimento.
+                          example: 74e929d9-33b6-4d85-8ba7-c146c867a817
+                        authorisationServerId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            Identificador do servidor de autorização da
+                            instituição.
+                          example: c8f0bf49-4744-4933-8960-7add6e590841
+                        rejection:
+                          type: object
+                          description: >
+                            Presente apenas quando `status` é `REJECTED`.
+                            Detalha o motivo e o responsável pela rejeição do
+                            consentimento.
+                          required:
+                            - rejectedBy
+                            - reason
+                          properties:
+                            rejectedBy:
+                              type: string
+                              description: >-
+                                Identifica o agente responsável pela rejeição do
+                                consentimento.
+                              enum:
+                                - USER
+                                - ASPSP
+                                - TPP
+                              x-enumDescriptions:
+                                USER: Usuário
+                                ASPSP: Instituição transmissora
+                                TPP: Instituição receptora
+                              example: USER
+                            reason:
+                              type: object
+                              required:
+                                - code
+                              properties:
+                                code:
+                                  type: string
+                                  description: Código que descreve o motivo da rejeição.
+                                  enum:
+                                    - CONSENT_EXPIRED
+                                    - CUSTOMER_MANUALLY_REJECTED
+                                    - CUSTOMER_MANUALLY_REVOKED
+                                    - CONSENT_MAX_DATE_REACHED
+                                    - CONSENT_TECHNICAL_ISSUE
+                                    - INTERNAL_SECURITY_REASON
+                                  x-enumDescriptions:
+                                    CONSENT_EXPIRED: >-
+                                      Consentimento ultrapassou o tempo limite
+                                      para autorização.
+                                    CUSTOMER_MANUALLY_REJECTED: >-
+                                      Cliente rejeitou o consentimento
+                                      manualmente.
+                                    CUSTOMER_MANUALLY_REVOKED: >-
+                                      Cliente revogou o consentimento após
+                                      autorização.
+                                    CONSENT_MAX_DATE_REACHED: >-
+                                      Consentimento ultrapassou o tempo limite
+                                      de compartilhamento.
+                                    CONSENT_TECHNICAL_ISSUE: >-
+                                      Falha técnica que impossibilita o uso do
+                                      consentimento (ex. falha na troca do
+                                      AuthCode pelo AccessToken no Hybrid Flow).
+                                    INTERNAL_SECURITY_REASON: >-
+                                      Rejeição por políticas de segurança da
+                                      instituição transmissora.
+                                  example: CUSTOMER_MANUALLY_REVOKED
+                                additionalInformation:
+                                  type: string
+                                  pattern: ^[^\s](.*[^\s])?$
+                                  description: >
+                                    Informações adicionais sobre a rejeição, a
+                                    critério da instituição transmissora.
+                                  example: >-
+                                    Tempo de confirmação da múltipla alçada
+                                    excedido.
+              example:
+                data:
+                  - userId: 9d9fe35d-8e12-46f3-807c-4bdaa1238d32
+                    consentId: urn:raidiambank:23f1a40c-6c9e-4c76-998c-d33d7c546818
+                    creationDateTime: '2025-02-14T11:28:11Z'
+                    status: REJECTED
+                    statusUpdateDateTime: '2025-02-14T11:29:41Z'
+                    permissions:
+                      - RESOURCES_READ
+                      - ACCOUNTS_READ
+                    organisationId: 74e929d9-33b6-4d85-8ba7-c146c867a817
+                    authorisationServerId: c8f0bf49-4744-4933-8960-7add6e590841
+                    rejection:
+                      rejectedBy: USER
+                      reason:
+                        code: CUSTOMER_MANUALLY_REVOKED
+                  - userId: 9d9fe35d-8e12-46f3-807c-4bdaa1238d32
+                    consentId: urn:raidiambank:2d076b0d-7b01-4822-9147-9303120eb1d3
+                    creationDateTime: '2025-02-10T20:06:44Z'
+                    status: AUTHORISED
+                    statusUpdateDateTime: '2025-02-10T20:07:23Z'
+                    permissions:
+                      - RESOURCES_READ
+                      - ACCOUNTS_READ
+                      - ACCOUNTS_BALANCES_READ
+                      - ACCOUNTS_TRANSACTIONS_READ
+                    organisationId: 74e929d9-33b6-4d85-8ba7-c146c867a817
+                    authorisationServerId: c8f0bf49-4744-4933-8960-7add6e590841
+        '401':
+          description: Não autorizado. Token ausente ou inválido.
+        '404':
+          description: Usuário não encontrado.
 components:
   securitySchemes:
     bearerAuth:
